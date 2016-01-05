@@ -1,0 +1,55 @@
+@BEGIN_TEMPLATE@
+<div>
+			<div id="list">
+				
+
+					<div class="inserto">
+					<div role="toolbar">
+						
+			
+						@BLOCK_BEGIN_EDIT@
+						<a class="btn btn-default btn-xs btn-success" href="?q=object/detail_edit&amp;p=_system_news&amp;a" title="Nuovo messaggio">
+							<span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
+						</a>
+
+						@BLOCK_END_EDIT@
+					</div>
+				</div>
+
+			@BLOCK_BEGIN_RESULT_ERROR@
+					<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+						Si &egrave; verificato un errore: @ERROR_MESSAGE@
+					</div>
+				@BLOCK_END_RESULT_ERROR@
+
+				@BLOCK_BEGIN_RESULT_EMPTY@
+					<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+						Nessun elemento trovato.
+					</div>
+				@BLOCK_END_RESULT_EMPTY@
+
+
+				([
+						[[@tag__system_news.ID#FLAT@] != []]
+						?? [
+							<table width="100%" summary="tabella risultati" border="0" cellspacing="0" cellpadding="0" class="sortable" id="risultati">
+								 
+	
+								@BEGIN__system_news@
+
+											<tr style="margin-top:5px;" class="lista_linea_pari">
+											@tag_title@
+											</tr>
+											<tr class="lista_linea_dispari">
+											@tag_teaser@
+											</tr>
+								@END__system_news@
+					  		</table>
+						]
+					])
+
+</div>
+		  		 
+		</div>@END_TEMPLATE@

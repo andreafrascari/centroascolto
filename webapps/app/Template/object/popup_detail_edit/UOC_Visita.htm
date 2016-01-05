@@ -1,0 +1,118 @@
+@BEGIN_TEMPLATE@<div id="popup-detail-edit-window">
+			@BEGIN_UOC_Visita@
+			
+			<script type="text/javascript">
+			
+			function cleanHtmlReferto()	{
+				var theRef = $("#INP_refertazione").val();
+				// alert("before: " + theRef);
+				var strippedString = theRef.replace(/<[^>]+>/ig,””);
+				// alert("after: " + strippedString);
+				$("#INP_refertazione").val(strippedString);
+			}
+			
+			$(document).ready(function()	{
+
+				checkControllo();
+				
+				cleanHtmlReferto();
+
+				$("#INP_data").change(function()	{
+	       			var theDate = $(this).val();
+	       			var splitted = theDate.split("/"); 
+	       			var theDateDate = new Date(splitted[2],parseInt(splitted[1])-1,splitted[0]);
+	       			// alert(theDateDate);
+	       			if (theDateDate.getTime() > new Date().getTime())	{
+	       				alert("Attenzione: impossibile registrare la visita in data futura.");
+	       				$(this).val("");
+	       				$(this).focus();
+	       			}	
+				});
+				
+				$("#INP_iter_visita").change(function()	{
+					checkControllo();
+				});
+				
+       		});
+       		
+       		
+       		function checkControllo()	{
+       			if ($("#INP_iter_visita option:selected").text().indexOf("controllo")>0)	{
+       				$("#miglioramento").show();
+       			} else {
+       				$("#miglioramento").hide();
+       			}  
+       		}
+			
+		</script>
+			
+			<div class="detail-edit">
+						<div id="splash">
+							<h2>@TITLE@</h2>
+						</div>
+		
+						@BLOCK_BEGIN_RESULT_ERROR@
+							<div class="system-message-error">
+								Si &egrave; verificato un errore: @ERROR_MESSAGE@
+							</div>
+						@BLOCK_END_RESULT_ERROR@
+		
+						@BLOCK_BEGIN_RESULT_EMPTY@
+							<div class="system-message-error">
+								Nessun elemento trovato!
+							</div>
+						@BLOCK_END_RESULT_EMPTY@
+		
+						<div class="form-container form-container-UOC_Visita">
+							<form id="popup-detail-edit" method="post" action="@ACTION@" @ajaxable="target=popup-detail-edit-window">
+								<fieldset>
+									<legend>Inserire/aggiornare la refertazione ... e gli altri dati se non presenti</legend>
+	
+									
+									<div class="memorandum">
+									Registrare la refertazione e gli altri dati,  salvare e chiudere.<br />
+									Di ritorno alla cartella, inviare il referto con il bottone "Invia Mys".
+									
+									</div>
+									
+									<div class="detail-body">
+									@tag_data@
+									
+									@tag_refertazione@
+									
+									
+									@tag_iter_visita@
+									
+									<div id="miglioramento" style="display:none">
+									([[[@tag_ID#FLAT@] ==[]]??[
+									@FUN_MODULE(q=object/list,t=Percorsi_Candidati,p=UOC_Percorso/_a_uoc_accesso_percorso/_v_@FUN_GET_URL_PARAM(param=a,pre=_a_per_cartella/_c_UOC_Accesso/_a_ID/_v_)@,list_page_dimension=100)@
+									]::[
+										@FUN_MODULE(q=object/list,t=Percorsi_Candidati,p=UOC_Percorso/_a_uoc_accesso_percorso/_v_@tag_per_cartella.UOC_Accesso.ID#FLAT@,list_page_dimension=100)@
+									 ]])
+										
+										<script type="text/javascript">
+											$("#INP_percorso option[value='@tag_percorso.UOC_Percorso.ID#FLAT@']").attr('selected', 'selected');
+										</script>										
+										@tag_miglioramento@@tag_incosa@
+								</div>
+									
+									
+									@tag_consulenzaBologna@		
+									@tag_oscuramento@@tag_oscuramentoDossier@
+								</div>
+															
+		
+									<input type="hidden" name="class" value="@CLASS@" />
+									<input type="hidden" name="r" value="@REDIRECT@" />
+									<input type="hidden" id="allow_instance_deletion" value="false" />
+									<input type="hidden" name="forced_post_save" id="popup_forced_post_save" value="@POST_SAVE@" />																	
+								</fieldset>
+							</form>
+		
+							<div class="detail-attachments">
+								
+							</div>
+		
+						</div>
+					</div>@END_UOC_Visita@
+		</div>@END_TEMPLATE@

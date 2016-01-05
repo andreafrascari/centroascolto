@@ -1,0 +1,172 @@
+@BEGIN_TEMPLATE@
+	<div class="operation-result, detail-edit">
+		<div id="splash">
+			<h2>Richiesta Accesso</h2>
+			<h3>Inserimento nuova Richiesta Accesso</h3>
+		</div>
+    	@BEGIN_UOC_Richiesta_Accesso[not(exists)]@
+      		<div class="system-message-success">
+      			La scheda Richiesta Accesso &egrave; stata inserita correttamente.<br />
+      		</div>
+      		
+			<div class="navigation-options">
+				E' ora possibile:  
+				<ul> 
+					<li>
+						continuare l'inserimento dei restanti dati anagrafici e, contestualmente, della richiesta di accesso al servizio: <a title="Procedi con l'inserimento della scheda Richiesta Accesso" href="?q=object/detail_edit&amp;p=UOC_Richiesta_Accesso/_a_ID/_v_@tag_ID#FLAT@">procedi</a>.
+					</li>
+				</ul>
+			</div>
+      	@END_UOC_Richiesta_Accesso@
+      
+      	@BEGIN_UOC_Richiesta_Accesso[exists and not(deleted)]@
+      		<div class="system-message-error">
+      			Attenzione: nell'anagrafica esiste gi&agrave; un Richiesta Accesso con questo codice fiscale (@tag_glo_codice_fiscale#FLAT@)
+      		</div>
+      		<div id="detail">
+	      		<div id="object-body">
+		      		<table summary="Tabella dati scheda">
+		      			<tbody>
+			      			<tr class="nome">
+			      				<th scope="row">
+				      			 	nome
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_nome#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="cognome">
+				      			<th scope="row">
+				      			 	cognome
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_cognome#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="sesso">
+				      			<th scope="row">
+				      			 	sesso
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_sesso#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="data_nascita">
+				      			<th scope="row">
+				      			 	data di nascita
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_data_nascita#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="luogo_nascita">
+				      			<th scope="row">
+				      			 	comune di nascita
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_luogo_nascita#FLAT@
+				      			</td>
+				      		</tr>
+				      	</tbody>
+			      	</table>
+		      	</div>
+			</div>
+			<div class="navigation-options">
+				Operazioni disponibili: 
+				<ul> 
+					<li>
+						<a title="Vai alla scheda del Richiesta Accesso" href="?q=object/detail&amp;p=UOC_Richiesta_Accesso/_a_ID/_v_@tag_ID#FLAT@">Vai alla scheda del Richiesta Accesso</a>
+					</li>
+					<li>
+						<a title="Inserisci nuovo UOC_Richiesta_Accesso" href="?q=anagrafica/insert/FORM=UOC_Richiesta_Accesso/cls=UOC_Richiesta_Accesso">Inserisci un nuova Richiesta Accesso</a>
+					</li>
+				</ul>
+			</div>
+		@END_UOC_Richiesta_Accesso@
+      
+		@BEGIN_UOC_Richiesta_Accesso[exists and deleted]@
+      		<div class="system-message-error">
+      			Attenzione nell'anagrafica esiste gi&agrave; un Richiesta Accesso con questo codice fiscale (@tag_glo_codice_fiscale#FLAT@).<br />
+      			Questo Richiesta Accesso &egrave; stato precedentemente cancellato.		
+      		</div>
+      
+      		<div id="detail">
+	      		<div id="object-body">
+		      		<table summary="Tabella dati scheda">
+		      			<tbody>
+			      			<tr class="nome">
+			      				<th scope="row">
+				      			 	nome
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_nome#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="cognome">
+				      			<th scope="row">
+				      			 	cognome
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_cognome#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="sesso">
+				      			<th scope="row">
+				      			 	sesso
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_sesso#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="data_nascita">
+				      			<th scope="row">
+				      			 	data di nascita
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_data_nascita#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="luogo_nascita">
+				      			<th scope="row">
+				      			 	comune di nascita
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_luogo_nascita#FLAT@
+				      			</td>
+				      		</tr>
+				      	</tbody>
+			      	</table>
+		      	</div>
+			</div>      	
+     
+			<div class="navigation-options">
+				Operazioni disponibili: 
+				<ul> 
+					<li>
+						<a title="Ripristina l'Richiesta Accesso cancellato" href="?q=object/undelete/CLS=UOC_Richiesta_Accesso/ID=@tag_ID#FLAT@">Ripristina la scheda del Richiesta Accesso</a>
+					</li>
+					<li>
+						<a title="Inserisci nuovo Richiesta Accesso" href="?q=anagrafica/insert/FORM=UOC_Richiesta_Accesso/cls=UOC_Richiesta_Accesso">Inserisci un nuovo Richiesta Accesso</a>
+					</li>
+				</ul>
+			</div>
+      	@END_UOC_Richiesta_Accesso@
+      	
+      	([
+      		[ [@tag_UOC_Richiesta_Accesso.ID#FLAT@] == [] ]
+      		?? [
+		  		<div class="system-message-error">
+		  			Attenzione nell'anagrafica esiste gi&agrave; un Richiesta Accesso con lo stesso codice fiscale ma non si hanno i permessi per modificarlo.
+		  		</div>      		
+				<div class="navigation-options">
+					Operazioni disponibili: 
+					<ul> 
+						<li>
+							<a title="Torna alla bacheca" href="Index">Torna alla bacheca</a>
+						</li>
+					</ul>
+				</div>
+			]
+		])
+	</div>
+@END_TEMPLATE@

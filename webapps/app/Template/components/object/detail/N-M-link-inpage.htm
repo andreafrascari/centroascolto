@@ -1,0 +1,14 @@
+<tr class="@NAME@">
+	<th scope="row">@LABEL@</th>
+	<td>
+		<div class="object-inpage">
+			@BLOCK_BEGIN_LINK_ITEM@
+			<div class="object-inpage-instance">
+				<span class="label">@TITLE_LABEL@</span>
+				<div @toggable="label=apri/chiudi la scheda,init_state=closed">
+					@FUN_MODULE(@OBJECT_DETAIL_LINK@)@</div>
+			</div>
+			@BLOCK_END_LINK_ITEM@
+		</div>
+	</td>
+</tr>

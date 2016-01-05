@@ -1,0 +1,33 @@
+@BEGIN_TEMPLATE@
+		<div class="filter">
+			<div id="splash">
+				<h2>Produzione Debito Informativo</h2>
+			</div>
+
+			<div class="form-container">
+				<form id="dir" method="post" action="?q=uocmri/debitoinformativo">
+					<fieldset>
+						<legend>Con riferimento alla data di oggi, specificare il periodo di riferimento e premere GENERA</legend>
+							<div class="memorandum"></div>
+							<select name="periodo">
+								<option value="">scegliere il periodo di riferimento</option>
+								<option value="1">a - intero anno corrente</option>
+								<option value="2">a - I semestre anno corrente</option>
+								<option value="3">a - II semestre anno corrente</option>
+								<option value="">-</option>
+								<option value="4">b - intero anno passato</option>
+								<option value="5">b - I semestre anno passato</option>
+								<option value="6">b- II semestre anno passato</option>
+								<option value="">-</option>
+								<option value="7">c - 2 anni fa</option>
+								<option value="8">c- I semestre 2 anni fa</option>
+								<option value="9">c- II semestre 2 anni fa</option>
+							</select>
+							<p>&nbsp;</p><p>&nbsp;</p>
+							<p><input onclick="loading(this,{text:'Attendere prego....'});" value="Genera" type="submit"></p>
+						</fieldset>
+				</form>
+			</div>
+		</div>
+@END_TEMPLATE@
+		

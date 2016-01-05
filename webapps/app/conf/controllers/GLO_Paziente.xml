@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean>
+  <title>Paziente</title>
+  <attributes>
+	    <item>
+	    	<name>regione</name>
+	    	<controls>
+	    		<controlled>
+	    			<target>glo_provincia</target>
+	    			<field>sd_parent</field>
+	    			<action>populate</action>
+	    		</controlled>
+	    	</controls>
+	    </item>
+	    <!--  cf check -->
+	    <item>
+	    	<name>glo_nome</name>
+	    	<tax_code_field>name</tax_code_field>
+	    </item>
+	    <item>
+	    	<name>glo_cognome</name>
+	    	<tax_code_field>surname</tax_code_field>
+	    </item>
+	    <item>
+	    	<name>glo_data_nascita</name>
+	    	<tax_code_field>date_of_birth</tax_code_field>
+	    </item>
+	    <item>
+	    	<name>glo_luogo_nascita</name>
+	    	<tax_code_field>city</tax_code_field>
+	    </item>
+	    <item>
+	    	<name>glo_sesso</name>
+	    	<tax_code_field>sex</tax_code_field>
+	    </item>
+	    <item>
+	    	<name>glo_codice_fiscale</name>
+	    	<tax_code_field>tax_code</tax_code_field>
+	    </item>
+	</attributes>
+</bean>

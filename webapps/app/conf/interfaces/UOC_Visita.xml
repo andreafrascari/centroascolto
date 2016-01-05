@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean> 
+  <title>UOC_Visita</title>  
+  <title_view>Visita/Trattamento</title_view>  
+  <attributes> 
+    <item> 
+      <name>ID</name>  
+      <type>1</type>  
+      <label>ID</label> 
+    </item>  
+    <item> 
+      <name>per_cartella</name>  
+      <label>cartella clinica</label>  
+      <detail>cartella clinica</detail>  
+      <heading>5</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>11</order> 
+    </item>  
+    <item> 
+      <name>data</name>  
+      <label>data</label>  
+      <detail>data</detail>  
+      <detail_edit>data</detail_edit>  
+      <filter>data</filter>  
+      <list>data</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
+      <max_length/>  
+      <default>@TODAY@</default>  
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>tipo_visita</name>  
+      <label>tipo intervento</label>  
+      <detail>tipo intervento</detail>  
+      <detail_edit>tipo intervento</detail_edit>  
+      <filter>tipo intervento</filter>  
+      <list>tipo intervento</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>iter_visita</name>  
+      <label>iter</label>  
+      <detail>tipo visita</detail>  
+      <detail_edit>tipo visita</detail_edit>  
+      <filter>tipo visita</filter>  
+      <list>tipo visita</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>25</order> 
+    </item>  
+      <item> 
+      <name>individuale_gruppo</name>  
+      <label>individuale gruppo</label>  
+      <detail>individuale gruppo</detail>  
+      <detail_edit>individuale gruppo</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default>individuale</default>  
+      <order>31</order> 
+    </item>  
+    <item> 
+      <name>stato</name>  
+      <label>stato</label>  
+      <detail>stato</detail>  
+      <detail_edit>stato</detail_edit>  
+      <filter>stato</filter>  
+      <list>stato</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default></default>  
+      <order>41</order> 
+    </item>  
+     <item> 
+      <name>refertazione</name>  
+      <label>referto</label>  
+      <detail>referto</detail>  
+      <detail_edit>referto</detail_edit>  
+      <detail_help>si puo' inserire in un secondo momento dettandolo...</detail_help>  
+      <filter>referto</filter>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>45</order> 
+    </item>  
+    <item> 
+      <name>note</name>  
+      <label>note</label>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>59</order> 
+    </item>  
+    <item> 
+      <name>owner_user</name>  
+      <label>utente proprietario</label>  
+      <detail>utente proprietario</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>owner_group</name>  
+      <label>gruppo proprietario</label>  
+      <detail>gruppo proprietario</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_user</name>  
+      <label>creation_user</label>  
+      <detail>utente creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_date</name>  
+      <label>data creazione</label>  
+      <detail>data creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_user</name>  
+      <label>deletion_user</label>  
+      <detail>utente cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_date</name>  
+      <label>deletion_date</label>  
+      <detail>data cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_user</name>  
+      <label>last_modification_user</label>  
+      <detail>utente ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_date</name>  
+      <label>last_modification_date</label>  
+      <detail>data ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>activation_flag</name>  
+      <label>activation_flag</label>  
+      <detail>attivo</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_flag</name>  
+      <label>deletion_flag</label>  
+      <detail>cancellato</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item> 
+  </attributes> 
+</bean>

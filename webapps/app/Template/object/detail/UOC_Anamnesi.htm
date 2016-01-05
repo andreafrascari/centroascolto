@@ -1,0 +1,76 @@
+@BEGIN_TEMPLATE@
+    
+@BEGIN_UOC_Anamnesi@
+
+<div id="detail" class="tabbed">
+
+
+			<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="javascript:history.back();" title="indietro">
+							<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+						</a>
+						
+						<a class="btn btn-default btn-xs btn-info" href="ModuleIndex?q=birtReport/give/CLS=@CLASS@/ID=@tag_ID#FLAT@/DOC=anamnesi/FILE=anamnesi/TYPE=pdf" title="Genera versione pdf">
+							  <span aria-hidden="true" class="glyphicon glyphicon-print"></span>
+      					</a>
+						
+						@BLOCK_BEGIN_EDIT@
+							<a class="btn btn-default btn-xs btn-warning" href=@HREF_DETAIL_EDIT@" title="Modifica la scheda">
+								  <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+       						</a>
+						@BLOCK_END_EDIT@
+					</div>
+			</div>	
+
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="system-message-error">
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+					<br /><br />
+      				<a href="javascript:history.back();" title="Indietro">Indietro</a>
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+
+			@BLOCK_BEGIN_RESULT_EMPTY@
+				<div class="system-message-error">
+					Nessun elemento trovato!
+					<br /><br />
+      				<a href="javascript:history.back();" title="Indietro">Indietro</a>
+				</div>
+			@BLOCK_END_RESULT_EMPTY@
+
+
+			
+			
+					@FUN_MODULE(q=object_tab_header/detail,p=UOC_Accesso/_a_ID/_v_@tag_uoc_accesso_anamnesi.UOC_Accesso.ID#FLAT@)@
+						<script type="text/javascript">
+						$(document).ready(function() {
+							Anastasis.SerenaUtils.getCurrentTabSheet('UOC_Anamnesi');
+						});
+						</script>
+				
+
+				
+				<div id="object-body">
+						<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
+							<tbody>
+							@tag_uoc_anamnesi_familiare@@tag_uoc_anamnesi_patologica@@tag_uoc_anamnesi_fisiologica@@tag_uoc_durata_gravidanza@@tag_uoc_gravidanza@@tag_uoc_parto@@tag_uoc_peso_alla_nascita@@tag_uoc_agapar_1_minuto@@tag_uoc_agapar_5_minuto@@tag_controllo_sfinterico_da_mesi@@tag_controllo_sfinterico@@tag_alimentazione@@tag_ritmo_sonno_veglia@@tag_uoc_terapia_farmacologica@@tag_note@@tag_uoc_altro@@tag_sezione_sviluppo_sociale_relazionale@@tag_sociale_comparsa_sorriso@@tag_sociale_consolabilita_primi_anni@@tag_sociale_autoregolazione_comportamentale@@tag_sociale_modalita_separazione_caregiver@@tag_sociale_relazione_con_adulti@@tag_sociale_relazione_con_pari@@tag_sociale_gioco@@tag_sociale_note@@tag_sezione_svulippo_psicomotorio@@tag_psicomotorio_capo@@tag_psicomotorio_seduto_senza_appoggio@@tag_psicomotorio_spostamento_al_tappeto@@tag_psicomotorio_stazione_eretta@@tag_psicomotorio_cammino@@tag_psicomotorio_scende_scale@@tag_psicomotorio_scende_scale_come@@tag_psicomotorio_abilita_grossomotorie@@tag_psicomotorio_note@@tag_sezione_svulippo_linguaggio@@tag_linguaggio_vocalizzo_mesi@@tag_linguaggio_lallazione_mesi@@tag_linguaggio_prime_parole_mesi@@tag_linguaggio_parola_frase@@tag_linguaggio_parole_rispetto_coetanei@@tag_linguaggio_comprensibile_estranei@
+							@tag_linguaggio_presenza_gesti_significativi@
+							@tag_linguaggio_tipo_gesti_significativi@
+							@tag_linguaggio_comprensione_richieste_semplici@@tag_linguaggio_utilizzo_materiale_iconico@@tag_linguaggio_note@@tag_sezione_svulippo_percettivo@@tag_percettivo_patologie_uditive_accertate@@tag_percettivo_presidi@@tag_percettivo_esami_audiometrici@@tag_percettivo_note@@tag_percettivo_visivo_patologie_accertate@@tag_percettivo_visivo_esami@@tag_percettivo_visivo_presidi@@tag_percettivo_visivo_riconosce@@tag_percettivo_visivo_note@@tag_percettivo_tattile_gustativo_olfattivo_problematiche@
+							@tag_sezione_percorso_scolastico@
+							@tag_percorso_scolastico_pregresso@
+							@tag_percorso_scolastico_attuale@
+							</tbody>
+						</table>
+					</div>
+
+				
+				<div id="object-system" @toggable="label=apri/chiudi attributi di sistema,init_state=closed">
+					<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">
+						<tbody>
+							@tag_creation_user@@tag_creation_date@@tag_deletion_user@@tag_deletion_date@@tag_last_modification_user@@tag_last_modification_date@@tag_activation_flag@@tag_deletion_flag@
+						</tbody>
+					</table>
+				</div>@END_UOC_Anamnesi@
+		</div>@END_TEMPLATE@

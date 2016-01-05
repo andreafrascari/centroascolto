@@ -1,0 +1,88 @@
+@BEGIN_TEMPLATE@ 
+@BEGIN_UOC_Accesso@
+
+@BLOCK_BEGIN_RESULT_ERROR@
+<div class="system-message-error">Si &egrave; verificato un errore: @ERROR_MESSAGE@ <br />
+@BLOCK_END_RESULT_ERROR@
+
+<h2>@FUN_CURRENT_DATA(class=GLO_Paziente,param=glo_cognome)@ @FUN_CURRENT_DATA(class=GLO_Paziente,param=glo_nome)@</h2>
+
+<div id="serena-tab-panel" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+
+	<li	id="GLO_Paziente" class="ui-state-default ui-corner-top data-exist">
+			<a title="vai alla scheda anagrafica"
+		href="?q=object/detail&amp;p=GLO_Paziente/_a_ID/_v_@tag_uoc_paziente_glo.GLO_Paziente.ID#FLAT@">Anagrafica</a>
+	</li>
+	<li	id="UOC_Accesso" class="ui-state-default ui-corner-top data-exist">
+			<a title="vai alla scheda accesso"
+		href="?q=object/detail&amp;p=UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@">Accesso</a>
+	</li>
+	
+	([ [[@tag_uoc_allegati@] != [] ] ?? [
+	<li id="UOC_Allegato" class="ui-state-default ui-corner-top data-exist"><a
+		title="vai agli allegati"
+		href="?q=object/list&amp;p=UOC_Allegato/_a_di_cartella/_c_UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@&amp;t=UOC_Allegato_tab">Allegati</a></li>
+	] :: [
+	<li id="UOC_Allegato" class="ui-state-default ui-corner-top data-do-not-exist"><a
+		title="registra un nuovo allegato"
+		href="?q=object/detail_edit&amp;p=UOC_Allegato&amp;a=_a_di_cartella/_c_UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@">Allegati</a></li>
+	] ])  	
+	
+	
+	([ [[@tag_uoc_diagnosi@] != [] ] ?? [
+	<li id="UOC_Diagnosi" class="ui-state-default ui-corner-top data-exist"><a
+		title="vai alla scheda diagnosi"
+		href="?q=object/detail&amp;p=UOC_Diagnosi/_a_uoc_accesso_diagnosi/_c_UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@">Diagnosi</a></li>
+	] :: [
+	<li id="UOC_Diagnosi" class="ui-state-default ui-corner-top data-do-not-exist"><a
+		title="compila la scheda diagnosi, ancora non presente"
+		href="?q=object/detail_edit&amp;p=UOC_Diagnosi&amp;a=_a_uoc_accesso_diagnosi/_c_UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@">Diagnosi</a></li>
+	] ])
+	
+	
+	([ [[@tag_uoc_anamnesi@] != [] ] ?? [
+	<li id="UOC_Anamnesi" class="ui-state-default ui-corner-top data-exist"><a
+		title="vai alla scheda anamnesi"
+		href="?q=object/detail&amp;p=UOC_Anamnesi/_a_uoc_accesso_anamnesi/_c_UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@">Anamnesi</a></li>
+	] :: [
+	<li id="UOC_Anamnesi" class="ui-state-default ui-corner-top data-do-not-exist"><a
+		title="compila la scheda anamnesi, ancora non presente"
+		href="?q=object/detail_edit&amp;p=UOC_Anamnesi&amp;a=_a_uoc_accesso_anamnesi/_c_UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@">Anamnesi</a></li>
+	] ])  
+
+	([ [[@tag_diario_clinico@] != [] ] ?? [
+	<li id="UOC_Diario_Clinico" class="ui-state-default ui-corner-top data-exist"><a
+		title="vai al diario clinico"
+		href="?q=object/list&amp;p=UOC_Diario_Clinico/_a_inverse_of_diario_clinico/_c_UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@&amp;t=UOC_Diario_Clinico_tab">Diario Clinico</a></li>
+	] :: [
+	<li id="UOC_Diario_Clinico" class="ui-state-default ui-corner-top data-do-not-exist"><a
+		title="registra una pagina del diario clinico, ancora non presente"
+		href="?q=object/detail_edit&amp;p=UOC_Diario_Clinico&amp;a=_a_inverse_of_diario_clinico/_c_UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@">Diario Clinico</a></li>
+	] ])  	
+	
+	([ [[@tag_uoc_visite@] != [] ] ?? [
+	<li id="UOC_Visita" class="ui-state-default ui-corner-top data-exist"><a
+		title="vai alle visite"
+		href="?q=object/list&amp;p=UOC_Visita/_a_per_cartella/_c_UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@&amp;t=UOC_Visita_tab">Visite/Trattamenti</a></li>
+	] :: [
+	<li id="UOC_Visita" class="ui-state-default ui-corner-top data-do-not-exist"><a
+		title="registra una nuova visita, ancora non presente"
+		href="?q=object/detail_edit&amp;p=UOC_Visita&amp;a=_a_per_cartella/_c_UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@">Visite/Trattamenti</a></li>
+	] ])  	
+		
+      ([ [ [@tag_uoc_percorsi@] != []]    ?? 	[
+	<li id="UOC_Percorso" class="ui-state-default ui-corner-top data-exist"><a
+		title="vai ai percorsi"
+		href="?q=object/list&amp;p=UOC_Percorso/_a_uoc_accesso_percorso/_c_UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@&amp;t=UOC_Percorso_tab">Percorsi</a></li>
+	] :: [
+	<li id="UOC_Percorso" class="ui-state-default ui-corner-top data-do-not-exist"><a
+		title="apri un nuovo percorso"
+		href="?q=object/detail_edit&amp;p=UOC_Percorso&amp;a=_a_uoc_accesso_percorso/_c_UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@">Percorsi</a></li>
+	] ])  
+</ul>
+
+</div>
+
+@END_UOC_Accesso@
+@END_TEMPLATE@

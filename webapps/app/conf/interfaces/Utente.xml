@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean> 
+  <title>Utente</title>  
+  <title_view>Utente</title_view>  
+  <attributes> 
+    <item> 
+      <name>ID</name>  
+      <type>1</type>  
+      <label>ID</label> 
+    </item>  
+    <item> 
+      <name>scheda</name>  
+      <label>scheda</label>  
+      <detail>scheda</detail>  
+      <detail_edit>scheda</detail_edit>  
+      <filter>scheda</filter>  
+      <list>scheda</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>3</order> 
+    </item>  
+    <item> 
+      <name>op_primo_colloquio</name>  
+      <label>operatore primo colloquio</label>  
+      <detail>operatore primo colloquio</detail>  
+      <detail_edit>operatore primo colloquio</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>11</order> 
+    </item>  
+    <item> 
+      <name>residenze_in_alloggio</name>  
+      <label>residenze in alloggio</label>  
+      <detail>residenze in alloggio</detail>  
+      <detail_edit>residenze in alloggio</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>11</order> 
+    </item>  
+    <item> 
+      <name>data_primo_colloquio</name>  
+      <label>data primo colloquio</label>  
+      <detail>data primo colloquio</detail>  
+      <detail_edit>data primo colloquio</detail_edit>  
+      <filter>data primo colloquio</filter>  
+      <list>data primo colloquio</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>15</order> 
+    </item>  
+    <item> 
+      <name>madrelingua</name>  
+      <label>madrelingua</label>  
+      <detail>madrelingua</detail>  
+      <detail_edit>madrelingua</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>nome</name>  
+      <label>nome</label>  
+      <detail>nome</detail>  
+      <detail_edit>nome</detail_edit>  
+      <filter>nome</filter>  
+      <list>nome</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>cognome</name>  
+      <label>cognome</label>  
+      <detail>cognome</detail>  
+      <detail_edit>cognome</detail_edit>  
+      <filter>cognome</filter>  
+      <list>cognome</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
+      <max_length/>  
+      <default/>  
+      <order>31</order> 
+    </item>  
+    <item> 
+      <name>comune_n</name>  
+      <label>comune di nascita</label>  
+      <detail>comune di nascita</detail>  
+      <detail_edit>comune di nascita</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>31</order> 
+    </item>  
+    <item> 
+      <name>data_n</name>  
+      <label>data di nascita</label>  
+      <detail>data di nascita</detail>  
+      <detail_edit>data di nascita</detail_edit>  
+      <filter>data di nascita</filter>  
+      <list>data di nascita</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>41</order> 
+    </item>  
+    <item> 
+      <name>data_arrivo_it</name>  
+      <label>data arrivo in Italia</label>  
+      <detail>data arrivo in Italia</detail>  
+      <detail_edit>data arrivo in Italia</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>45</order> 
+    </item>  
+    <item> 
+      <name>data_arrivo_bo</name>  
+      <label>data arrivo a Bologna</label>  
+      <detail>data arrivo a Bologna</detail>  
+      <detail_edit>data arrivo a Bologna</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>51</order> 
+    </item>  
+    <item> 
+      <name>tessere</name>  
+      <label>tessere</label>  
+      <detail>tessere</detail>  
+      <detail_edit>tessere</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>51</order> 
+    </item>  
+    <item> 
+      <name>documenti</name>  
+      <label>documenti</label>  
+      <detail>documenti</detail>  
+      <detail_edit>documenti</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>61</order> 
+    </item>  
+    <item> 
+      <name>stato_n</name>  
+      <label>stato di nascita</label>  
+      <detail>stato di nascita</detail>  
+      <detail_edit>stato di nascita</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>61</order> 
+    </item>  
+    <item> 
+      <name>cf</name>  
+      <label>codice fiscale</label>  
+      <detail>codice fiscale</detail>  
+      <detail_edit>codice fiscale</detail_edit>  
+      <filter>codice fiscale</filter>  
+      <list>codice fiscale</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>63</order> 
+    </item>  
+    <item> 
+      <name>sesso</name>  
+      <label>sesso</label>  
+      <detail>sesso</detail>  
+      <detail_edit>sesso</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>71</order> 
+    </item>  
+    <item> 
+      <name>stato_famiglia</name>  
+      <label>stato famiglia</label>  
+      <detail>stato famiglia</detail>  
+      <detail_edit>stato famiglia</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>71</order> 
+    </item>  
+    <item> 
+      <name>espulso</name>  
+      <label>espulso</label>  
+      <detail>espulso</detail>  
+      <detail_edit>espulso</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>81</order> 
+    </item>  
+    <item> 
+      <name>deceduto</name>  
+      <label>deceduto</label>  
+      <detail>deceduto</detail>  
+      <detail_edit>deceduto</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>91</order> 
+    </item>  
+    <item> 
+      <name>residenza_cap</name>  
+      <label>residenza cap</label>  
+      <detail>residenza cap</detail>  
+      <detail_edit>residenza cap</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>91</order> 
+    </item>  
+    <item> 
+      <name>lingua_it</name>  
+      <label>lingua it</label>  
+      <detail>lingua it</detail>  
+      <detail_edit>lingua it</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>101</order> 
+    </item>  
+    <item> 
+      <name>servizi_di_riferimento</name>  
+      <label>servizi di riferimento</label>  
+      <detail>servizi di riferimento</detail>  
+      <detail_edit>servizi di riferimento</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>101</order> 
+    </item>  
+    <item> 
+      <name>foto</name>  
+      <label>foto</label>  
+      <detail>foto</detail>  
+      <detail_edit>foto</detail_edit>  
+      <heading>2</heading>  
+      <max_length/>  
+      <default/>  
+      <order>111</order> 
+    </item>  
+    <item> 
+      <name>residenza_provincia</name>  
+      <label>residenza provincia</label>  
+      <detail>residenza provincia</detail>  
+      <detail_edit>residenza provincia</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>141</order> 
+    </item>  
+    <item> 
+      <name>contatti</name>  
+      <label>contatti</label>  
+      <detail>contatti</detail>  
+      <detail_edit>contatti</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>151</order> 
+    </item>  
+    <item> 
+      <name>domicilio_via</name>  
+      <label>domicilio via</label>  
+      <detail>domicilio via</detail>  
+      <detail_edit>domicilio via</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>191</order> 
+    </item>  
+    <item> 
+      <name>competenze</name>  
+      <label>competenze</label>  
+      <detail>competenze</detail>  
+      <detail_edit>competenze</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>201</order> 
+    </item>  
+    <item> 
+      <name>privo_residenza</name>  
+      <label>privo residenza</label>  
+      <detail>privo residenza</detail>  
+      <detail_edit>privo residenza</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>201</order> 
+    </item>  
+    <item> 
+      <name>comune_famiglia</name>  
+      <label>comune famiglia</label>  
+      <detail>comune famiglia</detail>  
+      <detail_edit>comune famiglia</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>211</order> 
+    </item>  
+    <item> 
+      <name>residenza_via</name>  
+      <label>residenza via</label>  
+      <detail>residenza via</detail>  
+      <detail_edit>residenza via</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>221</order> 
+    </item>  
+    <item> 
+      <name>note</name>  
+      <label>note</label>  
+      <detail>note</detail>  
+      <detail_edit>note</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>231</order> 
+    </item>  
+    <item> 
+      <name>domicilio_provincia</name>  
+      <label>domicilio provincia</label>  
+      <detail>domicilio provincia</detail>  
+      <detail_edit>domicilio provincia</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>241</order> 
+    </item>  
+    <item> 
+      <name>domicilio_comune</name>  
+      <label>domicilio comune</label>  
+      <detail>domicilio comune</detail>  
+      <detail_edit>domicilio comune</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>251</order> 
+    </item>  
+    <item> 
+      <name>cittadinanza</name>  
+      <label>cittadinanza</label>  
+      <detail>cittadinanza</detail>  
+      <detail_edit>cittadinanza</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>261</order> 
+    </item>  
+    <item> 
+      <name>nota_domicilio</name>  
+      <label>nota domicilio</label>  
+      <detail>nota domicilio</detail>  
+      <detail_edit>nota domicilio</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>271</order> 
+    </item>  
+    <item> 
+      <name>altre_lingue</name>  
+      <label>altre lingue</label>  
+      <detail>altre lingue</detail>  
+      <detail_edit>altre lingue</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>291</order> 
+    </item>  
+    <item> 
+      <name>automunito</name>  
+      <label>automunito</label>  
+      <detail>automunito</detail>  
+      <detail_edit>automunito</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>301</order> 
+    </item>  
+    <item> 
+      <name>stato_civile</name>  
+      <label>stato civile</label>  
+      <detail>stato civile</detail>  
+      <detail_edit>stato civile</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>311</order> 
+    </item>  
+    <item> 
+      <name>domicilio_cap</name>  
+      <label>domicilio cap</label>  
+      <detail>domicilio cap</detail>  
+      <detail_edit>domicilio cap</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>321</order> 
+    </item>  
+    <item> 
+      <name>residenza_comune</name>  
+      <label>residenza comune</label>  
+      <detail>residenza comune</detail>  
+      <detail_edit>residenza comune</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>331</order> 
+    </item>  
+    <item> 
+      <name>figli</name>  
+      <label>figli</label>  
+      <detail>figli</detail>  
+      <detail_edit>figli</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>371</order> 
+    </item>  
+    <item> 
+      <name>altro</name>  
+      <label>altro</label>  
+      <detail>altro</detail>  
+      <detail_edit>altro</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>381</order> 
+    </item>  
+    <item> 
+      <name>titolo_studio</name>  
+      <label>titolo studio</label>  
+      <detail>titolo studio</detail>  
+      <detail_edit>titolo studio</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>391</order> 
+    </item>  
+    <item> 
+      <name>situazione_economica</name>  
+      <label>situazione economica</label>  
+      <detail>situazione economica</detail>  
+      <detail_edit>situazione economica</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>421</order> 
+    </item>  
+    <item> 
+      <name>percentuale_inv</name>  
+      <label>percentuale inv</label>  
+      <detail>percentuale inv</detail>  
+      <detail_edit>percentuale inv</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>441</order> 
+    </item>  
+    <item> 
+      <name>owner_user</name>  
+      <label>utente proprietario</label>  
+      <detail>utente proprietario</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>owner_group</name>  
+      <label>gruppo proprietario</label>  
+      <detail>gruppo proprietario</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_user</name>  
+      <label>creation_user</label>  
+      <detail>utente creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_date</name>  
+      <label>data creazione</label>  
+      <detail>data creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_user</name>  
+      <label>deletion_user</label>  
+      <detail>utente cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_date</name>  
+      <label>deletion_date</label>  
+      <detail>data cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_user</name>  
+      <label>last_modification_user</label>  
+      <detail>utente ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_date</name>  
+      <label>last_modification_date</label>  
+      <detail>data ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>activation_flag</name>  
+      <label>activation_flag</label>  
+      <detail>attivo</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_flag</name>  
+      <label>deletion_flag</label>  
+      <detail>cancellato</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item> 
+  </attributes> 
+</bean>

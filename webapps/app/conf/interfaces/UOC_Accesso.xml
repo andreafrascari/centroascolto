@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean> 
+  <title>UOC_Accesso</title>  
+  <title_view>Cartella Clinica</title_view> 
+  <no_deletion>1</no_deletion> 
+  <attributes> 
+    <item> 
+      <name>ID</name>  
+      <type>1</type>  
+      <label>ID</label> 
+    </item>  
+    <item> 
+      <name>uoc_paziente_glo</name>  
+      <label>paziente</label>  
+      <detail>paziente</detail>  
+      <filter autocomplete="cls=GLO_Paziente,slot=glo_cognome,display1=glo_cognome,display2=glo_nome">paziente</filter>  
+      <list>paziente</list>  
+      <heading>5</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>2</order> 
+    </item>  
+    <item> 
+      <name>numero_cartella</name>  
+      <label>numero cartella</label>  
+      <detail>numero cartella</detail>  
+      <detail_edit>numero cartella</detail_edit>  
+      <detail_help>lasciare vuoto per assegnamento automatico progressivo</detail_help>  
+      <filter>numero cartella</filter>  
+      <list>numero cartella</list>  
+      <heading>1</heading>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
+      <max_length/>  
+      <default/>  
+      <order>10</order> 
+    </item>  
+    <item> 
+      <name>uoc_data_ingresso</name>  
+      <label>data ingresso</label>  
+      <detail>data ingresso</detail>  
+      <detail_edit>data ingresso</detail_edit>  
+      <filter>data ingresso</filter>  
+      <list>data ingresso</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default>@TODAY@</default>  
+      <order>11</order> 
+    </item>  
+    <item> 
+      <name>prosposta_osservazione</name>  
+      <label>prosposta osservazione</label>  
+      <detail inpage="1">prosposta osservazione</detail>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>13</order> 
+    </item>    
+    <item> 
+      <name>dataChiusura</name>  
+      <label>data chiusura</label>  
+      <detail>data chiusura</detail>  
+      <filter>data chiusura</filter>  
+      <list>data chiusura</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>12</order> 
+    </item>  
+    <item> 
+      <name>motivazioneChiusura</name>  
+      <label>motivazione chiusura</label>  
+      <detail>motivazione chiusura</detail>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>14</order> 
+    </item>  
+    <item> 
+      <name>diario_clinico</name>  
+      <label>diario clinico</label>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>51</order>  
+    </item>  
+    <item> 
+      <name>uoc_diagnosi</name>  
+      <label>diagnosi</label>  
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>56</order>  
+    </item>  
+    <item> 
+      <name>uoc_anamnesi</name>  
+      <label>anamnesi</label>  
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>60</order>  
+    </item>  
+    <item> 
+      <name>uoc_visite</name>  
+      <label>visite</label>  
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>65</order>  
+    </item>  
+    <item> 
+      <name>uoc_percorsi</name>  
+      <label>uoc percorsi</label>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>67</order>  
+    </item>  
+    <item> 
+      <name>uoc_allegati</name>  
+      <label>allegati</label>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>71</order>  
+    </item>  
+    <item> 
+      <name>sezione_madre</name>  
+      <label>Madre</label>  
+      <detail>Madre</detail>  
+      <detail_edit>Madre</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>72</order> 
+    </item>  
+    <item> 
+      <name>madre_nome</name>  
+      <label>nome e cognome</label>  
+      <detail>nome e cognome</detail>  
+      <detail_edit>nome e cognome</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>73</order> 
+    </item>  
+    <item> 
+      <name>madre_anno_nascita</name>  
+      <label>anno nascita</label>  
+      <detail>anno nascita</detail>  
+      <detail_edit>anno nascita</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>74</order> 
+    </item>  
+    <item> 
+      <name>madre_professione</name>  
+      <label>professione</label>  
+      <detail>professione</detail>  
+      <detail_edit>professione</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>75</order> 
+    </item>  
+    <item> 
+      <name>madre_scolarita</name>  
+      <label>scolarita</label>  
+      <detail>scolarita</detail>  
+      <detail_edit>scolarita</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>76</order> 
+    </item>  
+    <item> 
+      <name>sezione_padre</name>  
+      <label>Padre</label>  
+      <detail>Padre</detail>  
+      <detail_edit>Padre</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>80</order> 
+    </item>  
+    <item> 
+      <name>padre_nome</name>  
+      <label>nome e cognome</label>  
+      <detail>nome e cognome</detail>  
+      <detail_edit>nome e cognome</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>81</order> 
+    </item>  
+    <item> 
+      <name>padre_anno_nascita</name>  
+      <label>anno nascita</label>  
+      <detail>anno nascita</detail>  
+      <detail_edit>anno nascita</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>83</order> 
+    </item>  
+    <item> 
+      <name>padre_professione</name>  
+      <label>professione</label>  
+      <detail>professione</detail>  
+      <detail_edit>professione</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>87</order> 
+    </item>  
+    <item> 
+      <name>padre_scolarita</name>  
+      <label>scolarita</label>  
+      <detail>scolarita</detail>  
+      <detail_edit>scolarita</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>89</order> 
+    </item>  
+    <item> 
+      <name>sezione_altro</name>  
+      <label>Altro</label>  
+      <detail>Altro</detail>  
+      <detail_edit>Altro</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>90</order> 
+    </item>  
+    <item> 
+      <name>fratelli_e_altri_conviventi</name>  
+      <label>fratelli e altri conviventi</label>  
+      <detail>fratelli e altri conviventi</detail>  
+      <detail_edit>fratelli e altri conviventi</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>100</order> 
+    </item>  
+    <item> 
+      <name>stato_civile_genitori</name>  
+      <label>stato civile genitori</label>  
+      <detail>stato civile genitori</detail>  
+      <detail_edit>stato civile genitori</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>101</order> 
+    </item>  
+    <item> 
+      <name>pediatra_riferimenti</name>  
+      <label>pediatra riferimenti</label>  
+      <detail>pediatra riferimenti</detail>  
+      <detail_edit>pediatra riferimenti</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>131</order> 
+    </item>  
+    <item> 
+      <name>referente_asl_riferimenti</name>  
+      <label>referente asl riferimenti</label>  
+      <detail>referente asl riferimenti</detail>  
+      <detail_edit>referente asl riferimenti</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>135</order> 
+    </item>  
+    <item> 
+      <name>altri_riferimenti</name>  
+      <label>altri riferimenti</label>  
+      <detail>altri riferimenti</detail>  
+      <detail_edit>altri riferimenti</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>141</order> 
+    </item>  
+    <item> 
+      <name>inviante_e_emotivazione</name>  
+      <label>inviante e motivazione</label>  
+      <detail>inviante e motivazione</detail>  
+      <detail_edit>inviante e motivazione</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>142</order> 
+    </item>  
+    <item> 
+      <name>inviante_AUSL_bologna</name>  
+      <label>inviante AUSL bologna</label>  
+      <detail>inviante AUSL bologna</detail>  
+      <detail_edit>inviante AUSL bologna</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>144</order> 
+    </item>  
+     <item> 
+      <name>sezione_amministrativa</name>  
+      <label>Parte amministrativa</label>  
+      <detail>Parte amministrativa</detail>  
+      <detail_edit>Parte amministrativa</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>151</order> 
+    </item>  
+     <item> 
+      <name>certificazioni</name>  
+      <label>certificazioni</label>  
+      <detail>certificazioni</detail>  
+      <detail_edit>certificazioni</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>153</order> 
+    </item>  
+    <item> 
+      <name>consenso_dati_personali</name>  
+      <label>consenso dati personali</label>  
+      <detail>consenso dati personali</detail>  
+      <detail_edit>consenso dati personali</detail_edit>  
+      <needed>1</needed> 
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>155</order> 
+    </item>  
+    <item> 
+      <name>data_consenso_dati_peronali</name>  
+      <label>data consenso dati personali</label>  
+      <detail>data consenso dati personali</detail>  
+      <detail_edit>data consenso dati personali</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>155</order> 
+    </item>  
+    <item> 
+      <name>consenso_riprese</name>  
+      <label>consenso riprese</label>  
+      <detail>consenso riprese</detail>  
+      <detail_edit>consenso riprese</detail_edit>  
+      <needed>1</needed> 
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>161</order> 
+    </item>  
+    <item> 
+      <name>data_consenso_riprese</name>  
+      <label>data consenso riprese</label>  
+      <detail>data consenso riprese</detail>  
+      <detail_edit>data consenso riprese</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>171</order> 
+    </item>  
+    <item> 
+      <name>consenso_incontro_scuola</name>  
+      <label>consenso incontro scuola</label>  
+      <detail>consenso incontro scuola</detail>  
+      <detail_edit>consenso incontro scuola</detail_edit>  
+      <heading>1</heading> 
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>181</order> 
+    </item>  
+    <item> 
+      <name>consenso_incontro_professionisti_sanita</name>  
+      <label>consenso incontro professionisti sanita</label>  
+      <detail>consenso incontro professionisti sanita</detail>  
+      <detail_edit>consenso incontro professionisti sanita</detail_edit>  
+      <heading>1</heading> 
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>191</order> 
+    </item>  
+    <item> 
+      <name>percorso_riabilitativo_precedente</name>  
+      <label>percorso riabilitativo precedente</label>  
+      <detail>percorso riabilitativo precedente</detail>  
+      <detail_edit>percorso riabilitativo precedente</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>241</order> 
+    </item>  
+    <item> 
+      <name>percorso_riabilitativo_attuale</name>  
+      <label>percorso riabilitativo attuale</label>  
+      <detail>percorso riabilitativo attuale</detail>  
+      <detail_edit>percorso riabilitativo attuale</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>251</order> 
+    </item>  
+    <item> 
+      <name>gratuita</name>  
+      <label>gratuita</label>  
+      <detail>gratuita</detail>  
+      <detail_edit>gratuita</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>301</order> 
+    </item>  
+    <item> 
+      <name>ore_settimanali</name>  
+      <label>ore settimanali</label>  
+      <detail>ore settimanali</detail>  
+      <detail_edit>ore settimanali</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>321</order> 
+    </item>  
+    <item> 
+      <name>ore_settimanali_a_pagamento</name>  
+      <label>ore settimanali a pagamento</label>  
+      <detail>ore settimanali a pagamento</detail>  
+      <detail_edit>ore settimanali a pagamento</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>323</order> 
+    </item>  
+    <item> 
+      <name>scolarita</name>  
+      <label>anno scolastico</label>  
+      <detail inpage="1">anno scolastico</detail>  
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>355</order>  
+    </item>  
+    <item> 
+      <name>owner_user</name>  
+      <label>utente proprietario</label>  
+      <detail>utente proprietario</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>owner_group</name>  
+      <label>gruppo proprietario</label>  
+      <detail>gruppo proprietario</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_user</name>  
+      <label>creation_user</label>  
+      <detail>utente creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_date</name>  
+      <label>data creazione</label>  
+      <detail>data creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_user</name>  
+      <label>deletion_user</label>  
+      <detail>utente cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_date</name>  
+      <label>deletion_date</label>  
+      <detail>data cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_user</name>  
+      <label>last_modification_user</label>  
+      <detail>utente ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_date</name>  
+      <label>last_modification_date</label>  
+      <detail>data ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>activation_flag</name>  
+      <label>activation_flag</label>  
+      <detail>attivo</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_flag</name>  
+      <label>deletion_flag</label>  
+      <detail>cancellato</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item> 
+  </attributes> 
+</bean>

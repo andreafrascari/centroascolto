@@ -1,0 +1,19 @@
+<tr class="@NAME@">
+	<th scope="row">@LABEL@</th>
+	<td>
+		<ul class="decode-n-m-tree">
+			@BEGIN__system_decode@ ([[[@XPATH_FUN(string(@mark))@@] ==
+			[selected]] ?? [
+			<li class="selected cl_@tag_sd_value#FLAT@">@tag_sd_description#FLAT@
+				([[[@tag_sd_children@] != []] ?? [
+				<ul>@BEGIN_sd_children@ @tag__system_decode@ @END_sd_children@
+				</ul> ]])
+			</li> ]]) ([[[@XPATH_FUN(string(@mark))@@] == [path]] ?? [
+			<li class="path">@tag_sd_description#FLAT@
+				([[[@tag_sd_children@] != []] ?? [
+				<ul>@BEGIN_sd_children@ @tag__system_decode@ @END_sd_children@
+				</ul> ]])
+			</li> ]]) @END__system_decode@
+		</ul>
+	</td>
+</tr>

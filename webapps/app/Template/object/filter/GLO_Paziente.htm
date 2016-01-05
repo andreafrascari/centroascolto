@@ -1,0 +1,33 @@
+@BEGIN_TEMPLATE@<div class="filter">
+			<div id="splash">
+				<h2>@TITLE@</h2>
+				
+			</div>
+
+			@BLOCK_BEGIN_DESCRIPTION@
+				<div class="class-description">
+					@CLASS_DESCRIPTION@
+				</div>
+			@BLOCK_END_DESCRIPTION@
+
+
+			<div class="form-container">
+				
+				<form id="filter" method="post" action="@ACTION@">
+					<fieldset>
+						<legend>ricerca avanzata</legend>
+						<div class="alert alert-info" role="alert">Specifica i parametri desiderati e premi invio per avviare la ricerca. <br />
+							Premere il bottone <em>cerca</em> senza specificare parametri significa reperire tutte le schede presenti.
+						</div>
+						@BEGIN_GLO_Paziente@@tag_glo_cognome@@tag_glo_nome@@tag_glo_codice_fiscale@@tag_glo_sesso@@tag_glo_data_nascita@@tag_glo_luogo_nascita@@tag_glo_comune@@tag_glo_nazionalita@@END_GLO_Paziente@
+						<br class="clearBoth" />
+						<input type="hidden" name="fetch_from" value="@FETCH_FROM_VALUE@" />
+						<input type="hidden" name="fetch_to" value="@FETCH_TO_VALUE@" />
+						
+						<p class="serena-button-p">
+							<input name="post_search" title="avvia la ricerca" value="Cerca" class="btn btn-info" type="submit" />
+						</p>
+					</fieldset>
+				</form>
+			</div>
+		</div>@END_TEMPLATE@

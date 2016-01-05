@@ -1,0 +1,29 @@
+<!-- 
+<ul class="nav navbar-nav">
+   <li class="dropdown">
+        <a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">Hai aperta la cartella di:<span class="caret"></span></a>
+        <ul role="menu" class="dropdown-menu">
+      <li>
+       <a title="Vai alla cartella clinica" href="?q=object/detail&amp;p=UOC_Accesso/_a_uoc_paziente_glo/_c_GLO_Paziente/_a_ID/_v_@FUN_CURRENT_DATA(class=GLO_Paziente,param=ID)@">@FUN_CURRENT_DATA(class=GLO_Paziente,param=glo_cognome)@ @FUN_CURRENT_DATA(class=GLO_Paziente,param=glo_nome)@</a>
+      </li>
+  
+     </ul>
+    </li>
+</ul>
+ -->
+<ul class="nav navbar-nav">
+   <li class="dropdown cartella-aperta">
+   	<a aria-expanded="false" role="button" title="Vai alla cartella clinica" href="?q=object/detail&amp;p=UOC_Accesso/_a_uoc_paziente_glo/_c_GLO_Paziente/_a_ID/_v_@FUN_CURRENT_DATA(class=GLO_Paziente,param=ID)@"><em>Cartella aperta:</em> @FUN_CURRENT_DATA(class=GLO_Paziente,param=glo_cognome)@ @FUN_CURRENT_DATA(class=GLO_Paziente,param=glo_nome)@</a>
+    </li>
+</ul>
+
+
+	
+	@BLOCK_BEGIN_ERROR@
+			<div class="system-message-error">Il sistema ha riportato un errore in fase di selezione paziente: contattare assistenza</div>	
+	@BLOCK_END_ERROR@
+	
+	@BLOCK_BEGIN_SELECTION_CLEARED@
+		<div class="system-message-success">Fascicolo chiuso correttamente</div>	
+	@BLOCK_END_SELECTION_CLEARED@
+	

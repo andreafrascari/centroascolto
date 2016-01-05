@@ -1,0 +1,103 @@
+@BEGIN_TEMPLATE@
+ 
+@BEGIN_UOC_Accesso@
+@FUN_MODULE(q=current_data/set/MUTE=1/CLS=GLO_Paziente/id=@tag_uoc_paziente_glo.GLO_Paziente.ID#FLAT@/glo_nome=@tag_uoc_paziente_glo.GLO_Paziente.glo_nome#FLAT@/glo_cognome=@tag_uoc_paziente_glo.GLO_Paziente.glo_cognome#FLAT@/glo_data_nascita=@FUN_REPLACE(string=@tag_uoc_paziente_glo.GLO_Paziente.glo_data_nascita#FLAT@,search=/,replace=-)@)@    
+
+			<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="javascript:history.back();" title="indietro">
+							<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+						</a>
+						
+						<a class="btn btn-default btn-xs btn-info" href="ModuleIndex?q=birtReport/give/CLS=@CLASS@/ID=@tag_ID#FLAT@/DOC=cartella/FILE=cartella/TYPE=pdf" title="Genera versione pdf">
+							  <span aria-hidden="true" class="glyphicon glyphicon-print"></span>
+      					</a>
+						
+						@BLOCK_BEGIN_EDIT@
+							<a class="btn btn-default btn-xs btn-warning" href=@HREF_DETAIL_EDIT@" title="Modifica la scheda">
+								  <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+       						</a>
+						@BLOCK_END_EDIT@
+					</div>
+			</div>	
+
+
+
+<div id="detail" class="tabbed">
+        
+
+
+	@BLOCK_BEGIN_RESULT_ERROR@
+    <div class="system-message-error">
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+    </div>
+    @BLOCK_END_RESULT_ERROR@
+
+    @BLOCK_BEGIN_RESULT_EMPTY@
+    <div class="system-message-error">
+      Nessun elemento trovato!
+    </div>
+    @BLOCK_END_RESULT_EMPTY@
+	
+
+	
+	@FUN_MODULE(q=object_tab_header/detail,p=UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@)@
+<script type="text/javascript">
+$(document).ready(function() {
+	Anastasis.SerenaUtils.getCurrentTabSheet('UOC_Accesso');
+});
+</script>
+
+			([
+			 	[[@tag_prosposta_osservazione.UOC_Proposta_Osservazione.ID#FLAT@]==[]]??[
+			<div role="toolbar" class="btn-toolbar" style="float:right; margin-right:2px;">
+				<a aria-expanded="false" aria-haspopup="true" class="btn btn-success" type="button" href="?q=object/detail_edit&amp;p=UOC_Proposta_Osservazione&amp;a=_a_accesso/_c_UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@" title="registra la proposta osservazione">proposta osservazione</a>
+				</a>
+			</div>
+			]])
+				<div role="toolbar" class="btn-toolbar" style="float:right; margin-right:2px;">
+				<a aria-expanded="false" aria-haspopup="true" class="btn btn-success" type="button" href="?q=object/detail_edit&amp;p=UOC_Scolarita&amp;a=_a_inverse_of_scolarita/_c_UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@" title="registra nuova scheda anno scolastico">anno scolastico</a>
+				</a>
+			</div>
+			<br style="clear:both;" />
+
+
+				
+				<div id="object-body">
+						<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
+							<tbody>
+								@tag_numero_cartella@@tag_uoc_data_ingresso@
+								@tag_prosposta_osservazione@
+								@tag_dataChiusura@@tag_motivazioneChiusura@@tag_sezione_madre@@tag_madre_nome@@tag_madre_anno_nascita@@tag_madre_professione@@tag_madre_scolarita@@tag_sezione_padre@@tag_padre_nome@@tag_padre_anno_nascita@@tag_padre_professione@@tag_padre_scolarita@
+								@tag_sezione_altro@
+								@tag_fratelli_e_altri_conviventi@@tag_stato_civile_genitori@@tag_pediatra_riferimenti@@tag_referente_asl_riferimenti@@tag_altri_riferimenti@@tag_inviante_AUSL_bologna@@tag_inviante_e_emotivazione@
+								@tag_sezione_amministrativa@
+								@tag_certificazioni@
+								@tag_consenso_dati_personali@@tag_data_consenso_dati_peronali@@tag_consenso_riprese@@tag_data_consenso_riprese@@tag_consenso_incontro_scuola@@tag_consenso_incontro_professionisti_sanita@@tag_percorso_riabilitativo_precedente@@tag_percorso_riabilitativo_attuale@@tag_gratuita@@tag_ore_settimanali@@tag_ore_settimanali_a_pagamento@
+							</tbody>
+						</table>
+					</div>
+
+				
+				([
+					[ [@tag_scolarita@] != []]
+					?? [
+						<div id="object-body-links">
+							<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
+								<tbody>
+									@tag_scolarita@
+								</tbody>
+							</table>
+						</div>
+					]
+				])
+
+				
+				<div id="object-system" @toggable="label=apri/chiudi attributi di sistema,init_state=closed">
+					<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">
+						<tbody>
+							@tag_owner_user@@tag_owner_group@@tag_creation_user@@tag_creation_date@@tag_deletion_user@@tag_deletion_date@@tag_last_modification_user@@tag_last_modification_date@@tag_activation_flag@@tag_deletion_flag@
+						</tbody>
+					</table>
+				</div>@END_UOC_Accesso@
+		</div>@END_TEMPLATE@

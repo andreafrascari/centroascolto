@@ -1,0 +1,795 @@
+; Tue Jan 05 18:13:07 CET 2016
+; 
+;+ (version "3.5")
+;+ (build "Build 660")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot stato_n
+		(type SYMBOL)
+		(allowed-values Bulgaria)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot documenti
+		(type INSTANCE)
+;+		(allowed-classes Documento)
+;+		(inverse-slot inverse_of_documenti)
+		(create-accessor read-write))
+	(single-slot emissione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_competenze
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+;+		(inverse-slot competenze)
+		(create-accessor read-write))
+	(single-slot domicilio_via
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot privo_residenza
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot contatti
+		(type INSTANCE)
+;+		(allowed-classes Contatto)
+;+		(inverse-slot inverse_of_contatti)
+		(create-accessor read-write))
+	(single-slot scheda
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot stato_civile
+		(type SYMBOL)
+		(allowed-values Celibe%2FNubile)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot automunito
+		(type SYMBOL)
+		(allowed-values si no)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_primo_colloquio
+		(type INSTANCE)
+;+		(allowed-classes Operatore)
+;+		(cardinality 0 1)
+;+		(inverse-slot primi_colloqui)
+		(create-accessor read-write))
+	(multislot competenze
+		(type INSTANCE)
+;+		(allowed-classes Competenze)
+;+		(inverse-slot inverse_of_competenze)
+		(create-accessor read-write))
+	(single-slot data_n
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_servizi_di_riferimento
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+;+		(inverse-slot servizi_di_riferimento)
+		(create-accessor read-write))
+	(single-slot user_user_id
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot testo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_tessere
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+;+		(inverse-slot tessere)
+		(create-accessor read-write))
+	(single-slot comune_n
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot referente
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot user_phone_number
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot residenze_in_alloggio
+		(type INSTANCE)
+;+		(allowed-classes ResidenzaInAlloggio)
+;+		(inverse-slot inverse_of_residenze_in_alloggio)
+		(create-accessor read-write))
+	(single-slot rilasciato_da
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot titolo_studio
+		(type SYMBOL)
+		(allowed-values Diploma)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot deceduto
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot situazione_economica
+		(type SYMBOL)
+		(allowed-values privo_di_reddito)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cf
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipo_nota
+		(type SYMBOL)
+		(allowed-values Sanitaria)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nota_domicilio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot cittadinanza
+		(type INSTANCE)
+;+		(allowed-classes Cittadinanza)
+;+		(inverse-slot inverse_of_cittadinanza)
+		(create-accessor read-write))
+	(single-slot residenza_provincia
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipologia_competenza
+		(type SYMBOL)
+		(allowed-values muratore)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot descrizione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot domicilio_comune
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipologia_documento
+		(type SYMBOL)
+		(allowed-values Patente)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot note
+		(type INSTANCE)
+;+		(allowed-classes Nota)
+;+		(inverse-slot utente)
+		(create-accessor read-write))
+	(single-slot numero
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipologia_alloggio
+		(type SYMBOL)
+		(allowed-values affitto)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot residenza_comune
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot domicilio_cap
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot info
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipologia_tessera
+		(type SYMBOL)
+		(allowed-values salute)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot cognome
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot altre_lingue
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot al
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_cap
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sabatodomenica
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_arrivo_bo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot stato
+		(type SYMBOL)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot dal
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot percentuale_inv
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot CentroAscolto_Class9
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot stato_famiglia
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot madrelingua
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot user_email
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_primo_colloquio
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot figli
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_contatti
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+;+		(inverse-slot contatti)
+		(create-accessor read-write))
+	(single-slot altro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot servizi_di_riferimento
+		(type INSTANCE)
+;+		(allowed-classes ServizioDiRiferimento)
+;+		(inverse-slot inverse_of_servizi_di_riferimento)
+		(create-accessor read-write))
+	(single-slot allegato_2
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato_1
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot espulso
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot utente
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+;+		(inverse-slot note)
+		(create-accessor read-write))
+	(single-slot numero_telefono
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot tessere
+		(type INSTANCE)
+;+		(allowed-classes Tessera)
+;+		(inverse-slot inverse_of_tessere)
+		(create-accessor read-write))
+	(single-slot inverse_of_cittadinanza
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+;+		(inverse-slot cittadinanza)
+		(create-accessor read-write))
+	(single-slot lingua_it
+		(type SYMBOL)
+		(allowed-values madrelingua)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot foto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_residenze_in_alloggio
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+;+		(inverse-slot residenze_in_alloggio)
+		(create-accessor read-write))
+	(multislot primi_colloqui
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(inverse-slot op_primo_colloquio)
+		(create-accessor read-write))
+	(single-slot sesso
+		(type SYMBOL)
+		(allowed-values maschio femmina trans)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot data_arrivo_it
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_documenti
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+;+		(inverse-slot documenti)
+		(create-accessor read-write))
+	(single-slot scadenza
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nome
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot user_name
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot comune_famiglia
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_via
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot domicilio_provincia
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipo_servizio
+		(type SYMBOL)
+		(allowed-values SST)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Utente
+	(is-a USER)
+	(role concrete)
+	(single-slot stato_n
+		(type SYMBOL)
+		(allowed-values Bulgaria)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot residenze_in_alloggio
+		(type INSTANCE)
+;+		(allowed-classes ResidenzaInAlloggio)
+		(create-accessor read-write))
+	(multislot documenti
+		(type INSTANCE)
+;+		(allowed-classes Documento)
+		(create-accessor read-write))
+	(single-slot cognome
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot altre_lingue
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_cap
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot tessere
+		(type INSTANCE)
+;+		(allowed-classes Tessera)
+		(create-accessor read-write))
+	(single-slot domicilio_via
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot titolo_studio
+		(type SYMBOL)
+		(allowed-values Diploma)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot deceduto
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot lingua_it
+		(type SYMBOL)
+		(allowed-values madrelingua)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot foto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_arrivo_bo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot situazione_economica
+		(type SYMBOL)
+		(allowed-values privo_di_reddito)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot privo_residenza
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot contatti
+		(type INSTANCE)
+;+		(allowed-classes Contatto)
+		(create-accessor read-write))
+	(single-slot scheda
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot stato_civile
+		(type SYMBOL)
+		(allowed-values Celibe%2FNubile)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sesso
+		(type SYMBOL)
+		(allowed-values maschio femmina trans)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot data_arrivo_it
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot automunito
+		(type SYMBOL)
+		(allowed-values si no)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_primo_colloquio
+		(type INSTANCE)
+;+		(allowed-classes Operatore)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot cf
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nota_domicilio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot cittadinanza
+		(type INSTANCE)
+;+		(allowed-classes Cittadinanza)
+		(create-accessor read-write))
+	(single-slot percentuale_inv
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_provincia
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nome
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot competenze
+		(type INSTANCE)
+;+		(allowed-classes Competenze)
+		(create-accessor read-write))
+	(single-slot domicilio_comune
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_n
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot stato_famiglia
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot comune_famiglia
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot madrelingua
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot note
+		(type INSTANCE)
+;+		(allowed-classes Nota)
+		(create-accessor read-write))
+	(single-slot data_primo_colloquio
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot figli
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_comune
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot comune_n
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot residenza_via
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot altro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot servizi_di_riferimento
+		(type INSTANCE)
+;+		(allowed-classes ServizioDiRiferimento)
+		(create-accessor read-write))
+	(single-slot domicilio_cap
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot domicilio_provincia
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot espulso
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Operatore
+	(is-a USER)
+	(role concrete)
+	(single-slot user_email
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot primi_colloqui
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+		(create-accessor read-write))
+	(single-slot user_name
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot user_phone_number
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot user_user_id
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Nota
+	(is-a USER)
+	(role concrete)
+	(single-slot utente
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot testo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipo_nota
+		(type SYMBOL)
+		(allowed-values Sanitaria)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Tessera
+	(is-a USER)
+	(role concrete)
+	(single-slot scadenza
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipologia_tessera
+		(type SYMBOL)
+		(allowed-values salute)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot emissione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_tessere
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sabatodomenica
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass ResidenzaInAlloggio
+	(is-a USER)
+	(role concrete)
+	(single-slot tipologia_alloggio
+		(type SYMBOL)
+		(allowed-values affitto)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_residenze_in_alloggio
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot descrizione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot al
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dal
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass ServizioDiRiferimento
+	(is-a USER)
+	(role concrete)
+	(single-slot referente
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_servizi_di_riferimento
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot tipo_servizio
+		(type SYMBOL)
+		(allowed-values SST)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot info
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Cittadinanza
+	(is-a USER)
+	(role concrete)
+	(single-slot stato
+		(type SYMBOL)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_cittadinanza
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Documento
+	(is-a USER)
+	(role concrete)
+	(single-slot numero
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot scadenza
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot descrizione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot rilasciato_da
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato_2
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipologia_documento
+		(type SYMBOL)
+		(allowed-values Patente)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato_1
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_documenti
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Competenze
+	(is-a USER)
+	(role concrete)
+	(single-slot tipologia_competenza
+		(type SYMBOL)
+		(allowed-values muratore)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot descrizione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_competenze
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Contatto
+	(is-a USER)
+	(role concrete)
+	(single-slot numero_telefono
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_contatti
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot descrizione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot altro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))

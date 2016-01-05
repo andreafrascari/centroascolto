@@ -1,0 +1,20 @@
+<div class="detail-component link1-N @NAME@">
+	<div class="label">@LABEL@ ([ [[@NEEDED@] == [object-needed]] ??
+		[*] ])</div>
+	<ul>
+		<li>@BLOCK_BEGIN_LINK_ITEM@
+			<div class="object-link">
+				@LINK_LABEL@<br />@INFO_DATA@
+			</div> @BLOCK_END_LINK_ITEM@
+		</li> @BLOCK_BEGIN_NEW@
+		<li>inserisci nuovo/a <a tabindex="10"
+			onclick="return detailEdit.forceSave(this.href);"
+			title="inserisci nuovo/a @LABEL@" href="@OBJECT_DETAIL_EDIT_LINK@">@LABEL@</a></li>
+		@BLOCK_END_NEW@ @BLOCK_BEGIN_NEW_POPUP@
+		<li>inserisci nuovo/a <a tabindex="10" id="popup_new_@NAME@"
+			@popup="dimensions=@DIMENSIONS@,popup_detail_edit_from_detail_edit=true"
+			title="inserisci nuovo/a @LABEL@" href="@OBJECT_DETAIL_EDIT_LINK@">@LABEL@</a></li>
+		@BLOCK_END_NEW_POPUP@
+	</ul>
+	<div class="object-help">@HELP@</div>
+</div>

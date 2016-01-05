@@ -1,0 +1,82 @@
+@BEGIN_TEMPLATE@<div id="detail">
+
+@BEGIN_GLO_Paziente@
+				
+			<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="javascript:history.back();" title="indietro">
+						<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+						</a>
+						@BLOCK_BEGIN_EDIT@
+						
+						([[[@tag_glo_accesso_uoc.UOC_Accesso.ID#FLAT@] != []] ?? [
+						<!-- 
+									<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=UOC_Accesso/_a_ID/_v_@tag_glo_accesso_uoc.UOC_Accesso.ID#FLAT@" title="Vai alla cartella">									
+        							  <span aria-hidden="true" class="glyphicon glyphicon-folder-open"></span>
+          							</a>
+          				-->
+        					] :: [
+ 								<a class="btn btn-default btn-xs btn-success" href="?q=object/detail_edit&amp;p=UOC_Accesso&amp;a=_a_uoc_paziente_glo/_c_GLO_Paziente/_a_ID/_v_@tag_ID#FLAT@" title="registra la cartella del paziente">
+								<span aria-hidden="true" class="glyphicon glyphicon-folder-open"></span>
+								</a>
+							]])
+						
+							<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=GLO_Paziente/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+								  <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+       						</a>
+						@BLOCK_END_EDIT@
+					</div>
+			</div>	
+				
+			@FUN_MODULE(q=current_data/set/MUTE=1/CLS=GLO_Paziente/id=@tag_ID#FLAT@/glo_nome=@tag_glo_nome#FLAT@/glo_cognome=@tag_glo_cognome#FLAT@/glo_data_nascita=@FUN_REPLACE(string=@tag_glo_data_nascita#FLAT@,search=/,replace=-)@)@    
+			
+
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="system-message-error">
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+					<br /><br />
+      				<a href="javascript:history.back();" title="Indietro">Indietro</a>
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+
+			@BLOCK_BEGIN_RESULT_EMPTY@
+				<div class="system-message-error">
+					Nessun elemento trovato!
+					<br /><br />
+      				<a href="javascript:history.back();" title="Indietro">Indietro</a>
+				</div>
+			@BLOCK_END_RESULT_EMPTY@
+
+([[[@tag_glo_accesso_uoc.UOC_Accesso.ID#FLAT@] == []] ?? [
+		<h2>@tag_glo_cognome#FLAT@&nbsp;@tag_glo_nome#FLAT@</h2>
+	]::[
+
+@FUN_MODULE(q=object_tab_header/detail,p=UOC_Accesso/_a_ID/_v_@tag_glo_accesso_uoc.UOC_Accesso.ID#FLAT@)@
+		<script type="text/javascript">
+		$(document).ready(function() {
+			Anastasis.SerenaUtils.getCurrentTabSheet('GLO_Paziente');
+		});
+		</script>
+]])
+					
+				
+				<div id="object-body">
+						<table class="paziente" width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
+							<tbody>
+								@tag_glo_codice_fiscale@@tag_glo_sesso@@tag_glo_data_nascita@@tag_glo_luogo_nascita@@tag_glo_indirizzo@@tag_regione@@tag_glo_provincia@@tag_glo_nazionalita@@tag_glo_comune@@tag_glo_telefono@@tag_glo_email@@tag_note@
+								@tag_glo_foto@
+							</tbody>
+						</table>
+					</div>
+
+				
+
+				
+				<div id="object-system" @toggable="label=apri/chiudi attributi di sistema,init_state=closed">
+					<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">
+						<tbody>
+							@tag_creation_user@@tag_creation_date@@tag_deletion_user@@tag_deletion_date@@tag_last_modification_user@@tag_last_modification_date@@tag_activation_flag@@tag_deletion_flag@
+						</tbody>
+					</table>
+				</div>@END_GLO_Paziente@
+		</div>@END_TEMPLATE@

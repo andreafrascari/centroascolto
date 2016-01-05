@@ -1,0 +1,94 @@
+@BEGIN_TEMPLATE@<div class="operation-result">
+			<div id="splash">
+				<h2>Risultato dell'operazione</h2>
+			</div>
+
+			@BLOCK_BEGIN_RESULT_SUCCESS@
+				<div class="system-message-success">
+					Operazione effettuata correttamente!
+				</div>
+    
+				<div class="navigation-options">
+					@BLOCK_BEGIN_MAP@
+						&Egrave; ora possibile continuare la navigazione in base alla seguente mappa concettuale:
+						@MAP@
+					@BLOCK_END_MAP@
+					<br />
+					Possibilit&agrave; di navigazione per l'oggetto Paziente:
+					<div class="list-group">	
+					@BEGIN_GLO_Paziente@
+						([
+						  	[[@tag_glo_accesso_uoc.UOC_Accesso.ID#FLAT@]==[]]??[
+						    <a class="list-group-item active"  href="?q=object/detail_edit&amp;p=UOC_Accesso&amp;a=_a_uoc_paziente_glo/_c_GLO_Paziente/_a_ID/_v_@tag_ID#FLAT@" title="apri la cartella">Aprire la cartella del paziente</a>
+						]])				
+					@END_GLO_Paziente@		
+					
+					
+						@BLOCK_BEGIN_BACK_TO_CURRENT_OPERATION@
+							<a class="list-group-item"  title="Tornare all'operazione in corso" href="@HREF_CURRENT_OPERATION@">Tornare all'operazione in corso</a>
+						@BLOCK_END_BACK_TO_CURRENT_OPERATION@
+						@BLOCK_BEGIN_NEW@
+							<a class="list-group-item"  title="Inserire un nuovo oggetto" href="@HREF_NEW@">Inserire un nuovo oggetto</a>
+						@BLOCK_END_NEW@
+						<a class="list-group-item"  title="Tornare al filtro di ricerca" href="@HREF_FILTER@">Tornare al filtro di ricerca</a>
+						<a class="list-group-item"  title="Tornare all'ultima lista visualizzata" href="@HREF_LIST@&amp;page=XML-QUERY">Tornare all'ultima lista visualizzata</a>
+						@BLOCK_BEGIN_BACK_TO_RESOURCE@
+							<a class="list-group-item"  title="Tornare all&apos;oggetto" href="@HREF_DETAIL@">Tornare all&apos;oggetto</a>
+							<a class="list-group-item"  title="Tornare alla modifica dell&apos;oggetto" href="@HREF_DETAIL_EDIT@">Tornare alla modifica dell&apos;oggetto</a>
+						@BLOCK_END_BACK_TO_RESOURCE@
+					</div>
+				</div>
+			@BLOCK_END_RESULT_SUCCESS@
+		
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="system-message-error">
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+				</div>        
+    
+				<div class="navigation-options">
+					Operazioni disponibili: 
+					<ul>
+						@BLOCK_BEGIN_UNDELETE@
+							<li><a title="Ripristina l'oggetto esistente" href="@HREF_UNDELETE@">Ripristina l&apos;oggetto esistente</a></li>
+						@BLOCK_END_UNDELETE@
+						@BLOCK_BEGIN_REPLACE_OLD@
+							<li><a title="Sostituisci l'oggetto esistente con quello nuovo" href="@HREF_REPLACE_OLD@">Sostituisci l&apos;oggetto esistente con quello nuovo</a></li>
+							<li><a title="Modificare l&apos;oggetto esistente" href="@HREF_EDIT_OLD@">Modificare l&apos;oggetto esistente</a></li>
+						@BLOCK_END_REPLACE_OLD@
+						<li><a title="Inserire un nuovo oggetto" href="@HREF_NEW@">Inserire un nuovo oggetto @CLASS_NAME@</a></li>
+						<li><a title="Tornare al filtro di ricerca" href="@HREF_FILTER@">Tornare al filtro di ricerca</a></li>
+					</ul>
+					
+					@BLOCK_BEGIN_EXISTING@
+						<div id="existing-instance">
+							<p>Ecco l&apos;oggetto @CLASS_NAME@ presente:</p>
+							@OLD_OBJECT@
+						</div>
+						
+					@BLOCK_END_EXISTING@
+					
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+		</div>
+		
+		
+		@BLOCK_BEGIN_DUPLICATE_ENTRY@
+			l&apos;oggetto che si sta tentando di inserire &egrave; gi&agrave; presente nel sistema.
+		@BLOCK_END_DUPLICATE_ENTRY@
+
+		@BLOCK_BEGIN_DUPLICATE_DELETED_ENTRY@
+			l&apos;oggetto che si sta tentando di inserire &egrave;  gi&agrave; presente nel sistema, ma era stato precedentemente cancellato.
+		@BLOCK_END_DUPLICATE_DELETED_ENTRY@
+
+		@BLOCK_BEGIN_NULL_IN_OBLIGATORY@
+			uno o pi&ugrave; attributi obbligatori non sono stati inseriti.
+		@BLOCK_END_NULL_IN_OBLIGATORY@
+
+		@BLOCK_BEGIN_DUPLICATE_ENTRY_NO_PERMISSION@
+			l&apos;oggetto che si sta tentando di inserire &egrave;  gi&agrave; presente nel sistema, ma non si hanno i permessi per ripristinarlo o sostituirlo.
+		@BLOCK_END_DUPLICATE_ENTRY_NO_PERMISSION@
+
+		@BLOCK_BEGIN_RECOVER_IMPOSSIBLE@
+			l&apos;oggetto che si sta tentando di inserire &egrave;  gi&agrave; presente nel sistema, ma non &egrave; possibile procedere con ris
+			pristino o sostituzione: contattare il supporto tecnico
+		@BLOCK_END_RECOVER_IMPOSSIBLE@@END_TEMPLATE@

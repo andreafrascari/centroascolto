@@ -1,0 +1,108 @@
+@METABEGIN_TEMPLATE@ @BEGIN_TEMPLATE@
+<script
+	src="app/Javascript/anastasis/FormSender.js?s=@SERENA_VERSION@&amp;a=@APP_VERSION@"
+	type="text/javascript"></script>
+<script
+	src="app/Javascript/anastasis/serena/DetailEdit.js?s=@SERENA_VERSION@&amp;a=@APP_VERSION@"
+	type="text/javascript"></script>
+<script type="text/javascript">
+	detailEdit = new Anastasis.DetailEdit('detail-edit',
+			'Attachment?q=prepare', 'Attachment?q=status&amp;id=');
+</script>
+
+<div class="detail-edit detail-edit-@METAtag_bean.title@">
+	<div id="splash">
+		<h2>@TITLE@</h2>
+
+		<!--
+					<ul>
+						<li>inserire o modificare i dati proposti (asterisco = campi obbligatori)</li>
+						<li>premere il bottone <img src="app/Template/metaAmbiente/img/icon-edit.gif" alt="bottone editor" />, se presente, per avviare l'editor ed inserire campi formattati</li>
+						<li>caricare, se presenti, gli allegati desiderati nella sezione in fondo alla pagina</li>
+						<li>premere il bottone salva</li>
+					</ul>
+				-->
+	</div>
+
+	@BLOCK_BEGIN_RESULT_ERROR@
+	<div class="alert alert-danger" role="alert">
+		<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		Si &egrave; verificato un errore: @ERROR_MESSAGE@
+	</div>
+	@BLOCK_END_RESULT_ERROR@ @BLOCK_BEGIN_RESULT_EMPTY@
+	<div class="alert alert-danger" role="alert">
+		<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		Nessun elemento trovato.
+	</div>
+	@BLOCK_END_RESULT_EMPTY@ @METABEGIN_bean@ @BEGIN_@METAtag_title@@
+	<div class="form-container form-container-@METAtag_title@">
+		<form id="detail-edit" method="post" action="@ACTION@">
+			<fieldset>
+				<legend>Inserire/modificare i dati</legend>
+				<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="@BACK@" onclick="return confirm_exit();" 
+							title="indietro"> <span aria-hidden="true"
+							class="glyphicon glyphicon-backward"></span>
+						</a> <a class="btn btn-default btn-xs btn-success"
+							href="javascript:detailEdit.saveObject();"
+							title="Salva modifiche"> <span aria-hidden="true"
+							class="glyphicon glyphicon-ok"></span>
+						</a> ([ [ [@tag_ID#FLAT@] != [] && [@METAtag_no_deletion@] != [1]] ??
+						[ <a class="btn btn-default btn-xs btn-danger"
+							href="javascript:detailEdit.delObject('forced_post_save');"
+							title="Cancella la scheda"> <span aria-hidden="true"
+							class="glyphicon glyphicon-remove"></span>
+						</a> ] ])
+					</div>
+				</div>
+
+				<!--CORPO-->
+				<div class="detail-body">@METABEGIN_attributes@
+					@METABEGIN_item[not(heading=2) and detail_edit and
+					not(admin_only)]@ @tag_@METAtag_name@@ @METAEND_item@
+					@METAEND_attributes@</div>
+				<!--FINE CORPO-->
+
+				<!--SYSTEM -->
+				<div class="detail-edit-system">
+					<!-- In questa sezione si abilita, mediante la configurazione
+										 degli interface per i campi di sistema, la
+										 possibilita' di modificarli, per esempio per activation flag-->
+					@METABEGIN_attributes@ @METABEGIN_item[admin_only and
+					not(read_only)]@ @tag_@METAtag_name@@ @METAEND_item@
+					@METAEND_attributes@
+				</div>
+				<!--FINE SYSTEM-->
+
+				<input type="hidden" name="class" value="@CLASS@" /> <input
+					type="hidden" name="r" value="@REDIRECT@" /> <input type="hidden"
+					name="forced_post_save" id="forced_post_save" value="@POST_SAVE@" />
+
+				<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="@BACK@"
+							title="indietro"> <span aria-hidden="true"
+							class="glyphicon glyphicon-backward"></span>
+						</a> <a class="btn btn-default btn-xs btn-success"
+							href="javascript:detailEdit.saveObject();"
+							title="Salva modifiche"> <span aria-hidden="true"
+							class="glyphicon glyphicon-ok"></span>
+						</a> ([ [ [@tag_ID#FLAT@] != [] && [@METAtag_no_deletion@] != [1]] ??
+						[ <a class="btn btn-default btn-xs btn-danger"
+							href="javascript:detailEdit.delObject('forced_post_save');"
+							title="Cancella la scheda"> <span aria-hidden="true"
+							class="glyphicon glyphicon-remove"></span>
+						</a> ] ])
+					</div>
+				</div>
+			</fieldset>
+		</form>
+		<div class="detail-attachments">@METABEGIN_attributes@
+			@METABEGIN_item[(heading=2) and detail_edit]@ @tag_@METAtag_name@@
+			@METAEND_item@ @METAEND_attributes@</div>
+
+
+		@END_@METAtag_title@@ @METAEND_bean@
+	</div>
+	@END_TEMPLATE@ @METAEND_TEMPLATE@

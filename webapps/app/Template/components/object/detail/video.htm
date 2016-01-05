@@ -1,0 +1,48 @@
+<!--
+<tr>
+  <th scope="row">@INTERFACE_label@</th>
+  <td>
+    <a href="@LINK@" target="_blank" title="@TITLE@: l'oggetto si apre in una nuova finestra">@LINK_TEXT@</a>
+  </td>
+</tr>
+-->
+
+<tr class="@NAME@">
+	<th scope="row">@INTERFACE_label@</th>
+	<td>
+		<div class="videoplayer" id="div_videoplayer_@INTERFACE_name@"
+			style="width: 425">
+			<object width="425" height="344" type="application/x-shockwave-flash"
+				data="app/Javascript/anastasis/Video/video_player.swf"
+				id="videoplayer_@INTERFACE_name@">
+				<param name="allowScriptAccess" value="always" />
+				<param name="movie"
+					value="app/Javascript/anastasis/Video/video_player.swf" />
+				<param name="Menu" value="false" />
+				<param name="FlashVars" value="autoplay=0&debug=0&controls=0" />
+				Forse hai disattivato JavaScript o hai una vecchia versione di Adobe
+				Flash Player. <a href="http://www.adobe.com/go/getflashplayer/"
+					onmousedown="urchinTracker('/Events/VideoWatch/GetFlash');">Procurati
+					la versione di Flash Player pi&ugrave; recente</a>.
+			</object>
+			<div class="videoplayer_commands">
+				<a class="play" href="#"
+					onclick="video@INTERFACE_name@.playVideo(); return false;"> <img
+					src="app/Javascript/anastasis/Video/images/play.png" alt="Play" />
+				</a> <a class="pause" href="#"
+					onclick="video@INTERFACE_name@.pauseVideo(); return false;"> <img
+					src="app/Javascript/anastasis/Video/images/pause.png" alt="Pause" />
+				</a> <a class="stop" href="#"
+					onclick="video@INTERFACE_name@.stopVideo(); return false;"> <img
+					src="app/Javascript/anastasis/Video/images/stop.png" alt="Stop" />
+				</a>
+			</div>
+			<script type="text/javascript">
+			anastasis.syncLoadScript("Video/Video",true);
+			</script>
+			<script type="text/javascript">
+				var video@INTERFACE_name@=new Anastasis.Video("videoplayer_@INTERFACE_name@","@LINK@");
+			</script>
+		</div>
+	</td>
+</tr>

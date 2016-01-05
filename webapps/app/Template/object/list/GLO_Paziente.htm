@@ -1,0 +1,121 @@
+@BEGIN_TEMPLATE@
+<div>
+<div id="list">
+		
+			<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="javascript:history.back();" title="indietro">
+						<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+						</a>
+					</div>
+			</div>
+				
+			<div id="splash">
+				<h2>Pazienti trovati</h2>
+			</div>
+	      
+			
+
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="system-message-error">
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+	
+			@BLOCK_BEGIN_RESULT_EMPTY@
+				<div class="system-message-error">
+					Nessun paziente <em>@QUERY_DESC@</em> &egrave; stato trovato. 
+					@BLOCK_BEGIN_EDIT@
+						<br /><br />Si desidera <a href="?q=anagrafica/insert/FORM=GLO_Paziente/cls=GLO_Paziente" title="Inserire un nuovo paziente">inserire un nuovo paziente</a>?
+					@BLOCK_END_EDIT@
+				</div>
+			@BLOCK_END_RESULT_EMPTY@
+		  
+	<div class="table-responsive">
+			 <table class="table">
+			    <thead>
+			       <tr>
+					@BLOCK_BEGIN_HEADER@
+						<th>@HEAD_LABEL@</th>
+					@BLOCK_END_HEADER@
+					<th>Azioni</th>
+					</tr>
+			    </thead>
+			    <tbody>
+
+				
+					@BEGIN_GLO_Paziente@([ 
+							[[@XPATH_FUN((count(preceding-sibling::GLO_Paziente)+ 1) mod 2)@@] == [0.0] ] 
+							?? [
+						      <tr class="info">			  
+							]
+							:: [
+						      <tr>			  
+							]
+						])
+		
+						@tag_glo_cognome@@tag_glo_nome@@tag_glo_data_nascita@
+								<td class="azioni">
+								<div role="toolbar">
+									<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=GLO_Paziente/_a_ID/_v_@tag_ID#FLAT@" title="Vai alla scheda anagrafica">
+										<span aria-hidden="true" class="glyphicon glyphicon-play"></span>
+									</a>
+									([[[@tag_glo_accesso_uoc.UOC_Accesso.ID#FLAT@] != []] ?? [
+									<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=UOC_Accesso/_a_ID/_v_@tag_glo_accesso_uoc.UOC_Accesso.ID#FLAT@" title="Vai alla cartella">									
+        							  <span aria-hidden="true" class="glyphicon glyphicon-folder-open"></span>
+          							</a>
+        							]])
+									@BLOCK_BEGIN_EDIT@
+										<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=GLO_Paziente/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+											  <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+          								 </a>
+          								 ([[[@tag_glo_accesso_uoc.UOC_Accesso.ID#FLAT@] != []] ?? [
+          								 <a class="btn btn-default btn-xs btn-success" href="?q=@MODULE@/detail_edit&amp;p=UOC_Allegato&amp;a=_a_di_cartella/_c_UOC_Accesso/_a_ID/_v_@tag_glo_accesso_uoc.UOC_Accesso.ID#FLAT@" title="Aggiungi allegato">
+											  <span aria-hidden="true" class="glyphicon glyphicon-pushpin"></span>
+          								 </a>
+          								 ]])
+									@BLOCK_END_EDIT@
+								</div>									
+								</td>
+								</tr>@END_GLO_Paziente@
+						</tbody>
+	  		</table>
+	  		</div>
+	  		
+	  		<nav class="navbar navbar-default">
+  <div class="container-fluid">
+					  <ul class="pager">
+ 
+						@BLOCK_BEGIN_INDIETRO@
+							<li class="previous">
+								<a href="@HREF_LIST_FIRST@" @ajaxable="target=list,replace=true,target_result=list"  title="Vai alla prima pagina">
+									<span aria-hidden="true">&larr;</span> Prima pagina
+								</a>
+							</li>
+							<li>
+								<a href="@HREF_LIST_BACK@" @ajaxable="target=list,replace=true,target_result=list"  title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">
+									Precedente
+								</a>
+							</li>
+						@BLOCK_END_INDIETRO@
+
+						<li><span class="list-res-summary">@NUMERO_ELEMENTI@ elementi trovati - pagina @PAGINA_CORRENTE@</span></li>
+
+						@BLOCK_BEGIN_AVANTI@
+							<li>
+								<a href="@HREF_LIST@"  @ajaxable="target=list,replace=true,target_result=list" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">
+									Successiva
+								</a>
+							</li>
+							<li class="next">
+								<a  href="@HREF_LIST_LAST@" @ajaxable="target=list,replace=true,target_result=list" title="Vai all'ultima pagina">
+								<span aria-hidden="true">&rarr;</span> Ultima pagina</a>
+								</a>
+							</li>
+						@BLOCK_END_AVANTI@
+					  </ul>
+				</div>
+			</nav>
+</div>
+			
+		</div>@END_TEMPLATE@

@@ -1,0 +1,216 @@
+@METABEGIN_TEMPLATE@
+	@BEGIN_TEMPLATE@
+		<div>
+			<div id="list">
+			
+			<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="javascript:history.back();" title="indietro">
+							<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+						</a>
+					@BLOCK_BEGIN_EDIT@
+							@METABEGIN_bean@
+								([
+									[[@METAtag_read_only@] != [1] && [@METAtag_update_only@] != [1]]
+									?? [
+										<a class="btn btn-default btn-xs btn-success" href="@HREF_DETAIL_EDIT@" title="inserisci una nuova scheda">
+											<span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
+										</a>
+									]
+								])
+							@METAEND_bean@
+						@BLOCK_END_EDIT@
+					
+								<!-- altri link possibili...
+							<a href="?q=object/filter&amp;p=@CLASS@" title="Nuova ricerca">Ricerca</a>
+							<a href="?q=object/list&amp;p=@CLASS@" title="Lista completa">Lista</a>
+						<!-- NB: Sostituire l'etichetta @RPTDESIGN_FILE@ con ilnome del file .rptdesign (senza estensione)
+								 che deve essere all'interno della cartella Template/report/give/@CLASS@
+							<form action="ModuleIndex">
+								<input id="q1" type="hidden" value="report/give/CLS=@CLASS@/DOC=@RPTDESIGN_FILE@/TYPE=pdf" name="q"/>
+								<input type="hidden" id="xml-query-1" name="XQUERY" value="@XML-QUERY@" />
+								<input type="image" class="toolbar_button" title="crea report pdf" src="app/Template/metaAmbiente/img/icon-acrobat.gif" name="vai"/>
+							</form>
+						-->	
+					</div>
+			</div>
+				
+			<div id="splash">
+				<h2>@TITLE@</h2>
+<!-- 				<p class="list-report">Risultati della ricerca: @NUMERO_ELEMENTI@ - pagina @PAGINA_CORRENTE@</p> -->
+				
+			</div>
+			
+
+
+				@BLOCK_BEGIN_RESULT_ERROR@
+					<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+						Si &egrave; verificato un errore: @ERROR_MESSAGE@
+					</div>
+				@BLOCK_END_RESULT_ERROR@
+
+				@BLOCK_BEGIN_RESULT_EMPTY@
+					<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+						Nessun elemento trovato.
+					</div>
+				@BLOCK_END_RESULT_EMPTY@
+
+				@METABEGIN_bean@
+					([
+						[[@tag_@METAtag_title@.ID#FLAT@] != []]
+						?? [
+	<div class="table-responsive">
+			 <table class="table">
+			    <thead>
+			       <tr>
+									@BLOCK_BEGIN_HEADER@
+										<th>
+											([
+												[[@HEADER_HREF@] != []]
+												?? [
+													<a title="ordina in base a questo attributo" href="@HEADER_HREF@" @ajaxable="target=list,replace=true,target_result=list" ;>
+												]
+											])
+											@HEADER_LABEL@
+											([
+												[[@HEADER_HREF@] != []]
+												?? [
+													</a>
+												]
+											])
+										</th>
+									@BLOCK_END_HEADER@
+									<th scope="col">Azioni</th>
+								</tr>
+								 </thead>
+			    					<tbody>
+								@BEGIN_@METAtag_title@@
+									([
+										[[@XPATH_FUN((count(preceding-sibling::@METAtag_title@)+ 1) mod 2)@@] == [0.0] ]
+										?? [
+											<tr class="info">	
+										] :: [
+											<tr>
+										]
+									])
+	
+										@METABEGIN_attributes@
+											@METABEGIN_item[list]@
+												@tag_@METAtag_name@@
+											@METAEND_item@
+											<td>
+											<div role="toolbar">
+												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=@METAtag_../title@/_a_ID/_v_@tag_ID#FLAT@" title="Dettaglio">
+													<span aria-hidden="true" class="glyphicon glyphicon-play"></span>
+												</a>
+												([
+													[[@FUN_CHECK_INSTANCE_AUTH(CLS=@CLASS@,ID=@tag_ID#FLAT@,LEVEL=2,CREATION_USER=@tag_creation_user#FLAT@)@] == [true]]
+													<!--
+														Se vuoi usare il nuovo group owner la condition deve cambiare cosi':
+														[[@FUN_CHECK_INSTANCE_AUTH(CLS=@CLASS@,ID=@tag_ID#FLAT@,LEVEL=2,OWNER_USER=@tag_owner_user#FLAT@, OWNER_GROUP=@tag_owner_group#FLAT@)@] == [true]]
+													 -->
+													?? [
+														<span class="NoVisibility">|</span>
+														([
+															[[@METAtag_<-.read_only@] != [1]]
+															?? [
+																([ 
+																	[[@METAtag_<-.edit_method@] == [complex_detail_edit]] 
+																	?? [
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/complex_detail_edit/CLS=@METAtag_../title@/ID=@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>	
+																		</a>
+																	] :: [
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=@METAtag_../title@/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+																		</a>
+																	]
+																])
+															]
+														])
+													]
+												])
+												<!-- @MODULE@/detail_edit&amp;p=@METAtag_../title@/_a_ID/_v_@tag_ID#FLAT@ -->
+											</div>
+											</td>
+										@METAEND_attributes@
+									</tr>
+								@END_@METAtag_title@@
+								</tbody>
+					  		</table>
+						]
+					])
+				@METAEND_bean@
+
+		  		<!-- ESEMPIO DI FORM PER LANCIO REPORT pdf+excel: abilitare nei tpl o nel metatpl ma dopo aver definito tutti i report report_C per ogni classe C-->
+
+		  		<!--
+		  		<form id="report-repository-1" action="ModuleIndex">
+					<input type="hidden" id="q2" name="q" value="report/give/CLS=@CLASS@/DOC=report_@CLASS@/TYPE=pdf" />
+					<input type="hidden" id="xml-query-2" name="XQUERY" value="@XML-QUERY@" />
+					<div class="buttonrow">
+						<input class="button" type="submit" name="vai" title="crea report pdf" value="crea report pdf" />
+					</div>
+				</form>
+
+				<br />
+
+		  		<form id="report-repository-3" action="ModuleIndex">
+					<input type="hidden" id="q3" name="q" value="report/give/CLS=@CLASS@/DOC=report_@CLASS@/TYPE=xls" />
+					<input type="hidden" id="xml-query-3" name="XQUERY" value="@XML-QUERY@" />
+					<div class="buttonrow">
+						<input class="button" type="submit" name="vai" title="crea report xls" value="crea report xls" />
+					</div>
+				</form>
+		  		 -->
+		  		 
+		  		</div>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+					  <ul class="pager">
+ 
+						@BLOCK_BEGIN_INDIETRO@
+							<li class="previous">
+								<a href="@HREF_LIST_FIRST@" @ajaxable="target=list,replace=true,target_result=list"  title="Vai alla prima pagina">
+									<span aria-hidden="true">&larr;</span> Prima pagina
+								</a>
+							</li>
+							<li>
+								<a href="@HREF_LIST_BACK@" @ajaxable="target=list,replace=true,target_result=list"  title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">
+									Precedente
+								</a>
+							</li>
+						@BLOCK_END_INDIETRO@
+
+						<li><span class="list-res-summary">@NUMERO_ELEMENTI@ elementi trovati - pagina @PAGINA_CORRENTE@</span></li>
+
+						@BLOCK_BEGIN_AVANTI@
+							<li>
+								<a href="@HREF_LIST@"  @ajaxable="target=list,replace=true,target_result=list" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">
+									Successiva
+								</a>
+							</li>
+							<li class="next">
+								<a  href="@HREF_LIST_LAST@" @ajaxable="target=list,replace=true,target_result=list" title="Vai all'ultima pagina">
+								<span aria-hidden="true">&rarr;</span> Ultima pagina</a>
+								</a>
+							</li>
+						@BLOCK_END_AVANTI@
+					  </ul>
+				</div>
+			</nav>
+		  		
+		  		
+		  		
+		  		
+		  		
+			<span id="apri-chiudi-filtro" title="apri/chiudi filtro di raffinamento">Affina ricerca</span>
+			<div @toggable="controller=apri-chiudi-filtro,init_state=closed">
+			 	@FUN_MODULE(q=object/simplefilter)@  
+			</div>
+		</div>
+	@END_TEMPLATE@
+@METAEND_TEMPLATE@

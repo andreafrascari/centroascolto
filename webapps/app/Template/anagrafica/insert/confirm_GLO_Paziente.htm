@@ -1,0 +1,172 @@
+@BEGIN_TEMPLATE@
+	<div class="operation-result, detail-edit">
+		<div id="splash">
+			<h2>Paziente</h2>
+			<h3>Inserimento nuovo Paziente</h3>
+		</div>
+    	@BEGIN_GLO_Paziente[not(exists)]@
+      		<div class="system-message-success">
+      			La scheda paziente &egrave; stata inserita correttamente.<br />
+      		</div>
+      		
+			<div class="navigation-options">
+				E' ora possibile:  
+				<ul> 
+					<li>
+						continuare l'inserimento dei restanti dati anagrafici e, contestualmente, della richiesta di accesso al servizio: <a title="Procedi con l'inserimento della scheda paziente" href="?q=object/detail_edit&amp;p=GLO_Paziente/_a_ID/_v_@tag_ID#FLAT@">procedi</a>.
+					</li>
+				</ul>
+			</div>
+      	@END_GLO_Paziente@
+      
+      	@BEGIN_GLO_Paziente[exists and not(deleted)]@
+      		<div class="system-message-error">
+      			Attenzione: nell'anagrafica esiste gi&agrave; un Paziente con questo codice fiscale (@tag_glo_codice_fiscale#FLAT@)
+      		</div>
+      		<div id="detail">
+	      		<div id="object-body">
+		      		<table summary="Tabella dati scheda">
+		      			<tbody>
+			      			<tr class="nome">
+			      				<th scope="row">
+				      			 	nome
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_nome#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="cognome">
+				      			<th scope="row">
+				      			 	cognome
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_cognome#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="sesso">
+				      			<th scope="row">
+				      			 	sesso
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_sesso#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="data_nascita">
+				      			<th scope="row">
+				      			 	data di nascita
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_data_nascita#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="luogo_nascita">
+				      			<th scope="row">
+				      			 	comune di nascita
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_luogo_nascita#FLAT@
+				      			</td>
+				      		</tr>
+				      	</tbody>
+			      	</table>
+		      	</div>
+			</div>
+			<div class="navigation-options">
+				Operazioni disponibili: 
+				<ul> 
+					<li>
+						<a title="Vai alla scheda del paziente" href="?q=object/detail&amp;p=GLO_Paziente/_a_ID/_v_@tag_ID#FLAT@">Vai alla scheda del paziente</a>
+					</li>
+					<li>
+						<a title="Inserisci nuovo GLO_Paziente" href="?q=anagrafica/insert/FORM=GLO_Paziente/cls=GLO_Paziente">Inserisci un nuovo Paziente</a>
+					</li>
+				</ul>
+			</div>
+		@END_GLO_Paziente@
+      
+		@BEGIN_GLO_Paziente[exists and deleted]@
+      		<div class="system-message-error">
+      			Attenzione nell'anagrafica esiste gi&agrave; un Paziente con questo codice fiscale (@tag_glo_codice_fiscale#FLAT@).<br />
+      			Questo Paziente &egrave; stato precedentemente cancellato.		
+      		</div>
+      
+      		<div id="detail">
+	      		<div id="object-body">
+		      		<table summary="Tabella dati scheda">
+		      			<tbody>
+			      			<tr class="nome">
+			      				<th scope="row">
+				      			 	nome
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_nome#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="cognome">
+				      			<th scope="row">
+				      			 	cognome
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_cognome#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="sesso">
+				      			<th scope="row">
+				      			 	sesso
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_sesso#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="data_nascita">
+				      			<th scope="row">
+				      			 	data di nascita
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_data_nascita#FLAT@
+				      			</td>
+				      		</tr>
+				      		<tr class="luogo_nascita">
+				      			<th scope="row">
+				      			 	comune di nascita
+				      			</th>
+				      			<td>
+				      			 	@tag_glo_luogo_nascita#FLAT@
+				      			</td>
+				      		</tr>
+				      	</tbody>
+			      	</table>
+		      	</div>
+			</div>      	
+     
+			<div class="navigation-options">
+				Operazioni disponibili: 
+				<ul> 
+					<li>
+						<a title="Ripristina l'Paziente cancellato" href="?q=object/undelete/CLS=GLO_Paziente/ID=@tag_ID#FLAT@">Ripristina la scheda del paziente</a>
+					</li>
+					<li>
+						<a title="Inserisci nuovo Paziente" href="?q=anagrafica/insert/FORM=GLO_Paziente/cls=GLO_Paziente">Inserisci un nuovo Paziente</a>
+					</li>
+				</ul>
+			</div>
+      	@END_GLO_Paziente@
+      	
+      	([
+      		[ [@tag_GLO_Paziente.ID#FLAT@] == [] ]
+      		?? [
+		  		<div class="system-message-error">
+		  			Attenzione nell'anagrafica esiste gi&agrave; un Paziente con lo stesso codice fiscale ma non si hanno i permessi per modificarlo.
+		  		</div>      		
+				<div class="navigation-options">
+					Operazioni disponibili: 
+					<ul> 
+						<li>
+							<a title="Torna alla bacheca" href="Index">Torna alla bacheca</a>
+						</li>
+					</ul>
+				</div>
+			]
+		])
+	</div>
+@END_TEMPLATE@

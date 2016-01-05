@@ -1,0 +1,16 @@
+@BEGIN_TEMPLATE@
+<ul class="nav navbar-nav">
+   <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">@FUN_GET_USER_INFO(param=name)@<span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+	    	<li>
+	    		<a href="?q=userRegistration/changePassword/FORM=_system_user" title="Modifica password">Modifica password</a>
+	    	</li>
+	 
+	    	<li>
+	    		<a href="?q=@MODULE@/logout" title="Esci dal sistema">Esci dal sistema</a>
+	    	</li>
+	    </ul>
+	   </li>
+</ul>
+@END_TEMPLATE@

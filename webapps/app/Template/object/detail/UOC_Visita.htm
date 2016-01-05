@@ -1,0 +1,92 @@
+@BEGIN_TEMPLATE@
+
+@BEGIN_UOC_Visita@
+
+<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="javascript:history.back();" title="indietro">
+							<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+						</a>
+						
+						 <a class="btn btn-default btn-xs btn-info" href="ModuleIndex?q=birtReport/give/CLS=@CLASS@/ID=@tag_ID#FLAT@/DOC=visita/FILE=visita/TYPE=pdf" title="Stampa referto">
+						 	<span aria-hidden="true" class="glyphicon glyphicon-print"></span>
+						 </a>
+						
+						@BLOCK_BEGIN_EDIT@
+							<a class="btn btn-default btn-xs btn-warning" href=@HREF_DETAIL_EDIT@" title="Modifica la scheda">
+								  <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+       						</a>
+						@BLOCK_END_EDIT@
+					</div>
+			</div>	
+    
+    @FUN_MODULE(q=current_data/set/MUTE=1/CLS=GLO_Paziente/id=@tag_per_cartella.UOC_Accesso.uoc_paziente_glo.GLO_Paziente.ID#FLAT@/glo_nome=@tag_per_cartella.UOC_Accesso.uoc_paziente_glo.GLO_Paziente.glo_nome#FLAT@/glo_cognome=@tag_per_cartella.UOC_Accesso.uoc_paziente_glo.GLO_Paziente.glo_cognome#FLAT@/glo_data_nascita=@FUN_REPLACE(string=@tag_per_cartella.UOC_Accesso.uoc_paziente_glo.GLO_Paziente.glo_data_nascita#FLAT@,search=/,replace=-)@)@    
+    
+    	
+    
+<div id="detail" class="tabbed">
+
+	@BLOCK_BEGIN_RESULT_ERROR@
+    <div class="system-message-error">
+      Si &egrave; verificato un errore: @ERROR_MESSAGE@
+    </div>
+    @BLOCK_END_RESULT_ERROR@
+
+    @BLOCK_BEGIN_RESULT_EMPTY@
+    <div class="system-message-error">
+      Nessun elemento trovato!
+    </div>
+    @BLOCK_END_RESULT_EMPTY@
+	
+    @FUN_MODULE(q=object_tab_header/detail,p=UOC_Accesso/_a_ID/_v_@tag_per_cartella.UOC_Accesso.ID#FLAT@)@
+<script type="text/javascript">
+$(document).ready(function() {
+	Anastasis.SerenaUtils.getCurrentTabSheet('UOC_Visita');
+});
+
+</script>
+
+   
+	    
+
+
+
+        <div id="object-body">
+        
+        @BLOCK_BEGIN_EDIT@	
+        
+        		<div role="toolbar" class="btn-toolbar" style="float:right; margin-right:2px;">
+				<a aria-expanded="false" aria-haspopup="true" class="btn btn-success" type="button" href="?q=object/detail_edit&amp;p=UOC_Allegato&amp;a=_a_metadati/_v_@tag_tipo_visita#FLAT@/_a_ref_class/_v_UOC_Visita/_a_ref_instance/_v_@tag_ID#FLAT@/_a_di_cartella/_c_UOC_Accesso/_a_ID/_v_@tag_per_cartella.UOC_Accesso.ID#FLAT@" title="registra un nuovo allegato">registra allegato</a>
+				</a>
+			    </div>
+			    <br style="clear:both;" />
+				
+  		@BLOCK_END_EDIT@	
+  	
+				
+				        
+      		<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">      
+      			<tbody>
+      			@tag_data@@tag_tipo_visita@@tag_iter_visita@@tag_individuale_gruppo@@tag_stato@@tag_refertazione@
+							
+      	        
+		        <tr class="allegati">
+	        		<th scope="row">allegati</th>
+					<td>@FUN_MODULE(q=object/list,p=UOC_Allegato/_a_ref_class/_v_UOC_Visita/_a_ref_instance/_v_@tag_ID#FLAT@,t=UOC_Allegato_inpage)@</td>
+				</tr>	
+		        
+		        </tbody>
+        	</table>      
+      	</div>
+      
+	   
+      
+            
+     <div id="object-system" @toggable="label=apri/chiudi attributi di sistema,init_state=closed">
+					<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">
+						<tbody>
+        @tag_creation_user@@tag_creation_date@@tag_deletion_user@@tag_deletion_date@@tag_last_modification_user@@tag_last_modification_date@@tag_activation_flag@@tag_deletion_flag@
+        </tbody>
+      </table>          
+      </div>@END_UOC_Visita@
+  </div>@END_TEMPLATE@

@@ -1,0 +1,75 @@
+@BEGIN_TEMPLATE@
+	<script src="app/Javascript/anastasis/FormSender.js" type="text/javascript"></script>
+	<script src="app/Javascript/anastasis/serena/DetailEdit.js" type="text/javascript"></script>
+	<script src="app/Javascript/anastasis/serena/ComplexDetailEdit.js" type="text/javascript"></script>
+	<script type="text/javascript">	
+		detailEdit=new Anastasis.ComplexDetailEdit("detail-edit","Attachment?q=prepare","Attachment?q=status&amp;id=");
+	</script> 
+	<script src="app/Javascript/anastasis/serena/Controllers.js" type="text/javascript" ></script>
+	<script type="text/javascript">
+	
+
+	$(document).ready(function(){
+		anastasis.loadScript("serena/AjaxUtils",null,true);
+		$input=$('<input  id="bottone_calcola_cf" value="calcola" type="button" onclick="Anastasis.AjaxUtils.ajaxCodiceFiscale(\'detail-edit\',\'codice_fiscale\');">');
+		$('#codice_fiscale input:text').after($input);	
+		});
+	
+		</script>
+	<div class="detail-edit">
+	
+	<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="javascript:history.back();"
+							title="indietro"> <span aria-hidden="true"
+							class="glyphicon glyphicon-backward"></span>
+						</a>
+					</div>
+				</div>
+            
+		<div id="splash">
+			<h2>Registrazione Paziente</h2>
+			<h3>Inserimento nuovo paziente con controllo codice fiscale</h3>
+		</div>
+		
+				
+		<div id="creazione">
+			@BEGIN_GLO_Paziente@
+				<div class="form-container">
+					<form name="detail-edit" id="detail-edit" onsubmit="return Utils.checkAll()" method="post" action="Index?q=anagrafica/insert/FORM=confirm_GLO_Paziente">
+						<fieldset>
+							<legend>Inserire/modificare i dati</legend>
+							<div class="detail-body">
+								@tag_glo_cognome@
+								@tag_glo_nome@
+								@tag_glo_sesso@
+								@tag_glo_data_nascita@
+								<div @autocomplete="cls=_system_city,slot=city_name,display1=city_province_code,display2=city_region,mustMatch=true">
+									@tag_glo_luogo_nascita@
+								</div>
+								
+							<!--	<div id="codice_fiscale" @tooltip="content=Il sistema effettua un controllo di coerenza del codice fiscale rispetto ai restanti dati anagrafici. Cliccando sull'immagine sara' invece calcolato automaticamente">-->
+								<div id="codice_fiscale">
+									@tag_glo_codice_fiscale@
+									<div class="object-help">
+										Il sistema &egrave; in grado di controllare la coerenza del codice fiscale rispetto ai restanti dati anagrafici.
+										<br />E' possibile:<br />
+											- inserire il codice fiscale manualmente, premere <em>invia</em> e lasciare che il sistema controlli i dati inseriti
+											<br />
+											- cliccare sull'immagine per calcolare automaticamente il codice fiscale, e <strong>verificarlo manualmente dopo</strong>
+									</div>
+															
+								</div>
+							</div>
+
+							
+							<div class="buttonrow">
+								<input class="button" type="submit" onclick="detailEdit.saveObject(); return false;" value="Invia" />
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			@END_GLO_Paziente@
+		</div>
+	</div>
+@END_TEMPLATE@

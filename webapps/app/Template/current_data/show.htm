@@ -1,0 +1,19 @@
+<div class="menubox fascicolo-di">
+ <h2>Fascicolo della Persona</h2>
+
+ 		<ul><li><a href="?q=object/detail&amp;p=GLO_Paziente/_a_ID/_v_@FUN_CURRENT_DATA(class=GLO_Paziente,param=ID)@" title="vai al fascicolo della persona">@FUN_CURRENT_DATA(class=GLO_Paziente,param=glo_cognome)@ @FUN_CURRENT_DATA(class=GLO_Paziente,param=glo_nome)@</a></li></ul>
+	
+	@BLOCK_BEGIN_ERROR@
+			<div class="system-message-error">Il sistema ha riportato un errore in fase di selezione paziente: contattare assistenza</div>	
+	@BLOCK_END_ERROR@
+	
+	@BLOCK_BEGIN_SELECTION_OK@
+		<div class="system-message-success">Fascicolo aperto correttamente</div>	
+	@BLOCK_END_SELECTION_OK@
+
+	@BLOCK_BEGIN_SELECTION_CLEARED@
+		<div class="system-message-success">Fascicolo chiuso correttamente</div>	
+	@BLOCK_END_SELECTION_CLEARED@
+	
+  	  	
+ </div>

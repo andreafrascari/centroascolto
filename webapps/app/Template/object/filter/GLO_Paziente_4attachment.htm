@@ -1,0 +1,25 @@
+@BEGIN_TEMPLATE@<div class="filter">
+			<div id="splash">
+				<h2>Carica un allegato per un paziente</h2>
+			</div>
+
+			
+
+			<div class="form-container">
+				
+				<form id="filter" method="post" action="@ACTION@&amp;t=GLO_Paziente_4attachment">
+					<fieldset>
+						<legend>cerca il paziente</legend>
+						<div class="alert alert-info" role="alert">Cerca il paziente di cui caricare l'allegato:</div>
+						@BEGIN_GLO_Paziente@@tag_glo_cognome@@tag_glo_nome@@END_GLO_Paziente@
+						<br class="clearBoth" />
+						<input type="hidden" name="fetch_from" value="@FETCH_FROM_VALUE@" />
+						<input type="hidden" name="fetch_to" value="@FETCH_TO_VALUE@" />
+						
+						<p class="serena-button-p">
+							<input name="post_search" title="avvia la ricerca" value="Cerca" class="btn btn-info" type="submit" />
+						</p>
+					</fieldset>
+				</form>
+			</div>
+		</div>@END_TEMPLATE@

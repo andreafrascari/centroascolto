@@ -1,0 +1,17 @@
+@BEGIN_TEMPLATE@<div class="filter">
+	
+		<div class="form-container">
+				
+				<form id="filter" method="post" action="@ACTION@">
+
+						@BEGIN_UOC_Accesso@@tag_uoc_paziente_glo@@tag_numero_cartella@@END_UOC_Accesso@
+						<br class="clearBoth" />
+						<input type="hidden" name="fetch_from" value="@FETCH_FROM_VALUE@" />
+						<input type="hidden" name="fetch_to" value="@FETCH_TO_VALUE@" />
+						
+						<p class="serena-button-p">
+							<input name="post_search" title="avvia la ricerca" value="Cerca" class="btn btn-info" type="submit" />
+						</p>
+				</form>
+			</div>
+		</div>@END_TEMPLATE@
