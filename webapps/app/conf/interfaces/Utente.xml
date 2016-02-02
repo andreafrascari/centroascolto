@@ -502,7 +502,7 @@
     <item> 
       <name>contatti</name>  
       <label>contatti</label>  
-      <detail>contatti</detail>  
+      <detail inpage="1">contatti</detail>  
       <detail_edit>contatti</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
@@ -522,7 +522,7 @@
     <item> 
       <name>cittadinanza</name>  
       <label>cittadinanza</label>  
-      <detail>cittadinanza</detail>  
+      <detail inpage="1">cittadinanza</detail>  
       <detail_edit>cittadinanza</detail_edit>  
       <heading>1</heading>  
       <max_length/>  

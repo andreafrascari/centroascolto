@@ -1,0 +1,66 @@
+@BEGIN_TEMPLATE@ 
+@BEGIN_Utente@
+
+@BLOCK_BEGIN_RESULT_ERROR@
+<div class="system-message-error">Si &egrave; verificato un errore: @ERROR_MESSAGE@ <br />
+@BLOCK_END_RESULT_ERROR@
+
+<h2>@tag_nome#FLAT@ @tag_cognome#FLAT@</h2>
+
+<div id="serena-tab-panel" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+
+	<li	id="Utente" class="ui-state-default ui-corner-top data-exist">
+			<a title="vai alla scheda anagrafica"
+		href="?q=object/detail&amp;p=Utente/_a_ID/_v_@tag_ID#FLAT@">Anagrafica</a>
+	</li>
+	<li	id="Situazione" class="ui-state-default ui-corner-top data-exist">
+			<a title="vai alla situazione socio-economica (documenti, competenze, servizi etc.)"
+		href="?q=object/detail&amp;p=Utente/_a_ID/_v_@tag_ID#FLAT@&amp;t=Utente_Situazione">Situazione socio-economica</a>
+	</li>
+	
+	<li	id="CentroAscolto" class="ui-state-default ui-corner-top data-exist">
+			<a title="vai al Centro Ascolto (tessere ed eventi)"
+		href="?q=object/detail&amp;p=Utente/_a_ID/_v_@tag_ID#FLAT@&amp;t=Utente_CentroAscolto">Centro Ascolto</a>
+	</li>
+
+	
+	([ [[@tag_presa_in_carico_attivazioni@] != [] ] ?? [
+	<li id="Attivazione" class="ui-state-default ui-corner-top data-exist"><a
+		title="vai alle attivazioni"
+		href="?q=object/list&amp;p=Attivazione/_a_inverse_of_presa_in_carico_attivazioni/_c_Utente/_a_ID/_v_@tag_ID#FLAT@">Attivazioni</a></li>
+	] :: [
+	<li id="Attivazione" class="ui-state-default ui-corner-top data-do-not-exist"><a
+		title="registra nuova attivazione"
+		href="?q=object/detail_edit&amp;p=Attivazione&amp;a=_a_inverse_of_presa_in_carico_attivazioni/_c_Utente/_a_ID/_v_@tag_ID#FLAT@">Attivazioni</a></li>
+	] ])
+	
+	
+	
+	([ [[@tag_presa_in_carico_accoglienza@] != [] ] ?? [
+	<li id="Accoglienza" class="ui-state-default ui-corner-top data-exist"><a
+		title="vai alla accoglienze"
+		href="?q=object/detail&amp;p=Accoglienza/_a_inverse_of_presa_in_carico_accoglienza/_c_Utente/_a_ID/_v_@tag_ID#FLAT@">Accoglienza</a></li>
+	] :: [
+	<li id="Accoglienza" class="ui-state-default ui-corner-top data-do-not-exist"><a
+		title="registra nuova accoglienza"
+		href="?q=object/detail_edit&amp;p=Accoglienza&amp;a=_a_inverse_of_presa_in_carico_accoglienza/_c_Utente/_a_ID/_v_@tag_ID#FLAT@">Accoglienza</a></li>
+	] ])  
+
+	([ [[@tag_presa_in_carico_inserimenti_lavorativi@] != [] ] ?? [
+	<li id="Inserimento_Lavorativo" class="ui-state-default ui-corner-top data-exist"><a
+		title="vai agli  inserimenti lavorativi"
+		href="?q=object/list&amp;p=Inserimento_Lavorativo/_a_inverse_of_presa_in_carico_inserimenti_lavorativi/_c_Utente/_a_ID/_v_@tag_ID#FLAT@">Inserimenti Lavorativi</a></li>
+	] :: [
+	<li id="Inserimento_Lavorativo" class="ui-state-default ui-corner-top data-do-not-exist"><a
+		title="registra nuovo Inserimento Lavorativo"
+		href="?q=object/detail_edit&amp;p=Inserimento_Lavorativo&amp;a=_a_inverse_of_presa_in_carico_inserimenti_lavorativi/_c_Utente/_a_ID/_v_@tag_ID#FLAT@">Inserimenti Lavorativi</a></li>
+	] ])  	
+	
+	 
+</ul>
+
+</div>
+
+@END_Utente@
+@END_TEMPLATE@

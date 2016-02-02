@@ -1,0 +1,74 @@
+@BEGIN_TEMPLATE@<div id="detail">
+
+@BEGIN_Utente@
+				
+			<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="javascript:history.back();" title="indietro">
+						<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+						</a>
+						@BLOCK_BEGIN_EDIT@
+						
+							<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=Utente/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati anagrafici">
+								  <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+       						</a>
+						@BLOCK_END_EDIT@
+					</div>
+			</div>	
+				
+			@FUN_MODULE(q=current_data/set/MUTE=1/CLS=Utente/id=@tag_ID#FLAT@/nome=@tag_nome#FLAT@/cognome=@tag_cognome#FLAT@/data_n=@FUN_REPLACE(string=@tag_data_n#FLAT@,search=/,replace=-)@)@    
+			
+
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="system-message-error">
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+					<br /><br />
+      				<a href="javascript:history.back();" title="Indietro">Indietro</a>
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+
+			@BLOCK_BEGIN_RESULT_EMPTY@
+				<div class="system-message-error">
+					Nessun elemento trovato!
+					<br /><br />
+      				<a href="javascript:history.back();" title="Indietro">Indietro</a>
+				</div>
+			@BLOCK_END_RESULT_EMPTY@
+
+
+@FUN_MODULE(q=object_tab_header/detail,p=Utente/_a_ID/_v_@tag_ID#FLAT@)@
+		<script type="text/javascript">
+		$(document).ready(function() {
+			Anastasis.SerenaUtils.getCurrentTabSheet('Utente');
+		});
+		</script>
+
+					
+				
+				<div id="object-body">
+						<table class="paziente" width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
+							<tbody>
+								@tag_foto@@tag_sez_anagrafica@@tag_scheda@@tag_nome@@tag_cognome@@tag_op_primo_colloquio@@tag_data_primo_colloquio@@tag_data_n@@tag_data_arrivo_it@@tag_data_arrivo_bo@@tag_stato_n@@tag_comune_n@@tag_cf@@tag_sesso@@tag_espulso@@tag_deceduto@@tag_sez_residenza@@tag_privo_residenza@@tag_residenza_comune@@tag_residenza_cap@@tag_residenza_via@@tag_residenza_provincia@@tag_sez_situazione_famigliare@@tag_stato_civile@@tag_stato_famiglia@@tag_comune_famiglia@@tag_figli@@tag_sez_situazione_scolastica_ed_economica@@tag_titolo_studio@@tag_situazione_economica@@tag_altro@@tag_automunito@@tag_percentuale_inv@@tag_madrelingua@@tag_lingua_it@@tag_altre_lingue@@tag_sez_domicilio@@tag_domicilio_comune@@tag_domicilio_cap@@tag_domicilio_via@@tag_domicilio_provincia@@tag_nota_domicilio@@tag_residenze_in_alloggio@@tag_tessere@@tag_competenze@@tag_servizi_di_riferimento@@tag_eventi@@tag_contatti@@tag_documenti@@tag_cittadinanza@@tag_presa_in_carico_accoglienza@@tag_presa_in_carico_attivazioni@@tag_presa_in_carico_inserimenti_lavorativi@
+							</tbody>
+						</table>
+					</div>
+
+
+						<div id="object-body-links">
+							<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
+								<tbody>
+									
+								</tbody>
+							</table>
+						</div>
+	
+
+				
+				<div id="object-system" @toggable="label=apri/chiudi attributi di sistema,init_state=closed">
+					<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">
+						<tbody>
+							@tag_creation_user@@tag_creation_date@@tag_deletion_user@@tag_deletion_date@@tag_last_modification_user@@tag_last_modification_date@@tag_activation_flag@@tag_deletion_flag@
+						</tbody>
+					</table>
+				</div>@END_Utente@
+		</div>@END_TEMPLATE@
