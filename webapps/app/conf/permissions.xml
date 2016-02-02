@@ -899,24 +899,6 @@
       </ID>
     </Documento>
     <Evento>
-      <registrato_da>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </registrato_da>
       <utente>
         <admin>
           <set>1</set>
@@ -971,6 +953,24 @@
           <get>1</get>
         </anonymous>
       </tipo_nota>
+      <registrato_da>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </registrato_da>
       <testo>
         <admin>
           <set>1</set>
@@ -1573,24 +1573,6 @@
       </ID>
     </ItemIcfCentroAscolto>
     <Operatore>
-      <eventi_registrati>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </eventi_registrati>
       <user_user_id>
         <admin>
           <set>1</set>
@@ -1681,6 +1663,24 @@
           <get>1</get>
         </anonymous>
       </primi_colloqui>
+      <eventi_registrati>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </eventi_registrati>
       <ID>
         <admin>
           <set>1</set>
@@ -2049,7 +2049,7 @@
           <get>1</get>
         </anonymous>
       </scheda>
-      <op_primo_colloquio>
+      <sez_anagrafica>
         <admin>
           <set>1</set>
           <get>1</get>
@@ -2066,43 +2066,7 @@
           <set>1</set>
           <get>1</get>
         </anonymous>
-      </op_primo_colloquio>
-      <residenze_in_alloggio>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </residenze_in_alloggio>
-      <data_primo_colloquio>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </data_primo_colloquio>
+      </sez_anagrafica>
       <nome>
         <admin>
           <set>1</set>
@@ -2121,24 +2085,6 @@
           <get>1</get>
         </anonymous>
       </nome>
-      <madrelingua>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </madrelingua>
       <cognome>
         <admin>
           <set>1</set>
@@ -2157,7 +2103,7 @@
           <get>1</get>
         </anonymous>
       </cognome>
-      <comune_n>
+      <op_primo_colloquio>
         <admin>
           <set>1</set>
           <get>1</get>
@@ -2174,7 +2120,25 @@
           <set>1</set>
           <get>1</get>
         </anonymous>
-      </comune_n>
+      </op_primo_colloquio>
+      <data_primo_colloquio>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </data_primo_colloquio>
       <data_n>
         <admin>
           <set>1</set>
@@ -2247,24 +2211,6 @@
           <get>1</get>
         </anonymous>
       </tessere>
-      <documenti>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </documenti>
       <stato_n>
         <admin>
           <set>1</set>
@@ -2283,6 +2229,24 @@
           <get>1</get>
         </anonymous>
       </stato_n>
+      <comune_n>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </comune_n>
       <cf>
         <admin>
           <set>1</set>
@@ -2319,7 +2283,7 @@
           <get>1</get>
         </anonymous>
       </sesso>
-      <stato_famiglia>
+      <sez_residenza>
         <admin>
           <set>1</set>
           <get>1</get>
@@ -2336,7 +2300,7 @@
           <set>1</set>
           <get>1</get>
         </anonymous>
-      </stato_famiglia>
+      </sez_residenza>
       <espulso>
         <admin>
           <set>1</set>
@@ -2373,60 +2337,6 @@
           <get>1</get>
         </anonymous>
       </deceduto>
-      <residenza_cap>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </residenza_cap>
-      <servizi_di_riferimento>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </servizi_di_riferimento>
-      <lingua_it>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </lingua_it>
       <foto>
         <admin>
           <set>1</set>
@@ -2445,78 +2355,6 @@
           <get>1</get>
         </anonymous>
       </foto>
-      <residenza_provincia>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </residenza_provincia>
-      <presa_in_carico_attivazioni>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </presa_in_carico_attivazioni>
-      <contatti>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </contatti>
-      <domicilio_via>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </domicilio_via>
       <privo_residenza>
         <admin>
           <set>1</set>
@@ -2535,240 +2373,6 @@
           <get>1</get>
         </anonymous>
       </privo_residenza>
-      <competenze>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </competenze>
-      <comune_famiglia>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </comune_famiglia>
-      <residenza_via>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </residenza_via>
-      <presa_in_carico_inserimenti_lavorativi>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </presa_in_carico_inserimenti_lavorativi>
-      <eventi>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </eventi>
-      <domicilio_provincia>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </domicilio_provincia>
-      <domicilio_comune>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </domicilio_comune>
-      <cittadinanza>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </cittadinanza>
-      <nota_domicilio>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </nota_domicilio>
-      <altre_lingue>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </altre_lingue>
-      <automunito>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </automunito>
-      <stato_civile>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </stato_civile>
-      <domicilio_cap>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </domicilio_cap>
       <residenza_comune>
         <admin>
           <set>1</set>
@@ -2787,6 +2391,114 @@
           <get>1</get>
         </anonymous>
       </residenza_comune>
+      <residenza_cap>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </residenza_cap>
+      <residenza_via>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </residenza_via>
+      <residenza_provincia>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </residenza_provincia>
+      <stato_civile>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </stato_civile>
+      <stato_famiglia>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </stato_famiglia>
+      <comune_famiglia>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </comune_famiglia>
       <figli>
         <admin>
           <set>1</set>
@@ -2805,24 +2517,6 @@
           <get>1</get>
         </anonymous>
       </figli>
-      <altro>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </altro>
       <titolo_studio>
         <admin>
           <set>1</set>
@@ -2859,6 +2553,42 @@
           <get>1</get>
         </anonymous>
       </situazione_economica>
+      <altro>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </altro>
+      <automunito>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </automunito>
       <percentuale_inv>
         <admin>
           <set>1</set>
@@ -2877,6 +2607,330 @@
           <get>1</get>
         </anonymous>
       </percentuale_inv>
+      <madrelingua>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </madrelingua>
+      <lingua_it>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </lingua_it>
+      <altre_lingue>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </altre_lingue>
+      <sez_situazione_famigliare>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </sez_situazione_famigliare>
+      <domicilio_comune>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </domicilio_comune>
+      <domicilio_cap>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </domicilio_cap>
+      <domicilio_via>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </domicilio_via>
+      <domicilio_provincia>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </domicilio_provincia>
+      <nota_domicilio>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </nota_domicilio>
+      <residenze_in_alloggio>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </residenze_in_alloggio>
+      <sez_situazione_scolastica_ed_economica>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </sez_situazione_scolastica_ed_economica>
+      <competenze>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </competenze>
+      <servizi_di_riferimento>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </servizi_di_riferimento>
+      <eventi>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </eventi>
+      <contatti>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </contatti>
+      <documenti>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </documenti>
+      <cittadinanza>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </cittadinanza>
+      <sez_domicilio>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </sez_domicilio>
       <presa_in_carico_accoglienza>
         <admin>
           <set>1</set>
@@ -2895,6 +2949,42 @@
           <get>1</get>
         </anonymous>
       </presa_in_carico_accoglienza>
+      <presa_in_carico_attivazioni>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </presa_in_carico_attivazioni>
+      <presa_in_carico_inserimenti_lavorativi>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </presa_in_carico_inserimenti_lavorativi>
       <ID>
         <admin>
           <set>1</set>

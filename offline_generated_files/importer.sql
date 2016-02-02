@@ -78,11 +78,11 @@ SELECT `utente_id`, `emissione`, `scadenza`, `tipologia`, `sabatodomenica`,curda
 
 delete from Utente;
 insert into `Utente`
-(`ID`,`nome`,`cognome`,`cf`,`figli`,`data_n`,`data_primo_colloquio`,`data_arrivo_it`,`data_arrivo_bo`,`sesso`,`automunito`,`espulso`,`deceduto`,`privo_residenza`,
+(`ID`,`scheda`,`nome`,`cognome`,`cf`,`figli`,`data_n`,`data_primo_colloquio`,`data_arrivo_it`,`data_arrivo_bo`,`sesso`,`automunito`,`espulso`,`deceduto`,`privo_residenza`,
 `residenza_via`,`residenza_cap`,`residenza_comune`,`domicilio_via`,`domicilio_cap`,`domicilio_comune`,`nota_domicilio`,`stato_n`,`comune_n`,`stato_famiglia`,
 `comune_famiglia`,`titolo_studio`,`stato_civile`,`lingua_it`,`altre_lingue`,`madrelingua`,`ID_Operatore_primi_colloqui`,`percentuale_inv`,
 `situazione_economica`,`altro`,`creation_date`, `creation_user`,`deletion_flag`, `activation_flag`)
-SELECT `ID`, `nome`, `cognome`, `cf`, `figli`, `data_n`, `data_primo_colloquio`, `data_arrivo_it`, `data_arrivo_bo`, `sesso`, `automunito`, `espulso`, `deceduto`, 
+SELECT `ID`,`scheda`, `nome`, `cognome`, `cf`, `figli`, `data_n`, `data_primo_colloquio`, `data_arrivo_it`, `data_arrivo_bo`, `sesso`, `automunito`, `espulso`, `deceduto`, 
 `privo_residenza`, `residenza_via`, `residenza_cap`, 
 (select comune from tipi_comuni where ID = `residenza_comune`) as `residenza_comune`, 
 `domicilio_via`, `domicilio_cap`,

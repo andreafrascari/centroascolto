@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <CONFIGURAZIONE>
 	<DATABASE>
-    	<STRINGA_CONNESSIONE>jdbc:mysql://localhost:3306/antoniano</STRINGA_CONNESSIONE>
+    	<STRINGA_CONNESSIONE>jdbc:mysql://localhost:3306/sportellosocialeold</STRINGA_CONNESSIONE>
 <!--     	<STRINGA_CONNESSIONE>jdbc:mysql://anadev:3306/UocMRI</STRINGA_CONNESSIONE> -->
 		<NOME_UTENTE>serena-user</NOME_UTENTE>
 		<PASSWORD>h4w%pi!M</PASSWORD>

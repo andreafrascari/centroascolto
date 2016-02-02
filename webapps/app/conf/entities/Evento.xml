@@ -16,19 +16,6 @@
       </xml> 
     </item>  
     <item> 
-      <name>ID_Operatore_eventi_registrati</name>  
-      <type>6</type>  
-      <xml> 
-        <name>registrato_da</name>  
-        <class>Operatore</class>  
-        <relationship>N-1</relationship>  
-        <target>eventi_registrati</target> 
-      </xml>  
-      <codomain>Operatore</codomain>  
-      <from>ID_Operatore_eventi_registrati</from>  
-      <to>ID</to> 
-    </item>  
-    <item> 
       <name>ID_Utente_eventi</name>  
       <type>6</type>  
       <xml> 
@@ -58,6 +45,19 @@
         <class/> 
       </xml>  
       <decode_class>202</decode_class> 
+    </item>  
+    <item> 
+      <name>ID_Operatore_eventi_registrati</name>  
+      <type>6</type>  
+      <xml> 
+        <name>registrato_da</name>  
+        <class>Operatore</class>  
+        <relationship>N-1</relationship>  
+        <target>eventi_registrati</target> 
+      </xml>  
+      <codomain>Operatore</codomain>  
+      <from>ID_Operatore_eventi_registrati</from>  
+      <to>ID</to> 
     </item>  
     <item> 
       <name>testo</name>  

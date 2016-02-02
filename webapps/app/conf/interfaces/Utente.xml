@@ -10,6 +10,16 @@
       <label>ID</label> 
     </item>  
     <item> 
+      <name>sez_anagrafica</name>  
+      <label>Anagrafica</label>  
+      <detail>Anagrafica</detail>  
+      <detail_edit>Anagrafica</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>3</order> 
+    </item>  
+    <item> 
       <name>scheda</name>  
       <label>scheda</label>  
       <detail>scheda</detail>  
@@ -19,40 +29,7 @@
       <heading>1</heading>  
       <max_length/>  
       <default/>  
-      <order>3</order> 
-    </item>  
-    <item> 
-      <name>op_primo_colloquio</name>  
-      <label>operatore primo colloquio</label>  
-      <detail>operatore primo colloquio</detail>  
-      <detail_edit>operatore primo colloquio</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>11</order> 
-    </item>  
-    <item> 
-      <name>residenze_in_alloggio</name>  
-      <label>residenze in alloggio</label>  
-      <detail>residenze in alloggio</detail>  
-      <detail_edit>residenze in alloggio</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>11</order> 
-    </item>  
-    <item> 
-      <name>data_primo_colloquio</name>  
-      <label>data primo colloquio</label>  
-      <detail>data primo colloquio</detail>  
-      <detail_edit>data primo colloquio</detail_edit>  
-      <filter>data primo colloquio</filter>  
-      <list>data primo colloquio</list>  
-      <heading>1</heading>  
-      <needed>1</needed>  
-      <max_length/>  
-      <default/>  
-      <order>15</order> 
+      <order>5</order> 
     </item>  
     <item> 
       <name>nome</name>  
@@ -65,17 +42,7 @@
       <needed>1</needed>  
       <max_length/>  
       <default/>  
-      <order>21</order> 
-    </item>  
-    <item> 
-      <name>madrelingua</name>  
-      <label>madrelingua</label>  
-      <detail>madrelingua</detail>  
-      <detail_edit>madrelingua</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>21</order> 
+      <order>11</order> 
     </item>  
     <item> 
       <name>cognome</name>  
@@ -90,17 +57,30 @@
       <list_active_field>1</list_active_field>  
       <max_length/>  
       <default/>  
-      <order>31</order> 
+      <order>13</order> 
     </item>  
     <item> 
-      <name>comune_n</name>  
-      <label>comune di nascita</label>  
-      <detail>comune di nascita</detail>  
-      <detail_edit>comune di nascita</detail_edit>  
+      <name>op_primo_colloquio</name>  
+      <label>operatore primo colloquio</label>  
+      <detail>operatore primo colloquio</detail>  
+      <detail_edit>operatore primo colloquio</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
-      <order>31</order> 
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>data_primo_colloquio</name>  
+      <label>data primo colloquio</label>  
+      <detail>data primo colloquio</detail>  
+      <detail_edit>data primo colloquio</detail_edit>  
+      <filter>data primo colloquio</filter>  
+      <list>data primo colloquio</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>25</order> 
     </item>  
     <item> 
       <name>data_n</name>  
@@ -133,27 +113,7 @@
       <heading>1</heading>  
       <max_length/>  
       <default/>  
-      <order>51</order> 
-    </item>  
-    <item> 
-      <name>tessere</name>  
-      <label>tessere</label>  
-      <detail>tessere</detail>  
-      <detail_edit>tessere</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>51</order> 
-    </item>  
-    <item> 
-      <name>documenti</name>  
-      <label>documenti</label>  
-      <detail>documenti</detail>  
-      <detail_edit>documenti</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>61</order> 
+      <order>47</order> 
     </item>  
     <item> 
       <name>stato_n</name>  
@@ -167,6 +127,16 @@
       <order>61</order> 
     </item>  
     <item> 
+      <name>comune_n</name>  
+      <label>comune di nascita</label>  
+      <detail>comune di nascita</detail>  
+      <detail_edit>comune di nascita</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>65</order> 
+    </item>  
+    <item> 
       <name>cf</name>  
       <label>codice fiscale</label>  
       <detail>codice fiscale</detail>  
@@ -176,7 +146,7 @@
       <heading>1</heading>  
       <max_length/>  
       <default/>  
-      <order>63</order> 
+      <order>67</order> 
     </item>  
     <item> 
       <name>sesso</name>  
@@ -185,16 +155,6 @@
       <detail_edit>sesso</detail_edit>  
       <heading>1</heading>  
       <needed>1</needed>  
-      <max_length/>  
-      <default/>  
-      <order>71</order> 
-    </item>  
-    <item> 
-      <name>stato_famiglia</name>  
-      <label>stato famiglia</label>  
-      <detail>stato famiglia</detail>  
-      <detail_edit>stato famiglia</detail_edit>  
-      <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>71</order> 
@@ -220,36 +180,6 @@
       <order>91</order> 
     </item>  
     <item> 
-      <name>residenza_cap</name>  
-      <label>residenza cap</label>  
-      <detail>residenza cap</detail>  
-      <detail_edit>residenza cap</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>91</order> 
-    </item>  
-    <item> 
-      <name>servizi_di_riferimento</name>  
-      <label>servizi di riferimento</label>  
-      <detail>servizi di riferimento</detail>  
-      <detail_edit>servizi di riferimento</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>101</order> 
-    </item>  
-    <item> 
-      <name>lingua_it</name>  
-      <label>lingua it</label>  
-      <detail>lingua it</detail>  
-      <detail_edit>lingua it</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>101</order> 
-    </item>  
-    <item> 
       <name>foto</name>  
       <label>foto</label>  
       <detail>foto</detail>  
@@ -257,57 +187,287 @@
       <heading>2</heading>  
       <max_length/>  
       <default/>  
-      <order>111</order> 
+      <order>95</order> 
+    </item>  
+    <item> 
+      <name>sez_residenza</name>  
+      <label>Residenza</label>  
+      <detail>Residenza</detail>  
+      <detail_edit>Residenza</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>100</order> 
+    </item>  
+    <item> 
+      <name>privo_residenza</name>  
+      <label>privo di residenza</label>  
+      <detail>privo residenza</detail>  
+      <detail_edit>privo residenza</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>101</order> 
+    </item>  
+    <item> 
+      <name>residenza_comune</name>  
+      <label>comune</label>  
+      <detail>residenza comune</detail>  
+      <detail_edit>residenza comune</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>103</order> 
+    </item>  
+    <item> 
+      <name>residenza_cap</name>  
+      <label>cap</label>  
+      <detail>residenza cap</detail>  
+      <detail_edit>residenza cap</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>105</order> 
+    </item>  
+    <item> 
+      <name>residenza_via</name>  
+      <label>via</label>  
+      <detail>residenza via</detail>  
+      <detail_edit>residenza via</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>107</order> 
     </item>  
     <item> 
       <name>residenza_provincia</name>  
-      <label>residenza provincia</label>  
+      <label>provincia</label>  
       <detail>residenza provincia</detail>  
       <detail_edit>residenza provincia</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>109</order> 
+    </item>  
+    <item> 
+      <name>sez_situazione_famigliare</name>  
+      <label>Situazione famigliare</label>  
+      <detail>Situazione famigliare</detail>  
+      <detail_edit>Situazione famigliare</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>120</order> 
+    </item>  
+    <item> 
+      <name>stato_civile</name>  
+      <label>stato civile</label>  
+      <detail>stato civile</detail>  
+      <detail_edit>stato civile</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>121</order> 
+    </item>  
+    <item> 
+      <name>stato_famiglia</name>  
+      <label>stato famiglia</label>  
+      <detail>stato famiglia</detail>  
+      <detail_edit>stato famiglia</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>123</order> 
+    </item>  
+    <item> 
+      <name>comune_famiglia</name>  
+      <label>comune famiglia</label>  
+      <detail>comune famiglia</detail>  
+      <detail_edit>comune famiglia</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>125</order> 
+    </item>  
+    <item> 
+      <name>figli</name>  
+      <label>numero figli</label>  
+      <detail>figli</detail>  
+      <detail_edit>figli</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>129</order> 
+    </item>  
+    <item> 
+      <name>sez_situazione_scolastica_ed_economica</name>  
+      <label>Situazione scolastica ed economica</label>  
+      <detail>Situazione scolastica ed economica</detail>  
+      <detail_edit>Situazione scolastica ed economica</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>140</order> 
+    </item>  
+    <item> 
+      <name>titolo_studio</name>  
+      <label>titolo studio</label>  
+      <detail>titolo studio</detail>  
+      <detail_edit>titolo studio</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>141</order> 
     </item>  
     <item> 
-      <name>presa_in_carico_attivazioni</name>  
-      <label>presa in carico attivazioni</label>  
-      <detail>presa in carico attivazioni</detail>  
-      <detail_edit>presa in carico attivazioni</detail_edit>  
+      <name>situazione_economica</name>  
+      <label>situazione economica</label>  
+      <detail>situazione economica</detail>  
+      <detail_edit>situazione economica</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>143</order> 
+    </item>  
+    <item> 
+      <name>altro</name>  
+      <label>altro</label>  
+      <detail>altro</detail>  
+      <detail_edit>altro</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>145</order> 
+    </item>  
+    <item> 
+      <name>automunito</name>  
+      <label>automunito</label>  
+      <detail>automunito</detail>  
+      <detail_edit>automunito</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>147</order> 
+    </item>  
+    <item> 
+      <name>percentuale_inv</name>  
+      <label>percentuale invalidita</label>  
+      <detail>percentuale inv</detail>  
+      <detail_edit>percentuale inv</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>149</order> 
+    </item>  
+    <item> 
+      <name>madrelingua</name>  
+      <label>madrelingua</label>  
+      <detail>madrelingua</detail>  
+      <detail_edit>madrelingua</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>151</order> 
     </item>  
     <item> 
-      <name>contatti</name>  
-      <label>contatti</label>  
-      <detail>contatti</detail>  
-      <detail_edit>contatti</detail_edit>  
+      <name>lingua_it</name>  
+      <label>livello lingua italiana</label>  
+      <detail>lingua it</detail>  
+      <detail_edit>lingua it</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
-      <order>151</order> 
+      <order>153</order> 
+    </item>  
+    <item> 
+      <name>altre_lingue</name>  
+      <label>altre lingue</label>  
+      <detail>altre lingue</detail>  
+      <detail_edit>altre lingue</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>155</order> 
+    </item>  
+    <item> 
+      <name>sez_domicilio</name>  
+      <label>Domicilio</label>  
+      <detail>Domicilio</detail>  
+      <detail_edit>Domicilio</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>170</order> 
+    </item>  
+    <item> 
+      <name>domicilio_comune</name>  
+      <label>comune</label>  
+      <detail>domicilio comune</detail>  
+      <detail_edit>domicilio comune</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>171</order> 
+    </item>  
+    <item> 
+      <name>domicilio_cap</name>  
+      <label>cap</label>  
+      <detail>domicilio cap</detail>  
+      <detail_edit>domicilio cap</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>172</order> 
     </item>  
     <item> 
       <name>domicilio_via</name>  
-      <label>domicilio via</label>  
+      <label>via</label>  
       <detail>domicilio via</detail>  
       <detail_edit>domicilio via</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
-      <order>191</order> 
+      <order>173</order> 
     </item>  
     <item> 
-      <name>privo_residenza</name>  
-      <label>privo residenza</label>  
-      <detail>privo residenza</detail>  
-      <detail_edit>privo residenza</detail_edit>  
+      <name>domicilio_provincia</name>  
+      <label>provincia</label>  
+      <detail>domicilio provincia</detail>  
+      <detail_edit>domicilio provincia</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
-      <order>201</order> 
+      <order>175</order> 
+    </item>  
+    <item> 
+      <name>nota_domicilio</name>  
+      <label>nota</label>  
+      <detail>nota domicilio</detail>  
+      <detail_edit>nota domicilio</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>176</order> 
+    </item>  
+    <item> 
+      <name>residenze_in_alloggio</name>  
+      <label>residenze in alloggio</label>  
+      <detail>residenze in alloggio</detail>  
+      <detail_edit>residenze in alloggio</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>195</order> 
+    </item>  
+    <item> 
+      <name>tessere</name>  
+      <label>tessere</label>  
+      <detail>tessere</detail>  
+      <detail_edit>tessere</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>199</order> 
     </item>  
     <item> 
       <name>competenze</name>  
@@ -320,34 +480,14 @@
       <order>201</order> 
     </item>  
     <item> 
-      <name>comune_famiglia</name>  
-      <label>comune famiglia</label>  
-      <detail>comune famiglia</detail>  
-      <detail_edit>comune famiglia</detail_edit>  
+      <name>servizi_di_riferimento</name>  
+      <label>servizi di riferimento</label>  
+      <detail>servizi di riferimento</detail>  
+      <detail_edit>servizi di riferimento</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
-      <order>211</order> 
-    </item>  
-    <item> 
-      <name>residenza_via</name>  
-      <label>residenza via</label>  
-      <detail>residenza via</detail>  
-      <detail_edit>residenza via</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>221</order> 
-    </item>  
-    <item> 
-      <name>presa_in_carico_inserimenti_lavorativi</name>  
-      <label>presa in carico inserimenti lavorativi</label>  
-      <detail>presa in carico inserimenti lavorativi</detail>  
-      <detail_edit>presa in carico inserimenti lavorativi</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>231</order> 
+      <order>201</order> 
     </item>  
     <item> 
       <name>eventi</name>  
@@ -360,24 +500,24 @@
       <order>231</order> 
     </item>  
     <item> 
-      <name>domicilio_provincia</name>  
-      <label>domicilio provincia</label>  
-      <detail>domicilio provincia</detail>  
-      <detail_edit>domicilio provincia</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>241</order> 
-    </item>  
-    <item> 
-      <name>domicilio_comune</name>  
-      <label>domicilio comune</label>  
-      <detail>domicilio comune</detail>  
-      <detail_edit>domicilio comune</detail_edit>  
+      <name>contatti</name>  
+      <label>contatti</label>  
+      <detail>contatti</detail>  
+      <detail_edit>contatti</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>251</order> 
+    </item>  
+    <item> 
+      <name>documenti</name>  
+      <label>documenti</label>  
+      <detail>documenti</detail>  
+      <detail_edit>documenti</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>261</order> 
     </item>  
     <item> 
       <name>cittadinanza</name>  
@@ -390,116 +530,6 @@
       <order>261</order> 
     </item>  
     <item> 
-      <name>nota_domicilio</name>  
-      <label>nota domicilio</label>  
-      <detail>nota domicilio</detail>  
-      <detail_edit>nota domicilio</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>271</order> 
-    </item>  
-    <item> 
-      <name>altre_lingue</name>  
-      <label>altre lingue</label>  
-      <detail>altre lingue</detail>  
-      <detail_edit>altre lingue</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>291</order> 
-    </item>  
-    <item> 
-      <name>automunito</name>  
-      <label>automunito</label>  
-      <detail>automunito</detail>  
-      <detail_edit>automunito</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>301</order> 
-    </item>  
-    <item> 
-      <name>stato_civile</name>  
-      <label>stato civile</label>  
-      <detail>stato civile</detail>  
-      <detail_edit>stato civile</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>311</order> 
-    </item>  
-    <item> 
-      <name>domicilio_cap</name>  
-      <label>domicilio cap</label>  
-      <detail>domicilio cap</detail>  
-      <detail_edit>domicilio cap</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>321</order> 
-    </item>  
-    <item> 
-      <name>residenza_comune</name>  
-      <label>residenza comune</label>  
-      <detail>residenza comune</detail>  
-      <detail_edit>residenza comune</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>331</order> 
-    </item>  
-    <item> 
-      <name>figli</name>  
-      <label>figli</label>  
-      <detail>figli</detail>  
-      <detail_edit>figli</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>371</order> 
-    </item>  
-    <item> 
-      <name>altro</name>  
-      <label>altro</label>  
-      <detail>altro</detail>  
-      <detail_edit>altro</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>381</order> 
-    </item>  
-    <item> 
-      <name>titolo_studio</name>  
-      <label>titolo studio</label>  
-      <detail>titolo studio</detail>  
-      <detail_edit>titolo studio</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>391</order> 
-    </item>  
-    <item> 
-      <name>situazione_economica</name>  
-      <label>situazione economica</label>  
-      <detail>situazione economica</detail>  
-      <detail_edit>situazione economica</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>421</order> 
-    </item>  
-    <item> 
-      <name>percentuale_inv</name>  
-      <label>percentuale inv</label>  
-      <detail>percentuale inv</detail>  
-      <detail_edit>percentuale inv</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>441</order> 
-    </item>  
-    <item> 
       <name>presa_in_carico_accoglienza</name>  
       <label>presa in carico accoglienza</label>  
       <detail>presa in carico accoglienza</detail>  
@@ -507,7 +537,27 @@
       <heading>1</heading>  
       <max_length/>  
       <default/>  
-      <order>451</order> 
+      <order>311</order> 
+    </item>  
+    <item> 
+      <name>presa_in_carico_attivazioni</name>  
+      <label>presa in carico attivazioni</label>  
+      <detail>presa in carico attivazioni</detail>  
+      <detail_edit>presa in carico attivazioni</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>321</order> 
+    </item>  
+    <item> 
+      <name>presa_in_carico_inserimenti_lavorativi</name>  
+      <label>presa in carico inserimenti lavorativi</label>  
+      <detail>presa in carico inserimenti lavorativi</detail>  
+      <detail_edit>presa in carico inserimenti lavorativi</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>331</order> 
     </item>  
     <item> 
       <name>owner_user</name>  

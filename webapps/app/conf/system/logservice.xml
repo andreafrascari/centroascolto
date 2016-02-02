@@ -10,7 +10,7 @@
 	</appender>
 	
 	<appender name="ROLLING_FILE_APPENDER" class="org.apache.log4j.RollingFileAppender">
-		<param name="File" value="/var/serena/antoniano/log/log.log"/>
+		<param name="File" value="/var/serena/centroascolto/log/log.log"/>
 		<param name="Append" value="true"/>
 		<param name="MaxFileSize" value="50MB"/>
 		<param name="MaxBackupIndex" value="5"/>
@@ -20,7 +20,7 @@
 	</appender>
 
 	<appender name="ERROR_APPENDER" class="org.apache.log4j.RollingFileAppender">
-		<param name="File" value="/var/serena/antoniano/log/error.log"/>
+		<param name="File" value="/var/serena/centroascolto/log/error.log"/>
 		<param name="Append" value="true"/>
 		<param name="MaxFileSize" value="10MB"/>
 		<param name="MaxBackupIndex" value="5"/>
@@ -34,7 +34,7 @@
 		<param name="SMTPHost" value="mail-server" />
 		<param name="From" value="no-reply@serena.it" />
 		<param name="To" value="serviziweb@anastasis.it" />
-		<param name="Subject" value="SERENA FATAL ERROR - antoniano" />
+		<param name="Subject" value="SERENA FATAL ERROR - centroascolto" />
 		<param name="BufferSize" value="1" />
 		<param name="threshold" value="fatal" />
 		<layout class="org.apache.log4j.PatternLayout">

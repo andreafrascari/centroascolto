@@ -16,20 +16,6 @@
       </xml> 
     </item>  
     <item> 
-      <name>eventi_registrati</name>  
-      <type>8</type>  
-      <xml> 
-        <name>eventi_registrati</name>  
-        <class>Evento</class>  
-        <relationship>1-N</relationship>  
-        <target>registrato_da</target>  
-        <inverse>1</inverse>
-      </xml>  
-      <codomain>Evento</codomain>  
-      <from>ID</from>  
-      <to>ID_Operatore_eventi_registrati</to> 
-    </item>  
-    <item> 
       <name>user_user_id</name>  
       <type>1</type>  
       <xml> 
@@ -74,6 +60,20 @@
       <codomain>Utente</codomain>  
       <from>ID</from>  
       <to>ID_Operatore_primi_colloqui</to> 
+    </item>  
+    <item> 
+      <name>eventi_registrati</name>  
+      <type>8</type>  
+      <xml> 
+        <name>eventi_registrati</name>  
+        <class>Evento</class>  
+        <relationship>1-N</relationship>  
+        <target>registrato_da</target>  
+        <inverse>1</inverse> 
+      </xml>  
+      <codomain>Evento</codomain>  
+      <from>ID</from>  
+      <to>ID_Operatore_eventi_registrati</to> 
     </item>  
     <item> 
       <name>owner_user</name>  
