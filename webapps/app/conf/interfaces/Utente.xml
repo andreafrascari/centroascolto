@@ -452,7 +452,7 @@
     <item> 
       <name>residenze_in_alloggio</name>  
       <label>residenze in alloggio</label>  
-      <detail>residenze in alloggio</detail>  
+      <detail inpage="1">residenze in alloggio</detail>  
       <detail_edit>residenze in alloggio</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
@@ -472,7 +472,7 @@
     <item> 
       <name>competenze</name>  
       <label>competenze</label>  
-      <detail>competenze</detail>  
+      <detail inpage="1">competenze</detail>  
       <detail_edit>competenze</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
@@ -482,7 +482,7 @@
     <item> 
       <name>servizi_di_riferimento</name>  
       <label>servizi di riferimento</label>  
-      <detail>servizi di riferimento</detail>  
+      <detail inpage="1">servizi di riferimento</detail>  
       <detail_edit>servizi di riferimento</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
@@ -512,7 +512,7 @@
     <item> 
       <name>documenti</name>  
       <label>documenti</label>  
-      <detail>documenti</detail>  
+      <detail inpage="1">documenti</detail>  
       <detail_edit>documenti</detail_edit>  
       <heading>1</heading>  
       <max_length/>  

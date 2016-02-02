@@ -48,14 +48,38 @@
 				<div id="object-body">
 						<table class="paziente" width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
 							<tbody>
-								@tag_foto@@tag_sez_anagrafica@@tag_scheda@@tag_nome@@tag_cognome@@tag_op_primo_colloquio@@tag_data_primo_colloquio@@tag_data_n@@tag_data_arrivo_it@@tag_data_arrivo_bo@@tag_stato_n@@tag_comune_n@@tag_cf@@tag_sesso@@tag_espulso@@tag_deceduto@@tag_sez_residenza@@tag_privo_residenza@@tag_residenza_comune@@tag_residenza_cap@@tag_residenza_via@@tag_residenza_provincia@
+							
+								([[[@FUN_GET_URL_PARAM(param=sez)@]==[an] ]?? [
+									@tag_foto@@tag_sez_anagrafica@@tag_scheda@@tag_nome@@tag_cognome@@tag_op_primo_colloquio@@tag_data_primo_colloquio@@tag_data_n@@tag_data_arrivo_it@@tag_data_arrivo_bo@@tag_stato_n@@tag_comune_n@@tag_cf@@tag_sesso@@tag_espulso@@tag_deceduto@
+
+									@tag_contatti@@tag_cittadinanza@
+									
+									@tag_sez_residenza@@tag_privo_residenza@@tag_residenza_comune@@tag_residenza_cap@@tag_residenza_via@@tag_residenza_provincia@
 								
-								@tag_contatti@@tag_cittadinanza@
+									@tag_sez_situazione_famigliare@@tag_stato_civile@@tag_stato_famiglia@@tag_comune_famiglia@@tag_figli@
+																	
+									@tag_sez_domicilio@@tag_domicilio_comune@@tag_domicilio_cap@@tag_domicilio_via@@tag_domicilio_provincia@@tag_nota_domicilio@
+								]])
 								
-								@tag_sez_domicilio@@tag_domicilio_comune@@tag_domicilio_cap@@tag_domicilio_via@@tag_domicilio_provincia@@tag_nota_domicilio@
 								
 								
+								([[[@FUN_GET_URL_PARAM(param=sez)@]==[se] ]?? [
 								
+									@tag_sez_situazione_scolastica_ed_economica@@tag_titolo_studio@@tag_situazione_economica@@tag_altro@@tag_automunito@@tag_percentuale_inv@@tag_madrelingua@@tag_lingua_it@@tag_altre_lingue@
+									
+									@tag_residenze_in_alloggio@
+									@tag_competenze@
+									@tag_servizi_di_riferimento@
+									@tag_documenti@
+								]])						
+								
+								([[[@FUN_GET_URL_PARAM(param=sez)@]==[ca] ]?? [	
+								
+								@FUN_MODULE(q=object/list,p=Evento/_a_utente/_c_Utente/_a_ID/_v_@tag_ID#FLAT@,t=Evento_inlist))@	
+								
+								@FUN_MODULE(q=object/list,p=Tessera/_a_inverse_of_tessere/_c_Utente/_a_ID/_v_@tag_ID#FLAT@,t=Tessera_inlist))@	
+
+								]])
 							</tbody>
 						</table>
 					</div>
