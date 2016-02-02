@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bean> 
-  <title>UOC_Visita</title>  
-  <title_view>Visita/Trattamento</title_view>  
+  <title>IcfStub</title>  
+  <title_view>IcfStub</title_view>  
   <attributes> 
     <item> 
       <name>ID</name>  
@@ -10,99 +10,24 @@
       <label>ID</label> 
     </item>  
     <item> 
-      <name>per_cartella</name>  
-      <label>cartella clinica</label>  
-      <detail>cartella clinica</detail>  
-      <heading>5</heading>  
+      <name>inverse_of_icf</name>  
+      <label>inverse of icf</label>  
+      <detail>inverse of icf</detail>  
+      <heading>1</heading>  
       <needed>1</needed>  
       <max_length/>  
       <default/>  
       <order>11</order> 
     </item>  
     <item> 
-      <name>data</name>  
-      <label>data</label>  
-      <detail>data</detail>  
-      <detail_edit>data</detail_edit>  
-      <filter>data</filter>  
-      <list>data</list>  
+      <name>code</name>  
+      <label>code</label>  
+      <detail>code</detail>  
+      <detail_edit>code</detail_edit>  
       <heading>1</heading>  
-      <needed>1</needed>  
-      <description_field>1</description_field>  
-      <list_active_field>1</list_active_field>  
-      <max_length/>  
-      <default>@TODAY@</default>  
-      <order>21</order> 
-    </item>  
-    <item> 
-      <name>tipo_visita</name>  
-      <label>tipo intervento</label>  
-      <detail>tipo intervento</detail>  
-      <detail_edit>tipo intervento</detail_edit>  
-      <filter>tipo intervento</filter>  
-      <list>tipo intervento</list>  
-      <heading>1</heading>  
-      <needed>1</needed>  
       <max_length/>  
       <default/>  
       <order>21</order> 
-    </item>  
-    <item> 
-      <name>iter_visita</name>  
-      <label>iter</label>  
-      <detail>tipo visita</detail>  
-      <detail_edit>tipo visita</detail_edit>  
-      <filter>tipo visita</filter>  
-      <list>tipo visita</list>  
-      <heading>1</heading>  
-      <needed>1</needed>  
-      <max_length/>  
-      <default/>  
-      <order>25</order> 
-    </item>  
-      <item> 
-      <name>individuale_gruppo</name>  
-      <label>individuale gruppo</label>  
-      <detail>individuale gruppo</detail>  
-      <detail_edit>individuale gruppo</detail_edit>  
-      <heading>1</heading>  
-      <needed>1</needed>  
-      <max_length/>  
-      <default>individuale</default>  
-      <order>31</order> 
-    </item>  
-    <item> 
-      <name>stato</name>  
-      <label>stato</label>  
-      <detail>stato</detail>  
-      <detail_edit>stato</detail_edit>  
-      <filter>stato</filter>  
-      <list>stato</list>  
-      <heading>1</heading>  
-      <needed>1</needed>  
-      <max_length/>  
-      <default></default>  
-      <order>41</order> 
-    </item>  
-     <item> 
-      <name>refertazione</name>  
-      <label>referto</label>  
-      <detail>referto</detail>  
-      <detail_edit>referto</detail_edit>  
-      <detail_help>si puo' inserire in un secondo momento dettandolo...</detail_help>  
-      <filter>referto</filter>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>45</order> 
-    </item>  
-    <item> 
-      <name>note</name>  
-      <label>note</label>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>59</order> 
     </item>  
     <item> 
       <name>owner_user</name>  

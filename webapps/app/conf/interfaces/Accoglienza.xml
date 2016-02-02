@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bean> 
-  <title>UOC_Diagnosi</title>  
-  <title_view>Diagnosi</title_view>  
+  <title>Accoglienza</title>  
+  <title_view>Accoglienza</title_view>  
   <attributes> 
     <item> 
       <name>ID</name>  
@@ -10,50 +10,65 @@
       <label>ID</label> 
     </item>  
     <item> 
-      <name>uoc_accesso_diagnosi</name>  
-      <label>accesso diagnosi</label>  
-      <detail>cartella</detail>  
-      <heading>5</heading>  
-      <max_length/>  
-      <default/>  
-      <order>9</order> 
-    </item>  
-    <item> 
-      <name>data</name>  
-      <label>data</label>  
-      <detail>data</detail>  
-      <detail_edit>data</detail_edit>  
+      <name>inverse_of_presa_in_carico_accoglienza</name>  
+      <label>utente</label>  
+      <detail>utente</detail>  
       <heading>1</heading>  
       <needed>1</needed>  
       <max_length/>  
-      <default>@TODAY@</default>  
+      <default/>  
       <order>11</order> 
     </item>  
     <item> 
-      <name>uoc_diagnosi_principale_codice</name>  
-      <label>diagnosi principale</label>  
-      <detail>diagnosi principale</detail>  
-      <detail_edit>diagnosi principale</detail_edit>  
-      <filter>diagnosi principale</filter>  
-      <list>diagnosi principale</list>  
+      <name>dal</name>  
+      <label>dal</label>  
+      <detail>dal</detail>  
+      <detail_edit>dal</detail_edit>  
+      <filter>dal</filter>  
+      <list>dal</list>  
       <heading>1</heading>  
-      <index>1</index>  
       <needed>1</needed>  
-      <list_active_field>1</list_active_field>  
       <max_length/>  
       <default/>  
-      <order>13</order>  
-      <detail_help>se si sceglie ALTRO, specificare la diagnosi nel campo sottostante</detail_help> 
+      <order>21</order> 
     </item>  
     <item> 
-      <name>diagnosi_principale_altro</name>  
-      <label>altro</label>  
-      <detail>altro</detail>  
-      <detail_edit>altro (diagnosi principale)</detail_edit>  
+      <name>al</name>  
+      <label>al</label>  
+      <detail>al</detail>  
+      <detail_edit>al</detail_edit>  
+      <filter>al</filter>  
+      <list>al</list>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>31</order> 
+    </item>  
+    <item> 
+      <name>dove</name>  
+      <label>dove</label>  
+      <detail>dove</detail>  
+      <detail_edit>dove</detail_edit>  
+      <filter>dove</filter>  
+      <list>dove</list>  
+      <heading>1</heading>  
+      <index>1</index>  
+      <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
+      <max_length/>  
+      <default/>  
+      <order>41</order> 
+    </item>  
+    <item> 
+      <name>classificazioni_icf_accoglienza</name>  
+      <label>classificazioni icf</label>  
+      <detail>classificazioni icf</detail>  
+      <detail_edit>classificazioni icf</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>51</order> 
     </item>  
     <item> 
       <name>note</name>  
@@ -61,10 +76,19 @@
       <detail>note</detail>  
       <detail_edit>note</detail_edit>  
       <heading>1</heading>  
-      <index>1</index>  
       <max_length/>  
       <default/>  
-      <order>121</order> 
+      <order>61</order> 
+    </item>  
+    <item> 
+      <name>allegato</name>  
+      <label>allegato</label>  
+      <detail>allegato</detail>  
+      <detail_edit>allegato</detail_edit>  
+      <heading>2</heading>  
+      <max_length/>  
+      <default/>  
+      <order>71</order> 
     </item>  
     <item> 
       <name>owner_user</name>  
@@ -145,42 +169,6 @@
       <admin_only>1</admin_only>  
       <read_only>1</read_only>  
       <heading>3</heading> 
-    </item>  
-    <item> 
-      <name>icd10_1</name>  
-      <filter autocomplete="">comorbidita</filter>  
-      <list>comorbidita</list>  
-      <detail inpage="1">comorbidita</detail>  
-      <detail_edit autocomplete="cls=ICD10,slot=codice,display1=titolo,display2=definizione,matching=whole,match_display=true">comorbidita</detail_edit>  
-      <detail_help>Digitare i primi 3 caratteri del codice o della patologia, e attendere l'autocompletamento</detail_help>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>114</order> 
-    </item> 
-     <item> 
-      <name>icd10_2</name>  
-      <filter autocomplete="">comorbidita</filter>  
-      <list>comorbidita</list>  
-      <detail inpage="1">comorbidita</detail>  
-      <detail_edit autocomplete="cls=ICD10,slot=codice,display1=titolo,display2=definizione,matching=whole,match_display=true">comorbidita</detail_edit>  
-      <detail_help>Digitare i primi 3 caratteri del codice o della patologia, e attendere l'autocompletamento</detail_help>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>115</order> 
-    </item> 
-     <item> 
-      <name>icd10_3</name>  
-      <filter autocomplete="">comorbidita</filter>  
-      <list>comorbidita</list>  
-      <detail inpage="1">comorbidita</detail>  
-      <detail_edit autocomplete="cls=ICD10,slot=codice,display1=titolo,display2=definizione,matching=whole,match_display=true">comorbidita</detail_edit>  
-      <detail_help>Digitare i primi 3 caratteri del codice o della patologia, e attendere l'autocompletamento</detail_help>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>116</order> 
     </item> 
   </attributes> 
 </bean>

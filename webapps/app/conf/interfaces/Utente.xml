@@ -55,16 +55,6 @@
       <order>15</order> 
     </item>  
     <item> 
-      <name>madrelingua</name>  
-      <label>madrelingua</label>  
-      <detail>madrelingua</detail>  
-      <detail_edit>madrelingua</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>21</order> 
-    </item>  
-    <item> 
       <name>nome</name>  
       <label>nome</label>  
       <detail>nome</detail>  
@@ -73,6 +63,16 @@
       <list>nome</list>  
       <heading>1</heading>  
       <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>madrelingua</name>  
+      <label>madrelingua</label>  
+      <detail>madrelingua</detail>  
+      <detail_edit>madrelingua</detail_edit>  
+      <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>21</order> 
@@ -230,20 +230,20 @@
       <order>91</order> 
     </item>  
     <item> 
-      <name>lingua_it</name>  
-      <label>lingua it</label>  
-      <detail>lingua it</detail>  
-      <detail_edit>lingua it</detail_edit>  
+      <name>servizi_di_riferimento</name>  
+      <label>servizi di riferimento</label>  
+      <detail>servizi di riferimento</detail>  
+      <detail_edit>servizi di riferimento</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>101</order> 
     </item>  
     <item> 
-      <name>servizi_di_riferimento</name>  
-      <label>servizi di riferimento</label>  
-      <detail>servizi di riferimento</detail>  
-      <detail_edit>servizi di riferimento</detail_edit>  
+      <name>lingua_it</name>  
+      <label>lingua it</label>  
+      <detail>lingua it</detail>  
+      <detail_edit>lingua it</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
@@ -270,6 +270,16 @@
       <order>141</order> 
     </item>  
     <item> 
+      <name>presa_in_carico_attivazioni</name>  
+      <label>presa in carico attivazioni</label>  
+      <detail>presa in carico attivazioni</detail>  
+      <detail_edit>presa in carico attivazioni</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>151</order> 
+    </item>  
+    <item> 
       <name>contatti</name>  
       <label>contatti</label>  
       <detail>contatti</detail>  
@@ -290,20 +300,20 @@
       <order>191</order> 
     </item>  
     <item> 
-      <name>competenze</name>  
-      <label>competenze</label>  
-      <detail>competenze</detail>  
-      <detail_edit>competenze</detail_edit>  
+      <name>privo_residenza</name>  
+      <label>privo residenza</label>  
+      <detail>privo residenza</detail>  
+      <detail_edit>privo residenza</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>201</order> 
     </item>  
     <item> 
-      <name>privo_residenza</name>  
-      <label>privo residenza</label>  
-      <detail>privo residenza</detail>  
-      <detail_edit>privo residenza</detail_edit>  
+      <name>competenze</name>  
+      <label>competenze</label>  
+      <detail>competenze</detail>  
+      <detail_edit>competenze</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
@@ -330,10 +340,20 @@
       <order>221</order> 
     </item>  
     <item> 
-      <name>note</name>  
-      <label>note</label>  
-      <detail>note</detail>  
-      <detail_edit>note</detail_edit>  
+      <name>presa_in_carico_inserimenti_lavorativi</name>  
+      <label>presa in carico inserimenti lavorativi</label>  
+      <detail>presa in carico inserimenti lavorativi</detail>  
+      <detail_edit>presa in carico inserimenti lavorativi</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>231</order> 
+    </item>  
+    <item> 
+      <name>eventi</name>  
+      <label>eventi</label>  
+      <detail>eventi</detail>  
+      <detail_edit>eventi</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
@@ -478,6 +498,16 @@
       <max_length/>  
       <default/>  
       <order>441</order> 
+    </item>  
+    <item> 
+      <name>presa_in_carico_accoglienza</name>  
+      <label>presa in carico accoglienza</label>  
+      <detail>presa in carico accoglienza</detail>  
+      <detail_edit>presa in carico accoglienza</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>451</order> 
     </item>  
     <item> 
       <name>owner_user</name>  

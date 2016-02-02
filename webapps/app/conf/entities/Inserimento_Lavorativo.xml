@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bean> 
-  <title>UOC_Allegato</title>  
-  <data_source>UOC_Allegato</data_source>  
-  <order_by>data desc, creation_date desc</order_by>  
+  <title>Inserimento_Lavorativo</title>  
+  <data_source>Inserimento_Lavorativo</data_source>  
+  <order_by/>  
   <xml> 
-    <class>UOC_Allegato</class> 
+    <class>Inserimento_Lavorativo</class> 
   </xml>  
   <attributes> 
     <item> 
@@ -16,73 +16,132 @@
       </xml> 
     </item>  
     <item> 
-      <name>ID_UOC_Accesso_uoc_allegati</name>  
+      <name>ID_Utente_presa_in_carico_inserimenti_lavorativi</name>  
       <type>6</type>  
       <xml> 
-        <name>di_cartella</name>  
-        <class>UOC_Accesso</class>  
+        <name>inverse_of_presa_in_carico_inserimenti_lavorativi</name>  
+        <class>Utente</class>  
         <relationship>N-1</relationship>  
-        <target>uoc_allegati</target>  
+        <target>presa_in_carico_inserimenti_lavorativi</target>  
         <inverse>1</inverse> 
       </xml>  
-      <codomain>UOC_Accesso</codomain>  
-      <from>ID_UOC_Accesso_uoc_allegati</from>  
+      <codomain>Utente</codomain>  
+      <from>ID_Utente_presa_in_carico_inserimenti_lavorativi</from>  
       <to>ID</to> 
     </item>  
     <item> 
-      <name>titolo</name>  
-      <type>1</type>  
-      <xml> 
-        <name>titolo</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>ref_instance</name>  
-      <type>2</type>  
-      <xml> 
-        <name>ref_instance</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>ref_class</name>  
-      <type>1</type>  
-      <xml> 
-        <name>ref_class</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>data</name>  
+      <name>dal</name>  
       <type>3</type>  
       <xml> 
-        <name>data</name>  
+        <name>dal</name>  
         <class/> 
       </xml> 
     </item>  
     <item> 
-      <name>supporto</name>  
-      <type>28</type>  
+      <name>al</name>  
+      <type>3</type>  
       <xml> 
-        <name>supporto</name>  
+        <name>al</name>  
         <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>ente_avviante</name>  
+      <type>10</type>  
+      <xml> 
+        <name>ente_avviante</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>persone_di_riferimento</name>  
+      <type>10</type>  
+      <xml> 
+        <name>persone_di_riferimento</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>settore_inserimento</name>  
+      <type>10</type>  
+      <xml> 
+        <name>settore_inserimento</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>mansioni</name>  
+      <type>10</type>  
+      <xml> 
+        <name>mansioni</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>punti_di_forza</name>  
+      <type>10</type>  
+      <xml> 
+        <name>punti_di_forza</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>punti_di_debolezza</name>  
+      <type>10</type>  
+      <xml> 
+        <name>punti_di_debolezza</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>obiettivi</name>  
+      <type>10</type>  
+      <xml> 
+        <name>obiettivi</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>descrizione</name>  
+      <type>10</type>  
+      <xml> 
+        <name>descrizione</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>diario_incontri</name>  
+      <type>8</type>  
+      <xml> 
+        <name>diario_incontri</name>  
+        <class>Incontro_Inserimento_Lavorativo</class>  
+        <relationship>1-N</relationship>  
+        <target>inverse_of_diario_incontri</target> 
       </xml>  
-      <decode_class>230</decode_class> 
+      <codomain>Incontro_Inserimento_Lavorativo</codomain>  
+      <from>ID</from>  
+      <to>ID_Inserimento_Lavorativo_diario_incontri</to>  
+      <ri>1</ri>
     </item>  
     <item> 
-      <name>metadati</name>  
-      <type>10</type>  
+      <name>classificazioni_icf_inserimento_lavorativo</name>  
+      <type>8</type>  
       <xml> 
-        <name>metadati</name>  
-        <class/> 
-      </xml> 
+        <name>classificazioni_icf_inserimento_lavorativo</name>  
+        <class>ClassificazioneIcfCentroAscolto</class>  
+        <relationship>1-N</relationship>  
+        <target>inserimento_lavorativo</target> 
+      </xml>  
+      <codomain>ClassificazioneIcfCentroAscolto</codomain>  
+      <from>ID</from>  
+      <to>ID_Inserimento_Lavorativo_classificazioni_icf_inserimento_lavo</to>  
+      <ri>1</ri>
     </item>  
     <item> 
-      <name>descrizione_breve</name>  
+      <name>valutazione_finale</name>  
       <type>10</type>  
       <xml> 
-        <name>descrizione_breve</name>  
+        <name>valutazione_finale</name>  
         <class/> 
       </xml> 
     </item>  
@@ -95,51 +154,15 @@
       </xml> 
     </item>  
     <item> 
-      <name>attachment</name>  
+      <name>allegato</name>  
       <type>20</type>  
       <xml> 
-        <name>attachment</name>  
+        <name>allegato</name>  
         <class>_system_attachment</class>  
         <relationship>N-1</relationship> 
       </xml>  
       <codomain>_system_attachment</codomain>  
-      <from>attachment</from>  
-      <to>ID</to> 
-    </item>  
-    <item> 
-      <name>real_attachment_1</name>  
-      <type>20</type>  
-      <xml> 
-        <name>real_attachment_1</name>  
-        <class>_system_attachment</class>  
-        <relationship>N-1</relationship> 
-      </xml>  
-      <codomain>_system_attachment</codomain>  
-      <from>real_attachment_1</from>  
-      <to>ID</to> 
-    </item>  
-    <item> 
-      <name>real_attachment_2</name>  
-      <type>20</type>  
-      <xml> 
-        <name>real_attachment_2</name>  
-        <class>_system_attachment</class>  
-        <relationship>N-1</relationship> 
-      </xml>  
-      <codomain>_system_attachment</codomain>  
-      <from>real_attachment_2</from>  
-      <to>ID</to> 
-    </item>  
-    <item> 
-      <name>real_attachment_3</name>  
-      <type>20</type>  
-      <xml> 
-        <name>real_attachment_3</name>  
-        <class>_system_attachment</class>  
-        <relationship>N-1</relationship> 
-      </xml>  
-      <codomain>_system_attachment</codomain>  
-      <from>real_attachment_3</from>  
+      <from>allegato</from>  
       <to>ID</to> 
     </item>  
     <item> 
@@ -220,35 +243,6 @@
       <xml> 
         <name>deletion_flag</name>  
         <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>1</name>  
-      <type>22</type>  
-      <xml> 
-        <name>paziente</name>  
-        <class>GLO_Paziente</class>  
-        <target>glo_nome</target>  
-        <target>glo_cognome</target>  
-        <relationship/>  
-        <query> 
-          <GLO_Paziente operation="select" target="?"> 
-            <condition> 
-              <glo_accesso_uoc> 
-                <UOC_Accesso> 
-                  <uoc_allegati> 
-                    <UOC_Allegato> 
-                      <ID/> 
-                    </UOC_Allegato> 
-                  </uoc_allegati> 
-                </UOC_Accesso> 
-              </glo_accesso_uoc> 
-            </condition>  
-            <ID/>  
-            <glo_nome/>  
-            <glo_cognome/> 
-          </GLO_Paziente> 
-        </query> 
       </xml> 
     </item> 
   </attributes> 

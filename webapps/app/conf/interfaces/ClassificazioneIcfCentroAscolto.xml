@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bean> 
-  <title>UOC_Diario_Clinico</title>  
-  <title_view>UOC Diario Clinico</title_view>  
+  <title>ClassificazioneIcfCentroAscolto</title>  
+  <title_view>ClassificazioneIcfCentroAscolto</title_view>  
   <attributes> 
     <item> 
       <name>ID</name>  
@@ -10,14 +10,49 @@
       <label>ID</label> 
     </item>  
     <item> 
-      <name>inverse_of_diario_clinico</name>  
-      <label>cartella</label>  
-      <detail>cartella</detail>  
-      <heading>5</heading>  
+      <name>accoglienza</name>  
+      <label>accoglienza</label>  
+      <detail>accoglienza</detail>  
+      <heading>1</heading>  
       <needed>1</needed>  
       <max_length/>  
       <default/>  
       <order>11</order> 
+    </item>  
+    <item> 
+      <name>attivazione</name>  
+      <label>attivazione</label>  
+      <detail>attivazione</detail>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>inserimento_lavorativo</name>  
+      <label>inserimento lavorativo</label>  
+      <detail>inserimento lavorativo</detail>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>31</order> 
+    </item>  
+    <item> 
+      <name>iter</name>  
+      <label>iter</label>  
+      <detail>iter</detail>  
+      <detail_edit>iter</detail_edit>  
+      <filter>iter</filter>  
+      <list>iter</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
+      <max_length/>  
+      <default/>  
+      <order>41</order> 
     </item>  
     <item> 
       <name>data</name>  
@@ -28,24 +63,29 @@
       <list>data</list>  
       <heading>1</heading>  
       <needed>1</needed>  
-      <description_field>1</description_field>  
-      <list_active_field>1</list_active_field>  
-      <max_length/>  
-      <default>@TODAY@</default>  
-      <order>21</order> 
-    </item>  
-    <item> 
-      <name>osservazione</name>  
-      <label>osservazione</label>  
-      <detail>osservazione</detail>  
-      <detail_edit>osservazione</detail_edit>  
-      <filter>osservazione</filter>  
-      <list>osservazione</list>  
-      <heading>1</heading>  
-      <needed>1</needed>  
       <max_length/>  
       <default/>  
-      <order>31</order> 
+      <order>51</order> 
+    </item>  
+    <item> 
+      <name>item</name>  
+      <label>item</label>  
+      <detail>item</detail>  
+      <detail_edit>item</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>61</order> 
+    </item>  
+    <item> 
+      <name>note</name>  
+      <label>note</label>  
+      <detail>note</detail>  
+      <detail_edit>note</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>71</order> 
     </item>  
     <item> 
       <name>owner_user</name>  

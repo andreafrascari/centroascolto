@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bean> 
-  <title>UOC_Lista_Attesa</title>  
-  <title_view>Lista di Attesa Avvio Percorsi</title_view>  
+  <title>Incontro_Inserimento_Lavorativo</title>  
+  <title_view>Incontro_Inserimento_Lavorativo</title_view>  
   <attributes> 
     <item> 
       <name>ID</name>  
@@ -10,75 +10,52 @@
       <label>ID</label> 
     </item>  
     <item> 
-      <name>per_percorso</name>  
-      <label>per percorso</label>  
-      <detail>per percorso</detail>  
-      <heading>5</heading>  
+      <name>inverse_of_diario_incontri</name>  
+      <label>inserimento lavorativo</label>  
+      <detail>inserimento lavorativo</detail>  
+      <heading>1</heading>  
+      <needed>1</needed>  
       <max_length/>  
       <default/>  
-      <order>1</order> 
+      <order>11</order> 
     </item>  
     <item> 
-      <name>data_richiesta</name>  
-      <label>data richiesta</label>  
-      <detail>data richiesta</detail>  
-      <detail_edit>data richiesta</detail_edit>  
-      <filter>data richiesta</filter>  
-      <list>data richiesta</list>  
+      <name>data</name>  
+      <label>data</label>  
+      <detail>data</detail>  
+      <detail_edit>data</detail_edit>  
+      <filter>data</filter>  
+      <list>data</list>  
       <heading>1</heading>  
       <needed>1</needed>  
       <description_field>1</description_field>  
       <list_active_field>1</list_active_field>  
       <max_length/>  
-      <default>@TODAY@</default>  
-      <order>11</order> 
-    </item>  
-    <item> 
-      <name>tipo_percorso</name>  
-      <label>tipo percorso</label>  
-      <detail>tipo percorso</detail>  
-      <detail_edit>tipo percorso</detail_edit>  
-      <filter>tipo percorso</filter>  
-      <heading>1</heading>  
-      <needed>1</needed>  
-      <max_length/>  
       <default/>  
       <order>21</order> 
     </item>  
     <item> 
-      <name>tipo_prenotazione</name>  
-      <label>tipo prenotazione</label>  
-      <detail>prenotazione per</detail>  
-      <detail_edit>prenotazione per</detail_edit>  
-      <filter>prenotazione per</filter>  
-      <list>per</list>  
+      <name>con</name>  
+      <label>con</label>  
+      <detail>con</detail>  
+      <detail_edit>con</detail_edit>  
+      <filter>con</filter>  
+      <list>con</list>  
       <heading>1</heading>  
       <needed>1</needed>  
       <max_length/>  
       <default/>  
-      <order>25</order> 
+      <order>31</order> 
     </item>  
     <item> 
-      <name>priorita</name>  
-      <label>priorita</label>  
-      <detail>priorita</detail>  
-      <detail_edit>priorita</detail_edit>  
-      <filter>priorita</filter>  
-      <list>priorita</list>  
+      <name>descrizione</name>  
+      <label>descrizione</label>  
+      <detail>descrizione</detail>  
+      <detail_edit>descrizione</detail_edit>  
+      <filter>descrizione</filter>  
+      <list>descrizione</list>  
       <heading>1</heading>  
       <needed>1</needed>  
-      <max_length/>  
-      <default/>  
-      <order>35</order> 
-    </item>  
-    <item> 
-      <name>data_appuntamento</name>  
-      <label>appuntamento</label>  
-      <detail>appuntamento</detail>  
-      <detail_edit>appuntamento</detail_edit>  
-      <filter>appuntamento</filter>  
-      <list>appuntamento</list>  
-      <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>41</order> 
@@ -88,16 +65,17 @@
       <label>note</label>  
       <detail>note</detail>  
       <detail_edit>note</detail_edit>  
-      <filter>note</filter>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>51</order> 
     </item>  
     <item> 
-      <name>percorso_iniziato</name>  
-      <label>percorso iniziato</label>  
-      <heading>1</heading>  
+      <name>allegato</name>  
+      <label>allegato</label>  
+      <detail>allegato</detail>  
+      <detail_edit>allegato</detail_edit>  
+      <heading>2</heading>  
       <max_length/>  
       <default/>  
       <order>61</order> 

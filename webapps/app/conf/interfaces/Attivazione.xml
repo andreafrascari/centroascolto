@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bean> 
-  <title>UOC_Operatore</title>  
-  <title_view>Professionista Antoniano Insieme</title_view> 
-  <no_deletion>1</no_deletion> 
+  <title>Attivazione</title>  
+  <title_view>Attivazione</title_view>  
   <attributes> 
     <item> 
       <name>ID</name>  
@@ -11,123 +10,105 @@
       <label>ID</label> 
     </item>  
     <item> 
-      <name>user_name</name>  
-      <label>nome</label>  
-      <detail>nome</detail>  
-      <detail_edit>nome</detail_edit>  
-      <filter>nome</filter>  
-      <list>nome</list>  
+      <name>inverse_of_presa_in_carico_attivazioni</name>  
+      <label>utente</label>  
+      <detail>utente</detail>  
       <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>1</order> 
-    </item>  
-    <item> 
-      <name>user_user_id</name>  
-      <label>username</label>  
-      <detail>username</detail>  
-      <detail_edit>username</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>6</order> 
-    </item>  
-    <item> 
-      <name>user_email</name>  
-      <label>email</label>  
-      <detail>email</detail>  
-      <detail_edit>email</detail_edit>  
-      <filter>email</filter>  
-      <list>email</list>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>9</order> 
-    </item>  
-    <item> 
-      <name>user_phone_number</name>  
-      <label>telefono</label>  
-      <detail>telefono</detail>  
-      <detail_edit>telefono</detail_edit>  
-      <heading>1</heading>  
+      <needed>1</needed>  
       <max_length/>  
       <default/>  
       <order>11</order> 
     </item>  
     <item> 
-      <name>inverse_of_firma1</name>  
-      <label>proposte formate</label>  
-      <detail>proposte formate</detail>  
+      <name>dal</name>  
+      <label>dal</label>  
+      <detail>dal</detail>  
+      <detail_edit>dal</detail_edit>  
+      <filter>dal</filter>  
+      <list>dal</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>al</name>  
+      <label>al</label>  
+      <detail>al</detail>  
+      <detail_edit>al</detail_edit>  
+      <filter>al</filter>  
+      <list>al</list>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>31</order> 
     </item>  
     <item> 
-      <name>inverse_of_firma2</name>  
-      <label>proposte formate</label>  
-      <detail>proposte formate</detail>  
-      <detail_edit>proposte formate</detail_edit>  
+      <name>obiettivi</name>  
+      <label>obiettivi</label>  
+      <detail>obiettivi</detail>  
+      <detail_edit>obiettivi</detail_edit>  
       <heading>1</heading>  
+      <needed>1</needed>  
       <max_length/>  
       <default/>  
-      <order>33</order> 
+      <order>41</order> 
     </item>  
     <item> 
-      <name>inverse_of_firma3</name>  
-      <label>proposte formate</label>  
-      <detail>proposte formate</detail>  
+      <name>descrizione</name>  
+      <label>descrizione</label>  
+      <detail>descrizione</detail>  
+      <detail_edit>descrizione</detail_edit>  
+      <filter>descrizione</filter>  
+      <list>descrizione</list>  
       <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>35</order> 
-    </item>  
-    <item> 
-      <name>inverse_of_firma4</name>  
-      <label>proposte formate</label>  
-      <detail>proposte formate</detail>  
-      <detail_edit>proposte formate</detail_edit>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>39</order> 
-    </item>  
-    <item> 
-      <name>inverse_of_firma1_percorso</name>  
-      <label>percorsi formati</label>  
-      <detail>percorsi formati</detail>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>50</order> 
-    </item>  
-    <item> 
-      <name>inverse_of_firma2_percorso</name>  
-      <label>percorsi formati</label>  
-      <detail>percorsi formati</detail>  
-      <heading>1</heading>  
+      <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
       <max_length/>  
       <default/>  
       <order>51</order> 
     </item>  
     <item> 
-      <name>inverse_of_firma3_percorso</name>  
-      <label>percorsi formati</label>  
-      <detail>percorsi formati</detail>  
-      <detail_edit>percorsi formati</detail_edit>  
+      <name>classificazioni_icf_attivazione</name>  
+      <label>classificazioni icf</label>  
+      <detail>classificazioni icf</detail>  
+      <detail_edit>classificazioni icf</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
-      <order>55</order> 
+      <order>61</order> 
     </item>  
     <item> 
-      <name>inverse_of_firma4_percorso</name>  
-      <label>percorsi formati</label>  
-      <detail>percorsi formati</detail>  
+      <name>valutazione_finale</name>  
+      <label>valutazione finale</label>  
+      <detail>valutazione finale</detail>  
+      <detail_edit>valutazione finale</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
-      <order>59</order> 
+      <order>71</order> 
+    </item>  
+    <item> 
+      <name>note</name>  
+      <label>note</label>  
+      <detail>note</detail>  
+      <detail_edit>note</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>81</order> 
+    </item>  
+    <item> 
+      <name>allegato</name>  
+      <label>allegato</label>  
+      <detail>allegato</detail>  
+      <detail_edit>allegato</detail_edit>  
+      <heading>2</heading>  
+      <max_length/>  
+      <default/>  
+      <order>91</order> 
     </item>  
     <item> 
       <name>owner_user</name>  

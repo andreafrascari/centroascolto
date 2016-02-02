@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bean> 
-  <title>UOC_Diagnosi</title>  
-  <data_source>UOC_Diagnosi</data_source>  
+  <title>Incontro_Inserimento_Lavorativo</title>  
+  <data_source>Incontro_Inserimento_Lavorativo</data_source>  
   <order_by/>  
   <xml> 
-    <class>UOC_Diagnosi</class> 
+    <class>Incontro_Inserimento_Lavorativo</class> 
   </xml>  
   <attributes> 
     <item> 
@@ -16,35 +16,18 @@
       </xml> 
     </item>  
     <item> 
-      <name>uoc_accesso_diagnosi</name>  
-      <type>8</type>  
+      <name>ID_Inserimento_Lavorativo_diario_incontri</name>  
+      <type>6</type>  
       <xml> 
-        <name>uoc_accesso_diagnosi</name>  
-        <class>UOC_Accesso</class>  
-        <relationship>1-N</relationship>  
-        <target>uoc_diagnosi</target>  
+        <name>inverse_of_diario_incontri</name>  
+        <class>Inserimento_Lavorativo</class>  
+        <relationship>N-1</relationship>  
+        <target>diario_incontri</target>  
         <inverse>1</inverse> 
       </xml>  
-      <codomain>UOC_Accesso</codomain>  
-      <from>ID</from>  
-      <to>ID_UOC_Diagnosi_uoc_accesso_diagnosi</to> 
-    </item>  
-    <item> 
-      <name>diagnosi_principale_altro</name>  
-      <type>1</type>  
-      <xml> 
-        <name>diagnosi_principale_altro</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>uoc_diagnosi_principale_codice</name>  
-      <type>28</type>  
-      <xml> 
-        <name>uoc_diagnosi_principale_codice</name>  
-        <class/> 
-      </xml>  
-      <decode_class>229</decode_class> 
+      <codomain>Inserimento_Lavorativo</codomain>  
+      <from>ID_Inserimento_Lavorativo_diario_incontri</from>  
+      <to>ID</to> 
     </item>  
     <item> 
       <name>data</name>  
@@ -55,12 +38,41 @@
       </xml> 
     </item>  
     <item> 
+      <name>con</name>  
+      <type>28</type>  
+      <xml> 
+        <name>con</name>  
+        <class/> 
+      </xml>  
+      <decode_class>215</decode_class> 
+    </item>  
+    <item> 
+      <name>descrizione</name>  
+      <type>10</type>  
+      <xml> 
+        <name>descrizione</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
       <name>note</name>  
       <type>10</type>  
       <xml> 
         <name>note</name>  
         <class/> 
       </xml> 
+    </item>  
+    <item> 
+      <name>allegato</name>  
+      <type>20</type>  
+      <xml> 
+        <name>allegato</name>  
+        <class>_system_attachment</class>  
+        <relationship>N-1</relationship> 
+      </xml>  
+      <codomain>_system_attachment</codomain>  
+      <from>allegato</from>  
+      <to>ID</to> 
     </item>  
     <item> 
       <name>owner_user</name>  
@@ -141,51 +153,6 @@
         <name>deletion_flag</name>  
         <class/> 
       </xml> 
-    </item>  
-    <item> 
-      <name>ID_ICD10_inverse_of_icd10_1</name>  
-      <key>1</key>  
-      <type>6</type>  
-      <xml> 
-        <name>icd10_1</name>  
-        <class>ICD10</class>  
-        <relationship>N-1</relationship>  
-        <target>inverse_of_icd10_1</target> 
-      </xml>  
-      <codomain>ICD10</codomain>  
-      <from>ID_ICD10_inverse_of_icd10_1</from>  
-      <to>ID</to>  
-      <ri>0</ri> 
-    </item> 
-    <item> 
-      <name>ID_ICD10_inverse_of_icd10_2</name>  
-      <key>1</key>  
-      <type>6</type>  
-      <xml> 
-        <name>icd10_2</name>  
-        <class>ICD10</class>  
-        <relationship>N-1</relationship>  
-        <target>inverse_of_icd10_2</target> 
-      </xml>  
-      <codomain>ICD10</codomain>  
-      <from>ID_ICD10_inverse_of_icd10_2</from>  
-      <to>ID</to>  
-      <ri>0</ri> 
-    </item> 
-    <item> 
-      <name>ID_ICD10_inverse_of_icd10_3</name>  
-      <key>1</key>  
-      <type>6</type>  
-      <xml> 
-        <name>icd10_3</name>  
-        <class>ICD10</class>  
-        <relationship>N-1</relationship>  
-        <target>inverse_of_icd10_3</target> 
-      </xml>  
-      <codomain>ICD10</codomain>  
-      <from>ID_ICD10_inverse_of_icd10_3</from>  
-      <to>ID</to>  
-      <ri>0</ri> 
     </item> 
   </attributes> 
 </bean>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bean> 
-  <title>GLO_Paziente</title>  
-  <data_source>GLO_Paziente</data_source>  
-  <order_by>glo_cognome</order_by>  
+  <title>Attivazione</title>  
+  <data_source>Attivazione</data_source>  
+  <order_by/>  
   <xml> 
-    <class>GLO_Paziente</class> 
+    <class>Attivazione</class> 
   </xml>  
   <attributes> 
     <item> 
@@ -16,103 +16,70 @@
       </xml> 
     </item>  
     <item> 
-      <name>glo_cognome</name>  
-      <type>1</type>  
+      <name>ID_Utente_presa_in_carico_attivazioni</name>  
+      <type>6</type>  
       <xml> 
-        <name>glo_cognome</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>glo_nome</name>  
-      <type>1</type>  
-      <xml> 
-        <name>glo_nome</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>glo_codice_fiscale</name>  
-      <type>1</type>  
-      <xml> 
-        <name>glo_codice_fiscale</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>glo_foto</name>  
-      <type>12</type>  
-      <xml> 
-        <name>glo_foto</name>  
-        <class>_system_attachment</class>  
-        <relationship>N-1</relationship> 
+        <name>inverse_of_presa_in_carico_attivazioni</name>  
+        <class>Utente</class>  
+        <relationship>N-1</relationship>  
+        <target>presa_in_carico_attivazioni</target>  
+        <inverse>1</inverse> 
       </xml>  
-      <codomain>_system_attachment</codomain>  
-      <from>glo_foto</from>  
+      <codomain>Utente</codomain>  
+      <from>ID_Utente_presa_in_carico_attivazioni</from>  
       <to>ID</to> 
     </item>  
     <item> 
-      <name>glo_sesso</name>  
-      <type>28</type>  
-      <xml> 
-        <name>glo_sesso</name>  
-        <class/> 
-      </xml>  
-      <decode_class>234</decode_class> 
-    </item>  
-    <item> 
-      <name>glo_data_nascita</name>  
+      <name>dal</name>  
       <type>3</type>  
       <xml> 
-        <name>glo_data_nascita</name>  
+        <name>dal</name>  
         <class/> 
       </xml> 
     </item>  
     <item> 
-      <name>glo_luogo_nascita</name>  
-      <type>1</type>  
+      <name>al</name>  
+      <type>3</type>  
       <xml> 
-        <name>glo_luogo_nascita</name>  
+        <name>al</name>  
         <class/> 
       </xml> 
     </item>  
     <item> 
-      <name>glo_indirizzo</name>  
-      <type>1</type>  
+      <name>obiettivi</name>  
+      <type>10</type>  
       <xml> 
-        <name>glo_indirizzo</name>  
+        <name>obiettivi</name>  
         <class/> 
       </xml> 
     </item>  
     <item> 
-      <name>glo_comune</name>  
-      <type>1</type>  
+      <name>descrizione</name>  
+      <type>10</type>  
       <xml> 
-        <name>glo_comune</name>  
+        <name>descrizione</name>  
         <class/> 
       </xml> 
     </item>  
     <item> 
-      <name>glo_nazionalita</name>  
-      <type>1</type>  
+      <name>classificazioni_icf_attivazione</name>  
+      <type>8</type>  
       <xml> 
-        <name>glo_nazionalita</name>  
-        <class/> 
-      </xml> 
+        <name>classificazioni_icf_attivazione</name>  
+        <class>ClassificazioneIcfCentroAscolto</class>  
+        <relationship>1-N</relationship>  
+        <target>attivazione</target> 
+      </xml>  
+      <codomain>ClassificazioneIcfCentroAscolto</codomain>  
+      <from>ID</from>  
+      <to>ID_Attivazione_classificazioni_icf_attivazione</to>  
+      <ri>1</ri>
     </item>  
     <item> 
-      <name>glo_telefono</name>  
-      <type>1</type>  
+      <name>valutazione_finale</name>  
+      <type>10</type>  
       <xml> 
-        <name>glo_telefono</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>glo_email</name>  
-      <type>14</type>  
-      <xml> 
-        <name>glo_email</name>  
+        <name>valutazione_finale</name>  
         <class/> 
       </xml> 
     </item>  
@@ -125,18 +92,16 @@
       </xml> 
     </item>  
     <item> 
-      <name>glo_accesso_uoc</name>  
-      <type>8</type>  
+      <name>allegato</name>  
+      <type>20</type>  
       <xml> 
-        <name>glo_accesso_uoc</name>  
-        <class>UOC_Accesso</class>  
-        <relationship>1-N</relationship>  
-        <target>uoc_paziente_glo</target> 
+        <name>allegato</name>  
+        <class>_system_attachment</class>  
+        <relationship>N-1</relationship> 
       </xml>  
-      <codomain>UOC_Accesso</codomain>  
-      <from>ID</from>  
-      <to>ID_GLO_Paziente_glo_accesso_uoc</to>  
-      <ri>1</ri>
+      <codomain>_system_attachment</codomain>  
+      <from>allegato</from>  
+      <to>ID</to> 
     </item>  
     <item> 
       <name>owner_user</name>  

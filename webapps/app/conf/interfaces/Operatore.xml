@@ -11,7 +11,7 @@
     </item>  
     <item> 
       <name>user_user_id</name>  
-      <label>user user id</label>  
+      <label>username</label>  
       <detail>user user id</detail>  
       <detail_edit>user user id</detail_edit>  
       <filter>user user id</filter>  
@@ -24,7 +24,7 @@
     </item>  
     <item> 
       <name>user_name</name>  
-      <label>user name</label>  
+      <label>nome</label>  
       <detail>user name</detail>  
       <detail_edit>user name</detail_edit>  
       <filter>user name</filter>  
@@ -39,7 +39,7 @@
     </item>  
     <item> 
       <name>user_email</name>  
-      <label>user email</label>  
+      <label>email</label>  
       <detail>user email</detail>  
       <detail_edit>user email</detail_edit>  
       <filter>user email</filter>  
@@ -51,7 +51,7 @@
     </item>  
     <item> 
       <name>user_phone_number</name>  
-      <label>user phone number</label>  
+      <label>telefono</label>  
       <detail>user phone number</detail>  
       <detail_edit>user phone number</detail_edit>  
       <filter>user phone number</filter>  
@@ -69,6 +69,15 @@
       <max_length/>  
       <default/>  
       <order>51</order> 
+    </item>  
+    <item> 
+      <name>eventi_registrati</name>  
+      <label>eventi registrati</label>  
+      <detail>eventi registrati</detail>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>61</order> 
     </item>  
     <item> 
       <name>owner_user</name>  

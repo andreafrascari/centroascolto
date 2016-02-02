@@ -16,6 +16,61 @@
       </xml> 
     </item>  
     <item> 
+      <name>ID_Utente_documenti</name>  
+      <type>6</type>  
+      <xml> 
+        <name>inverse_of_documenti</name>  
+        <class>Utente</class>  
+        <relationship>N-1</relationship>  
+        <target>documenti</target>  
+        <inverse>1</inverse> 
+      </xml>  
+      <codomain>Utente</codomain>  
+      <from>ID_Utente_documenti</from>  
+      <to>ID</to> 
+    </item>  
+    <item> 
+      <name>tipologia_documento</name>  
+      <type>28</type>  
+      <xml> 
+        <name>tipologia_documento</name>  
+        <class/> 
+      </xml>  
+      <decode_class>201</decode_class> 
+    </item>  
+    <item> 
+      <name>numero</name>  
+      <type>1</type>  
+      <xml> 
+        <name>numero</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>scadenza</name>  
+      <type>3</type>  
+      <xml> 
+        <name>scadenza</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>rilasciato_da</name>  
+      <type>1</type>  
+      <xml> 
+        <name>rilasciato_da</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>descrizione</name>  
+      <type>10</type>  
+      <xml> 
+        <name>descrizione</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
       <name>allegato</name>  
       <type>20</type>  
       <xml> 
@@ -50,61 +105,6 @@
       <codomain>_system_attachment</codomain>  
       <from>allegato_2</from>  
       <to>ID</to> 
-    </item>  
-    <item> 
-      <name>descrizione</name>  
-      <type>10</type>  
-      <xml> 
-        <name>descrizione</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>ID_Utente_documenti</name>  
-      <type>6</type>  
-      <xml> 
-        <name>inverse_of_documenti</name>  
-        <class>Utente</class>  
-        <relationship>N-1</relationship>  
-        <target>documenti</target>  
-        <inverse>1</inverse>
-      </xml>  
-      <codomain>Utente</codomain>  
-      <from>ID_Utente_documenti</from>  
-      <to>ID</to> 
-    </item>  
-    <item> 
-      <name>numero</name>  
-      <type>1</type>  
-      <xml> 
-        <name>numero</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>rilasciato_da</name>  
-      <type>1</type>  
-      <xml> 
-        <name>rilasciato_da</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>scadenza</name>  
-      <type>3</type>  
-      <xml> 
-        <name>scadenza</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>tipologia_documento</name>  
-      <type>28</type>  
-      <xml> 
-        <name>tipologia_documento</name>  
-        <class/> 
-      </xml>  
-      <decode_class>201</decode_class> 
     </item>  
     <item> 
       <name>owner_user</name>  

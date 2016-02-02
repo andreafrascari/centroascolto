@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bean> 
-  <title>ICD10</title>  
-  <title_view>ICD10</title_view>  
+  <title>Item_Icf_D</title>  
+  <title_view>Attivita e Partecipazione</title_view>  
   <read_only>1</read_only>
   <attributes> 
     <item> 
@@ -11,17 +11,10 @@
       <label>ID</label> 
     </item>  
     <item> 
-      <name>inverse_of_icd10</name>  
-      <label>in</label>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>2</order> 
-    </item>  
-    <item> 
       <name>codice</name>  
       <label>codice</label>  
       <detail>codice</detail>  
+      <detail_edit>codice</detail_edit>  
       <filter autocomplete="">codice</filter>  
       <list>codice</list>  
       <heading>1</heading>  
@@ -34,22 +27,12 @@
       <order>11</order> 
     </item>  
     <item> 
-      <name>titolo</name>  
-      <label>titolo</label>  
-      <detail>titolo</detail>  
-      <filter>titolo</filter>  
-      <list>titolo</list>  
-      <heading>1</heading>  
-      <index>1</index>  
-      <max_length/>  
-      <default/>  
-      <order>15</order> 
-    </item>  
-    <item> 
-      <name>definizione</name>  
+      <name>descrizione</name>  
       <label>definizione</label>  
       <detail>definizione</detail>  
-      <filter>definizione</filter>
+      <detail_edit>definizione</detail_edit>  
+      <filter>definizione</filter>  
+      <list>definizione</list>  
       <heading>1</heading>  
       <index>1</index>  
       <needed>1</needed>  
@@ -58,11 +41,12 @@
       <order>21</order> 
     </item>  
     <item> 
-      <name>note</name>  
-      <label>note</label>  
-      <detail>note</detail>  
-      <detail_edit>note</detail_edit>  
-      <filter>note</filter>  
+      <name>procedure_criteri</name>  
+      <label>descrizione</label>  
+      <detail>descrizione</detail>  
+      <detail_edit>descrizione</detail_edit>  
+      <filter>descrizione</filter>  
+      <list>descrizione</list>  
       <heading>1</heading>  
       <index>1</index>  
       <max_length/>  
@@ -73,49 +57,98 @@
       <name>inclusione</name>  
       <label>inclusione</label>  
       <detail>inclusione</detail>  
+      <detail_edit>inclusione</detail_edit>  
       <filter>inclusione</filter>  
       <heading>1</heading>  
       <index>1</index>  
       <max_length/>  
       <default/>  
-      <order>41</order> 
+      <order>31</order> 
     </item>  
     <item> 
       <name>esclusione</name>  
       <label>esclusione</label>  
       <detail>esclusione</detail>  
+      <detail_edit>esclusione</detail_edit>  
       <filter>esclusione</filter>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
-      <order>51</order> 
+      <order>41</order> 
+    </item>  
+    <item> 
+      <name>esemplificazioni</name>  
+      <label>esemplificazioni</label>  
+      <heading>1</heading>  
+      <index>1</index>  
+      <max_length/>  
+      <default/>  
+      <order>53</order> 
     </item>  
     <item> 
       <name>tipo</name>  
       <label>tipo</label>  
-      <filter>tipo</filter>  
+      <detail_edit>tipo</detail_edit>  
       <heading>1</heading>  
+      <index>1</index>  
       <max_length/>  
       <default/>  
       <order>55</order> 
     </item>  
     <item> 
-      <name>padre</name>  
+      <name>padre_d</name>  
       <label>item padre</label>  
-      <list>item padre</list>  
+      <detail>item padre</detail>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>61</order> 
     </item>  
     <item> 
-      <name>figli</name>  
+      <name>figli_d</name>  
       <label>sottoitem</label>  
+      <detail>sottoitem</detail>  
+      <detail_edit>sottoitem</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
-      <order>71</order>  
-      <detail_edit>figli</detail_edit>
+      <order>71</order> 
+    </item>  
+    <item> 
+      <name>valutazioni_d</name>  
+      <label>valutazioni d</label>  
+      <detail_edit>valutazioni d</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>81</order> 
+    </item>  
+    <item> 
+      <name>profile_d</name>  
+      <label>presente nei profili</label>  
+      <detail>presente nei profili</detail>    
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>91</order> 
+    </item>  
+    <item> 
+      <name>indicatori</name>  
+      <label>indicatori</label>  
+      <detail inpage="1">indicatori</detail>    
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>95</order> 
+    </item>  
+    <item> 
+      <name>domande</name>  
+      <label>domande e risposte</label>  
+      <detail inpage="1">domande e risposte</detail> 
+      <heading>4</heading>  
+      <max_length/>  
+      <default/>  
+      <order>111</order> 
     </item>  
     <item> 
       <name>creation_user</name>  
@@ -180,14 +213,6 @@
       <admin_only>1</admin_only>  
       <read_only>1</read_only>  
       <heading>3</heading> 
-    </item>  
-    <item> 
-      <name>inverse_of_comorbidita_icd10</name>  
-      <label>inverse_of_comorbidita_icd10</label>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>2</order> 
     </item> 
   </attributes> 
 </bean>

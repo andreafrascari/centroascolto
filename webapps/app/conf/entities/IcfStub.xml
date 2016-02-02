@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bean> 
-  <title>UOC_Diario_Clinico</title>  
-  <data_source>UOC_Diario_Clinico</data_source>  
-  <order_by>data desc</order_by>  
+  <title>IcfStub</title>  
+  <data_source>IcfStub</data_source>  
+  <order_by/>  
   <xml> 
-    <class>UOC_Diario_Clinico</class> 
+    <class>IcfStub</class> 
   </xml>  
   <attributes> 
     <item> 
@@ -16,34 +16,26 @@
       </xml> 
     </item>  
     <item> 
-      <name>ID_UOC_Accesso_diario_clinico</name>  
-      <type>6</type>  
+      <name>code</name>  
+      <type>1</type>  
       <xml> 
-        <name>inverse_of_diario_clinico</name>  
-        <class>UOC_Accesso</class>  
-        <relationship>N-1</relationship>  
-        <target>diario_clinico</target>  
-        <inverse>1</inverse> 
+        <name>code</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>inverse_of_icf</name>  
+      <type>8</type>  
+      <xml> 
+        <name>inverse_of_icf</name>  
+        <class>ItemIcfCentroAscolto</class>  
+        <relationship>1-N</relationship>  
+        <target>icf</target>  
+        <inverse>1</inverse>
       </xml>  
-      <codomain>UOC_Accesso</codomain>  
-      <from>ID_UOC_Accesso_diario_clinico</from>  
-      <to>ID</to> 
-    </item>  
-    <item> 
-      <name>data</name>  
-      <type>3</type>  
-      <xml> 
-        <name>data</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>osservazione</name>  
-      <type>10</type>  
-      <xml> 
-        <name>osservazione</name>  
-        <class/> 
-      </xml> 
+      <codomain>ItemIcfCentroAscolto</codomain>  
+      <from>ID</from>  
+      <to>ID_IcfStub_inverse_of_icf</to> 
     </item>  
     <item> 
       <name>owner_user</name>  

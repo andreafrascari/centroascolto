@@ -25,8 +25,20 @@
 
 
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
+(213,'dove',1,0);
+INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
+(213,0,'it','San Ruffillo',1,0),
+(213,1,'it','Via Gorizia',1,0),
+(213,2,'it','Centro ascolto',1,0);
+INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
 (DA VALORIZZARE,'stato',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
+INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
+(214,'iter',1,0);
+INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
+(214,0,'it','iniziale',1,0),
+(214,1,'it','intermedia',1,0),
+(214,2,'it','finale',1,0);
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
 (200,'tipologia_competenza',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
@@ -40,6 +52,13 @@ INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 (202,0,'it','Sanitaria',1,0);
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
+(215,'con',1,0);
+INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
+(215,0,'it','beneficiario',1,0),
+(215,1,'it','tutor aziendale',1,0),
+(215,2,'it','ente avviante',1,0),
+(215,3,'it','mental coach',1,0);
+INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
 (203,'tipologia_alloggio',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 (203,0,'it','affitto',1,0);
@@ -48,22 +67,30 @@ INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 (204,0,'it','SST',1,0);
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
-(DA VALORIZZARE,'sabatodomenica',1,0);
-INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
-INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
 (205,'tipologia_tessera',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 (205,0,'it','salute',1,0);
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
-(206,'automunito',1,0);
+(DA VALORIZZARE,'sabatodomenica',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
-(206,0,'it','si',1,0),
-(206,1,'it','no',1,0);
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
-(DA VALORIZZARE,'deceduto',1,0);
+(211,'stato_n',1,0);
+INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
+(211,0,'it','Bulgaria',1,0);
+INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
+(208,'sesso',1,0);
+INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
+(208,0,'it','maschio',1,0),
+(208,1,'it','femmina',1,0),
+(208,2,'it','trans',1,0);
+INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
+(DA VALORIZZARE,'stato_famiglia',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
 (DA VALORIZZARE,'espulso',1,0);
+INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
+INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
+(DA VALORIZZARE,'deceduto',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
 (207,'lingua_it',1,0);
@@ -73,30 +100,22 @@ INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_
 (DA VALORIZZARE,'privo_residenza',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
-(208,'sesso',1,0);
+(206,'automunito',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
-(208,0,'it','maschio',1,0),
-(208,1,'it','femmina',1,0),
-(208,2,'it','trans',1,0);
-INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
-(209,'situazione_economica',1,0);
-INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
-(209,0,'it','privo di reddito',1,0);
+(206,0,'it','si',1,0),
+(206,1,'it','no',1,0);
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
 (210,'stato_civile',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 (210,0,'it','Celibe/Nubile',1,0);
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
-(DA VALORIZZARE,'stato_famiglia',1,0);
-INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
-INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
-(211,'stato_n',1,0);
-INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
-(211,0,'it','Bulgaria',1,0);
-INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
 (212,'titolo_studio',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 (212,0,'it','Diploma',1,0);
+INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
+(209,'situazione_economica',1,0);
+INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
+(209,0,'it','privo di reddito',1,0);
 
 
 -- Fine parte dinamica 

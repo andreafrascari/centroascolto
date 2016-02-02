@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bean> 
-  <title>UOC_Eval_Icf</title>  
-  <data_source>UOC_Eval_Icf</data_source>  
-  <order_by>data, item</order_by>  
+  <title>ClassificazioneIcfCentroAscolto</title>  
+  <data_source>ClassificazioneIcfCentroAscolto</data_source>  
+  <order_by/>  
   <xml> 
-    <class>UOC_Eval_Icf</class> 
+    <class>ClassificazioneIcfCentroAscolto</class> 
   </xml>  
   <attributes> 
     <item> 
@@ -16,18 +16,55 @@
       </xml> 
     </item>  
     <item> 
-      <name>ID_UOC_Percorso_icf</name>  
+      <name>ID_Accoglienza_classificazioni_icf_accoglienza</name>  
       <type>6</type>  
       <xml> 
-        <name>di_percorso</name>  
-        <class>UOC_Percorso</class>  
+        <name>accoglienza</name>  
+        <class>Accoglienza</class>  
         <relationship>N-1</relationship>  
-        <target>icf</target>  
+        <target>classificazioni_icf_accoglienza</target>  
         <inverse>1</inverse> 
       </xml>  
-      <codomain>UOC_Percorso</codomain>  
-      <from>ID_UOC_Percorso_icf</from>  
+      <codomain>Accoglienza</codomain>  
+      <from>ID_Accoglienza_classificazioni_icf_accoglienza</from>  
       <to>ID</to> 
+    </item>  
+    <item> 
+      <name>ID_Attivazione_classificazioni_icf_attivazione</name>  
+      <type>6</type>  
+      <xml> 
+        <name>attivazione</name>  
+        <class>Attivazione</class>  
+        <relationship>N-1</relationship>  
+        <target>classificazioni_icf_attivazione</target>  
+        <inverse>1</inverse> 
+      </xml>  
+      <codomain>Attivazione</codomain>  
+      <from>ID_Attivazione_classificazioni_icf_attivazione</from>  
+      <to>ID</to> 
+    </item>  
+    <item> 
+      <name>ID_Inserimento_Lavorativo_classificazioni_icf_inserimento_lavo</name>  
+      <type>6</type>  
+      <xml> 
+        <name>inserimento_lavorativo</name>  
+        <class>Inserimento_Lavorativo</class>  
+        <relationship>N-1</relationship>  
+        <target>classificazioni_icf_inserimento_lavorativo</target>  
+        <inverse>1</inverse> 
+      </xml>  
+      <codomain>Inserimento_Lavorativo</codomain>  
+      <from>ID_Inserimento_Lavorativo_classificazioni_icf_inserimento_lavo</from>  
+      <to>ID</to> 
+    </item>  
+    <item> 
+      <name>iter</name>  
+      <type>28</type>  
+      <xml> 
+        <name>iter</name>  
+        <class/> 
+      </xml>  
+      <decode_class>214</decode_class> 
     </item>  
     <item> 
       <name>data</name>  
@@ -39,30 +76,17 @@
     </item>  
     <item> 
       <name>item</name>  
-      <type>28</type>  
+      <type>8</type>  
       <xml> 
         <name>item</name>  
-        <class/> 
+        <class>ItemIcfCentroAscolto</class>  
+        <relationship>1-N</relationship>  
+        <target>inverse_of_item</target> 
       </xml>  
-      <decode_class>333</decode_class> 
-    </item>  
-    <item> 
-      <name>performance</name>  
-      <type>28</type>  
-      <xml> 
-        <name>performance</name>  
-        <class/> 
-      </xml>  
-      <decode_class>334</decode_class> 
-    </item>  
-    <item> 
-      <name>capacita</name>  
-      <type>28</type>  
-      <xml> 
-        <name>capacita</name>  
-        <class/> 
-      </xml>  
-      <decode_class>334</decode_class> 
+      <codomain>ItemIcfCentroAscolto</codomain>  
+      <from>ID</from>  
+      <to>ID_ClassificazioneIcfCentroAscolto_item</to>  
+      <ri>1</ri>
     </item>  
     <item> 
       <name>note</name>  
@@ -151,24 +175,6 @@
         <name>deletion_flag</name>  
         <class/> 
       </xml> 
-    </item>  
-    <item> 
-      <name>obiettivo_raggiunto</name>  
-      <type>28</type>  
-      <xml> 
-        <name>obiettivo_raggiunto</name>  
-        <class/> 
-      </xml>  
-      <decode_class>338</decode_class> 
-    </item>  
-    <item> 
-      <name>menomazione</name>  
-      <type>28</type>  
-      <xml> 
-        <name>menomazione</name>  
-        <class/> 
-      </xml>  
-      <decode_class>334</decode_class> 
     </item> 
   </attributes> 
 </bean>

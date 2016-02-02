@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bean> 
-  <title>ICD10</title>  
-  <data_source>ICD10</data_source>  
-  <order_by>codice</order_by>  
+  <title>ItemIcfCentroAscolto</title>  
+  <data_source>ItemIcfCentroAscolto</data_source>  
+  <order_by/>  
   <xml> 
-    <class>ICD10</class> 
+    <class>ItemIcfCentroAscolto</class> 
   </xml>  
   <attributes> 
     <item> 
@@ -16,89 +16,70 @@
       </xml> 
     </item>  
     <item> 
-      <name>codice</name>  
-      <key>1</key>  
-      <type>1</type>  
+      <name>ID_ClassificazioneIcfCentroAscolto_item</name>  
+      <type>6</type>  
       <xml> 
-        <name>codice</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>titolo</name>  
-      <type>1</type>  
-      <xml> 
-        <name>titolo</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>definizione</name>  
-      <type>10</type>  
-      <xml> 
-        <name>definizione</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>note</name>  
-      <type>10</type>  
-      <xml> 
-        <name>note</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>inclusione</name>  
-      <type>10</type>  
-      <xml> 
-        <name>inclusione</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>esclusione</name>  
-      <type>10</type>  
-      <xml> 
-        <name>esclusione</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>tipo</name>  
-      <type>1</type>  
-      <xml> 
-        <name>tipo</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
-      <name>ID_ICD10_figli</name>  
-      <type>17</type>  
-      <xml> 
-        <name>padre</name>  
-        <class>ICD10</class>  
+        <name>inverse_of_item</name>  
+        <class>ClassificazioneIcfCentroAscolto</class>  
         <relationship>N-1</relationship>  
-        <target>figli</target>  
+        <target>item</target>  
         <inverse>1</inverse> 
       </xml>  
-      <codomain>ICD10</codomain>  
-      <from>ID_ICD10_figli</from>  
+      <codomain>ClassificazioneIcfCentroAscolto</codomain>  
+      <from>ID_ClassificazioneIcfCentroAscolto_item</from>  
       <to>ID</to> 
     </item>  
     <item> 
-      <name>figli</name>  
-      <type>8</type>  
+      <name>codice_centro_ascolto</name>  
+      <type>1</type>  
       <xml> 
-        <name>figli</name>  
-        <class>ICD10</class>  
-        <relationship>1-N</relationship>  
-        <target>padre</target> 
+        <name>codice_centro_ascolto</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>descrizione</name>  
+      <type>10</type>  
+      <xml> 
+        <name>descrizione</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>classificazione</name>  
+      <type>2</type>  
+      <xml> 
+        <name>classificazione</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>allegato</name>  
+      <type>20</type>  
+      <xml> 
+        <name>allegato</name>  
+        <class>_system_attachment</class>  
+        <relationship>N-1</relationship> 
       </xml>  
-      <codomain>ICD10</codomain>  
-      <from>ID</from>  
-      <to>ID_ICD10_figli</to>  
-      <ri>1</ri>
+      <codomain>_system_attachment</codomain>  
+      <from>allegato</from>  
+      <to>ID</to> 
+    </item>  
+    <item> 
+      <name>owner_user</name>  
+      <type>2</type>  
+      <xml> 
+        <name>owner_user</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>owner_group</name>  
+      <type>2</type>  
+      <xml> 
+        <name>owner_group</name>  
+        <class/> 
+      </xml> 
     </item>  
     <item> 
       <name>creation_user</name>  
@@ -163,6 +144,21 @@
         <name>deletion_flag</name>  
         <class/> 
       </xml> 
-    </item>
+    </item>  
+    <item> 
+      <name>ID_Icf</name>  
+      <priority>1</priority>  
+      <type>7</type>  
+      <xml> 
+        <name>icf</name>  
+        <class>Item_Icf_D</class>  
+        <relationship>1-1</relationship>  
+        <target>valutazioni_d</target> 
+      </xml>  
+      <codomain>Item_Icf_D</codomain>  
+      <from>ID_Icf</from>  
+      <to>ID</to>  
+      <ri>1</ri> 
+    </item> 
   </attributes> 
 </bean>

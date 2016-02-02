@@ -16,14 +16,6 @@
       </xml> 
     </item>  
     <item> 
-      <name>emissione</name>  
-      <type>3</type>  
-      <xml> 
-        <name>emissione</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
       <name>ID_Utente_tessere</name>  
       <type>6</type>  
       <xml> 
@@ -31,20 +23,28 @@
         <class>Utente</class>  
         <relationship>N-1</relationship>  
         <target>tessere</target>  
-        <inverse>1</inverse>
+        <inverse>1</inverse> 
       </xml>  
       <codomain>Utente</codomain>  
       <from>ID_Utente_tessere</from>  
       <to>ID</to> 
     </item>  
     <item> 
-      <name>sabatodomenica</name>  
+      <name>tipologia_tessera</name>  
       <type>28</type>  
       <xml> 
-        <name>sabatodomenica</name>  
+        <name>tipologia_tessera</name>  
         <class/> 
       </xml>  
-      <decode_class>DA VALORIZZARE</decode_class> 
+      <decode_class>205</decode_class> 
+    </item>  
+    <item> 
+      <name>emissione</name>  
+      <type>3</type>  
+      <xml> 
+        <name>emissione</name>  
+        <class/> 
+      </xml> 
     </item>  
     <item> 
       <name>scadenza</name>  
@@ -55,13 +55,13 @@
       </xml> 
     </item>  
     <item> 
-      <name>tipologia_tessera</name>  
+      <name>sabatodomenica</name>  
       <type>28</type>  
       <xml> 
-        <name>tipologia_tessera</name>  
+        <name>sabatodomenica</name>  
         <class/> 
       </xml>  
-      <decode_class>205</decode_class> 
+      <decode_class>DA VALORIZZARE</decode_class> 
     </item>  
     <item> 
       <name>owner_user</name>  

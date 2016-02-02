@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bean> 
-  <title>UOC_Eval_Icf</title>  
-  <title_view>Classificazione Icf</title_view>  
+  <title>Evento</title>  
+  <title_view>Evento</title_view>  
   <attributes> 
     <item> 
       <name>ID</name>  
@@ -10,76 +10,76 @@
       <label>ID</label> 
     </item>  
     <item> 
-      <name>di_percorso</name>  
-      <label>di percorso</label>  
-      <detail>di percorso</detail>  
-      <heading>5</heading>  
+      <name>utente</name>  
+      <label>utente</label>  
+      <detail>utente</detail>  
+      <heading>1</heading>  
       <needed>1</needed>  
       <max_length/>  
       <default/>  
-      <order>31</order> 
+      <order>11</order> 
     </item>  
     <item> 
       <name>data</name>  
       <label>data</label>  
       <detail>data</detail>  
       <detail_edit>data</detail_edit>  
+      <filter>data</filter>  
+      <list>data</list>  
       <heading>1</heading>  
-      <needed>1</needed>  
-      <max_length/>  
-      <default>@TODAY@</default>  
-      <order>41</order> 
-    </item>  
-    <item> 
-      <name>item</name>  
-      <label>item</label>  
-      <detail>item</detail>  
-      <detail_edit>item</detail_edit>  
-      <filter>item</filter>  
-      <list>item</list>  
-      <heading>5</heading>  
       <needed>1</needed>  
       <description_field>1</description_field>  
       <list_active_field>1</list_active_field>  
       <max_length/>  
       <default/>  
-      <order>61</order> 
+      <order>21</order> 
     </item>  
     <item> 
-      <name>performance</name>  
-      <label>performance</label>  
-      <detail>performance</detail>  
-      <detail_edit>performance</detail_edit>  
-      <filter>performance</filter>  
-      <list>performance</list>  
+      <name>tipo_nota</name>  
+      <label>tipo nota</label>  
+      <detail>tipo nota</detail>  
+      <detail_edit>tipo nota</detail_edit>  
+      <filter>tipo nota</filter>  
+      <list>tipo nota</list>  
       <heading>1</heading>  
+      <needed>1</needed>  
       <max_length/>  
       <default/>  
-      <order>75</order>  
+      <order>31</order> 
     </item>  
     <item> 
-      <name>capacita</name>  
-      <label>capacita</label>  
-      <detail>capacita</detail>  
-      <detail_edit>capacita</detail_edit>  
-      <filter>capacita</filter>  
-      <list>capacita</list>  
+      <name>registrato_da</name>  
+      <label>registrato da</label>  
+      <detail>registrato da</detail>  
+      <detail_edit>registrato da</detail_edit>  
       <heading>1</heading>  
+      <needed>1</needed>  
       <max_length/>  
       <default/>  
-      <order>81</order>  
-      <detail_help>PER TUTTI I QUALIFICATORI: 0 - NESSUNA difficolta/limitazione (assente, trascurabile...) 0-4%; 1 - difficolta/limitazione LIEVE (leggera, piccola...) 5-24%; 2 - difficolta/limitazione MEDIA (moderata, discreta...) 25-49%; 3 - difficolta/limitazione GRAVE (notevole, estrema...) 50-95%; 4 - difficolta/limitazione COMPLETA (totale...) 96-100%; 8 - non specificato; 9 - non applicabile;</detail_help> 
+      <order>35</order> 
     </item>  
     <item> 
-      <name>note</name>  
-      <label>note</label>  
-      <detail>note</detail>  
-      <detail_edit>note</detail_edit>  
-      <filter>note</filter>  
+      <name>testo</name>  
+      <label>testo</label>  
+      <detail>testo</detail>  
+      <detail_edit>testo</detail_edit>  
+      <filter>testo</filter>  
+      <list>testo</list>  
       <heading>1</heading>  
+      <needed>1</needed>  
       <max_length/>  
       <default/>  
-      <order>91</order> 
+      <order>41</order> 
+    </item>  
+    <item> 
+      <name>allegato</name>  
+      <label>allegato</label>  
+      <detail>allegato</detail>  
+      <detail_edit>allegato</detail_edit>  
+      <heading>2</heading>  
+      <max_length/>  
+      <default/>  
+      <order>51</order> 
     </item>  
     <item> 
       <name>owner_user</name>  
@@ -160,6 +160,6 @@
       <admin_only>1</admin_only>  
       <read_only>1</read_only>  
       <heading>3</heading> 
-    </item>      
+    </item> 
   </attributes> 
 </bean>

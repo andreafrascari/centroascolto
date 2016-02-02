@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <bean> 
-  <title>UOC_Allegato</title>  
-  <title_view>Allegato</title_view>  
-  <list_page_dimension>20</list_page_dimension>  
+  <title>Inserimento_Lavorativo</title>  
+  <title_view>Inserimento_Lavorativo</title_view>  
   <attributes> 
     <item> 
       <name>ID</name>  
@@ -11,157 +10,181 @@
       <label>ID</label> 
     </item>  
     <item> 
-      <name>di_cartella</name>  
-      <label>di cartella</label>  
-      <detail>di cartella</detail>  
-      <heading>5</heading>  
-      <max_length/>  
-      <default/>  
-      <order>1</order> 
-    </item>  
-    <item> 
-      <name>titolo</name>  
-      <label>titolo</label>  
-      <detail>titolo</detail>  
-      <detail_edit>titolo</detail_edit>  
-      <filter>titolo</filter>  
-      <list>titolo</list>  
-      <heading>1</heading>  
-      <index>1</index>  
-      <needed>1</needed>  
-      <description_field>1</description_field>  
-      <list_active_field>1</list_active_field>  
-      <max_length/>  
-      <default/>  
-      <order>3</order> 
-    </item>  
-    <item> 
-      <name>ref_instance</name>  
-      <label>ref instance</label>  
-      <detail_edit>ref instance</detail_edit>  
-      <heading>1</heading>  
-      <read_only>1</read_only>  
-      <max_length/>  
-      <default/>  
-      <order>11</order>  
-      <read_only>1</read_only> 
-    </item>  
-    <item> 
-      <name>ref_class</name>  
-      <label>classe</label>  
-      <detail_edit>contesto</detail_edit>  
-      <filter>contesto</filter>  
-      <list>contesto</list>  
-      <heading>1</heading>  
-      <read_only>1</read_only>  
-      <max_length/>  
-      <default/>  
-      <order>21</order>  
-      <read_only>1</read_only> 
-    </item>  
-    <item> 
-      <name>data</name>  
-      <label>data</label>  
-      <detail>data</detail>  
-      <detail_edit>data</detail_edit>  
-      <filter>data</filter>  
-      <list>data</list>  
+      <name>inverse_of_presa_in_carico_inserimenti_lavorativi</name>  
+      <label>utente</label>  
+      <detail>utente</detail>  
       <heading>1</heading>  
       <needed>1</needed>  
       <max_length/>  
-      <default>@TODAY@</default>  
-      <order>25</order> 
+      <default/>  
+      <order>11</order> 
     </item>  
     <item> 
-      <name>supporto</name>  
-      <label>supporto</label>  
-      <detail>supporto</detail>  
-      <detail_edit>supporto</detail_edit>  
-      <filter>supporto</filter>  
-      <list>supporto</list>  
+      <name>dal</name>  
+      <label>dal</label>  
+      <detail>dal</detail>  
+      <detail_edit>dal</detail_edit>  
+      <filter>dal</filter>  
+      <list>dal</list>  
       <heading>1</heading>  
       <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>al</name>  
+      <label>al</label>  
+      <detail>al</detail>  
+      <detail_edit>al</detail_edit>  
+      <filter>al</filter>  
+      <list>al</list>  
+      <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>31</order> 
     </item>  
     <item> 
-      <name>metadati</name>  
-      <label>metadati</label>  
-      <detail>metadati</detail>  
-      <detail_edit>metadati</detail_edit>  
-      <filter>metadati</filter>  
+      <name>ente_avviante</name>  
+      <label>ente avviante</label>  
+      <detail>ente avviante</detail>  
+      <detail_edit>ente avviante</detail_edit>  
+      <filter>ente avviante</filter>  
+      <list>ente avviante</list>  
       <heading>1</heading>  
-      <index>1</index>  
+      <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
       <max_length/>  
       <default/>  
-      <order>35</order> 
+      <order>41</order> 
     </item>  
     <item> 
-      <name>descrizione_breve</name>  
-      <label>descrizione breve</label>  
-      <detail>descrizione breve</detail>  
-      <detail_edit>descrizione breve</detail_edit>  
-      <filter>descrizione breve</filter>  
+      <name>persone_di_riferimento</name>  
+      <label>persone di riferimento</label>  
+      <detail>persone di riferimento</detail>  
+      <detail_edit>persone di riferimento</detail_edit>  
       <heading>1</heading>  
-      <index>1</index>  
+      <needed>1</needed>  
       <max_length/>  
       <default/>  
-      <order>39</order>  
-      <detail_help>da utilizzare per le ricerche: per allegati contestuali vengono compilati automaticamente, per allegati generici sono da utilizzare in luogo della logica a cartelle</detail_help> 
+      <order>51</order> 
+    </item>  
+    <item> 
+      <name>settore_inserimento</name>  
+      <label>settore inserimento</label>  
+      <detail>settore inserimento</detail>  
+      <detail_edit>settore inserimento</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>61</order> 
+    </item>  
+    <item> 
+      <name>mansioni</name>  
+      <label>mansioni</label>  
+      <detail>mansioni</detail>  
+      <detail_edit>mansioni</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>71</order> 
+    </item>  
+    <item> 
+      <name>punti_di_forza</name>  
+      <label>punti di forza</label>  
+      <detail>punti di forza</detail>  
+      <detail_edit>punti di forza</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>81</order> 
+    </item>  
+    <item> 
+      <name>punti_di_debolezza</name>  
+      <label>punti di debolezza</label>  
+      <detail>punti di debolezza</detail>  
+      <detail_edit>punti di debolezza</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>91</order> 
+    </item>  
+    <item> 
+      <name>obiettivi</name>  
+      <label>obiettivi</label>  
+      <detail>obiettivi</detail>  
+      <detail_edit>obiettivi</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>101</order> 
+    </item>  
+    <item> 
+      <name>descrizione</name>  
+      <label>descrizione</label>  
+      <detail>descrizione</detail>  
+      <detail_edit>descrizione</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>111</order> 
+    </item>  
+    <item> 
+      <name>diario_incontri</name>  
+      <label>diario incontri</label>  
+      <detail>diario incontri</detail>  
+      <detail_edit>diario incontri</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>121</order> 
+    </item>  
+    <item> 
+      <name>classificazioni_icf_inserimento_lavorativo</name>  
+      <label>classificazioni icf</label>  
+      <detail>classificazioni icf</detail>  
+      <detail_edit>classificazioni icf</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>131</order> 
+    </item>  
+    <item> 
+      <name>valutazione_finale</name>  
+      <label>valutazione finale</label>  
+      <detail>valutazione finale</detail>  
+      <detail_edit>valutazione finale</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>141</order> 
     </item>  
     <item> 
       <name>note</name>  
       <label>note</label>  
       <detail>note</detail>  
       <detail_edit>note</detail_edit>  
-      <filter>note</filter>  
       <heading>1</heading>  
-      <index>1</index>  
       <max_length/>  
       <default/>  
-      <order>40</order> 
+      <order>151</order> 
     </item>  
     <item> 
-      <name>attachment</name>  
-      <label>scarica</label>  
-      <detail>scarica</detail>  
-      <detail_edit>carica il file</detail_edit>  
-      <list>scarica</list>  
+      <name>allegato</name>  
+      <label>allegato</label>  
+      <detail>allegato</detail>  
+      <detail_edit>allegato</detail_edit>  
       <heading>2</heading>  
       <max_length/>  
       <default/>  
-      <order>111</order> 
-    </item>  
-    <item> 
-      <name>real_attachment_1</name>  
-      <label>scarica</label>  
-      <detail>scarica (2)</detail>  
-      <detail_edit>carica il file (2)</detail_edit>  
-      <heading>2</heading>  
-      <max_length/>  
-      <default/>  
-      <order>210</order> 
-    </item>  
-    <item> 
-      <name>real_attachment_2</name>  
-      <label>scarica</label>  
-      <detail>scarica (3)</detail>  
-      <detail_edit>carica il file (3)</detail_edit>  
-      <heading>2</heading>  
-      <max_length/>  
-      <default/>  
-      <order>271</order> 
-    </item>  
-    <item> 
-      <name>real_attachment_3</name>  
-      <label>scarica</label>  
-      <detail>scarica (4)</detail>  
-      <detail_edit>carica il file (4)</detail_edit>  
-      <heading>2</heading>  
-      <max_length/>  
-      <default/>  
-      <order>311</order> 
+      <order>161</order> 
     </item>  
     <item> 
       <name>owner_user</name>  
@@ -242,17 +265,6 @@
       <admin_only>1</admin_only>  
       <read_only>1</read_only>  
       <heading>3</heading> 
-    </item>  
-    <item> 
-      <name>paziente</name>  
-      <label>paziente</label>  
-      <detail>paziente</detail>  
-      <filter>paziente</filter>  
-      <list>paziente</list>  
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>171</order> 
     </item> 
   </attributes> 
 </bean>
