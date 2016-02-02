@@ -372,8 +372,8 @@
     <item> 
       <name>lingua_it</name>  
       <label>livello lingua italiana</label>  
-      <detail>lingua it</detail>  
-      <detail_edit>lingua it</detail_edit>  
+      <detail>livello lingua italiana</detail>  
+      <detail_edit>livello lingua italiana</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  

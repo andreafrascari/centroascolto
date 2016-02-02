@@ -2,7 +2,7 @@
 
 <bean> 
   <title>ItemIcfCentroAscolto</title>  
-  <title_view>ItemIcfCentroAscolto</title_view>  
+  <title_view>Item Icf Centro Ascolto</title_view>  
   <attributes> 
     <item> 
       <name>ID</name>  
@@ -13,7 +13,7 @@
       <name>inverse_of_item</name>  
       <label>classificazione</label>  
       <detail>classificazione</detail>  
-      <heading>1</heading>  
+      <heading>5</heading>  
       <needed>1</needed>  
       <max_length/>  
       <default/>  

@@ -22,7 +22,7 @@
         <name>stato</name>  
         <class/> 
       </xml>  
-      <decode_class>DA VALORIZZARE</decode_class> 
+      <decode_class>211</decode_class> 
     </item>  
     <item> 
       <name>ID_Utente_cittadinanza</name>  

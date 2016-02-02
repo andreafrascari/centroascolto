@@ -2,7 +2,7 @@
 
 <bean> 
   <title>Incontro_Inserimento_Lavorativo</title>  
-  <title_view>Incontro_Inserimento_Lavorativo</title_view>  
+  <title_view>Incontro</title_view>  
   <attributes> 
     <item> 
       <name>ID</name>  
@@ -13,7 +13,7 @@
       <name>inverse_of_diario_incontri</name>  
       <label>inserimento lavorativo</label>  
       <detail>inserimento lavorativo</detail>  
-      <heading>1</heading>  
+      <heading>5</heading>  
       <needed>1</needed>  
       <max_length/>  
       <default/>  

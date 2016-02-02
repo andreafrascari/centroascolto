@@ -2,7 +2,7 @@
 
 <bean> 
   <title>ServizioDiRiferimento</title>  
-  <title_view>ServizioDiRiferimento</title_view>  
+  <title_view>Servizio di riferimento</title_view>  
   <attributes> 
     <item> 
       <name>ID</name>  
@@ -13,7 +13,7 @@
       <name>inverse_of_servizi_di_riferimento</name>  
       <label>utente</label>  
       <detail>utente</detail>  
-      <heading>1</heading>  
+      <heading>5</heading>  
       <needed>1</needed>  
       <max_length/>  
       <default/>  

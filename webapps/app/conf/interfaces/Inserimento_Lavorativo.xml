@@ -2,7 +2,7 @@
 
 <bean> 
   <title>Inserimento_Lavorativo</title>  
-  <title_view>Inserimento_Lavorativo</title_view>  
+  <title_view>Inserimento Lavorativo</title_view>  
   <attributes> 
     <item> 
       <name>ID</name>  
@@ -13,7 +13,7 @@
       <name>inverse_of_presa_in_carico_inserimenti_lavorativi</name>  
       <label>utente</label>  
       <detail>utente</detail>  
-      <heading>1</heading>  
+      <heading>5</heading>  
       <needed>1</needed>  
       <max_length/>  
       <default/>  

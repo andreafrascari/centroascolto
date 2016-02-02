@@ -4,7 +4,7 @@ INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`
 select 212, ID, 'it', nome, 1, 0, 'admin',curdate() from  `tipi_titoli_studio`;
 
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`,`creation_user`,`creation_date`) 
-select 204, ID, 'it', nome, 1, 0, 'admin',curdate() from  `tipi_tipo_servizio`;
+select 204, ID, 'it', nome, 1, 0, 'admin',curdate() from  `tipi_servizi`;
 
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`,`creation_user`,`creation_date`) 
 select 205, ID, 'it', nome, 1, 0, 'admin',curdate() from  `tipi_tessere`;
@@ -35,6 +35,17 @@ select 201, ID, 'it', nome, 1, 0, 'admin',curdate() from  `tipi_documenti`;
 insert into `_system_user` 
 (`user_name`,`user_user_id`,`user_password`,`user_phone_number`,`creation_date`, `creation_user`,`deletion_flag`, `activation_flag`)
 SELECT concat(`nome`,' ', `cognome`), `username`, `password`, `operativo`,curdate(),'admin',0,1 FROM `operatori` WHERE ID > 1;
+
+
+/* extra che era cablato!!! */
+
+INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
+(207,1,'it','nessuna',1,0),
+(207,2,'it','scarsa',1,0),
+(207,3,'it','sufficiente',1,0),
+(207,4,'it','buona',1,0),
+(207,5,'it','ottima',1,0),
+(207,6,'it','madrelingua',1,0);
 
 
 /*
@@ -75,6 +86,10 @@ SELECT `utente_id`, `numero`, `descrizione`,curdate(),'admin',0,1 FROM `telefoni
 insert into `Tessera` 
 (`ID_Utente_tessere`,`emissione`,`scadenza`,`tipologia_tessera`,`sabatodomenica`,`creation_date`, `creation_user`,`deletion_flag`, `activation_flag`)
 SELECT `utente_id`, `emissione`, `scadenza`, `tipologia`, `sabatodomenica`,curdate(),'admin',0,1 FROM `tessere`;
+
+insert into  `ServizioDiRiferimento` 
+(`ID_Utente_servizi_di_riferimento`,`tipo_servizio`,`referente`,`info`,`creation_date`, `creation_user`,`deletion_flag`, `activation_flag`)
+SELECT `utente_id`, `servizio_id`, `referente`, `info`,curdate(), 'admin',0,1 FROM `servizi`;
 
 delete from Utente;
 insert into `Utente`

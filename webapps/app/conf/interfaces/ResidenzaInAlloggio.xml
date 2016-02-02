@@ -2,7 +2,7 @@
 
 <bean> 
   <title>ResidenzaInAlloggio</title>  
-  <title_view>ResidenzaInAlloggio</title_view>  
+  <title_view>Residenza in alloggio</title_view>  
   <attributes> 
     <item> 
       <name>ID</name>  
@@ -13,7 +13,7 @@
       <name>inverse_of_residenze_in_alloggio</name>  
       <label>utente</label>  
       <detail>utente</detail>  
-      <heading>1</heading>  
+      <heading>5</heading>  
       <needed>1</needed>  
       <max_length/>  
       <default/>  

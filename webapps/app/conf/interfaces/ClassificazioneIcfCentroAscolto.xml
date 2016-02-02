@@ -2,7 +2,7 @@
 
 <bean> 
   <title>ClassificazioneIcfCentroAscolto</title>  
-  <title_view>ClassificazioneIcfCentroAscolto</title_view>  
+  <title_view>Classificazione Icf Centro Ascolto</title_view>  
   <attributes> 
     <item> 
       <name>ID</name>  
@@ -13,7 +13,7 @@
       <name>accoglienza</name>  
       <label>accoglienza</label>  
       <detail>accoglienza</detail>  
-      <heading>1</heading>  
+      <heading>5</heading>  
       <needed>1</needed>  
       <max_length/>  
       <default/>  
