@@ -115,50 +115,6 @@
       <ri>1</ri>
     </item>  
     <item> 
-      <name>profile_d</name>  
-      <type>11</type>  
-      <xml> 
-        <name>profile_d</name>  
-        <class>Profile_Icf</class>  
-        <relationship>M-N</relationship>  
-        <target>p_item_d</target> 
-      </xml>  
-      <codomain>Profile_Icf</codomain>  
-      <mapping>rel_Profile_Icf_p_item_d_to_Item_Icf_D_profile_d</mapping>  
-      <domain_from>ID</domain_from>  
-      <domain_to>ID_Item_Icf_D_profile_d</domain_to>  
-      <codomain_from>ID_Profile_Icf_p_item_d</codomain_from>  
-      <codomain_to>ID</codomain_to> 
-    </item>  
-    <item> 
-      <name>indicatori</name>  
-      <type>8</type>  
-      <xml> 
-        <name>indicatori</name>  
-        <class>Indicatore_Attivita_Partecipazione</class>  
-        <relationship>1-N</relationship>  
-        <target>item_attivita</target> 
-      </xml>  
-      <codomain>Indicatore_Attivita_Partecipazione</codomain>  
-      <from>ID</from>  
-      <to>ID_Item_Icf_D_indicatori</to>  
-      <ri>1</ri>
-    </item>  
-    <item> 
-      <name>domande</name>  
-      <type>8</type>  
-      <xml> 
-        <name>domande</name>  
-        <class>Integrazione_Domanda_Risposta</class>  
-        <relationship>1-N</relationship>  
-        <target>item_da</target> 
-      </xml>  
-      <codomain>Integrazione_Domanda_Risposta</codomain>  
-      <from>ID</from>  
-      <to>ID_Item_Icf_D_domande</to>  
-      <ri>1</ri>
-    </item>  
-    <item> 
       <name>creation_user</name>  
       <type>1</type>  
       <xml> 

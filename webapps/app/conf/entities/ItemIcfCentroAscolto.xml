@@ -3,7 +3,7 @@
 <bean> 
   <title>ItemIcfCentroAscolto</title>  
   <data_source>ItemIcfCentroAscolto</data_source>  
-  <order_by/>  
+  <order_by>ordine</order_by>  
   <xml> 
     <class>ItemIcfCentroAscolto</class> 
   </xml>  
@@ -34,6 +34,14 @@
       <type>1</type>  
       <xml> 
         <name>codice_centro_ascolto</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>ordine</name>  
+      <type>2</type>  
+      <xml> 
+        <name>ordine</name>  
         <class/> 
       </xml> 
     </item>  

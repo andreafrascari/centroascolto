@@ -124,33 +124,6 @@
       <order>81</order> 
     </item>  
     <item> 
-      <name>profile_d</name>  
-      <label>presente nei profili</label>  
-      <detail>presente nei profili</detail>    
-      <heading>1</heading>  
-      <max_length/>  
-      <default/>  
-      <order>91</order> 
-    </item>  
-    <item> 
-      <name>indicatori</name>  
-      <label>indicatori</label>  
-      <detail inpage="1">indicatori</detail>    
-      <heading>4</heading>  
-      <max_length/>  
-      <default/>  
-      <order>95</order> 
-    </item>  
-    <item> 
-      <name>domande</name>  
-      <label>domande e risposte</label>  
-      <detail inpage="1">domande e risposte</detail> 
-      <heading>4</heading>  
-      <max_length/>  
-      <default/>  
-      <order>111</order> 
-    </item>  
-    <item> 
       <name>creation_user</name>  
       <label>creation_user</label>  
       <detail>utente creazione</detail>  

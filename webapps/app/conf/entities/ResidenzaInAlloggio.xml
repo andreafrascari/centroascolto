@@ -3,7 +3,7 @@
 <bean> 
   <title>ResidenzaInAlloggio</title>  
   <data_source>ResidenzaInAlloggio</data_source>  
-  <order_by/>  
+  <order_by>dal</order_by>  
   <xml> 
     <class>ResidenzaInAlloggio</class> 
   </xml>  

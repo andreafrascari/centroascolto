@@ -3,7 +3,7 @@
 <bean> 
   <title>Utente</title>  
   <data_source>Utente</data_source>  
-  <order_by/>  
+  <order_by>cognome</order_by>  
   <xml> 
     <class>Utente</class> 
   </xml>  

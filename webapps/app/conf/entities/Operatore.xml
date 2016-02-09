@@ -3,7 +3,7 @@
 <bean> 
   <title>Operatore</title>  
   <data_source>_system_user</data_source>  
-  <order_by/>  
+  <order_by>user_name</order_by>
   <xml> 
     <class>Operatore</class> 
   </xml>  
