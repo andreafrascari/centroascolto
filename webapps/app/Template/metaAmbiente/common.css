@@ -1612,3 +1612,7 @@ li.thd ul li a {color:#333; }
 ul.nav li.cartella-aperta a	{color: #d9edf7/*#d6e9c6*/;}
 
 #contentwrap .panel-body {margin-left:5px;} 
+
+.classificazione {font-size:20px;}
+.note-classificazione {font-size:10px;}
+.input-note-classificazione {font-size:12px; margin-left:3px;}

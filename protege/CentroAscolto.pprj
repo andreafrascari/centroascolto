@@ -1,4 +1,4 @@
-; Tue Feb 09 11:29:48 CET 2016
+; Wed Feb 10 06:45:12 CET 2016
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
@@ -58,13 +58,13 @@
 
 ([CentroAscolto_ProjectKB_Class8] of  String
 
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
 
 ([CentroAscolto_ProjectKB_Class9] of  String
 
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
 
 ([CLSES_TAB] of  Widget
 
@@ -105,7 +105,7 @@
 
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
-([KB_527518_Class0] of  Map
+([KB_833806_Class0] of  Map
 )
 
 ([KB_875361_Class0] of  String
@@ -287,8 +287,8 @@
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[STANDARD_FACET_FORM_WIDGET]
 		[STANDARD_SLOT_FORM_WIDGET]
+		[STANDARD_FACET_FORM_WIDGET]
 		[PAL_FORM_WIDGET]
 		[STANDARD_CLASS_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")

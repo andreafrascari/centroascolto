@@ -60,7 +60,23 @@
         <name>classificazione</name>  
         <class/> 
       </xml> 
-    </item>  
+    </item> 
+    <item> 
+      <name>procedura_classificazione</name>  
+      <type>10</type>  
+      <xml> 
+        <name>procedura_classificazione</name>  
+        <class/> 
+      </xml> 
+    </item> 
+    <item> 
+      <name>osservazione</name>  
+      <type>10</type>  
+      <xml> 
+        <name>osservazione</name>  
+        <class/> 
+      </xml> 
+    </item> 
     <item> 
       <name>allegato</name>  
       <type>20</type>  

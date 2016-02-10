@@ -68,6 +68,31 @@
       <default/>  
       <order>41</order> 
     </item>  
+     <item> 
+      <name>procedura_classificazione</name>  
+      <label>procedura_classificazione</label>  
+      <detail>note sulla procedura di classificazione</detail>  
+      <detail_edit>note sulla procedura di classificazione</detail_edit>  
+      <detail_edit>inserire eventuali note sulla procedura di classificazione, al fine di stilare poi un protocollo di Servizio</detail_edit>  
+      <filter>note classificazione</filter>  
+      <list>note classificazione</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>43</order> 
+    </item>  
+    <item> 
+      <name>osservazione</name>  
+      <label>osservazione</label>  
+      <detail>osservazioni sulla classificazione</detail>  
+      <detail_edit>osservazioni sulla classificazione</detail_edit>  
+      <detail_edit>inserire eventuali osservazioni sulla classificazione e sui fattori ambientali in cui e' avvenuta</detail_edit>  
+      <filter>osservazioni</filter>  
+      <list>osservazioni</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>45</order> 
     <item> 
       <name>allegato</name>  
       <label>allegato</label>  
