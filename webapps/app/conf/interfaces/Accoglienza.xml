@@ -63,8 +63,7 @@
     <item> 
       <name>classificazioni_icf_accoglienza</name>  
       <label>classificazioni icf</label>  
-      <detail>classificazioni icf</detail>  
-      <detail_edit>classificazioni icf</detail_edit>  
+      <detail>classificazioni icf</detail>   
       <heading>1</heading>  
       <max_length/>  
       <default/>  
