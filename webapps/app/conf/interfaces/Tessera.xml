@@ -60,11 +60,11 @@
     </item>  
     <item> 
       <name>sabatodomenica</name>  
-      <label>sabatodomenica</label>  
-      <detail>sabatodomenica</detail>  
-      <detail_edit>sabatodomenica</detail_edit>  
-      <filter>sabatodomenica</filter>  
-      <list>sabatodomenica</list>  
+      <label>sabato e domenica</label>  
+      <detail>sabato e domenica</detail>  
+      <detail_edit>sabato e domenica</detail_edit>  
+      <filter>sabato e domenica</filter>  
+      <list>sabato e domenica</list>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  

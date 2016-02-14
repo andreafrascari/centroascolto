@@ -93,6 +93,7 @@
       <max_length/>  
       <default/>  
       <order>45</order> 
+    </item>
     <item> 
       <name>allegato</name>  
       <label>allegato</label>  
