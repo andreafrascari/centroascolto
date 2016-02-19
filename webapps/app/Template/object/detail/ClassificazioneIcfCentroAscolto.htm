@@ -53,6 +53,9 @@
 					@BEGIN_ItemIcfCentroAscolto@
    						<li id="LI_@tag_ID#FLAT@" 
    						class="list-group-item ([[[@tag_classificazione#FLAT@]==[0]]??[list-group-item-success]])([[[@tag_classificazione#FLAT@]==[1]]??[list-group-item-warning]])([[[@tag_classificazione#FLAT@]==[2]]??[list-group-item-warning]])([[[@tag_classificazione#FLAT@]==[3]]??[list-group-item-danger]])([[[@tag_classificazione#FLAT@]==[4]]??[list-group-item-danger]])([[[@tag_classificazione#FLAT@]==[8]]??[list-group-item-info]])([[[@tag_classificazione#FLAT@]==[9]]??[list-group-item-info]])">
+   						([[[@tag_icf.Item_Icf_D.ID#FLAT@] != []] ?? [<a @popup="title=Item ICF,dimensions=medium" class="btn btn-default btn-xs btn-info" href="?q=object/detail&amp;p=Item_Icf_D/_a_ID/_v_@tag_icf.Item_Icf_D.ID#FLAT@" title="Consulta item ICF relativo">
+							<span aria-hidden="true" class="glyphicon glyphicon-zoom-in"></span>
+						</a>]])
    						@tag_codice_centro_ascolto#FLAT@ @tag_descrizione#FLAT@<span class="classificazione">.@tag_classificazione#FLAT@</span>
    						<span class="note-classificazione">@tag_osservazione#FLAT@ @tag_procedura_classificazione#FLAT@</span>
    						</li>

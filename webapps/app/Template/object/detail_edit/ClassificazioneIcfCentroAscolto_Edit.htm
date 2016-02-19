@@ -90,7 +90,11 @@ function assegna(id,classificazione,osservazione,procedura_classificazione)	{
 				@BEGIN_item@
 					 <div class="list-group">
 					@BEGIN_ItemIcfCentroAscolto@
-   						<li id="LI_@tag_ID#FLAT@" class="list-group-item">@tag_codice_centro_ascolto#FLAT@ @tag_descrizione#FLAT@: <select onchange="javascript:eval(@tag_ID#FLAT@);" id="EVAL_@tag_ID#FLAT@" name="EVAL_@tag_ID#FLAT@"><option></option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="8">8</option><option value="9">9</option></select>
+   						<li id="LI_@tag_ID#FLAT@" class="list-group-item">
+   						([[[@tag_icf.Item_Icf_D.ID#FLAT@] != []] ?? [<a @popup="title=Item ICF,dimensions=medium" class="btn btn-default btn-xs btn-info" href="?q=object/detail&amp;p=Item_Icf_D/_a_ID/_v_@tag_icf.Item_Icf_D.ID#FLAT@" title="Consulta item ICF relativo">
+							<span aria-hidden="true" class="glyphicon glyphicon-zoom-in"></span>
+						</a>]])
+   						@tag_codice_centro_ascolto#FLAT@ @tag_descrizione#FLAT@: <select onchange="javascript:eval(@tag_ID#FLAT@);" id="EVAL_@tag_ID#FLAT@" name="EVAL_@tag_ID#FLAT@"><option></option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="8">8</option><option value="9">9</option></select>
    						<span class="input-note-classificazione">condizioni osservazione: <input type=text" id="OSS_@tag_ID#FLAT@" name="OSS_@tag_ID#FLAT@" /></span><span class="input-note-classificazione"> note su procedura/strumenti: <input type=text" name="PROC_@tag_ID#FLAT@" id="PROC_@tag_ID#FLAT@" /></span>
    						<script type="text/javascript">
    							javascript:assegna('@tag_ID#FLAT@','@tag_classificazione#FLAT@','@tag_osservazione#FLAT@','@tag_procedura_classificazione#FLAT@');
