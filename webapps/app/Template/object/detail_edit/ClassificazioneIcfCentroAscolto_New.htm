@@ -1,0 +1,87 @@
+@BEGIN_TEMPLATE@<script
+	src="app/Javascript/anastasis/FormSender.js?s=@SERENA_VERSION@&amp;a=@APP_VERSION@"
+	type="text/javascript"></script>
+<script
+	src="app/Javascript/anastasis/serena/DetailEdit.js?s=@SERENA_VERSION@&amp;a=@APP_VERSION@"
+	type="text/javascript"></script>
+<script type="text/javascript">
+	detailEdit = new Anastasis.DetailEdit('detail-edit',
+			'Attachment?q=prepare', 'Attachment?q=status&amp;id=');
+	
+	$(document).ready(function()	{
+		var action = $("#detail-edit").attr("action");
+		action = action.replace("object/detail_edit","centroascolto/nuova_aclassificazione_accoglienza"); // dinamico, in base alla classe di provenianza!
+		$("#detail-edit").attr("action",action);
+	});		
+</script>
+
+<div class="detail-edit detail-edit-ClassificazioneIcfCentroAscolto">
+	<div id="splash">
+		<h2>Inizializzazione classificazione ICF</h2>
+
+		
+	</div>
+
+	@BLOCK_BEGIN_RESULT_ERROR@
+	<div class="alert alert-danger" role="alert">
+		<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		Si &egrave; verificato un errore: @ERROR_MESSAGE@
+	</div>
+	@BLOCK_END_RESULT_ERROR@ @BLOCK_BEGIN_RESULT_EMPTY@
+	<div class="alert alert-danger" role="alert">
+		<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+		Nessun elemento trovato.
+	</div>
+	@BLOCK_END_RESULT_EMPTY@ @BEGIN_ClassificazioneIcfCentroAscolto@<div class="form-container form-container-ClassificazioneIcfCentroAscolto">
+		<form id="detail-edit" method="post" action="@ACTION@">
+			<fieldset>
+				<legend>Inserire/modificare i dati</legend>
+				<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="@BACK@" onclick="return confirm_exit();" 
+							title="indietro"> <span aria-hidden="true"
+							class="glyphicon glyphicon-backward"></span>
+						</a> <a class="btn btn-default btn-xs btn-success"
+							href="javascript:detailEdit.saveObject();"
+							title="Salva modifiche"> <span aria-hidden="true"
+							class="glyphicon glyphicon-ok"></span>
+						</a> ([ [ [@tag_ID#FLAT@] != [] && [] != [1]] ??
+						[ <a class="btn btn-default btn-xs btn-danger"
+							href="javascript:detailEdit.delObject('forced_post_save');"
+							title="Cancella la scheda"> <span aria-hidden="true"
+							class="glyphicon glyphicon-remove"></span>
+						</a> ] ])
+					</div>
+				</div>
+
+				
+				<div class="detail-body">@tag_iter@@tag_data@@tag_note@</div>
+				
+
+				
+
+				<input type="hidden" name="class" value="@CLASS@" /> <input
+					type="hidden" name="r" value="@REDIRECT@" /> <input type="hidden"
+					name="forced_post_save" id="forced_post_save" value="@POST_SAVE@" />
+
+				<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="@BACK@"
+							title="indietro"> <span aria-hidden="true"
+							class="glyphicon glyphicon-backward"></span>
+						</a> <a class="btn btn-default btn-xs btn-success"
+							href="javascript:detailEdit.saveObject();"
+							title="Salva modifiche"> <span aria-hidden="true"
+							class="glyphicon glyphicon-ok"></span>
+						</a> ([ [ [@tag_ID#FLAT@] != [] && [] != [1]] ??
+						[ <a class="btn btn-default btn-xs btn-danger"
+							href="javascript:detailEdit.delObject('forced_post_save');"
+							title="Cancella la scheda"> <span aria-hidden="true"
+							class="glyphicon glyphicon-remove"></span>
+						</a> ] ])
+					</div>
+				</div>
+			</fieldset>
+		</form>
+		<div class="detail-attachments"></div>@END_ClassificazioneIcfCentroAscolto@
+	</div>@END_TEMPLATE@

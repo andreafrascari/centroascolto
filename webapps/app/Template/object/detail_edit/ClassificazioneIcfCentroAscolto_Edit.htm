@@ -1,0 +1,106 @@
+@BEGIN_TEMPLATE@
+<script
+	src="app/Javascript/anastasis/FormSender.js?s=@SERENA_VERSION@&amp;a=@APP_VERSION@"
+	type="text/javascript"></script>
+<script
+	src="app/Javascript/anastasis/serena/DetailEdit.js?s=@SERENA_VERSION@&amp;a=@APP_VERSION@"
+	type="text/javascript"></script>
+<script type="text/javascript">
+	detailEdit = new Anastasis.DetailEdit('detail-edit',
+			'Attachment?q=prepare', 'Attachment?q=status&amp;id=');
+
+function eval(id)   {
+	var theVal = $("#EVAL_"+id).val();
+	var theClasses = ["list-group-item-success","list-group-item-warning","list-group-item-warning","list-group-item-danger","list-group-item-danger","","","","list-group-item-info","list-group-item-info"];;
+	var theClass=theClasses[parseInt(theVal)];
+	console.log("adding class " + theClass);
+	$("#LI_"+id).addClass(theClass);
+}
+
+function record(){
+	if (confirm("Confermare registrazione classificazione ICF"))	{
+		var action = $("#detail-edit").attr("action");
+		action = action.replace("object/detail_edit","centroascolto/registraClassificazioneIcf"); 
+		$("#detail-edit").attr("action",action);
+		$("#detail-edit").submit();
+	}
+}
+	
+function assegna(id,classificazione,osservazione,procedura_classificazione)	{
+	if (classificazione!=null && classificazione!="")	{
+		$("#EVAL_"+id).val(classificazione);
+		$("#OSS_"+id).val(osservazione);
+		$("#PROC_"+id).val(procedura_classificazione);
+		eval(id);
+    }
+}
+</script>
+
+
+
+	@BEGIN_ClassificazioneIcfCentroAscolto@
+
+<div id="detail">
+		
+				<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="?q=object/detail&amp;p=@CLASS@/_a_ID/_@tag_ID#FLAT@" title="Tornare alla classificazione">
+							<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+						</a>
+						<a class="btn btn-default btn-xs btn-success"
+							href="javascript:record();"
+							title="Salva modifiche"> <span aria-hidden="true"
+							class="glyphicon glyphicon-ok"></span>
+						</a> ([ [ [@tag_ID#FLAT@] != [] && [] != [1]] ??
+						[ <a class="btn btn-default btn-xs btn-danger"
+							href="javascript:detailEdit.delObject('forced_post_save');"
+							title="Cancella la scheda"> <span aria-hidden="true"
+							class="glyphicon glyphicon-remove"></span>
+						</a> ] ])
+				
+					</div>
+			</div>	
+
+				<h2>Classificazione @tag_iter#FLAT@ del @tag_data#FLAT@</h2>
+		
+
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+					<br /><br />
+      				<a href="javascript:history.back();" title="Indietro">Indietro</a>
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+
+			@BLOCK_BEGIN_RESULT_EMPTY@
+				<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					Nessun elemento trovato!
+					<br /><br />
+      				<a href="javascript:history.back();" title="Indietro">Indietro</a>
+				</div>
+			@BLOCK_END_RESULT_EMPTY@
+
+				<form id="detail-edit" method="post" action="@ACTION@">
+				<input type="hidden" name="ID" value="@tag_ID#FLAT@" />
+				<input type="hidden" name="attivazione" value="@tag_attivazione.Attivazione.ID#FLAT@" />
+				<input type="hidden" name="inserimento" value="@tag_inserimento_lavorativo.Inserimento_Lavorativo.ID#FLAT@" />
+				<input type="hidden" name="accoglienza" value="@tag_accoglienza.Accoglienza.ID#FLAT@" />
+				@BEGIN_item@
+					 <div class="list-group">
+					@BEGIN_ItemIcfCentroAscolto@
+   						<li id="LI_@tag_ID#FLAT@" class="list-group-item">@tag_codice_centro_ascolto#FLAT@ @tag_descrizione#FLAT@: <select onchange="javascript:eval(@tag_ID#FLAT@);" id="EVAL_@tag_ID#FLAT@" name="EVAL_@tag_ID#FLAT@"><option></option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="8">8</option><option value="9">9</option></select>
+   						<span class="input-note-classificazione">condizioni osservazione: <input type=text" id="OSS_@tag_ID#FLAT@" name="OSS_@tag_ID#FLAT@" /></span><span class="input-note-classificazione"> note su procedura/strumenti: <input type=text" name="PROC_@tag_ID#FLAT@" id="PROC_@tag_ID#FLAT@" /></span>
+   						<script type="text/javascript">
+   							javascript:assegna('@tag_ID#FLAT@','@tag_classificazione#FLAT@','@tag_osservazione#FLAT@','@tag_procedura_classificazione#FLAT@');
+   						</script>
+   						</li>
+					@END_ItemIcfCentroAscolto@
+					</div>
+				@END_item@
+				</form>
+				
+				
+			@END_ClassificazioneIcfCentroAscolto@
+		</div>@END_TEMPLATE@

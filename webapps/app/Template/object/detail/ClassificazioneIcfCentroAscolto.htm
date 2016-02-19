@@ -1,0 +1,66 @@
+@BEGIN_TEMPLATE@
+
+
+
+
+	@BEGIN_ClassificazioneIcfCentroAscolto@
+
+<div id="detail">
+		
+				<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="?q=object/detail&amp;p=@CLASS@/_a_ID/_@tag_ID#FLAT@" title="Tornare alla classificazione">
+							<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+						</a>
+						@BLOCK_BEGIN_EDIT@
+						
+								<a class="btn btn-default btn-xs btn-warning" href="@HREF_DETAIL_EDIT@&amp;t=ClassificazioneIcfCentroAscolto_Edit" title="Modifica la scheda">
+								  <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+       							</a>		
+						@BLOCK_END_EDIT@
+				
+					</div>
+			</div>	
+
+				<h2>Classificazione @tag_iter#FLAT@ del @tag_data#FLAT@</h2>
+		
+
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+					<br /><br />
+      				<a href="javascript:history.back();" title="Indietro">Indietro</a>
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+
+			@BLOCK_BEGIN_RESULT_EMPTY@
+				<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					Nessun elemento trovato!
+					<br /><br />
+      				<a href="javascript:history.back();" title="Indietro">Indietro</a>
+				</div>
+			@BLOCK_END_RESULT_EMPTY@
+
+				<form id="detail-edit" method="post" action="@ACTION@">
+				<input type="hidden" name="ID" value="@tag_ID#FLAT@" />
+				<input type="hidden" name="attivazione" value="@tag_attivazione.Attivazione.ID#FLAT@" />
+				<input type="hidden" name="inserimento" value="@tag_inserimento_lavorativo.Inserimento_Lavorativo.ID#FLAT@" />
+				<input type="hidden" name="accoglienza" value="@tag_accoglienza.Accoglienza.ID#FLAT@" />
+				@BEGIN_item@
+					 <div class="list-group">
+					@BEGIN_ItemIcfCentroAscolto@
+   						<li id="LI_@tag_ID#FLAT@" 
+   						class="list-group-item ([[[@tag_classificazione#FLAT@]==[0]]??[list-group-item-success]])([[[@tag_classificazione#FLAT@]==[1]]??[list-group-item-warning]])([[[@tag_classificazione#FLAT@]==[2]]??[list-group-item-warning]])([[[@tag_classificazione#FLAT@]==[3]]??[list-group-item-danger]])([[[@tag_classificazione#FLAT@]==[4]]??[list-group-item-danger]])([[[@tag_classificazione#FLAT@]==[8]]??[list-group-item-info]])([[[@tag_classificazione#FLAT@]==[9]]??[list-group-item-info]])">
+   						@tag_codice_centro_ascolto#FLAT@ @tag_descrizione#FLAT@<span class="classificazione">.@tag_classificazione#FLAT@</span>
+   						<span class="note-classificazione">@tag_osservazione#FLAT@ @tag_procedura_classificazione#FLAT@</span>
+   						</li>
+					@END_ItemIcfCentroAscolto@
+					</div>
+				@END_item@
+				</form>
+				
+				
+			@END_ClassificazioneIcfCentroAscolto@
+		</div>@END_TEMPLATE@
