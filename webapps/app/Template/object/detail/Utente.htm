@@ -37,19 +37,21 @@
 
 
 @FUN_MODULE(q=object_tab_header/detail,p=Utente/_a_ID/_v_@tag_ID#FLAT@)@
-		<script type="text/javascript">
-		$(document).ready(function() {
-			Anastasis.SerenaUtils.getCurrentTabSheet('Utente');
-		});
-		</script>
+		
 
 					
 				
 				<div id="object-body">
-						<table class="paziente" width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
-							<tbody>
 							
 								([[[@FUN_GET_URL_PARAM(param=sez)@]==[an] || [@FUN_GET_URL_PARAM(param=sez)@]==[] ]?? [
+								<script type="text/javascript">
+									$(document).ready(function() {
+										Anastasis.SerenaUtils.getCurrentTabSheet('Utente');
+									});
+								</script>
+								<table class="paziente" width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
+									<tbody>
+							
 									@tag_foto@@tag_sez_anagrafica@@tag_scheda@@tag_nome@@tag_cognome@@tag_op_primo_colloquio@@tag_data_primo_colloquio@@tag_data_n@@tag_data_arrivo_it@@tag_data_arrivo_bo@@tag_stato_n@@tag_comune_n@@tag_cf@@tag_sesso@@tag_espulso@@tag_deceduto@
 
 									
@@ -76,12 +78,21 @@
 									@tag_sez_situazione_famigliare@@tag_stato_civile@@tag_stato_famiglia@@tag_comune_famiglia@@tag_figli@
 																	
 									@tag_sez_domicilio@@tag_domicilio_comune@@tag_domicilio_cap@@tag_domicilio_via@@tag_domicilio_provincia@@tag_nota_domicilio@
+									</tbody>
+									</table>
 								]])
 								
 								
 								
 								([[[@FUN_GET_URL_PARAM(param=sez)@]==[se] ]?? [
-								
+								<script type="text/javascript">
+									$(document).ready(function() {
+										Anastasis.SerenaUtils.getCurrentTabSheet('Situazione');
+									});
+								</script>
+									<table class="paziente" width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
+									<tbody>
+					
 									@tag_sez_situazione_scolastica_ed_economica@@tag_titolo_studio@@tag_situazione_economica@@tag_altro@@tag_automunito@@tag_percentuale_inv@@tag_madrelingua@@tag_lingua_it@@tag_altre_lingue@
 									
 									@tag_residenze_in_alloggio@
@@ -116,17 +127,25 @@
 											</a>									
 										</div>
 									</td></tr>
+									</tbody>
+						</table>
 								]])						
 								
 								([[[@FUN_GET_URL_PARAM(param=sez)@]==[ca] ]?? [	
+								<script type="text/javascript">
+									$(document).ready(function() {
+										Anastasis.SerenaUtils.getCurrentTabSheet('CentroAscolto');
+									});
+								</script>
 								
+								
+									@FUN_MODULE(q=object/list,p=Tessera/_a_inverse_of_tessere/_c_Utente/_a_ID/_v_@tag_ID#FLAT@,t=Tessera_inlist)@
 									@FUN_MODULE(q=object/list,p=Evento/_a_utente/_c_Utente/_a_ID/_v_@tag_ID#FLAT@,t=Evento_inlist)@	
 								
-									@FUN_MODULE(q=object/list,p=Tessera/_a_inverse_of_tessere/_c_Utente/_a_ID/_v_@tag_ID#FLAT@,t=Tessera_inlist)@	
+										
 
 								]])
-							</tbody>
-						</table>
+							
 					</div>
 
 

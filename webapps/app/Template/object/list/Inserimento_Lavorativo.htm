@@ -1,23 +1,5 @@
-@BEGIN_TEMPLATE@
-<div class="col-lg-6 col-md-6 home-box">
-<div class="panel panel-warning">
-      <div class="panel-heading">
-        <h3 id="panel-title" class="panel-title">Tessere</h3>
-      </div>
-      <div class="panel-body">
+@BEGIN_TEMPLATE@<div>
 			<div id="list">
-			
-			<div class="inserto">
-					<div role="toolbar">
-
-										<a class="btn btn-default btn-xs btn-success" href="?q=@MODULE@/detail_edit&amp;p=Tessera&amp;a=_a_inverse_of_tessere/_c_Utente/_a_ID/_v_@FUN_GET_URL_PARAM(param=utente)@" title="registra una nuova tessera">
-											<span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
-										</a>
-									
-					</div>
-			</div>
-				
-		
 			
 
 
@@ -34,9 +16,22 @@
 						Nessun elemento trovato.
 					</div>
 				@BLOCK_END_RESULT_EMPTY@
+				
+				@FUN_MODULE(q=object_tab_header/detail,p=Utente/_a_ID/_v_@tag_Inserimento_Lavorativo.inverse_of_presa_in_carico_inserimenti_lavorativi.Utente.ID#FLAT@)@
+
+							
+			<script type="text/javascript">
+				$(document).ready(function() {
+					Anastasis.SerenaUtils.getCurrentTabSheet('Inserimento_Lavorativo');
+				});
+			</script>
+			
+			<div role="toolbar" class="btn-toolbar" style="float:right; margin-right:2px;">
+				<a aria-expanded="false" aria-haspopup="true" class="btn btn-success" type="button" href="?q=object/detail_edit&amp;p=Inserimento_Lavorativo&amp;a=_a_inverse_of_presa_in_carico_inserimenti_lavorativi/_c_Utente/_a_ID/_v_@tag_Inserimento_Lavorativo.inverse_of_presa_in_carico_inserimenti_lavorativi.Utente.ID#FLAT@" title="nuovo inserimento">Nuovo inserimento</a>		
+			</div>
 
 				([
-						[[@tag_Tessera.ID#FLAT@] != []]
+						[[@tag_Inserimento_Lavorativo.ID#FLAT@] != []]
 						?? [
 	<div class="table-responsive">
 			 <table class="table">
@@ -63,8 +58,8 @@
 								</tr>
 								 </thead>
 			    					<tbody>
-								@BEGIN_Tessera@([
-										[[@XPATH_FUN((count(preceding-sibling::Tessera)+ 1) mod 2)@@] == [0.0] ]
+								@BEGIN_Inserimento_Lavorativo@([
+										[[@XPATH_FUN((count(preceding-sibling::Inserimento_Lavorativo)+ 1) mod 2)@@] == [0.0] ]
 										?? [
 											<tr class="info">	
 										] :: [
@@ -72,10 +67,10 @@
 										]
 									])
 	
-										@tag_tipologia_tessera@@tag_emissione@@tag_scadenza@@tag_sabatodomenica@
+										@tag_dal@@tag_al@@tag_ente_avviante@
 											<td>
 											<div role="toolbar">
-												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=Tessera/_a_ID/_v_@tag_ID#FLAT@" title="Dettaglio">
+												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=Inserimento_Lavorativo/_a_ID/_v_@tag_ID#FLAT@" title="Dettaglio">
 													<span aria-hidden="true" class="glyphicon glyphicon-play"></span>
 												</a>
 												([
@@ -89,11 +84,11 @@
 																([ 
 																	[[] == [complex_detail_edit]] 
 																	?? [
-																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/complex_detail_edit/CLS=Tessera/ID=@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/complex_detail_edit/CLS=Inserimento_Lavorativo/ID=@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
 																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>	
 																		</a>
 																	] :: [
-																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=Tessera/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=Inserimento_Lavorativo/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
 																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
 																		</a>
 																	]
@@ -105,7 +100,7 @@
 												
 											</div>
 											</td>
-									</tr>@END_Tessera@
+									</tr>@END_Inserimento_Lavorativo@
 								</tbody>
 					  		</table>
 						]
@@ -151,9 +146,13 @@
 					  </ul>
 				</div>
 			</nav>
-		  		</div>
-		  	</div>
-		  </div>
 		  		
-
+		  		
+		  		
+		  		
+		  		
+			<span id="apri-chiudi-filtro" title="apri/chiudi filtro di raffinamento">Affina ricerca</span>
+			<div @toggable="controller=apri-chiudi-filtro,init_state=closed">
+			 	@FUN_MODULE(q=object/simplefilter)@  
+			</div>
 		</div>@END_TEMPLATE@

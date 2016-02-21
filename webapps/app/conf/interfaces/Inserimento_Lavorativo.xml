@@ -139,8 +139,7 @@
     <item> 
       <name>diario_incontri</name>  
       <label>diario incontri</label>  
-      <detail>diario incontri</detail>  
-      <detail_edit>diario incontri</detail_edit>  
+      <detail inpage="1">diario incontri</detail>
       <heading>1</heading>  
       <max_length/>  
       <default/>  

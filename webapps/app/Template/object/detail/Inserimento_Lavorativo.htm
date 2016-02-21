@@ -1,29 +1,41 @@
 @BEGIN_TEMPLATE@<div id="detail">
-
-@BEGIN_Accoglienza@
 		
 				<div class="inserto">
 					<div role="toolbar">
 						<a class="btn btn-default btn-xs btn-info" href="?q=object/list&amp;p=@CLASS@&amp;page=XML-QUERY" title="Tornare all'ultima lista visualizzata">
 							<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
 						</a>
-					
+					([[[] != []]
+							?? [
 							<a class="btn btn-default btn-xs btn-info" href="ModuleIndex?q=birtReport/give/CLS=@CLASS@/ID=@ID@/DOC=@CLASS@/FILE=@FILE@/TYPE=pdf" title="Genera versione pdf">
 						 		<span aria-hidden="true" class="glyphicon glyphicon-print"></span>
 						 	</a>	
-							
+							]
+						])
 						
 					@BLOCK_BEGIN_EDIT@
-						
+						([
+								[[] != [1]]
+								?? [
 								<a class="btn btn-default btn-xs btn-warning" href="@HREF_DETAIL_EDIT@" title="Modifica la scheda">
 								  <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
        							</a>
-				
-								
+								]
+							])
+							([
+								[[] == [complex_detail_edit]]
+								?? [
+									<a class="btn btn-default btn-xs btn-warning" href="@HREF_COMPLEX_DETAIL_EDIT@" title="Modifica la scheda">
+								  <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+       							</a>
+								]
+							])
 						@BLOCK_END_EDIT@
 					</div>
 			</div>	
+
 		
+
 
 			@BLOCK_BEGIN_RESULT_ERROR@
 				<div class="alert alert-danger" role="alert">
@@ -43,33 +55,37 @@
 				</div>
 			@BLOCK_END_RESULT_EMPTY@
 
-		@FUN_MODULE(q=object_tab_header/detail,p=Utente/_a_ID/_v_@tag_inverse_of_presa_in_carico_accoglienza.Utente.ID#FLAT@)@
+			@BEGIN_Inserimento_Lavorativo@
+
+
+@FUN_MODULE(q=object_tab_header/detail,p=Utente/_a_ID/_v_@tag_inverse_of_presa_in_carico_inserimenti_lavorativi.Utente.ID#FLAT@)@
 
 							
 			<script type="text/javascript">
 				$(document).ready(function() {
-					Anastasis.SerenaUtils.getCurrentTabSheet('Accoglienza');
+					Anastasis.SerenaUtils.getCurrentTabSheet('Inserimento_Lavorativo');
 				});
 			</script>
-
 			
 			<div role="toolbar" class="btn-toolbar" style="float:right; margin-right:2px;">
-				<a aria-expanded="false" aria-haspopup="true" class="btn btn-success" type="button" href="?q=object/detail_edit&amp;p=ClassificazioneIcfCentroAscolto&amp;a=_a_accoglienza/_c_Accoglienza/_a_ID/_v_@tag_ID#FLAT@&amp;t=ClassificazioneIcfCentroAscolto_New" title="nuova classificazione ICF">Classificazione ICF</a>	
+				<a aria-expanded="false" aria-haspopup="true" class="btn btn-success" type="button" href="?q=object/detail_edit&amp;p=ClassificazioneIcfCentroAscolto&amp;a=_a_inserimento_lavorativo/_c_Inserimento_Lavorativo/_a_ID/_v_@tag_ID#FLAT@&amp;t=ClassificazioneIcfCentroAscolto_New" title="nuova classificazione ICF">Classificazione ICF</a>
+				
 			</div>
-		
+			
 			<!-- 
 			<div role="toolbar" class="btn-toolbar" style="float:right; margin-right:2px;">
-				<a aria-expanded="false" aria-haspopup="true" class="btn btn-success" type="button" href="?q=object/detail_edit&amp;p=Accoglienza&amp;a=_a_inverse_of_presa_in_carico_accoglienza/_c_Utente/_a_ID/_v_@tag_inverse_of_presa_in_carico_accoglienza.Utente.ID#FLAT@" title="nuova accoglienza">Nuova accoglienza</a>		
+				<a aria-expanded="false" aria-haspopup="true" class="btn btn-success" type="button" href="?q=object/detail_edit&amp;p=Inserimento_Lavorativo&amp;a=_a_inverse_of_presa_in_carico_inserimenti_lavorativi/_c_Utente/_a_ID/_v_@tag_inverse_of_presa_in_carico_inserimenti_lavorativi.Utente.ID#FLAT@" title="nuovo inserimento">Nuovo inserimento</a>		
 			</div>
-            -->
-
-			
+			 -->
+			<div role="toolbar" class="btn-toolbar" style="float:right; margin-right:2px;">
+				<a aria-expanded="false" aria-haspopup="true" class="btn btn-success" type="button" href="?q=object/detail_edit&amp;p=Incontro_Inserimento_Lavorativo&amp;a=_a_inverse_of_diario_incontri/_c_Inserimento_Lavorativo/_a_ID/_v_@tag_ID#FLAT@" title="nuovo incontro">Nuovo incontro</a>		
+			</div>
 
 				
 				<div id="object-body">
 						<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
 							<tbody>
-								@tag_dal@@tag_al@@tag_dove@@tag_classificazioni_icf_accoglienza@@tag_note@
+								@tag_dal@@tag_al@@tag_ente_avviante@@tag_persone_di_riferimento@@tag_settore_inserimento@@tag_mansioni@@tag_punti_di_forza@@tag_punti_di_debolezza@@tag_obiettivi@@tag_descrizione@@tag_diario_incontri@@tag_classificazioni_icf_inserimento_lavorativo@@tag_valutazione_finale@@tag_note@
 							</tbody>
 						</table>
 					</div>
@@ -95,5 +111,5 @@
 							@tag_owner_user@@tag_owner_group@@tag_creation_user@@tag_creation_date@@tag_deletion_user@@tag_deletion_date@@tag_last_modification_user@@tag_last_modification_date@@tag_activation_flag@@tag_deletion_flag@
 						</tbody>
 					</table>
-				</div>@END_Accoglienza@
+				</div>@END_Inserimento_Lavorativo@
 		</div>@END_TEMPLATE@
