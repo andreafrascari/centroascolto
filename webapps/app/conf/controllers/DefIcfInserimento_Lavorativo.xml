@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<classificazione>
+	<area>Accoglienza</area>
+	<item>
+		<ItemCentroAscolto>
+			<ordine>1</ordine>
+			<descrizione></descrizione>
+			<codice>D5 - Cura di se'</codice>
+			<icf>190</icf>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>2</ordine>
+			<descrizione></descrizione>
+			<codice>D469 - Orientamento sul territorio</codice>
+			<icf>1192</icf>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>3</ordine>
+			<descrizione>classificare questo o il successivo in base al tipo di inserimento</descrizione>
+			<codice>D850 - Lavoro retribuito</codice>
+			<icf>1126</icf>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>4</ordine>
+			<descrizione></descrizione>
+			<codice>D855 - Lavoro non retribuito</codice>
+			<icf>1132</icf>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>5</ordine>
+			<descrizione></descrizione>
+			<codice>Motivazioni ed interessi</codice>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>6</ordine>
+			<descrizione></descrizione>
+			<codice>Capacita' di attivazione</codice>
+			<icf>1072</icf>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>7</ordine>
+			<descrizione></descrizione>
+			<codice>Comprensione del contesto di inserimento</codice>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>8</ordine>
+			<descrizione></descrizione>
+			<codice>Puntualita'</codice>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>9</ordine>
+			<descrizione></descrizione>
+			<codice>Attenzione</codice>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>10</ordine>
+			<descrizione></descrizione>
+			<codice>Costanza</codice>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>11</ordine>
+			<descrizione></descrizione>
+			<codice>Rapporti con i colleghi</codice>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>12</ordine>
+			<descrizione></descrizione>
+			<codice>Rapporti con i superiori</codice>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>13</ordine>
+			<descrizione></descrizione>
+			<codice>Rispoetto regole lavoro</codice>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>14</ordine>
+			<descrizione></descrizione>
+			<codice>Gestione emotiva dell'inserimento</codice>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>15</ordine>
+			<descrizione></descrizione>
+			<codice>Gestione operativa dell'inserimento</codice>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>16</ordine>
+			<descrizione></descrizione>
+			<codice>Gestione del denaro</codice>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>17</ordine>
+			<descrizione></descrizione>
+			<codice>Potenziamento competenze iniziali</codice>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>18</ordine>
+			<descrizione></descrizione>
+			<codice>Acquisizione competenze nuove</codice>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>19</ordine>
+			<descrizione></descrizione>
+			<codice>Tenuta progetto</codice>
+		</ItemCentroAscolto>
+	</item>
+</classificazione>
+  
