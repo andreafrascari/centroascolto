@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <classificazione>
-	<area>Accoglienza</area>
+	<area>Inserimento_Lavorativo</area>
 	<item>
 		<ItemCentroAscolto>
 			<ordine>1</ordine>
@@ -71,7 +71,7 @@
 		<ItemCentroAscolto>
 			<ordine>13</ordine>
 			<descrizione></descrizione>
-			<codice>Rispoetto regole lavoro</codice>
+			<codice>Rispetto regole lavoro</codice>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
 			<ordine>14</ordine>

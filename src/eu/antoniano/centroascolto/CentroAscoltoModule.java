@@ -8,7 +8,7 @@ public final static String MODULE_NAME = "centroascolto";
 
 	protected void setUpMethods()
 	{
-		addMethod(new CreaIstanzaClassificazioneAccoglienzaIcfMethod(this, getDefaultParameters()));
+		addMethod(new CreaIstanzaClassificazioneIcfMethod(this, getDefaultParameters()));
 		addMethod(new RegistraClassificazioneIcfMethod(this, getDefaultParameters()));
 	}
 	

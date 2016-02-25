@@ -15,15 +15,15 @@ import eu.anastasis.serena.constants.ConstantsXSerena;
 import eu.anastasis.serena.exception.SerenaException;
 import eu.anastasis.serena.query.UpdateQuery;
 
-public class CreaIstanzaClassificazioneAccoglienzaIcfMethod extends DetailEditMethod {
+public class CreaIstanzaClassificazioneIcfMethod extends DetailEditMethod {
 
-	public CreaIstanzaClassificazioneAccoglienzaIcfMethod(DefaultModule defaultModule, String[] defaultParameters) {
+	public CreaIstanzaClassificazioneIcfMethod(DefaultModule defaultModule, String[] defaultParameters) {
 		super(defaultModule, defaultParameters);
 		// TODO Auto-generated constructor stub
 	}
 	
 	private static final Logger logger = Logger
-			.getLogger(CreaIstanzaClassificazioneAccoglienzaIcfMethod.class);
+			.getLogger(CreaIstanzaClassificazioneIcfMethod.class);
 
 
 	@Override
@@ -33,7 +33,17 @@ public class CreaIstanzaClassificazioneAccoglienzaIcfMethod extends DetailEditMe
 		super.postValidInsertActions(request, query, ret, messages);
 		try {
 			String id = messages[1];
-			List<ItemIcfCentroAscolto> itemPrevisti = getItemPrevisti();
+			List<ItemIcfCentroAscolto> itemPrevisti = null;
+			String a = request.getParameter("a");
+			if (a.contains("accoglienza"))	{
+				itemPrevisti = IcfXmlBuilder.getInstanceAccoglienza().asBeans();				
+			} else if (a.contains("attivazione"))	{
+				itemPrevisti = IcfXmlBuilder.getInstanceAttivazione().asBeans();				
+			} else if (a.contains("inserimento"))	{
+				itemPrevisti = IcfXmlBuilder.getInstanceInserimento().asBeans();				
+			} else {
+				logger.fatal("Errore in inizializzazione classificazione ICF: parametro a non specificato");
+			}
 			performUpdate(request,id,itemPrevisti);
 		} catch (Exception e) {
 			Vector<String> p = new Vector<String>();
@@ -88,10 +98,7 @@ public class CreaIstanzaClassificazioneAccoglienzaIcfMethod extends DetailEditMe
 		}
 	}
 
-	private List<ItemIcfCentroAscolto> getItemPrevisti() throws SerenaException {
-		return IcfXmlBuilder.getInstanceAccoglienza().asBeans();
 
-	}
 
 	/**
 	protected Prestazione getPrestazione(String idPrestazione)
@@ -133,7 +140,7 @@ public class CreaIstanzaClassificazioneAccoglienzaIcfMethod extends DetailEditMe
 		return METHOD_NAME;
 	}
 
-	public static final String METHOD_NAME = "nuova_aclassificazione_accoglienza";
+	public static final String METHOD_NAME = "nuova_aclassificazione";
 
 	protected String retrieveDefaultTemplateContext(String methodName) {
 

@@ -1,109 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <classificazione>
-	<area>Accoglienza</area>
+	<area>Attivazione</area>
 	<item>
 		<ItemCentroAscolto>
 			<ordine>1</ordine>
 			<descrizione></descrizione>
-			<codice>D540 - Vestirsi</codice>
-			<icf>205</icf>
+			<codice>D5 - Cura di se'</codice>
+			<icf>190</icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
 			<ordine>2</ordine>
 			<descrizione></descrizione>
-			<codice>D550 - Mangiare</codice>
-			<icf>211</icf>
+			<codice>D740 - Rapporti con referente corso</codice>
+			<icf>1082</icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
 			<ordine>3</ordine>
 			<descrizione></descrizione>
-			<codice>D570 - Cura della propria persona</codice>
-			<icf>213</icf>
+			<codice>D750 - Rapporti con ospiti</codice>
+			<icf>1088</icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
 			<ordine>4</ordine>
 			<descrizione></descrizione>
-			<codice>D510 - Uso del tempo libero</codice>
-			<icf>1158</icf>
+			<codice>Tenuta</codice>
+			<icf></icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
 			<ordine>5</ordine>
 			<descrizione></descrizione>
-			<codice>D910 - Rapporti con la comunita'</codice>
-			<icf>1145</icf>
+			<codice>Puntualita'</codice>
+			<icf></icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
 			<ordine>6</ordine>
 			<descrizione></descrizione>
-			<codice>D720 - Rapporti con compagni di stanza</codice>
-			<icf>1072</icf>
+			<codice>Acquisizione competenze finali</codice>
+			<icf></icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
 			<ordine>7</ordine>
 			<descrizione></descrizione>
-			<codice>D720 - Rapporti con operatori</codice>
-			<icf>1072</icf>
+			<codice>Motivazione / messa in gioco</codice>
+			<icf></icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
 			<ordine>8</ordine>
 			<descrizione></descrizione>
-			<codice>D720 - Rapporti con volontari</codice>
-			<icf>1072</icf>
-		</ItemCentroAscolto>
-		<ItemCentroAscolto>
-			<ordine>9</ordine>
-			<descrizione>Include: gestione spazi comuni e gestione spazi privati
-			</descrizione>
-			<codice>D230 - Rispetto delle regole</codice>
-			<icf>940</icf>
-		</ItemCentroAscolto>
-		<ItemCentroAscolto>
-			<ordine>10</ordine>
-			<descrizione></descrizione>
-			<codice>D57022 - Abuso farmaci e sostanza</codice>
-			<icf>1374</icf>
-		</ItemCentroAscolto>
-		<ItemCentroAscolto>
-			<ordine>11</ordine>
-			<descrizione></descrizione>
-			<codice>D469 - Orientamento sul territorio</codice>
-			<icf>1192</icf>
-		</ItemCentroAscolto>
-		<ItemCentroAscolto>
-			<ordine>12</ordine>
-			<descrizione></descrizione>
-			<codice>D845 - Ricerca autonoma lavorativa</codice>
-			<icf>1120</icf>
-		</ItemCentroAscolto>
-		<ItemCentroAscolto>
-			<ordine>13</ordine>
-			<descrizione></descrizione>
-			<codice>D610 - Ricerca autonoma abitativa</codice>
-			<icf>1013</icf>
-		</ItemCentroAscolto>
-		<ItemCentroAscolto>
-			<ordine>14</ordine>
-			<descrizione></descrizione>
-			<codice>D2305 - Puntaualita' appuntamenti</codice>
-			<icf>1267</icf>
-		</ItemCentroAscolto>
-		<ItemCentroAscolto>
-			<ordine>15</ordine>
-			<descrizione></descrizione>
-			<codice>D860 - Gestione denaro</codice>
-			<icf>1134</icf>
-		</ItemCentroAscolto>
-		<ItemCentroAscolto>
-			<ordine>16</ordine>
-			<descrizione></descrizione>
-			<codice>Riacquisizione autonomia</codice>
-			<icf></icf>
-		</ItemCentroAscolto>
-		<ItemCentroAscolto>
-			<ordine>17</ordine>
-			<descrizione></descrizione>
-			<codice>Tenuta progetto</codice>
+			<codice>Capacita' di attivarsi</codice>
 			<icf></icf>
 		</ItemCentroAscolto>
 	</item>
