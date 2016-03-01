@@ -23,7 +23,7 @@
       <name>attivazione</name>  
       <label>attivazione</label>  
       <detail>attivazione</detail>  
-      <heading>1</heading>  
+      <heading>5</heading>  
       <needed>1</needed>  
       <max_length/>  
       <default/>  
@@ -33,7 +33,7 @@
       <name>inserimento_lavorativo</name>  
       <label>inserimento lavorativo</label>  
       <detail>inserimento lavorativo</detail>  
-      <heading>1</heading>  
+      <heading>5</heading>  
       <needed>1</needed>  
       <max_length/>  
       <default/>  

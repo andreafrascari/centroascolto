@@ -87,8 +87,9 @@ function assegna(id,classificazione,osservazione,procedura_classificazione)	{
 				<input type="hidden" name="attivazione" value="@tag_attivazione.Attivazione.ID#FLAT@" />
 				<input type="hidden" name="inserimento" value="@tag_inserimento_lavorativo.Inserimento_Lavorativo.ID#FLAT@" />
 				<input type="hidden" name="accoglienza" value="@tag_accoglienza.Accoglienza.ID#FLAT@" />
+				 <div class="list-group">
+				 <ul>
 				@BEGIN_item@
-					 <div class="list-group">
 					@BEGIN_ItemIcfCentroAscolto@
    						<li id="LI_@tag_ID#FLAT@" class="list-group-item">
    						([[[@tag_icf.Item_Icf_D.ID#FLAT@] != []] ?? [<a @popup="title=Item ICF,dimensions=medium" class="btn btn-default btn-xs btn-info" href="?q=object/detail&amp;p=Item_Icf_D/_a_ID/_v_@tag_icf.Item_Icf_D.ID#FLAT@" title="Consulta item ICF relativo">
@@ -101,8 +102,10 @@ function assegna(id,classificazione,osservazione,procedura_classificazione)	{
    						</script>
    						</li>
 					@END_ItemIcfCentroAscolto@
-					</div>
 				@END_item@
+					<li class="list-group-item">Note generali classificazione:  <input type=text" name="NOTE" style="width:400px;" value="@tag_note#FLAT@" /></li>
+					</ul>
+					</div>
 				</form>
 				
 				

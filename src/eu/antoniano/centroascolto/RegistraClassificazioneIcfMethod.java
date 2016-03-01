@@ -61,6 +61,7 @@ public class RegistraClassificazioneIcfMethod extends DefaultMethod {
 			String attivazione = request.getParameter("attivazione");
 			String inserimento = request.getParameter("inserimento");
 			String accoglienza = request.getParameter("accoglienza");
+			String note = request.getParameter("NOTE");
 
 			Enumeration<String> keys = request.getParameterNames();
 			while (keys.hasMoreElements()) {
@@ -79,7 +80,7 @@ public class RegistraClassificazioneIcfMethod extends DefaultMethod {
 					}		
 				}
 			}
-			performUpdate(request, idClassificazione, tmpMap);
+			performUpdate(request, idClassificazione, tmpMap, note);
 
 			response.sendRedirect("?q=object/detail&p=ClassificazioneIcfCentroAscolto/_a_ID/_v_"+idClassificazione+"&m=Registrazione avvenuta correttamente");
 			
@@ -91,11 +92,15 @@ public class RegistraClassificazioneIcfMethod extends DefaultMethod {
 		}
 	}
 
-	private void performUpdate(HttpServletRequest request, String id, Hashtable<String, Eval> evals)
+	private void performUpdate(HttpServletRequest request, String id, Hashtable<String, Eval> evals, String note)
 			throws Exception {
 		try {
 			UpdateQuery uq = new UpdateQuery("ClassificazioneIcfCentroAscolto", id);
 			Element classElem = uq.getFirstClassElement();
+			if (note!=null && !note.isEmpty())	{
+				Element noteEl = classElem.addElement("note");
+				noteEl.setText(note);
+			}
 			Element items = classElem.addElement("item");
 			for (String item : evals.keySet()) {
 				Eval theEval = evals.get(item);

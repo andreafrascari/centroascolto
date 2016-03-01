@@ -1,66 +1,45 @@
-@BEGIN_TEMPLATE@
+@BEGIN_TEMPLATE@<div class="inpage_detail">
 
+			<div class="inserto">
+				<div role="toolbar">
 
-
-
-	@BEGIN_ClassificazioneIcfCentroAscolto@
-
-<div id="detail">
-		
-				<div class="inserto">
-					<div role="toolbar">
-						<a class="btn btn-default btn-xs btn-info" href="?q=object/detail&amp;p=@CLASS@/_a_ID/_@tag_ID#FLAT@" title="Tornare alla classificazione">
-							<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
-						</a>
-						@BLOCK_BEGIN_EDIT@
-						
-								<a class="btn btn-default btn-xs btn-warning" href="@HREF_DETAIL_EDIT@&amp;t=ClassificazioneIcfCentroAscolto_Edit" title="Modifica la scheda">
+							@BLOCK_BEGIN_EDIT@
+							([
+								[[] != [1]]
+								?? [
+								<a class="btn btn-default btn-xs btn-warning" href="@HREF_DETAIL_EDIT@&amp;t=ClassificazioneIcfCentroAscolto_Edit" title="Aggiorna/integra la classificazione">
 								  <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
-       							</a>		
+       							</a>	
+								]
+							])
 						@BLOCK_END_EDIT@
-				
-					</div>
-			</div>	
-
-				<h3>Classificazione @tag_iter#FLAT@ del @tag_data#FLAT@ nel contesto di:</h3>
-		
+				</div>
+			</div>
 
 			@BLOCK_BEGIN_RESULT_ERROR@
 				<div class="alert alert-danger" role="alert">
   <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
 					Si &egrave; verificato un errore: @ERROR_MESSAGE@
-					<br /><br />
-      				<a href="javascript:history.back();" title="Indietro">Indietro</a>
 				</div>
 			@BLOCK_END_RESULT_ERROR@
 
 			@BLOCK_BEGIN_RESULT_EMPTY@
 				<div class="alert alert-danger" role="alert">
   <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-					Nessun elemento trovato!
-					<br /><br />
-      				<a href="javascript:history.back();" title="Indietro">Indietro</a>
+					Nessun elemento trovato.
 				</div>
 			@BLOCK_END_RESULT_EMPTY@
-			
-			([
-					[ [@tag_accoglienza@@tag_attivazione@@tag_inserimento_lavorativo@] != []]
-					?? [
-						<div id="object-body-nav">
-							<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella navigazione">
-								<tbody>
-									@tag_accoglienza@@tag_attivazione@@tag_inserimento_lavorativo@
-								</tbody>
-							</table>
-						</div>
-					]
-				])
-			
 
-				 
+			@BEGIN_ClassificazioneIcfCentroAscolto@
+			
+				<div class="object-inpage-body">
+					<div class="icf-header">Data: <strong>@tag_data#FLAT@</strong></div>
+					<div class="icf-header">Eventuali note: @tag_note#FLAT@</div>
 				@BEGIN_item@
 					 <div class="list-group">
+					 <ul>
 					@BEGIN_ItemIcfCentroAscolto@
+					([[[@tag_classificazione#FLAT@]!=[]]??[
    						<li id="LI_@tag_ID#FLAT@" 
    						class="list-group-item ([[[@tag_classificazione#FLAT@]==[0]]??[list-group-item-success]])([[[@tag_classificazione#FLAT@]==[1]]??[list-group-item-warning]])([[[@tag_classificazione#FLAT@]==[2]]??[list-group-item-warning]])([[[@tag_classificazione#FLAT@]==[3]]??[list-group-item-danger]])([[[@tag_classificazione#FLAT@]==[4]]??[list-group-item-danger]])([[[@tag_classificazione#FLAT@]==[8]]??[list-group-item-info]])([[[@tag_classificazione#FLAT@]==[9]]??[list-group-item-info]])">
    						([[[@tag_icf.Item_Icf_D.ID#FLAT@] != []] ?? [<a @popup="title=Item ICF,dimensions=medium" class="btn btn-default btn-xs btn-info" href="?q=object/detail&amp;p=Item_Icf_D/_a_ID/_v_@tag_icf.Item_Icf_D.ID#FLAT@" title="Consulta item ICF relativo">
@@ -69,11 +48,12 @@
    						@tag_codice_centro_ascolto#FLAT@ @tag_descrizione#FLAT@<span class="classificazione">.@tag_classificazione#FLAT@</span>
    						<span class="note-classificazione">@tag_osservazione#FLAT@ @tag_procedura_classificazione#FLAT@</span>
    						</li>
+   					 ]])
 					@END_ItemIcfCentroAscolto@
-					</div>
-				@END_item@
-			
-				
-				
+				</ul>
+				</div>							
+				@END_item@		
+				</div>
+					
 			@END_ClassificazioneIcfCentroAscolto@
 		</div>@END_TEMPLATE@
