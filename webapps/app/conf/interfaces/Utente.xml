@@ -25,7 +25,6 @@
       <detail>scheda</detail>  
       <detail_edit>scheda</detail_edit>  
       <filter>scheda</filter>  
-      <list>scheda</list>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
@@ -36,7 +35,7 @@
       <label>nome</label>  
       <detail>nome</detail>  
       <detail_edit>nome</detail_edit>  
-      <filter>nome</filter>  
+      <filter autocomplete="">nome</filter>  
       <list>nome</list>  
       <heading>1</heading>  
       <needed>1</needed>  
@@ -49,7 +48,7 @@
       <label>cognome</label>  
       <detail>cognome</detail>  
       <detail_edit>cognome</detail_edit>  
-      <filter>cognome</filter>  
+      <filter autocomplete="">cognome</filter>  
       <list>cognome</list>  
       <heading>1</heading>  
       <needed>1</needed>  
@@ -62,8 +61,10 @@
     <item> 
       <name>op_primo_colloquio</name>  
       <label>operatore primo colloquio</label>  
-      <detail>operatore primo colloquio</detail>  
-      <detail_edit>operatore primo colloquio</detail_edit>  
+      <detail>accolto da</detail>  
+      <filter>accolto da</filter>  
+      <list>accolto da</list>  
+      <detail_edit>accolto da</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
@@ -75,7 +76,7 @@
       <detail>data primo colloquio</detail>  
       <detail_edit>data primo colloquio</detail_edit>  
       <filter>data primo colloquio</filter>  
-      <list>data primo colloquio</list>  
+      <list>primo colloquio</list>  
       <heading>1</heading>  
       <needed>1</needed>  
       <max_length/>  
@@ -142,7 +143,6 @@
       <detail>codice fiscale</detail>  
       <detail_edit>codice fiscale</detail_edit>  
       <filter>codice fiscale</filter>  
-      <list>codice fiscale</list>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  

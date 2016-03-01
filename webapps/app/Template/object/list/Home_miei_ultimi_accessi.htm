@@ -1,6 +1,9 @@
-@BEGIN_TEMPLATE@
-<div>
-<div id="list">
+@BEGIN_TEMPLATE@<div>
+			<div id="list">
+			
+			
+
+			
 
 
 				@BLOCK_BEGIN_RESULT_ERROR@
@@ -18,7 +21,7 @@
 				@BLOCK_END_RESULT_EMPTY@
 
 				([
-						[[@tag_UOC_Accesso.ID#FLAT@] != []]
+						[[@tag_Utente.ID#FLAT@] != []]
 						?? [
 	<div class="table-responsive">
 			 <table class="table">
@@ -45,8 +48,8 @@
 								</tr>
 								 </thead>
 			    					<tbody>
-								@BEGIN_UOC_Accesso@([
-										[[@XPATH_FUN((count(preceding-sibling::UOC_Accesso)+ 1) mod 2)@@] == [0.0] ]
+								@BEGIN_Utente@([
+										[[@XPATH_FUN((count(preceding-sibling::Utente)+ 1) mod 2)@@] == [0.0] ]
 										?? [
 											<tr class="info">	
 										] :: [
@@ -54,10 +57,10 @@
 										]
 									])
 	
-										@tag_uoc_paziente_glo@@tag_numero_cartella@@tag_uoc_data_ingresso@@tag_dataChiusura@
+										@tag_nome@@tag_cognome@@tag_op_primo_colloquio@@tag_data_primo_colloquio@@tag_data_n@
 											<td>
 											<div role="toolbar">
-												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@" title="Dettaglio">
+												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=Utente/_a_ID/_v_@tag_ID#FLAT@&amp;sez=an" title="Dettaglio">
 													<span aria-hidden="true" class="glyphicon glyphicon-play"></span>
 												</a>
 												([
@@ -71,11 +74,11 @@
 																([ 
 																	[[] == [complex_detail_edit]] 
 																	?? [
-																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/complex_detail_edit/CLS=UOC_Accesso/ID=@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/complex_detail_edit/CLS=Utente/ID=@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
 																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>	
 																		</a>
 																	] :: [
-																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=UOC_Accesso/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=Utente/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
 																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
 																		</a>
 																	]
@@ -87,12 +90,52 @@
 												
 											</div>
 											</td>
-									</tr>@END_UOC_Accesso@
+									</tr>@END_Utente@
 								</tbody>
 					  		</table>
 						]
 					])
 
+		  		
 
- </div>
+		  		
+		  		 
+		  		</div>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+					  <ul class="pager">
+ 
+						@BLOCK_BEGIN_INDIETRO@
+							<li class="previous">
+								<a href="@HREF_LIST_FIRST@" @ajaxable="target=list,replace=true,target_result=list"  title="Vai alla prima pagina">
+									<span aria-hidden="true">&larr;</span> Prima pagina
+								</a>
+							</li>
+							<li>
+								<a href="@HREF_LIST_BACK@" @ajaxable="target=list,replace=true,target_result=list"  title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">
+									Precedente
+								</a>
+							</li>
+						@BLOCK_END_INDIETRO@
+
+						<li><span class="list-res-summary">@NUMERO_ELEMENTI@ elementi trovati - pagina @PAGINA_CORRENTE@</span></li>
+
+						@BLOCK_BEGIN_AVANTI@
+							<li>
+								<a href="@HREF_LIST@"  @ajaxable="target=list,replace=true,target_result=list" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">
+									Successiva
+								</a>
+							</li>
+							<li class="next">
+								<a  href="@HREF_LIST_LAST@" @ajaxable="target=list,replace=true,target_result=list" title="Vai all'ultima pagina">
+								<span aria-hidden="true">&rarr;</span> Ultima pagina</a>
+								</a>
+							</li>
+						@BLOCK_END_AVANTI@
+					  </ul>
+				</div>
+			</nav>
+		  		
+
 		</div>@END_TEMPLATE@
