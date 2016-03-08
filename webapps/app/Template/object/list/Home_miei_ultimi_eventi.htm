@@ -1,8 +1,5 @@
 @BEGIN_TEMPLATE@<div>
-			<div id="list-accessi">
-			
-			
-
+			<div id="list">
 			
 
 
@@ -21,7 +18,7 @@
 				@BLOCK_END_RESULT_EMPTY@
 
 				([
-						[[@tag_Utente.ID#FLAT@] != []]
+						[[@tag_Evento.ID#FLAT@] != []]
 						?? [
 	<div class="table-responsive">
 			 <table class="table">
@@ -32,7 +29,7 @@
 											([
 												[[@HEADER_HREF@] != []]
 												?? [
-													<a title="ordina in base a questo attributo" href="@HEADER_HREF@" @ajaxable="target=list-accessi,replace=true,target_result=list-accessi" ;>
+													<a title="ordina in base a questo attributo" href="@HEADER_HREF@" @ajaxable="target=list,replace=true,target_result=list" ;>
 												]
 											])
 											@HEADER_LABEL@
@@ -48,8 +45,8 @@
 								</tr>
 								 </thead>
 			    					<tbody>
-								@BEGIN_Utente@([
-										[[@XPATH_FUN((count(preceding-sibling::Utente)+ 1) mod 2)@@] == [0.0] ]
+								@BEGIN_Evento@([
+										[[@XPATH_FUN((count(preceding-sibling::Evento)+ 1) mod 2)@@] == [0.0] ]
 										?? [
 											<tr class="info">	
 										] :: [
@@ -57,10 +54,10 @@
 										]
 									])
 	
-										@tag_nome@@tag_cognome@@tag_op_primo_colloquio@@tag_data_primo_colloquio@@tag_data_n@
+										@tag_data@@tag_tipo_nota@@tag_registrato_da@
 											<td>
 											<div role="toolbar">
-												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=Utente/_a_ID/_v_@tag_ID#FLAT@&amp;sez=an" title="Dettaglio">
+												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=Evento/_a_ID/_v_@tag_ID#FLAT@" title="Dettaglio">
 													<span aria-hidden="true" class="glyphicon glyphicon-play"></span>
 												</a>
 												([
@@ -74,11 +71,11 @@
 																([ 
 																	[[] == [complex_detail_edit]] 
 																	?? [
-																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/complex_detail_edit/CLS=Utente/ID=@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/complex_detail_edit/CLS=Evento/ID=@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
 																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>	
 																		</a>
 																	] :: [
-																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=Utente/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=Evento/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
 																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
 																		</a>
 																	]
@@ -90,7 +87,7 @@
 												
 											</div>
 											</td>
-									</tr>@END_Utente@
+									</tr>@END_Evento@
 								</tbody>
 					  		</table>
 						]
@@ -108,11 +105,12 @@
  
 						@BLOCK_BEGIN_INDIETRO@
 							<li class="previous">
-								<a href="@HREF_LIST_FIRST@" @ajaxable="target=list-accessi,replace=true,target_result=list-accessi"  title="Vai alla prima pagina">
-									<span aria-hidden="true"><<</span></a>
+								<a href="@HREF_LIST_FIRST@" @ajaxable="target=list,replace=true,target_result=list"  title="Vai alla prima pagina">
+									<span aria-hidden="true"><<</span>
+								</a>
 							</li>
 							<li>
-								<a href="@HREF_LIST_BACK@" @ajaxable="target=list-accessi,replace=true,target_result=list-accessi"  title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">
+								<a href="@HREF_LIST_BACK@" @ajaxable="target=list,replace=true,target_result=list"  title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">
 									<
 								</a>
 							</li>
@@ -122,12 +120,12 @@
 
 						@BLOCK_BEGIN_AVANTI@
 							<li>
-								<a href="@HREF_LIST@"  @ajaxable="target=list-accessi,replace=true,target_result=list-accessi" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">
+								<a href="@HREF_LIST@"  @ajaxable="target=list,replace=true,target_result=list" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">
 									>
 								</a>
 							</li>
 							<li class="next">
-								<a  href="@HREF_LIST_LAST@" @ajaxable="target=list-accessi,replace=true,target_result=list-accessi" title="Vai all'ultima pagina">
+								<a  href="@HREF_LIST_LAST@" @ajaxable="target=list,replace=true,target_result=list" title="Vai all'ultima pagina">
 								<span aria-hidden="true">>></span></a>
 								</a>
 							</li>
@@ -136,5 +134,6 @@
 				</div>
 			</nav>
 		  		
-
+		  		
+		  		
 		</div>@END_TEMPLATE@

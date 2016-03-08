@@ -15,6 +15,27 @@
   <div id="pannello-1" class="panel-collapse collapse in">
   <div class="panel-body">
 
+<div class="col-lg-4 col-md-4 col-sm-6  home-box">
+<div class="panel panel-warning">
+      <div class="panel-heading">
+        <h3 id="panel-title" class="panel-title">I miei ultimi accessi</h3>
+      </div>
+      <div class="panel-body">
+		@FUN_MODULE(q=object/list,p=Utente/_a_op_primo_colloquio/_c_Operatore/_a_user_user_id/_v_@FUN_GET_USER_INFO(param=username)@,order-by=data_primo_colloquio desc,t=Home_miei_ultimi_accessi)@</div>		
+    </div>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-4 col-sm-6  home-box">
+<div class="panel panel-warning">
+      <div class="panel-heading">
+        <h3 id="panel-title" class="panel-title">I miei ultimi eventi</h3>
+      </div>
+      <div class="panel-body">
+		@FUN_MODULE(q=object/list,p=Evento/_a_registrato_da/_c_Operatore/_a_user_user_id/_v_@FUN_GET_USER_INFO(param=username)@,order-by=data desc,t=Home_miei_ultimi_eventi)@</div>		
+      </div>
+</div>
+</div>
 
   <div class="col-lg-4  col-md-4 col-sm-6 home-box">
 <div class="panel panel-warning">
@@ -37,11 +58,6 @@
 						Registra un nuovo utente: 
       		<div class="inserto">
 					<div role="toolbar">
-			<!-- 
-						<a class="btn btn-default btn-xs btn-success" href="?q=anagrafica/insert/FORM=GLO_Paziente/cls=GLO_Paziente" title="Registra un nuovo paziente">
-							<span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
-						</a>
-						 -->
 						<a class="btn btn-default btn-xs btn-success" href="?q=object/detail_edit&amp;p=Utente&amp;a" title="Registra un nuovo utente">
 							<span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
 						</a>
@@ -68,7 +84,7 @@
 <div class="col-lg-4 col-md-4 col-sm-6  home-box">
 <div class="panel panel-success">
       <div class="panel-heading">
-        <h3 id="panel-title" class="panel-title">Carica allegato per..</h3>
+        <h3 id="panel-title" class="panel-title">Carica documento per..</h3>
       </div>
       <div class="panel-body">
 		@FUN_MODULE(q=object/filter,p=Utente,t=Home_Utente_4attachment)@
@@ -76,28 +92,9 @@
 </div>
 </div>
 
-<div class="col-lg-4 col-md-4 col-sm-6  home-box">
-<div class="panel panel-warning">
-      <div class="panel-heading">
-        <h3 id="panel-title" class="panel-title">I miei ultimi accessi</h3>
-      </div>
-      <div class="panel-body">
-		@FUN_MODULE(q=object/list,p=Utente/_a_op_primo_colloquio/_c_Operatore/_a_user_user_id/_v_@FUN_GET_USER_INFO(param=username)@,order-by=last_modification_date desc,t=Home_miei_ultimi_accessi)@</div>		
-    </div>
-</div>
-</div>
 
 
-<div class="col-lg-4 col-md-4 col-sm-6  home-box">
-<div class="panel panel-warning">
-      <div class="panel-heading">
-        <h3 id="panel-title" class="panel-title">I miei ultimi eventi</h3>
-      </div>
-      <div class="panel-body">
-		@FUN_MODULE(q=object/list,p=Evento/_a_registrato_da/_c_Operatore/_a_user_user_id/_v_@FUN_GET_USER_INFO(param=username)@,order-by=last_modification_date desc,t=Home_mie_ultimi_eventi)@</div>		
-      </div>
-</div>
-</div>
+
 
 
 
