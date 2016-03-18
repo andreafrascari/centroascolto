@@ -24,23 +24,10 @@
 			 <table class="table">
 			    <thead>
 			       <tr>
-									@BLOCK_BEGIN_HEADER@
-										<th>
-											([
-												[[@HEADER_HREF@] != []]
-												?? [
-													<a title="ordina in base a questo attributo" href="@HEADER_HREF@" @ajaxable="target=list,replace=true,target_result=list" ;>
-												]
-											])
-											@HEADER_LABEL@
-											([
-												[[@HEADER_HREF@] != []]
-												?? [
-													</a>
-												]
-											])
-										</th>
-									@BLOCK_END_HEADER@
+									
+										<th>data</th>
+										<th>evento</th>
+									
 									<th scope="col">Azioni</th>
 								</tr>
 								 </thead>
@@ -54,7 +41,7 @@
 										]
 									])
 	
-										@tag_data@@tag_tipo_nota@@tag_registrato_da@
+										@tag_data@@tag_tipo_nota@
 											<td>
 											<div role="toolbar">
 												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=Evento/_a_ID/_v_@tag_ID#FLAT@" title="Dettaglio">
@@ -116,7 +103,7 @@
 							</li>
 						@BLOCK_END_INDIETRO@
 
-						<li><span class="list-res-summary">@NUMERO_ELEMENTI@ elementi trovati - pagina @PAGINA_CORRENTE@</span></li>
+						<li><span class="list-res-summary">@NUMERO_ELEMENTI@ - pagina @PAGINA_CORRENTE@</span></li>
 
 						@BLOCK_BEGIN_AVANTI@
 							<li>
