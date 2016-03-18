@@ -31,7 +31,7 @@ INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`
 (213,1,'it','Via Gorizia',1,0),
 (213,2,'it','Centro ascolto',1,0);
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
-(DA VALORIZZARE,'stato',1,0);
+(211,'stato',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
 (214,'iter',1,0);
@@ -47,6 +47,11 @@ INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_
 (201,'tipologia_documento',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 (201,0,'it','Patente',1,0);
+INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
+(301,'tipo_documento',1,0);
+INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
+(301,0,'it','verbale',1,0),
+(301,1,'it','report',1,0);
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
 (202,'tipo_nota',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
@@ -71,7 +76,7 @@ INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 (205,0,'it','salute',1,0);
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
-(DA VALORIZZARE,'sabatodomenica',1,0);
+(300,'sabatodomenica',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
 (211,'stato_n',1,0);
@@ -84,20 +89,20 @@ INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`
 (208,1,'it','femmina',1,0),
 (208,2,'it','trans',1,0);
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
-(DA VALORIZZARE,'espulso',1,0);
+(300,'espulso',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
-(DA VALORIZZARE,'deceduto',1,0);
+(300,'deceduto',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
-(DA VALORIZZARE,'privo_residenza',1,0);
+(300,'privo_residenza',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
 (210,'stato_civile',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 (210,0,'it','Celibe/Nubile',1,0);
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
-(DA VALORIZZARE,'stato_famiglia',1,0);
+(211,'stato_famiglia',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
 (212,'titolo_studio',1,0);
@@ -108,10 +113,10 @@ INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 (209,0,'it','privo di reddito',1,0);
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
-(206,'automunito',1,0);
+(300,'automunito',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
-(206,0,'it','si',1,0),
-(206,1,'it','no',1,0);
+(300,0,'it','si',1,0),
+(300,1,'it','no',1,0);
 INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
 (207,'lingua_it',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES

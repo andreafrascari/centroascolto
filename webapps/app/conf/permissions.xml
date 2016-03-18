@@ -898,6 +898,134 @@
         </anonymous>
       </ID>
     </Documento>
+    <DocumentoCondiviso>
+      <allegato>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </allegato>
+      <allegato_1>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </allegato_1>
+      <allegato_2>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </allegato_2>
+      <data>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </data>
+      <descrizione>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </descrizione>
+      <tipo_documento>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </tipo_documento>
+      <ID>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </ID>
+    </DocumentoCondiviso>
     <Evento>
       <utente>
         <admin>
@@ -1499,6 +1627,24 @@
           <get>1</get>
         </anonymous>
       </codice_centro_ascolto>
+      <ordine>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </ordine>
       <descrizione>
         <admin>
           <set>1</set>
@@ -1535,6 +1681,42 @@
           <get>1</get>
         </anonymous>
       </classificazione>
+      <procedura_classificazione>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </procedura_classificazione>
+      <osservazione>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </osservazione>
       <allegato>
         <admin>
           <set>1</set>
@@ -2031,24 +2213,6 @@
       </ID>
     </Tessera>
     <Utente>
-      <scheda>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </scheda>
       <sez_anagrafica>
         <admin>
           <set>1</set>
@@ -2067,6 +2231,24 @@
           <get>1</get>
         </anonymous>
       </sez_anagrafica>
+      <scheda>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </scheda>
       <nome>
         <admin>
           <set>1</set>
@@ -2193,24 +2375,6 @@
           <get>1</get>
         </anonymous>
       </data_arrivo_bo>
-      <tessere>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </tessere>
       <stato_n>
         <admin>
           <set>1</set>
@@ -2283,24 +2447,6 @@
           <get>1</get>
         </anonymous>
       </sesso>
-      <sez_residenza>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </sez_residenza>
       <espulso>
         <admin>
           <set>1</set>
@@ -2355,6 +2501,24 @@
           <get>1</get>
         </anonymous>
       </foto>
+      <sez_residenza>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </sez_residenza>
       <privo_residenza>
         <admin>
           <set>1</set>
@@ -2445,6 +2609,24 @@
           <get>1</get>
         </anonymous>
       </residenza_provincia>
+      <sez_situazione_famigliare>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </sez_situazione_famigliare>
       <stato_civile>
         <admin>
           <set>1</set>
@@ -2517,6 +2699,24 @@
           <get>1</get>
         </anonymous>
       </figli>
+      <sez_situazione_scolastica_ed_economica>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </sez_situazione_scolastica_ed_economica>
       <titolo_studio>
         <admin>
           <set>1</set>
@@ -2661,7 +2861,7 @@
           <get>1</get>
         </anonymous>
       </altre_lingue>
-      <sez_situazione_famigliare>
+      <sez_domicilio>
         <admin>
           <set>1</set>
           <get>1</get>
@@ -2678,7 +2878,7 @@
           <set>1</set>
           <get>1</get>
         </anonymous>
-      </sez_situazione_famigliare>
+      </sez_domicilio>
       <domicilio_comune>
         <admin>
           <set>1</set>
@@ -2787,7 +2987,7 @@
           <get>1</get>
         </anonymous>
       </residenze_in_alloggio>
-      <sez_situazione_scolastica_ed_economica>
+      <tessere>
         <admin>
           <set>1</set>
           <get>1</get>
@@ -2804,7 +3004,7 @@
           <set>1</set>
           <get>1</get>
         </anonymous>
-      </sez_situazione_scolastica_ed_economica>
+      </tessere>
       <competenze>
         <admin>
           <set>1</set>
@@ -2913,24 +3113,6 @@
           <get>1</get>
         </anonymous>
       </cittadinanza>
-      <sez_domicilio>
-        <admin>
-          <set>1</set>
-          <get>1</get>
-        </admin>
-        <user>
-          <set>1</set>
-          <get>1</get>
-        </user>
-        <restricted_user>
-          <set>1</set>
-          <get>1</get>
-        </restricted_user>
-        <anonymous>
-          <set>1</set>
-          <get>1</get>
-        </anonymous>
-      </sez_domicilio>
       <presa_in_carico_accoglienza>
         <admin>
           <set>1</set>

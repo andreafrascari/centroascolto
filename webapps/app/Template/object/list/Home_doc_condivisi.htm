@@ -1,0 +1,141 @@
+@BEGIN_TEMPLATE@
+<div>
+			<div id="listdoc">
+				
+
+					<div class="inserto">
+					<div role="toolbar">
+						
+			
+						@BLOCK_BEGIN_EDIT@
+						<a class="btn btn-default btn-xs btn-success" href="?q=object/detail_edit&amp;p=DocumentoCondiviso&amp;a" title="Nuovo documento condiviso">
+							<span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
+						</a>
+
+						@BLOCK_END_EDIT@
+					</div>
+				</div>
+
+			@BLOCK_BEGIN_RESULT_ERROR@
+					<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+						Si &egrave; verificato un errore: @ERROR_MESSAGE@
+					</div>
+				@BLOCK_END_RESULT_ERROR@
+
+				@BLOCK_BEGIN_RESULT_EMPTY@
+					<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+						Nessun elemento trovato.
+					</div>
+				@BLOCK_END_RESULT_EMPTY@
+
+
+				([
+						[[@tag_DocumentoCondiviso.ID#FLAT@] != []]
+						?? [
+							<div class="table-responsive">
+			 <table class="table">
+			    <thead>
+			       <tr>
+									
+										<th>data</th>
+										<th>tipo</th>
+										<th>Download</th>
+									
+									<!--  <th scope="col">Azioni</th>-->
+								</tr>
+								 </thead>
+			    					<tbody>
+								@BEGIN_DocumentoCondiviso@([
+										[[@XPATH_FUN((count(preceding-sibling::DocumentoCondiviso)+ 1) mod 2)@@] == [0.0] ]
+										?? [
+											<tr class="info">	
+										] :: [
+											<tr>
+										]
+									])
+	
+										@tag_data@@tag_tipo_documento@@tag_allegato@
+										<!-- 
+											<td>
+											<div role="toolbar">
+												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=DocumentoCondiviso/_a_ID/_v_@tag_ID#FLAT@&amp;sez=an" title="Dettaglio">
+													<span aria-hidden="true" class="glyphicon glyphicon-play"></span>
+												</a>
+												([
+													[[@FUN_CHECK_INSTANCE_AUTH(CLS=@CLASS@,ID=@tag_ID#FLAT@,LEVEL=2,CREATION_USER=@tag_creation_user#FLAT@)@] == [true]]
+													
+													?? [
+														<span class="NoVisibility">|</span>
+														([
+															[[] != [1]]
+															?? [
+																([ 
+																	[[] == [complex_detail_edit]] 
+																	?? [
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/complex_detail_edit/CLS=DocumentoCondiviso/ID=@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>	
+																		</a>
+																	] :: [
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=DocumentoCondiviso/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+																		</a>
+																	]
+																])
+															]
+														])
+													]
+												])
+												
+											</div>
+											</td>
+											 -->
+									</tr>@END_DocumentoCondiviso@
+								</tbody>
+					  		</table>
+						]
+					])
+
+		  		
+
+		  		
+		  		 
+		  		</div>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+					  <ul class="pager">
+ 
+						@BLOCK_BEGIN_INDIETRO@
+							<li class="previous">
+								<a href="@HREF_LIST_FIRST@" @ajaxable="target=listdoc,replace=true,target_result=listdoc"  title="Vai alla prima pagina">
+									<span aria-hidden="true"><<</span></a>
+							</li>
+							<li>
+								<a href="@HREF_LIST_BACK@" @ajaxable="target=listdoc,replace=true,target_result=listdoc"  title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">
+									<
+								</a>
+							</li>
+						@BLOCK_END_INDIETRO@
+
+						<li><span class="list-res-summary">@NUMERO_ELEMENTI@ - pagina @PAGINA_CORRENTE@</span></li>
+
+						@BLOCK_BEGIN_AVANTI@
+							<li>
+								<a href="@HREF_LIST@"  @ajaxable="target=listdoc,replace=true,target_result=listdoc" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">
+									>
+								</a>
+							</li>
+							<li class="next">
+								<a  href="@HREF_LIST_LAST@" @ajaxable="target=listdoc,replace=true,target_result=listdoc" title="Vai all'ultima pagina">
+								<span aria-hidden="true">>></span></a>
+								</a>
+							</li>
+						@BLOCK_END_AVANTI@
+					  </ul>
+				</div>
+			</nav>
+	</div>	  		
+
+		</div>@END_TEMPLATE@

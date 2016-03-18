@@ -114,7 +114,7 @@ INDEX (`deletion_flag`)
 ALTER TABLE `Contatto` 
   CHANGE `numero_telefono` `numero_telefono` varchar(200),
   CHANGE `altro` `altro` varchar(200),
-  CHANGE `descrizione` `descrizione` longtext NOT NULL,
+  CHANGE `descrizione` `descrizione` longtext,
 CHANGE `ID_Utente_contatti` `ID_Utente_contatti` int(10) NOT NULL,
 INDEX(`ID_Utente_contatti`),
 DROP PRIMARY KEY,
@@ -147,6 +147,32 @@ INDEX (`creation_date`),
 INDEX (`activation_flag`),
 INDEX (`deletion_flag`)
 ;
+
+CREATE TABLE `DocumentoCondiviso` (
+  `ID` int(10) unsigned NOT NULL auto_increment,
+  ADD`allegato` int(10) NOT NULL,
+  ADD`allegato_1` int(10),
+  ADD`allegato_2` int(10),
+  ADD`data` DATE NOT NULL,
+  ADD`descrizione` longtext NOT NULL,
+  ADD`tipo_documento` int(10) NOT NULL,
+  `owner_user` int(10) unsigned NULL,
+  `owner_group` int(10) unsigned NULL,
+  `creation_date` date NOT NULL,
+  `creation_user` varchar(100) NOT NULL,
+  `last_modification_date` date,
+  `last_modification_user` varchar(100),
+  `deletion_date` date,
+  `deletion_user` varchar(100),
+  `deletion_flag` tinyint(1) NOT NULL,
+  `activation_flag` tinyint(1) NOT NULL,
+PRIMARY KEY ( `ID` ),
+INDEX (`owner_user`),
+INDEX (`owner_group`),
+INDEX (`creation_user`),
+INDEX (`creation_date`),
+INDEX (`activation_flag`),
+INDEX (`deletion_flag`)) ENGINE=InnoDB;
 
 ALTER TABLE `Evento` 
   CHANGE `data` `data` DATE NOT NULL,
@@ -213,8 +239,11 @@ INDEX (`deletion_flag`)
 
 ALTER TABLE `ItemIcfCentroAscolto` 
   CHANGE `codice_centro_ascolto` `codice_centro_ascolto` varchar(200) NOT NULL,
+  CHANGE `ordine` `ordine` int(10) NOT NULL,
   CHANGE `descrizione` `descrizione` longtext NOT NULL,
   CHANGE `classificazione` `classificazione` int(10),
+  CHANGE `procedura_classificazione` `procedura_classificazione` longtext,
+  CHANGE `osservazione` `osservazione` longtext,
   CHANGE `allegato` `allegato` int(10),
 CHANGE `ID_ClassificazioneIcfCentroAscolto_item` `ID_ClassificazioneIcfCentroAscolto_item` int(10) NOT NULL,
 INDEX(`ID_ClassificazioneIcfCentroAscolto_item`),
@@ -302,7 +331,7 @@ ALTER TABLE `Utente`
   CHANGE `data_n` `data_n` DATE NOT NULL,
   CHANGE `data_arrivo_it` `data_arrivo_it` DATE,
   CHANGE `data_arrivo_bo` `data_arrivo_bo` DATE,
-    CHANGE `stato_n` `stato_n` int(10) NOT NULL,
+  CHANGE `stato_n` `stato_n` int(10) NOT NULL,
   CHANGE `comune_n` `comune_n` varchar(200),
   CHANGE `cf` `cf` varchar(200),
   CHANGE `sesso` `sesso` int(10) NOT NULL,
@@ -331,7 +360,7 @@ ALTER TABLE `Utente`
   CHANGE `domicilio_via` `domicilio_via` varchar(200),
   CHANGE `domicilio_provincia` `domicilio_provincia` varchar(200),
   CHANGE `nota_domicilio` `nota_domicilio` varchar(200),
-                    CHANGE `ID_Operatore_primi_colloqui` `ID_Operatore_primi_colloqui` int(10) NOT NULL,
+                      CHANGE `ID_Operatore_primi_colloqui` `ID_Operatore_primi_colloqui` int(10) NOT NULL,
 INDEX(`ID_Operatore_primi_colloqui`),
 DROP PRIMARY KEY,
 ADD PRIMARY KEY ( `ID` ),
