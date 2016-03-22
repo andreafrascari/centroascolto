@@ -62,9 +62,9 @@
       <name>op_primo_colloquio</name>  
       <label>operatore primo colloquio</label>  
       <detail>accolto da</detail>  
-      <filter>accolto da</filter>  
+      <filter autocomplete="">accolto da</filter>  
       <list>accolto da</list>  
-      <detail_edit>accolto da</detail_edit>  
+      <detail_edit  autocomplete="" no-link-new="1">accolto da</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
@@ -352,8 +352,8 @@
     <item> 
       <name>percentuale_inv</name>  
       <label>percentuale invalidita</label>  
-      <detail>percentuale inv</detail>  
-      <detail_edit>percentuale inv</detail_edit>  
+      <detail>percentuale invalidita</detail>  
+      <detail_edit>percentuale invalidita</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
