@@ -77,7 +77,6 @@
       <detail_edit>descrizione</detail_edit>  
       <filter>descrizione</filter>  
       <heading>1</heading>  
-      <needed>1</needed>  
       <max_length/>  
       <default/>  
       <order>61</order> 
