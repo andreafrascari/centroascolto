@@ -7,7 +7,7 @@
       <div class="panel-body">
 
 
-			<div id="list">
+			<div id="list-e">
 			
 			<div class="inserto">
 					<div role="toolbar">
@@ -46,7 +46,7 @@
 											([
 												[[@HEADER_HREF@] != []]
 												?? [
-													<a title="ordina in base a questo attributo" href="@HEADER_HREF@" @ajaxable="target=list,replace=true,target_result=list" ;>
+													<a title="ordina in base a questo attributo" href="@HEADER_HREF@" @ajaxable="target=list-e,replace=true,target_result=list-e" ;>
 												]
 											])
 											@HEADER_LABEL@
@@ -58,7 +58,7 @@
 											])
 										</th>
 									@BLOCK_END_HEADER@
-									<th scope="col">Azioni</th>
+									<th scope="col">&nbsp;</th>
 								</tr>
 								 </thead>
 			    					<tbody>
@@ -122,12 +122,12 @@
  
 						@BLOCK_BEGIN_INDIETRO@
 							<li class="previous">
-								<a href="@HREF_LIST_FIRST@" @ajaxable="target=list,replace=true,target_result=list"  title="Vai alla prima pagina">
+								<a href="@HREF_LIST_FIRST@" @ajaxable="target=list-e,replace=true,target_result=list-e"  title="Vai alla prima pagina">
 									<span aria-hidden="true">&larr;</span> Prima pagina
 								</a>
 							</li>
 							<li>
-								<a href="@HREF_LIST_BACK@" @ajaxable="target=list,replace=true,target_result=list"  title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">
+								<a href="@HREF_LIST_BACK@" @ajaxable="target=list-e,replace=true,target_result=list-e"  title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">
 									Precedente
 								</a>
 							</li>
@@ -137,12 +137,12 @@
 
 						@BLOCK_BEGIN_AVANTI@
 							<li>
-								<a href="@HREF_LIST@"  @ajaxable="target=list,replace=true,target_result=list" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">
+								<a href="@HREF_LIST@"  @ajaxable="target=list-e,replace=true,target_result=list-e" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">
 									Successiva
 								</a>
 							</li>
 							<li class="next">
-								<a  href="@HREF_LIST_LAST@" @ajaxable="target=list,replace=true,target_result=list" title="Vai all'ultima pagina">
+								<a  href="@HREF_LIST_LAST@" @ajaxable="target=list-e,replace=true,target_result=list-e" title="Vai all'ultima pagina">
 								<span aria-hidden="true">&rarr;</span> Ultima pagina</a>
 								</a>
 							</li>

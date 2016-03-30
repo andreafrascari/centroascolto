@@ -60,33 +60,41 @@ select 212, ID, 'it', nome, 1, 0, 'admin',curdate() from  `tipi_comuni`;
 
 /* data */
 
+delete from ResidenzaInAlloggio;
 insert into ResidenzaInAlloggio (`tipologia_alloggio`, `dal`, `al`, `descrizione`, `creation_date`, `creation_user`,  `deletion_flag`, `activation_flag`, `ID_Utente_residenze_in_alloggio`)
 SELECT  `tipologia`, `data`,null, `descrizione`,curdate(),'admin', 0,1, `utente_id` FROM `alloggi` ;
 
+delete from Competenze;
 insert into  `Competenze` 
 (`tipologia_competenza`, `descrizione`,`creation_date`, `creation_user`, `deletion_flag`, `activation_flag`, `ID_Utente_competenze`)
 SELECT  `tipologia`, `descrizione`,curdate(),'admin',0,1,  `utente_id` FROM `competenze`;
 
+delete from Documento;
 insert into `Documento`
 (`ID_Utente_documenti`,`scadenza`,`tipologia_documento`,`numero`,`descrizione`,`rilasciato_da`,`creation_date`, `creation_user`,`deletion_flag`, `activation_flag`)
 SELECT `utente_id`, `scadenza`, `tipologia`, `numero`, `descrizione`, `rilasciato_da`,curdate(),'admin',0,1 FROM `documenti`;
 
+delete from Evento;
 insert into `Evento` 
 (`data`,ID_Operatore_eventi_registrati,`ID_Utente_eventi`,`tipo_nota`,`testo`,`creation_date`, `creation_user`,`deletion_flag`, `activation_flag`)
 SELECT `data`, `operatore_id`, `utente_id`, `tipologia`, `testo`,curdate(),'admin',0,1 FROM `note` ;
 
+delete from Cittadinanza;
 insert into `Cittadinanza`
 (`ID_Utente_cittadinanza`,`stato`,`creation_date`, `creation_user`,`deletion_flag`, `activation_flag`)
 SELECT `utente_id`, `stato_id`,curdate(),'admin',0,1 FROM `nazionalita` ;
 
+delete from Contatto;
 insert into `Contatto` 
 (`ID_Utente_contatti`,`numero_telefono`,`descrizione`,`creation_date`, `creation_user`,`deletion_flag`, `activation_flag`)
 SELECT `utente_id`, `numero`, `descrizione`,curdate(),'admin',0,1 FROM `telefoni`;
 
+delete from Tessera;
 insert into `Tessera` 
 (`ID_Utente_tessere`,`emissione`,`scadenza`,`tipologia_tessera`,`sabatodomenica`,`creation_date`, `creation_user`,`deletion_flag`, `activation_flag`)
 SELECT `utente_id`, `emissione`, `scadenza`, `tipologia`, `sabatodomenica`,curdate(),'admin',0,1 FROM `tessere`;
 
+delete from ServizioDiRiferimento;
 insert into  `ServizioDiRiferimento` 
 (`ID_Utente_servizi_di_riferimento`,`tipo_servizio`,`referente`,`info`,`creation_date`, `creation_user`,`deletion_flag`, `activation_flag`)
 SELECT `utente_id`, `servizio_id`, `referente`, `info`,curdate(), 'admin',0,1 FROM `servizi`;
@@ -108,4 +116,36 @@ SELECT `ID`,`scheda`, `nome`, `cognome`, `cf`, `figli`, `data_n`, `data_primo_co
 (select comune from tipi_comuni where ID = `comune_famiglia`) as `comune_famiglia`,  
 `titolo_studio`, `stato_civile`, `lingua_it`, `altre_lingue`, `madrelingua`, `op_primo_colloquio`, `percentuale_inv`, `situazione_economica`, `altro`, curdate(),'admin',0,1 FROM `utenti`;
 
+delete from Accoglienza;
+delete from 	Attivazione;
+delete from 	ClassificazioneIcfCentroAscolto;
+delete from 	Incontro_Inserimento_Lavorativo;
+delete from 	Inserimento_Lavorativo;
+delete from 	ItemIcfCentroAscolto;
+delete from DocumentoCondiviso;
+delete FROM  `_system_attachment` ;
 
+
+drop table alloggi;
+drop table 	competenze; 
+drop table 	documenti;
+drop table nazionalita;
+drop table note;
+drop table operatori;
+drop table servizidrop table ;
+drop table telefoni;
+drop table tessere;
+drop table tipi_alloggi;
+drop table tipi_area_intervento;
+drop table tipi_competenze;
+drop table tipi_comunidrop table ;
+drop table tipi_documenti;
+drop table tipi_nota;
+drop table tipi_servizi;
+drop table tipi_situazione_economica;
+drop table tipi_stati;
+drop table tipi_stato_civile;
+drop table tipi_tessere;
+drop table tipi_tipo_servizio;
+drop table tipi_titoli_studio;
+drop table utenti;

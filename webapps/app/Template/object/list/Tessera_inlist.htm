@@ -5,7 +5,7 @@
         <h3 id="panel-title" class="panel-title">Tessere</h3>
       </div>
       <div class="panel-body">
-			<div id="list">
+			<div id="list-t">
 			
 			<div class="inserto">
 					<div role="toolbar">
@@ -42,24 +42,11 @@
 			 <table class="table">
 			    <thead>
 			       <tr>
-									@BLOCK_BEGIN_HEADER@
-										<th>
-											([
-												[[@HEADER_HREF@] != []]
-												?? [
-													<a title="ordina in base a questo attributo" href="@HEADER_HREF@" @ajaxable="target=list,replace=true,target_result=list" ;>
-												]
-											])
-											@HEADER_LABEL@
-											([
-												[[@HEADER_HREF@] != []]
-												?? [
-													</a>
-												]
-											])
-										</th>
-									@BLOCK_END_HEADER@
-									<th scope="col">Azioni</th>
+									
+										<th>tipologia</th>
+										<th>emissione</th>
+									
+									<th scope="col">&nbsp;</th>
 								</tr>
 								 </thead>
 			    					<tbody>
@@ -72,7 +59,7 @@
 										]
 									])
 	
-										@tag_tipologia_tessera@@tag_emissione@@tag_scadenza@@tag_sabatodomenica@
+										@tag_tipologia_tessera@@tag_emissione@
 											<td>
 											<div role="toolbar">
 												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=Tessera/_a_ID/_v_@tag_ID#FLAT@" title="Dettaglio">
@@ -123,12 +110,12 @@
  
 						@BLOCK_BEGIN_INDIETRO@
 							<li class="previous">
-								<a href="@HREF_LIST_FIRST@" @ajaxable="target=list,replace=true,target_result=list"  title="Vai alla prima pagina">
+								<a href="@HREF_LIST_FIRST@" @ajaxable="target=list-t,replace=true,target_result=list-t"  title="Vai alla prima pagina">
 									<span aria-hidden="true">&larr;</span> Prima pagina
 								</a>
 							</li>
 							<li>
-								<a href="@HREF_LIST_BACK@" @ajaxable="target=list,replace=true,target_result=list"  title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">
+								<a href="@HREF_LIST_BACK@" @ajaxable="target=list-t,replace=true,target_result=list-t"  title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">
 									Precedente
 								</a>
 							</li>
@@ -138,12 +125,12 @@
 
 						@BLOCK_BEGIN_AVANTI@
 							<li>
-								<a href="@HREF_LIST@"  @ajaxable="target=list,replace=true,target_result=list" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">
+								<a href="@HREF_LIST@"  @ajaxable="target=list-t,replace=true,target_result=list-t" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">
 									Successiva
 								</a>
 							</li>
 							<li class="next">
-								<a  href="@HREF_LIST_LAST@" @ajaxable="target=list,replace=true,target_result=list" title="Vai all'ultima pagina">
+								<a  href="@HREF_LIST_LAST@" @ajaxable="target=list-t,replace=true,target_result=list-t" title="Vai all'ultima pagina">
 								<span aria-hidden="true">&rarr;</span> Ultima pagina</a>
 								</a>
 							</li>

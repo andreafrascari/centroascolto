@@ -1,175 +1,173 @@
 
 <div class="row">
-<br />
+	<br />
 
 
-<div class="panel-group" id="accordion">
+	<div class="panel-group" id="accordion">
 
 
- <div class="panel panel-primary">
-  <div class="panel-heading">
-   <h4 class="panel-title">
-   <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#pannello-1">Al Centro Ascolto</a>
-   </h4>
-  </div>
-  <div id="pannello-1" class="panel-collapse collapse in">
-  <div class="panel-body">
-  
-  
-  <div class="col-lg-4 col-md-6 col-sm-6  home-box">
-<div class="panel panel-warning">
-      <div class="panel-heading">
-        <h3 id="panel-title" class="panel-title">I miei ultimi eventi</h3>
-      </div>
-      <div class="panel-body">
-		@FUN_MODULE(q=object/list,p=Evento/_a_registrato_da/_c_Operatore/_a_user_user_id/_v_@FUN_GET_USER_INFO(param=username)@,order-by=data desc,t=Home_miei_ultimi_eventi)@</div>		
-      </div>
-</div>
-</div>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a class="accordion-toggle" data-toggle="collapse"
+						data-parent="#accordion" href="#pannello-1">Al Centro Ascolto</a>
+				</h4>
+			</div>
+			<div id="pannello-1" class="panel-collapse collapse in">
+				<div class="panel-body">
 
 
-  <div class="col-lg-4  col-md-6 col-sm-6 home-box">
-<div class="panel panel-warning">
-      <div class="panel-heading">
-        <h3 id="panel-title" class="panel-title">Bacheca messaggi</h3>
-      </div>
-      <div class="panel-body">
-		@FUN_MODULE(q=object/list,p=_system_news,t=Bacheca,order-by=creation_date desc,t=Home_bacheca)@
-      </div>
-</div>
-</div>
-
-  <div class="col-lg-4  col-md-6 col-sm-6 home-box">
-<div class="panel panel-warning">
-      <div class="panel-heading">
-        <h3 id="panel-title" class="panel-title">Documenti Condivisi</h3>
-      </div>
-      <div class="panel-body">
-		@FUN_MODULE(q=object/list,p=DocumentoCondiviso,t=Home_doc_condivisi,order-by=data desc)@
-      </div>
-</div>
-</div>
-
-
-<div class="col-lg-4 col-md-6 col-sm-6 home-box">
-<div class="panel panel-success">
-      <div class="panel-heading">
-        <h3 id="panel-title" class="panel-title">Nuovo utente</h3>
-      </div>
-      <div class="panel-body">      
-						Registra un nuovo utente: 
-      		<div class="inserto">
-					<div role="toolbar">
-						<a class="btn btn-default btn-xs btn-success" href="?q=object/detail_edit&amp;p=Utente&amp;a" title="Registra un nuovo utente">
-							<span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
-						</a>
-						
+					<div class="col-lg-4 col-md-6 col-sm-6  home-box">
+						<div class="panel panel-warning">
+							<div class="panel-heading">
+								<h3 id="panel-title" class="panel-title">I miei ultimi
+									eventi</h3>
+							</div>
+							<div class="panel-body">
+								@FUN_MODULE(q=object/list,p=Evento/_a_registrato_da/_c_Operatore/_a_user_user_id/_v_@FUN_GET_USER_INFO(param=username)@,order-by=data
+								desc,t=Home_miei_ultimi_eventi)@</div>
+						</div>
 					</div>
 				</div>
-			</div>
-</div>
-</div>
 
 
-<div class="col-lg-4 col-md-6 col-sm-6  home-box">
-<div class="panel panel-warning">
-      <div class="panel-heading">
-        <h3 id="panel-title" class="panel-title">Cerca utenti</h3>
-      </div>
-      <div class="panel-body">
-		@FUN_MODULE(q=object/filter,p=Utente,t=Home_Utente_quick_search)@
-	</div>
-</div>
-</div>
+				<div class="col-lg-4  col-md-6 col-sm-6 home-box">
+					<div class="panel panel-warning">
+						<div class="panel-heading">
+							<h3 id="panel-title" class="panel-title">Bacheca messaggi</h3>
+						</div>
+						<div class="panel-body">
+							@FUN_MODULE(q=object/list,p=_system_news,t=Bacheca,order-by=creation_date
+							desc,t=Home_bacheca)@</div>
+					</div>
+				</div>
 
-
-<div class="col-lg-4 col-md-6 col-sm-6  home-box">
-<div class="panel panel-success">
-      <div class="panel-heading">
-        <h3 id="panel-title" class="panel-title">Carica documento per..</h3>
-      </div>
-      <div class="panel-body">
-		@FUN_MODULE(q=object/filter,p=Utente,t=Home_Utente_4attachment)@
-	</div>
-</div>
-</div>
-
-  
-  <!-- 
-
-<div class="col-lg-4 col-md-6 col-sm-6  home-box">
-<div class="panel panel-warning">
-      <div class="panel-heading">
-        <h3 id="panel-title" class="panel-title">I miei ultimi accessi</h3>
-      </div>
-      <div class="panel-body">
-		@FUN_MODULE(q=object/list,p=Utente/_a_op_primo_colloquio/_c_Operatore/_a_user_user_id/_v_@FUN_GET_USER_INFO(param=username)@,order-by=data_primo_colloquio desc,t=Home_miei_ultimi_accessi)@</div>		
-    </div>
-</div>
-</div>
- -->
+				<div class="col-lg-4  col-md-6 col-sm-6 home-box">
+					<div class="panel panel-warning">
+						<div class="panel-heading">
+							<h3 id="panel-title" class="panel-title">Documenti Condivisi</h3>
+						</div>
+						<div class="panel-body">
+							@FUN_MODULE(q=object/list,p=DocumentoCondiviso,t=Home_doc_condivisi,order-by=data
+							desc)@
+						</div>
+					</div>
+				
 
 
 
+				<div class="col-lg-4 col-md-6 col-sm-6 home-box">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 id="panel-title" class="panel-title">Nuovo utente</h3>
+						</div>
+						<div class="panel-body">
+							Registra un nuovo utente:
+							<div class="inserto">
+								<div role="toolbar">
+									<a class="btn btn-default btn-xs btn-success"
+										href="?q=object/detail_edit&amp;p=Utente&amp;a"
+										title="Registra un nuovo utente"> <span aria-hidden="true"
+										class="glyphicon glyphicon-plus"></span>
+									</a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
 
+				<div class="col-lg-4 col-md-6 col-sm-6  home-box">
+					<div class="panel panel-warning">
+						<div class="panel-heading">
+							<h3 id="panel-title" class="panel-title">Cerca utenti</h3>
+						</div>
+						<div class="panel-body">
+							@FUN_MODULE(q=object/filter,p=Utente,t=Home_Utente_quick_search)@
+						</div>
+					</div>
+				</div>
 
 
+				<div class="col-lg-4 col-md-6 col-sm-6  home-box">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 id="panel-title" class="panel-title">Carica documento
+								per..</h3>
+						</div>
+						<div class="panel-body">
+							@FUN_MODULE(q=object/filter,p=Utente,t=Home_Utente_4attachment)@
+						</div>
+					</div>
+				</div>
 
 
-
-
-</div>
-</div>
-</div>
-
-  
-
- <div class="panel panel-primary">
-  <div class="panel-heading">
-   <h4 class="panel-title">
-   <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#pannello-2">In amministrazione</a>
-   </h4>
-  </div>
-  <div id="pannello-2" class="panel-collapse collapse in">
-  <div class="panel-body">
-  
-  
-  
-
-<div class="col-lg-12 col-md-12 col-sm-12 home-box">
-	<div class="panel panel-danger">
-	      <div class="panel-heading">
-	        <h3 id="panel-title" class="panel-title">Statistiche</h3>
-	      </div>
-	      <div class="panel-body">			
-			Questa pagine contiene delle statistiche basate su distribuzioni di dati generate automaticamente specificando i parametri che si desidera monitorare.
-			<br /><br />
-
-			A titolo di esempio, scegliendo la scheda "Visite" e specificando il parametro "tipologia", il sistema genera - tramite grafici a barre o torte - le frequenze dei possibili valori (psicologica, logopedica etc.).
-			<br /><br />
-			E' possibile specificare più parametri contemporaneamente, ed il periodo relativo al quale generare le frequenze (le date sono riferite alla creazione delle schede della cartella).
-			<br /><br />
-			
-			<div aria-label="Justified button group" role="group" class="btn-group btn-group-justified"> 
-				<a role="button" class="btn btn-default" href="?q=stat/distribution/CLS=Utente">Utenti</a> 
-				<a role="button" class="btn btn-default" href="?q=stat/distribution/CLS=Tessera">Tessere</a>
-				<a role="button" class="btn btn-default" href="?q=stat/distribution/CLS=Evento">Eventi</a>
-				<a role="button" class="btn btn-default" href="?q=stat/distribution/CLS=Attivazione">Attivazioni</a>
-				<a role="button" class="btn btn-default" href="?q=stat/distribution/CLS=Accoglienza">Accoglienza</a>
-				<a role="button" class="btn btn-default" href="?q=stat/distribution/CLS=Inserimento_Lavorativo">Inserimenti lavorativi</a>
 			</div>
 		</div>
 	</div>
-</div>   
 
-                                                         
+
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a class="accordion-toggle" data-toggle="collapse"
+					data-parent="#accordion" href="#pannello-2">In amministrazione</a>
+			</h4>
+		</div>
+		<div id="pannello-2" class="panel-collapse collapse in">
+			<div class="panel-body">
+
+
+
+
+				<div class="col-lg-12 col-md-12 col-sm-12 home-box">
+					<div class="panel panel-danger">
+						<div class="panel-heading">
+							<h3 id="panel-title" class="panel-title">Statistiche</h3>
+						</div>
+						<div class="panel-body">
+							Questa pagine contiene delle statistiche basate su distribuzioni
+							di dati generate automaticamente specificando i parametri che si
+							desidera monitorare. <br />
+							<br /> A titolo di esempio, scegliendo la scheda "Visite" e
+							specificando il parametro "tipologia", il sistema genera -
+							tramite grafici a barre o torte - le frequenze dei possibili
+							valori (psicologica, logopedica etc.). <br />
+							<br /> E' possibile specificare più parametri
+							contemporaneamente, ed il periodo relativo al quale generare le
+							frequenze (le date sono riferite alla creazione delle schede
+							della cartella). <br />
+							<br />
+
+							<div aria-label="Justified button group" role="group"
+								class="btn-group btn-group-justified">
+								<a role="button" class="btn btn-default"
+									href="?q=stat/distribution/CLS=Utente">Utenti</a> <a
+									role="button" class="btn btn-default"
+									href="?q=stat/distribution/CLS=Tessera">Tessere</a> <a
+									role="button" class="btn btn-default"
+									href="?q=stat/distribution/CLS=Evento">Eventi</a> <a
+									role="button" class="btn btn-default"
+									href="?q=stat/distribution/CLS=Attivazione">Attivazioni</a> <a
+									role="button" class="btn btn-default"
+									href="?q=stat/distribution/CLS=Accoglienza">Accoglienza</a> <a
+									role="button" class="btn btn-default"
+									href="?q=stat/distribution/CLS=Inserimento_Lavorativo">Inserimenti
+									lavorativi</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
 
 </div>
 </div>
-</div>
- 
-</div>
-</div>
-	
+
 
