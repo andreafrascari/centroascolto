@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="ROLLING_FILE_APPENDER" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="/var/serena/HelpDesk/log/log.log"/>
+		<param name="Append" value="true"/>
+		<param name="MaxFileSize" value="50MB"/>
+		<param name="MaxBackupIndex" value="5"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%p ;; %d{ISO8601} ;; %c.%M (%L) ;; %m%n" />
+		</layout>
+	</appender>	
+
+	<appender name="ERROR_APPENDER" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="/var/serena/HelpDesk/log/error.log"/>
+		<param name="Append" value="true"/>
+		<param name="MaxFileSize" value="10MB"/>
+		<param name="MaxBackupIndex" value="5"/>
+		<param name="Threshold" value="ERROR"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%p ;; %d{ISO8601} ;; %c.%M (%L) ;; %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="MAIL_APPENDER" class="org.apache.log4j.net.SMTPAppender">
+		<param name="SMTPHost" value="aspmx.l.google.com" />
+		<param name="From" value="no-reply@serena.it" />
+		<param name="To" value="afrascari@anastasis.it, apegoretti@anastasis.it" />
+		<param name="Subject" value="SERENA FATAL ERROR - Help Desk (ANATEST)" />
+		<param name="BufferSize" value="1" />
+		<param name="threshold" value="fatal" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%p ;; %d{ISO8601} ;; %c.%M (%L) ;; %m%n" />
+		</layout>
+	</appender>
+	
+	<logger name="eu.anastasis">
+		<level value="DEBUG"/>
+		<appender-ref ref="ROLLING_FILE_APPENDER" />
+		<appender-ref ref="MAIL_APPENDER" />
+	</logger>
+
+	<root>
+		<level value="ERROR"/>		
+		<appender-ref ref="ERROR_APPENDER" />
+	</root>
+</log4j:configuration>
