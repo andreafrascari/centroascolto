@@ -1,4 +1,4 @@
-; Fri Mar 18 20:23:08 CET 2016
+; Tue Apr 19 17:55:09 CEST 2016
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
@@ -431,10 +431,18 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot allegato_4
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(multislot servizi_di_riferimento
 		(type INSTANCE)
 ;+		(allowed-classes ServizioDiRiferimento)
 ;+		(inverse-slot inverse_of_servizi_di_riferimento)
+		(create-accessor read-write))
+	(single-slot allegato_3
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot allegato_2
 		(type STRING)
@@ -1045,6 +1053,14 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot allegato_4
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato_3
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot al
 		(type STRING)
 ;+		(cardinality 0 1)
@@ -1054,7 +1070,15 @@
 ;+		(allowed-classes Utente)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
+	(single-slot allegato_2
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato_1
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))

@@ -3,7 +3,7 @@
 <bean> 
   <title>Evento</title>  
   <data_source>Evento</data_source>  
-  <order_by>data</order_by>  
+  <order_by>data desc</order_by>  
   <xml> 
     <class>Evento</class> 
   </xml>  

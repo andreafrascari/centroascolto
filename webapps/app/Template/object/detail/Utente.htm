@@ -14,7 +14,12 @@
 						<a class="btn btn-default btn-xs btn-info" href="ModuleIndex?q=birtReport/give/CLS=@CLASS@/ID=@tag_ID#FLAT@/DOC=cartella_situazione_economica/FILE=cartella_situazione_economica/TYPE=pdf" title="Anagrafica e situazione socio-economica: genera versione pdf">
 							  <span aria-hidden="true" class="glyphicon glyphicon-print"></span>
       					</a>
+      					<!-- 
 						<a class="btn btn-default btn-xs btn-success" href="ModuleIndex?q=birtReport/give/CLS=@CLASS@/ID=@tag_ID#FLAT@/DOC=cartella/FILE=cartella/TYPE=pdf" title="Cartella completa: genera versione pdf">
+							  <span aria-hidden="true" class="glyphicon glyphicon-print"></span>
+      					</a>
+      					 -->
+						<a class="btn btn-default btn-xs btn-success" href="ModuleIndex?q=birtReport/give/CLS=@CLASS@/ID=@tag_ID#FLAT@/DOC=cartella_presa_in_carico/FILE=cartella_presa_in_carico/TYPE=pdf" title="Tessere ed eventi: genera versione pdf">
 							  <span aria-hidden="true" class="glyphicon glyphicon-print"></span>
       					</a>
 						@BLOCK_BEGIN_EDIT@
@@ -106,9 +111,9 @@
 									@tag_sez_situazione_scolastica_ed_economica@@tag_titolo_studio@@tag_situazione_economica@@tag_altro@@tag_automunito@@tag_percentuale_inv@@tag_madrelingua@@tag_lingua_it@@tag_altre_lingue@
 									
 									@tag_residenze_in_alloggio@
-									<tr><th scope="row">nuova residenza</th><td>
+									<tr><th scope="row">nuovo alloggio</th><td>
 										<div role="toolbar">
-											<a class="btn btn-default btn-xs btn-success" @popup="title=Registra nuova residenza,dimensions=big" href="?q=@MODULE@/detail_edit&amp;p=ResidenzaInAlloggio&amp;a=_a_inverse_of_residenze_in_alloggio/_c_Utente/_a_ID/_v_@tag_ID#FLAT@" title="registra nuova residenza">
+											<a class="btn btn-default btn-xs btn-success" @popup="title=Registra nuovo alloggio,dimensions=big" href="?q=@MODULE@/detail_edit&amp;p=ResidenzaInAlloggio&amp;a=_a_inverse_of_residenze_in_alloggio/_c_Utente/_a_ID/_v_@tag_ID#FLAT@" title="registra nuovo alloggio">
 												<span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
 											</a>									
 										</div>

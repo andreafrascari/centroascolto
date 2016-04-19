@@ -89,6 +89,54 @@
       <to>ID</to> 
     </item>  
     <item> 
+      <name>allegato_1</name>  
+      <type>20</type>  
+      <xml> 
+        <name>allegato_1</name>  
+        <class>_system_attachment</class>  
+        <relationship>N-1</relationship> 
+      </xml>  
+      <codomain>_system_attachment</codomain>  
+      <from>allegato_1</from>  
+      <to>ID</to> 
+    </item> 
+    <item> 
+      <name>allegato_2</name>  
+      <type>20</type>  
+      <xml> 
+        <name>allegato_2</name>  
+        <class>_system_attachment</class>  
+        <relationship>N-1</relationship> 
+      </xml>  
+      <codomain>_system_attachment</codomain>  
+      <from>allegato_2</from>  
+      <to>ID</to> 
+    </item>  
+    <item> 
+      <name>allegato_3</name>  
+      <type>20</type>  
+      <xml> 
+        <name>allegato_3</name>  
+        <class>_system_attachment</class>  
+        <relationship>N-1</relationship> 
+      </xml>  
+      <codomain>_system_attachment</codomain>  
+      <from>allegato_3</from>  
+      <to>ID</to> 
+    </item>  
+    <item> 
+      <name>allegato_4</name>  
+      <type>20</type>  
+      <xml> 
+        <name>allegato_4</name>  
+        <class>_system_attachment</class>  
+        <relationship>N-1</relationship> 
+      </xml>  
+      <codomain>_system_attachment</codomain>  
+      <from>allegato_4</from>  
+      <to>ID</to> 
+    </item>   
+    <item> 
       <name>owner_user</name>  
       <type>2</type>  
       <xml> 
