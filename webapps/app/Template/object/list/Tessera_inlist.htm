@@ -1,5 +1,5 @@
 @BEGIN_TEMPLATE@
-<div class="col-lg-6 col-md-6 home-box">
+<div class="col-lg-12 col-md-12 home-box">
 <div class="panel panel-warning">
       <div class="panel-heading">
         <h3 id="panel-title" class="panel-title">Tessere</h3>
@@ -45,6 +45,7 @@
 									
 										<th>tipologia</th>
 										<th>emissione</th>
+										<th>scadenza</th>
 									
 									<th scope="col">&nbsp;</th>
 								</tr>
@@ -59,7 +60,7 @@
 										]
 									])
 	
-										@tag_tipologia_tessera@@tag_emissione@
+										@tag_tipologia_tessera@@tag_emissione@@tag_scadenza@
 											<td>
 											<div role="toolbar">
 												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=Tessera/_a_ID/_v_@tag_ID#FLAT@" title="Dettaglio">

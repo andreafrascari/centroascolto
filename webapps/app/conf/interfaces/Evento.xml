@@ -65,7 +65,8 @@
       <label>testo</label>  
       <detail>testo</detail>  
       <detail_edit>testo</detail_edit>  
-      <filter>testo</filter>  
+      <filter>testo</filter> 
+      <list>testo</list> 
       <heading>1</heading>  
       <needed>1</needed>  
       <max_length/>  
