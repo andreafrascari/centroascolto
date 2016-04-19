@@ -1,0 +1,52 @@
+<serena>
+	<service name="get">
+		<result dimension="1">1</result>
+		<Meta>
+			<calendario>ITALIANI</calendario>
+			<mese>Gennaio 2016</mese>
+		</Meta>
+		 <utenti>
+		 	<Utente>
+		 		<nome>gino</nome>
+		 		<cognome>rossi</cognome>
+		 		<scadenza>12/5</scadenza>
+		 		<sabatoDomenica>1</sabatoDomenica>
+		 		<progressivo>1</progressivo>
+		 	</Utente>
+		 	<Utente>
+		 		<nome>mario</nome>
+		 		<cognome>bianchi</cognome>
+		 		<scadenza>11/5</scadenza>
+		 		<sabatoDomenica>0</sabatoDomenica>
+		 		<progressivo>2</progressivo>
+		 	</Utente>
+		 </utenti>
+		 <meseCorrente>
+		 	<Giorno>
+		 		<progressivo>1</progressivo>
+		 		<sigla>Ve</sigla>
+		 		<sabatoDomenica>0</sabatoDomenica>
+		 	</Giorno>
+		 	<Giorno>
+		 		<progressivo>2</progressivo>
+		 		<sigla>Sa</sigla>
+		 		<sabatoDomenica>1</sabatoDomenica>
+		 	</Giorno>
+		 	<Giorno>
+		 		<progressivo>3</progressivo>
+		 		<sigla>Do</sigla>
+		 		<sabatoDomenica>1</sabatoDomenica>
+		 	</Giorno>
+		 	<Giorno>
+		 		<progressivo>4</progressivo>
+		 		<sigla>Lu</sigla>
+		 		<sabatoDomenica>0</sabatoDomenica>
+		 	</Giorno>
+		 	<Giorno>
+		 		<progressivo>5</progressivo>
+		 		<sigla>Ma</sigla>
+		 		<sabatoDomenica>0</sabatoDomenica>
+		 	</Giorno>
+		 </meseCorrente>
+	</service>
+</serena>

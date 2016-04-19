@@ -10,6 +10,7 @@ public final static String MODULE_NAME = "centroascolto";
 	{
 		addMethod(new CreaIstanzaClassificazioneIcfMethod(this, getDefaultParameters()));
 		addMethod(new RegistraClassificazioneIcfMethod(this, getDefaultParameters()));
+		addMethod(new ReportTessereAttiveMethod(this, getDefaultParameters()));
 	}
 	
 	@Override
