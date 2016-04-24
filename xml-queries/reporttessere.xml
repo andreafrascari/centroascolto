@@ -1,0 +1,39 @@
+<serena>
+	<service name="get">
+		<result dimension="1">1</result>
+		<anni>
+			<Anno>
+				<label>2014</label>
+				<rinnovi>14</rinnovi>
+				<nuove>4</nuove>
+				<totale>18</totale>
+			</Anno>
+			<Anno>
+				<label>2015</label>
+				<rinnovi>17</rinnovi>
+				<nuove>4</nuove>
+				<totale>21</totale>
+			</Anno>
+			<Anno>
+				<label>2016</label>
+				<rinnovi>11</rinnovi>
+				<nuove>4</nuove>
+				<totale>15</totale>
+			</Anno>
+		</anni>
+		 <mesi>
+		 	<Mese>
+		 		<label>gen 2015</label>
+				<rinnovi>17</rinnovi>
+				<nuove>4</nuove>
+				<totale>21</totale>
+		 	</Mese>
+		 	<Mese>
+		 		<label>feb 2015</label>
+				<rinnovi>17</rinnovi>
+				<nuove>4</nuove>
+				<totale>21</totale>
+		 	</Mese>
+		 </mesi>
+	</service>
+</serena>

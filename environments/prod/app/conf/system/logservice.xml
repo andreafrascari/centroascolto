@@ -46,12 +46,12 @@
 	<!-- per attivare i messaggi di trace modificare il livello in questo logger
 	    <level value="TRACE"/> 
 	-->
-	<!--
+	<!-- 
 	<logger name="eu.anastasis">
 		<level value="DEBUG"/>
 		<appender-ref ref="CONSOLE_APPENDER" />
 	</logger>
-	 -->
+	-->
 	
 	<!-- PRODUZIONE -->
 	<logger name="eu.anastasis">
@@ -59,7 +59,7 @@
 		<appender-ref ref="ROLLING_FILE_APPENDER" />
 		<appender-ref ref="MAIL_APPENDER" />
 	</logger>
-
+	 
 	<root>
 		<level value="ERROR"/>		
 		<appender-ref ref="ERROR_APPENDER" />
