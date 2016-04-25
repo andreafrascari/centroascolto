@@ -1,0 +1,41 @@
+<serena>
+	<service name="get">
+		<result dimension="1">1</result>
+		<Meta>
+			<report>
+				Tessere per motivazione
+			</report>
+			<decsrizione>bla bla</decsrizione>
+		</Meta>
+		<anni>
+			<Anno>
+				<label>2014</label>
+				<totale>18</totale>
+				<valori>
+					<Valore>
+						<label>motivi politici</label>
+						<value>789</value>
+					</Valore>
+					<Valore>
+						<label>motivi economico</label>
+						<value>122</value>
+					</Valore>
+				</valori>
+			</Anno>
+			<Anno>
+				<label>2015</label>
+				<totale>21</totale>
+				<valori>
+					<Valore>
+						<label>motivi politici</label>
+						<value>789</value>
+					</Valore>
+					<Valore>
+						<label>motivi economico</label>
+						<value>122</value>
+					</Valore>
+				</valori>
+			</Anno>
+		</anni>
+	</service>
+</serena>
