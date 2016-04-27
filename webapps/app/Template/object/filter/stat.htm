@@ -1,6 +1,9 @@
 @BEGIN_TEMPLATE@
-<!-- ?q=object/filter&p=Utente&t=stat&y=2014&s=motivazione-tessere -->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<!-- 
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.2/jquery.min.js"></script>
+ -->	
+	
 <script type="text/javascript">
 $(function () {
 	var theURl = "ModuleIndex?q=centroascolto/all_stats";
@@ -72,11 +75,43 @@ $(function () {
 	
 });
 </script>
-	
+
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
+
+
+<div class="btn-group btn-group-justified" role="group"
+	aria-label="Anni">
 	
+	<a href="?q=object/filter&p=Utente&t=stat&y=2007&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2007</a> 
+	<a href="?q=object/filter&p=Utente&t=stat&y=2008&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2008</a>
+	<a href="?q=object/filter&p=Utente&t=stat&y=2009&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2009</a>
+	<a href="?q=object/filter&p=Utente&t=stat&y=2010&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2010</a>
+	<a href="?q=object/filter&p=Utente&t=stat&y=2011&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2011</a>
+	<a href="?q=object/filter&p=Utente&t=stat&y=2012&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2012</a>
+	<a href="?q=object/filter&p=Utente&t=stat&y=2013&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2013</a>
+	<a href="?q=object/filter&p=Utente&t=stat&y=2014&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2014</a>
+	<a href="?q=object/filter&p=Utente&t=stat&y=2015&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2015</a>
+	<a href="?q=object/filter&p=Utente&t=stat&y=2016&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2016</a>
+</div>
+<div id="container"
+	style="min-width: 310px; height: 400px; margin: 0 auto">
+</div>
+
+<div class="dropup">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Statistiche disponibili
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+		<li><a href="?q=object/filter&p=Utente&t=stat&y=2016&s=motivazione-tessere">Motivazioni rilascio tessere</a></li>
+		<li><a href="#">Another action</a></li> 
+		<li><a href="#">Something else here</a></li> 
+		<li role="separator" class="divider"></li> 
+		<li><a href="#">Separated link</a></li> 
+	</ul> 
+</div>
+
 @END_TEMPLATE@
