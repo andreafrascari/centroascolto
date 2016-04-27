@@ -1,40 +1,32 @@
 <serena>
 	<service name="get">
 		<result dimension="1">1</result>
-		<Meta>
-			<report>
-				Tessere per motivazione
-			</report>
-			<decsrizione>bla bla</decsrizione>
-		</Meta>
 		<anni>
 			<Anno>
-				<label>2014</label>
+				<x>2014</x>
 				<totale>18</totale>
-				<valori>
-					<Valore>
-						<label>motivi politici</label>
-						<value>789</value>
-					</Valore>
-					<Valore>
-						<label>motivi economico</label>
-						<value>122</value>
-					</Valore>
-				</valori>
+				<y1>789</y1>
+				<y2>123</y2>
+				<y3>222</y3>
+				<y4>444</y4>
+				<y5>888</y5>
+				<y6>888</y6>
+				<y7>888</y7>
+				<y8>888</y8>
+				<y9>888</y9>
 			</Anno>
 			<Anno>
-				<label>2015</label>
-				<totale>21</totale>
-				<valori>
-					<Valore>
-						<label>motivi politici</label>
-						<value>789</value>
-					</Valore>
-					<Valore>
-						<label>motivi economico</label>
-						<value>122</value>
-					</Valore>
-				</valori>
+				<x>2015</x>
+				<totale>28</totale>
+				<y1>789</y1>
+				<y2>123</y2>
+				<y3>222</y3>
+				<y4>444</y4>
+				<y5>888</y5>
+				<y6>888</y6>
+				<y7>888</y7>
+				<y8>888</y8>
+				<y9>888</y9>
 			</Anno>
 		</anni>
 	</service>

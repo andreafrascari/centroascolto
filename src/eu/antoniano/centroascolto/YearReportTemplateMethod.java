@@ -42,7 +42,7 @@ public class YearReportTemplateMethod extends GiveMethod {
 	private class Output {
 		String xlabel;
 		int totale = 0;
-		HashMap<String, Integer> valori = new HashMap<String, Integer>();
+		TreeMap<String, Integer> valori = new TreeMap<String, Integer>();
 	}
 
 	public YearReportTemplateMethod(DefaultModule parentModule,
@@ -100,14 +100,11 @@ public class YearReportTemplateMethod extends GiveMethod {
 				Element annoEl = anniEl.addElement("Anno");
 				Element currentEl = annoEl.addElement("totale");
 				currentEl.setText(new Integer(a.totale).toString());
-				currentEl = annoEl.addElement("label");
+				currentEl = annoEl.addElement("x");
 				currentEl.setText(a.xlabel);
-				Element valori = annoEl.addElement("valori");
+				int i=1;
 				for (String aVal : a.valori.keySet()) {
-					Element valore = valori.addElement("Valore");
-					currentEl = valore.addElement("label");
-					currentEl.setText(aVal);
-					currentEl = valore.addElement("value");
+					currentEl = annoEl.addElement("y"+i++);
 					currentEl.setText(new Integer(a.valori.get(aVal))
 							.toString());
 				}

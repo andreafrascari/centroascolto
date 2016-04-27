@@ -12,6 +12,7 @@ public final static String MODULE_NAME = "centroascolto";
 		addMethod(new RegistraClassificazioneIcfMethod(this, getDefaultParameters()));
 		addMethod(new ReportTessereAttiveMethod(this, getDefaultParameters()));
 		addMethod(new ReportRilascioTessereMethod(this, getDefaultParameters()));
+		addMethod(new YearReportTemplateMethod(this, getDefaultParameters()));
 	}
 	
 	@Override
