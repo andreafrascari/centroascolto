@@ -137,12 +137,13 @@ public class AllStatsMethod extends JSONMethod {
 					o.valori.put(t.val,1);
 				}
 			}
-			res.title = anno;
+			res.title = "Motivazione rilascio tessere: " + anno;
 			res.asseY = "Numero tessere rilasciate";
 			res.data = new JsonInnerDTO[possibleValues.size()]; // tante istanze quanti i possibili valori della decodifica
 			// loop sui possibili valori
 			int i=0;
 			for (String val: possibleValues)	{
+				logger.debug("Valore: "+val);
 				JsonInnerDTO j = new JsonInnerDTO();
 				res.data[i++] = j;
 				j.name =  val;
@@ -150,6 +151,7 @@ public class AllStatsMethod extends JSONMethod {
 				// loop sui mesi
 				int k=0;
 				for (Integer mese: mesi.keySet()) {
+					logger.debug("---> mese: " + mese + "(in " + k +")");
 					Output o = mesi.get(mese);
 					if (o.valori.containsKey(val))	{
 						j.data[k++] = o.valori.get(val);
