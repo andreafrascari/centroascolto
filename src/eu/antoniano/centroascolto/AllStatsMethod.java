@@ -44,7 +44,7 @@ public class AllStatsMethod extends JSONMethod {
 
 	private class JsonInnerDTO {
 		String name; // valore della decodifica
-		int[] data; // frequenza sui 12 mesi
+		int[] data; // frequenza sui 12 mesi/sugli anni
 	}
 
 	private class JsonDTO {
@@ -64,6 +64,13 @@ public class AllStatsMethod extends JSONMethod {
 			}
 		}
 
+		/**
+		 * 
+		 * @param anno0 - 0 = tutti gli anni
+		 * @param request
+		 * @return
+		 * @throws SerenaException
+		 */
 		private List<UnitDTO> getTesserePerMotivazione(String anno0, HttpServletRequest request)
 				throws SerenaException {
 			try {
@@ -75,14 +82,16 @@ public class AllStatsMethod extends JSONMethod {
 				t.addAttribute(ConstantsXSerena.ATTR_TARGET, ConstantsXSerena.TARGET_ALL);
 				t.addAttribute(ConstantsXSerena.ATTR_TARGET_LEVELS, "1");
 				t.addAttribute(ConstantsXSerena.ATTR_ORDER_BY, "emissione");
-				Element condElement = DocumentHelper.createElement(ConstantsXSerena.TAG_AND);
-				Element cond = condElement.addElement("emissione");
-				cond.setText("01/01/" + anno0);
-				cond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_GREATER_EQUAL_THAN);
-				cond = condElement.addElement("emissione");
-				cond.setText("31/12/" + anno0);
-				cond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_LESS_EQUAL_THAN);
-				q.addCondition(t, condElement);
+				if (anno0!=null){
+					Element condElement = DocumentHelper.createElement(ConstantsXSerena.TAG_AND);
+					Element cond = condElement.addElement("emissione");
+					cond.setText("01/01/" + anno0);
+					cond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_GREATER_EQUAL_THAN);
+					cond = condElement.addElement("emissione");
+					cond.setText("31/12/" + anno0);
+					cond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_LESS_EQUAL_THAN);
+					q.addCondition(t, condElement);
+				}
 				Document data = ApplicationLibrary.getData(q, request);
 				String[] messages2 = { "", "" };
 				int res = ConstantsXSerena.getXserenaRequestResult(data, messages2, "Tessera");
@@ -118,16 +127,30 @@ public class AllStatsMethod extends JSONMethod {
 		String query = request.getParameter("query");
 		String anno = request.getParameter("year");
 		JsonDTO res = new JsonDTO();
+		boolean isAnni = (anno==null);
+		int xDim = (isAnni)?(new SerenaDate().getYear()-2006):12; // dim x? se statistica anni -> anno corrente -2007 (primo anno) +1. Se mesi: qw
+		logger.debug("xdim = " + xDim);
 		try	{
-			TreeMap<Integer, Output> mesi = new TreeMap<Integer, Output>();
+			TreeMap<Integer, Output> mesiAnni = new TreeMap<Integer, Output>();
 			List<UnitDTO> units = getAll(anno, request, query);
 			List<String> possibleValues = new ArrayList<String>();
 			for (UnitDTO t : units) {
+				Output o = null;
 				SerenaDate c = new SerenaDate(t.data);
-				if (!mesi.containsKey(c.getMonth()))	{
-					mesi.put(c.getMonth(), new Output());
+				if (c.getYear()==2006){
+					continue; // dont want them
 				}
-				Output o = mesi.get(c.getMonth());
+				if (isAnni)	{
+					if (!mesiAnni.containsKey(c.getYear()))	{
+						mesiAnni.put(c.getYear(), new Output());
+					}
+					o = mesiAnni.get(c.getYear());
+				} else {
+					if (!mesiAnni.containsKey(c.getMonth()))	{
+						mesiAnni.put(c.getMonth(), new Output());
+					}
+					o = mesiAnni.get(c.getMonth());
+				}
 				if (o.valori.containsKey(t.val)){
 					o.valori.put(t.val, (o.valori.get(t.val)+1));
 					if (!possibleValues.contains(t.val)){
@@ -147,12 +170,12 @@ public class AllStatsMethod extends JSONMethod {
 				JsonInnerDTO j = new JsonInnerDTO();
 				res.data[i++] = j;
 				j.name =  val;
-				j.data = new int[12];
-				// loop sui mesi
+				j.data = new int[xDim];
+				// loop sui mesi/anni
 				int k=0;
-				for (Integer mese: mesi.keySet()) {
+				for (Integer mese: mesiAnni.keySet()) {
 					logger.debug("---> mese: " + mese + "(in " + k +")");
-					Output o = mesi.get(mese);
+					Output o = mesiAnni.get(mese);
 					if (o.valori.containsKey(val))	{
 						j.data[k++] = o.valori.get(val);
 					} else {
