@@ -33,6 +33,9 @@ public class AllStatsMethod extends JSONMethod {
 	private static final String QUERY_MOTIVAZIONE_TESSERE = "motivazione-tessere";
 	private static final String QUERY_UTENTI_PER_SESSO = "utenti-per-sesso";
 	private static final String QUERY_UTENTI_PER_STATO = "utenti-per-stato";
+	private static final String QUERY_UTENTI_PER_STATO_CIVILE = "utenti-per-stato-civile";
+	private static final String QUERY_EVENTI = "eventi";
+	private static final String QUERY_UTENTI_PER_RESIDENZA = "utenti-per-residenza";
 
 	private class UnitDTO {
 		String id;
@@ -63,14 +66,26 @@ public class AllStatsMethod extends JSONMethod {
 				res.asseY = "Numero tessere rilasciate";
 				return getData(anno, request,"Tessera","emissione","tipologia_tessera");
 			} if (QUERY_UTENTI_PER_SESSO.equals(query))	{
-				res.title = "Utenti per sesso: " + ((anno!=null)?anno:"");
+				res.title = "Utenti accolti suddivisi per sesso: " + ((anno!=null)?anno:"");
 				res.asseY = "Numero Utenti";
 				return getData(anno, request,"Utente","data_primo_colloquio","sesso");
 			} if (QUERY_UTENTI_PER_STATO.equals(query))	{
-				res.title = "Utenti per paese di provenienza: " + ((anno!=null)?anno:"");
+				res.title = "Utenti accolti suddivisi per paese di provenienza: " + ((anno!=null)?anno:"");
 				res.asseY = "Numero Utenti";
 				return getData(anno, request,"Utente","data_primo_colloquio","stato_n");
-			}
+			} if (QUERY_UTENTI_PER_STATO_CIVILE.equals(query))	{
+				res.title = "Utenti  accolti suddivisi per stato civile: " + ((anno!=null)?anno:"");
+				res.asseY = "Numero Utenti";
+				return getData(anno, request,"Utente","data_primo_colloquio","stato_civile");
+			}  if (QUERY_EVENTI.equals(query))	{
+				res.title = "Eventi: " + ((anno!=null)?anno:"");
+				res.asseY = "Numero Eventi";
+				return getData(anno, request,"Evento","data","tipo_nota");
+			} if (QUERY_UTENTI_PER_RESIDENZA.equals(query))	{
+				res.title = "Utenti accolti con/privi di residenza: " + ((anno!=null)?anno:"");
+				res.asseY = "Numero Eventi";
+				return getData(anno, request,"Utente","data_primo_colloquio","privo_residenza");
+			} 
 			else {
 				String theError = "Richiesta non gestita: " + query;
 				throw new SerenaException(theError);
@@ -178,14 +193,14 @@ public class AllStatsMethod extends JSONMethod {
 				if (!possibleValues.contains(t.val)){
 					possibleValues.add(t.val);
 				}
-				logger.debug("putting " + t.id  + " in " + t.val );
+		//		logger.debug("putting " + t.id  + " in " + t.val );
 			}
 			
 			res.data = new JsonInnerDTO[possibleValues.size()]; // tante istanze quanti i possibili valori della decodifica
 			// loop sui possibili valori
 			int i=0;
 			for (String val: possibleValues)	{
-				logger.debug("Valore: "+val);
+			//	logger.debug("Valore: "+val);
 				JsonInnerDTO j = new JsonInnerDTO();
 				res.data[i++] = j;
 				j.name =  val;
@@ -193,7 +208,7 @@ public class AllStatsMethod extends JSONMethod {
 				// loop sui mesi/anni
 				int k=0;
 				for (Integer mese: mesiAnni.keySet()) {
-					logger.debug("---> mese: " + mese + "(in " + k +")");
+				//	logger.debug("---> mese: " + mese + "(in " + k +")");
 					Output o = mesiAnni.get(mese);
 					if (o.valori.containsKey(val))	{
 						j.data[k++] = o.valori.get(val);

@@ -121,21 +121,23 @@ public class ReportRilascioTessereMethod extends GiveMethod {
 				// another month is done:
 				// 1) month to xml
 				UnitDTO u = mesi.get(meselabel);
-				Element meseEl = mesiEl.addElement("Mese");
-				Element currentEl = meseEl.addElement("totale");
-				currentEl.setText(new Integer(u.totale).toString());
-				currentEl = meseEl.addElement("nuove");
-				currentEl.setText(new Integer(u.nuove).toString());
-				currentEl = meseEl.addElement("rinnovi");
-				currentEl.setText(new Integer(u.rinnovi).toString());
-				currentEl = meseEl.addElement("label");
-				currentEl.setText(meselabel);
-				// 2) update anno
-				UnitDTO a = anni.get(annolabel);
-				a.totale += u.totale;
-				a.nuove += u.nuove;
-				a.rinnovi += u.rinnovi;
-				anni.put(annolabel, a);
+				if (u!=null)	{
+					Element meseEl = mesiEl.addElement("Mese");
+					Element currentEl = meseEl.addElement("totale");
+					currentEl.setText(new Integer(u.totale).toString());
+					currentEl = meseEl.addElement("nuove");
+					currentEl.setText(new Integer(u.nuove).toString());
+					currentEl = meseEl.addElement("rinnovi");
+					currentEl.setText(new Integer(u.rinnovi).toString());
+					currentEl = meseEl.addElement("label");
+					currentEl.setText(meselabel);
+					// 2) update anno
+					UnitDTO a = anni.get(annolabel);
+					a.totale += u.totale;
+					a.nuove += u.nuove;
+					a.rinnovi += u.rinnovi;
+					anni.put(annolabel, a);
+				}
 				t0 = t1;
 			}
 			for (UnitDTO a : anni.values()) {
@@ -150,6 +152,7 @@ public class ReportRilascioTessereMethod extends GiveMethod {
 				currentEl.setText(a.label);
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 			String theError = "Errore in generazione report tessere attive: "
 					+ e.getMessage();
 			throw new SerenaException(theError);
