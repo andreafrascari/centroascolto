@@ -1,0 +1,87 @@
+@BEGIN_TEMPLATE@
+	<h2 style="text-align:center">Statistiche</h1>
+		<h4 style="text-align:center">Dal tasto menu sulla destra le opzioni di stampa/esportazione</h4>
+	
+
+	
+<script type="text/javascript">
+
+$(function () {
+	var theURl = "ModuleIndex?q=centroascolto/eta_stats";
+	$.ajax({
+		type: "GET",
+		url: theURl,
+		data: {year: @FUN_GET_URL_PARAM(param=y)@, query:"@FUN_GET_URL_PARAM(param=s)@"},
+        async: false,        
+        cache: false,
+        dataType: "json",
+        error: function(data){ $('#myPleaseWait').modal('hide'); $("#error-message").show();},
+        success: function(data){  
+        	$("#error-message").hide(); 
+        	$('#myPleaseWait').modal('hide');
+
+		$('#container').highcharts({
+		        title: {
+		            text: data.title
+		        },
+		        /*
+		        subtitle: {
+		            text: 'Source: WorldClimate.com',
+		            x: -20
+		        },*/
+		        xAxis: {
+		            categories: ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic',]
+		        },
+		        yAxis: {
+		            title: {
+		                text: data.asseY
+		            },
+		            plotLines: [{
+		                value: 0,
+		                width: 1,
+		                color: '#808080'
+		            }]
+		        },
+		        legend: {
+		            layout: 'vertical',
+		            align: 'right',
+		            verticalAlign: 'middle',
+		            borderWidth: 0
+		        },
+		        tooltip: {
+		            valueSuffix: 'anni'
+		        },
+		        series: data.data
+		    });
+        }
+});
+	
+});
+</script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+
+
+<div class="btn-group btn-group-justified" role="group"
+	aria-label="Anni">
+	<a href="?q=object/filter&p=Utente&t=stat-eta&y=2007&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2007</a> 
+	<a href="?q=object/filter&p=Utente&t=stat-eta&y=2008&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2008</a>
+	<a href="?q=object/filter&p=Utente&t=stat-eta&y=2009&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2009</a>
+	<a href="?q=object/filter&p=Utente&t=stat-eta&y=2010&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2010</a>
+	<a href="?q=object/filter&p=Utente&t=stat-eta&y=2011&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2011</a>
+	<a href="?q=object/filter&p=Utente&t=stat-eta&y=2012&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2012</a>
+	<a href="?q=object/filter&p=Utente&t=stat-eta&y=2013&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2013</a>
+	<a href="?q=object/filter&p=Utente&t=stat-eta&y=2014&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2014</a>
+	<a href="?q=object/filter&p=Utente&t=stat-eta&y=2015&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2015</a>
+	<a href="?q=object/filter&p=Utente&t=stat-eta&y=2016&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2016</a>
+	<a href="?q=object/filter&p=Utente&t=stat-eta&y=2017&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2017</a>
+</div>
+<div id="container"
+	style="min-width: 310px; height: 400px; margin: 0 auto">
+</div>
+
+
+@END_TEMPLATE@
