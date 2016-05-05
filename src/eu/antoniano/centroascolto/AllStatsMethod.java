@@ -34,11 +34,15 @@ public class AllStatsMethod extends JSONMethod {
 
 	private static final String QUERY_TESSERE_RILASCIATE = "tessere-rilasciate";
 	private static final String QUERY_MOTIVAZIONE_TESSERE = "motivazione-tessere";
+	private static final String QUERY_TESSERE_PER_SESSO = "tessere-per-sesso";
+	private static final String QUERY_TESSERE_PER_STATO = "tessere-per-stato";
+	private static final String QUERY_TESSERE_PER_STATO_CIVILE = "tessere-per-stato-civile";
+	private static final String QUERY_TESSERE_PER_RESIDENZA = "tessere-per-residenza";
 	private static final String QUERY_UTENTI_PER_SESSO = "utenti-per-sesso";
 	private static final String QUERY_UTENTI_PER_STATO = "utenti-per-stato";
+	private static final String QUERY_UTENTI_PER_RESIDENZA = "utenti-per-residenza";
 	private static final String QUERY_UTENTI_PER_STATO_CIVILE = "utenti-per-stato-civile";
 	private static final String QUERY_EVENTI = "eventi";
-	private static final String QUERY_UTENTI_PER_RESIDENZA = "utenti-per-residenza";
 	private static final String QUERY_ETA_PRIMO_COLLOQUIO = "eta-primo-colloquio";
 
 	protected class UnitDTO {
@@ -84,14 +88,26 @@ public class AllStatsMethod extends JSONMethod {
 				res.title = "Utenti accolti suddivisi per sesso: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Utenti";
 				return getData(anno, request,"Utente","data_primo_colloquio","sesso");
+			} else if (QUERY_TESSERE_PER_SESSO.equals(query))	{
+				res.title = "Utenti in carico suddivisi per sesso: " + ((anno!=null)?anno:"per anno");
+				res.asseY = "Numero Utenti";
+				return get2kevelData(anno, request,"Tessera","Utente","emissione","sesso");
 			} else if (QUERY_UTENTI_PER_STATO.equals(query))	{
 				res.title = "Utenti accolti suddivisi per paese di provenienza: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Utenti";
 				return getData(anno, request,"Utente","data_primo_colloquio","stato_n");
+			} else if (QUERY_TESSERE_PER_STATO.equals(query))	{
+				res.title = "Utenti in carico suddivisi per paese di provenienza: " + ((anno!=null)?anno:"per anno");
+				res.asseY = "Numero Utenti";
+				return get2kevelData(anno, request,"Tessera","Utente","emissione","stato_n");
 			} else if (QUERY_UTENTI_PER_STATO_CIVILE.equals(query))	{
 				res.title = "Utenti  accolti suddivisi per stato civile: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Utenti";
-				return getData(anno, request,"Utente","data_primo_colloquio","stato_civile");
+				return get2kevelData(anno, request,"Tessera","Utente","data_primo_colloquio","stato_civile");
+			} else if (QUERY_TESSERE_PER_STATO_CIVILE.equals(query))	{
+				res.title = "Utenti in carico suddivisi per stato civile: " + ((anno!=null)?anno:"per anno");
+				res.asseY = "Numero Utenti";
+				return getData(anno, request,"Utente","emissione","stato_civile");
 			} else if (QUERY_EVENTI.equals(query))	{
 				res.title = "Eventi: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Eventi";
@@ -100,6 +116,10 @@ public class AllStatsMethod extends JSONMethod {
 				res.title = "Utenti accolti con/privi di residenza: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Eventi";
 				return getData(anno, request,"Utente","data_primo_colloquio","privo_residenza");
+			} else if (QUERY_TESSERE_PER_RESIDENZA.equals(query))	{
+				res.title = "Utenti in carico con/privi di residenza: " + ((anno!=null)?anno:"per anno");
+				res.asseY = "Numero Eventi";
+				return get2kevelData(anno, request,"Tessera","Utente","emissione","privo_residenza");
 			} else if (QUERY_TESSERE_RILASCIATE.equals(query)){
 				res.title = "Tessere rilasciate: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Tessere";
@@ -189,6 +209,69 @@ public class AllStatsMethod extends JSONMethod {
 			}
 	}
 
+		/**
+		 * Come la precendete, ma pesca theAttribute dalla classe a secondo livello (esempio utente di tessere)
+		 * @param anno0
+		 * @param request
+		 * @param level1Class
+		 * @param level2Class
+		 * @param theDate
+		 * @param theAttribute
+		 * @return
+		 * @throws SerenaException
+		 */
+		protected List<UnitDTO> get2kevelData(String anno0, HttpServletRequest request, String level1Class ,String level2Class ,String theDate,	String theAttribute )
+				throws SerenaException {
+			try {
+				List<UnitDTO> answer = new ArrayList<UnitDTO>();
+				
+				SelectQuery q = new SelectQuery(level1Class);
+				Element t = q.getFirstClassElement();
+				// t.addAttribute(ConstantsXSerena.ATTR_OPERATION,
+				// ConstantsXSerena.VAL_SELECT);
+				t.addAttribute(ConstantsXSerena.ATTR_TARGET, ConstantsXSerena.TARGET_ALL);
+				t.addAttribute(ConstantsXSerena.ATTR_TARGET_LEVELS, "2");
+				t.addAttribute(ConstantsXSerena.ATTR_ORDER_BY, theDate);
+				if (anno0!=null){
+					Element condElement = DocumentHelper.createElement(ConstantsXSerena.TAG_AND);
+					Element cond = condElement.addElement(theDate);
+					cond.setText("01/01/" + anno0);
+					cond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_GREATER_EQUAL_THAN);
+					cond = condElement.addElement(theDate);
+					cond.setText("31/12/" + anno0);
+					cond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_LESS_EQUAL_THAN);
+					q.addCondition(t, condElement);
+				}
+				Document data = ApplicationLibrary.getData(q, request);
+				String[] messages2 = { "", "" };
+				int res = ConstantsXSerena.getXserenaRequestResult(data, messages2, level1Class);
+				if (res == ConstantsXSerena.XSERENA_RESULT_SUCCESS) {
+					List<Element> tessere = data.selectNodes(".//"+level1Class);
+					for (Element tEl : tessere) {
+						try {
+							UnitDTO tNew = new UnitDTO();
+							tNew.data = tEl.elementText(theDate);
+							tNew.id = tEl.elementText("ID");
+							Element level2Element = (Element)tEl.selectSingleNode(".//"+level2Class);
+							tNew.val = level2Element.elementText(theAttribute);
+							answer.add(tNew);
+						} catch (Exception r) {
+							String message = "Errore in " + level1Class + " " + tEl.elementText("ID") + ": dati mancanti ...";
+							logger.error(message);
+						}
+					}
+				} else {
+					String message = "Impossibile reperire " + level1Class +": " + messages2[0];
+					logger.error(message);
+					throw new SerenaException(message);
+				}
+				return answer;
+			} catch (Exception e) {
+				String message = "Impossibile reperire " + level1Class +": " + e.getMessage();
+				logger.error(message);
+				throw new SerenaException(message);
+			}
+	}
 	@Override
 	public String doMethod(HttpServletRequest request, HttpServletResponse response) throws JSONException {
 		String query = request.getParameter("query");
