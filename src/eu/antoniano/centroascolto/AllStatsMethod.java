@@ -103,11 +103,11 @@ public class AllStatsMethod extends JSONMethod {
 			} else if (QUERY_UTENTI_PER_STATO_CIVILE.equals(query))	{
 				res.title = "Utenti  accolti suddivisi per stato civile: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Utenti";
-				return get2kevelData(anno, request,"Tessera","Utente","data_primo_colloquio","stato_civile");
+				return getData(anno, request,"Utente","data_primo_colloquio","stato_civile");
 			} else if (QUERY_TESSERE_PER_STATO_CIVILE.equals(query))	{
 				res.title = "Utenti in carico suddivisi per stato civile: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Utenti";
-				return getData(anno, request,"Utente","emissione","stato_civile");
+				return get2kevelData(anno, request,"Tessera","Utente","emissione","stato_civile");
 			} else if (QUERY_EVENTI.equals(query))	{
 				res.title = "Eventi: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Eventi";
