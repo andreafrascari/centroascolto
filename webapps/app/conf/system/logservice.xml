@@ -33,7 +33,7 @@
 	<appender name="MAIL_APPENDER" class="org.apache.log4j.net.SMTPAppender">
 		<param name="SMTPHost" value="mail-server" />
 		<param name="From" value="no-reply@serena.it" />
-		<param name="To" value="serviziweb@anastasis.it" />
+		<param name="To" value="afrascari@gmail.com" />
 		<param name="Subject" value="SERENA FATAL ERROR - centroascolto" />
 		<param name="BufferSize" value="1" />
 		<param name="threshold" value="fatal" />

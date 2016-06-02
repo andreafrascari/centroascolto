@@ -38,7 +38,7 @@
 	    	dell'applicazione e a 1 quando l'applicazione 
 	    	entra in produzione 
 	    -->
-	    <PARAM NOME="TEMPLATE_CACHE">0</PARAM>
+	    <PARAM NOME="TEMPLATE_CACHE">1</PARAM>
 	    <!-- 
 		    TEMPLATE_RECURSIVE_CACHE. Se impostato a 0, i metatemplate vengono 
 			ricaricati/ricreati dinamicamente ad ogni occorrenza. 
@@ -47,7 +47,7 @@
 			Si consiglia di impostarlo a 0 durante le fasi di sviluppo 
 			dell'applicazione e a 1 quando l'applicazione entra in produzione
 	    -->
-	    <PARAM NOME="TEMPLATE_RECURSIVE_CACHE">0</PARAM>
+	    <PARAM NOME="TEMPLATE_RECURSIVE_CACHE">1</PARAM>
 
 		<!--  @NOMEFUNZIONE@_CACHE: Ogni funzione Sere-na puo' essere
 			cachata o meno, impostando a 1 il relativo parametro. 
@@ -86,11 +86,14 @@
 	    	MAIL_SYSTEM_ADDRESS. L'indirizzo email che verr� indicato 
 	    	come mittente delle mail di notifica 
     	-->
-    	<PARAM NOME="MAIL_SYSTEM_ADDRESS">info@sere-na.it</PARAM>
+    	<PARAM NOME="MAIL_SYSTEM_ADDRESS">afrascari@gmail.com</PARAM>
     	<!--
     		SMTP_SERVER. Il server SMTP da usare per inviare le mail di notifica 
     	-->
-    	<PARAM NOME="SMTP_SERVER">localhost</PARAM>
+	<PARAM NOME="SMTP_SERVER">smtp.gmail.com</PARAM>
+		<PARAM NOME="SMTP_USERNAME">socialphotowedding@gmail.com</PARAM>
+		<PARAM NOME="SMTP_PASSWORD">gomate55!</PARAM>
+
 
 
 		<!-- SEZIONE LOG -->

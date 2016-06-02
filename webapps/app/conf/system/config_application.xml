@@ -86,11 +86,13 @@
 	    	MAIL_SYSTEM_ADDRESS. L'indirizzo email che verrà indicato 
 	    	come mittente delle mail di notifica 
     	-->
-    	<PARAM NOME="MAIL_SYSTEM_ADDRESS">info@sere-na.it</PARAM>
+    	<PARAM NOME="MAIL_SYSTEM_ADDRESS">afrascari@gmail.com</PARAM>
     	<!--
     		SMTP_SERVER. Il server SMTP da usare per inviare le mail di notifica 
     	-->
-    	<PARAM NOME="SMTP_SERVER">localhost</PARAM>
+	<PARAM NOME="SMTP_SERVER">smtp.gmail.com</PARAM>
+		<PARAM NOME="SMTP_USERNAME">socialphotowedding@gmail.com</PARAM>
+		<PARAM NOME="SMTP_PASSWORD">gomate55!</PARAM>
 
 
 		<!-- SEZIONE LOG -->
