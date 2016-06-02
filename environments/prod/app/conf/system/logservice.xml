@@ -59,6 +59,11 @@
 		<appender-ref ref="ROLLING_FILE_APPENDER" />
 		<appender-ref ref="MAIL_APPENDER" />
 	</logger>
+	<logger name="eu.antoniano">
+                <level value="DEBUG"/>
+                <appender-ref ref="ROLLING_FILE_APPENDER" />
+                <appender-ref ref="MAIL_APPENDER" />
+    </logger>
 	 
 	<root>
 		<level value="ERROR"/>		
