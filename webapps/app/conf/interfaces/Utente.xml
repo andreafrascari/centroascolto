@@ -62,10 +62,11 @@
       <name>op_primo_colloquio</name>  
       <label>operatore primo colloquio</label>  
       <detail>accolto da</detail>  
+      <detail_edit autocomplete="" no-link-new="1">accolto da</detail_edit>  
       <filter autocomplete="">accolto da</filter>  
       <list>accolto da</list>  
-      <detail_edit  autocomplete="" no-link-new="1">accolto da</detail_edit>  
       <heading>1</heading>  
+      <needed>1</needed>  
       <max_length/>  
       <default/>  
       <order>21</order> 
@@ -360,6 +361,16 @@
       <order>149</order> 
     </item>  
     <item> 
+      <name>situazione_sanitaria</name>  
+      <label>situazione sanitaria</label>  
+      <detail>situazione sanitaria</detail>  
+      <detail_edit>situazione sanitaria</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>150</order> 
+    </item>  
+    <item> 
       <name>madrelingua</name>  
       <label>madrelingua</label>  
       <detail>madrelingua</detail>  
@@ -510,20 +521,20 @@
       <order>251</order> 
     </item>  
     <item> 
-      <name>documenti</name>  
-      <label>documenti</label>  
-      <detail inpage="1">documenti</detail>  
-      <detail_edit>documenti</detail_edit>  
+      <name>cittadinanza</name>  
+      <label>cittadinanza</label>  
+      <detail inpage="1">cittadinanza</detail>  
+      <detail_edit>cittadinanza</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>261</order> 
     </item>  
     <item> 
-      <name>cittadinanza</name>  
-      <label>cittadinanza</label>  
-      <detail inpage="1">cittadinanza</detail>  
-      <detail_edit>cittadinanza</detail_edit>  
+      <name>documenti</name>  
+      <label>documenti</label>  
+      <detail inpage="1">documenti</detail>  
+      <detail_edit>documenti</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
@@ -558,6 +569,46 @@
       <max_length/>  
       <default/>  
       <order>331</order> 
+    </item>  
+    <item> 
+      <name>servizi_antoniano</name>  
+      <label>servizi antoniano</label>  
+      <detail>servizi antoniano</detail>  
+      <detail_edit>servizi antoniano</detail_edit>  
+      <detail_help>tenere premuto ctrl per selezione multipla</detail_help>
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>491</order> 
+    </item>  
+    <item> 
+      <name>familiari</name>  
+      <label>familiari</label>  
+      <detail>familiari</detail>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>521</order> 
+    </item>  
+    <item> 
+      <name>inverse_of_familiari</name>  
+      <label>familiare di</label>  
+      <detail>familiare di</detail>  
+      <detail_edit autocomplete="cls=Utente,slot=cognome,display1=cognome,display2=nome">familiare di</detail_edit>  
+      <detail_help>Digitare le prime 2 lettere del cognome per autocompletamento</detail_help>
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>541</order> 
+    </item>  
+    <item> 
+      <name>allegati</name>  
+      <label>allegati</label>  
+      <detail>allegati</detail>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>901</order> 
     </item>  
     <item> 
       <name>owner_user</name>  

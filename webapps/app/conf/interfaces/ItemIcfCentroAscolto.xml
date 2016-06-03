@@ -23,19 +23,19 @@
       <name>codice_centro_ascolto</name>  
       <label>codice centro ascolto</label>  
       <detail>codice centro ascolto</detail>  
+      <detail_edit>codice centro ascolto</detail_edit>  
       <filter>codice centro ascolto</filter>  
       <list>codice centro ascolto</list>  
-      <detail_edit>codice centro ascolto</detail_edit>  
       <heading>1</heading>  
+      <needed>1</needed>  
       <description_field>1</description_field>  
       <list_active_field>1</list_active_field>  
-      <needed>1</needed>  
       <max_length/>  
       <default/>  
       <order>21</order> 
     </item>  
-    <item>
-      <name>ordine</name>
+    <item> 
+      <name>ordine</name>  
       <label>ordine</label>  
       <detail>ordine</detail>  
       <detail_edit>ordine</detail_edit>  
@@ -44,7 +44,7 @@
       <max_length/>  
       <default/>  
       <order>23</order> 
-    </item>
+    </item>  
     <item> 
       <name>descrizione</name>  
       <label>descrizione</label>  
@@ -68,12 +68,11 @@
       <default/>  
       <order>41</order> 
     </item>  
-     <item> 
+    <item> 
       <name>procedura_classificazione</name>  
       <label>procedura_classificazione</label>  
       <detail>note sulla procedura di classificazione</detail>  
       <detail_edit>note sulla procedura di classificazione</detail_edit>  
-      <detail_edit>inserire eventuali note sulla procedura di classificazione, al fine di stilare poi un protocollo di Servizio</detail_edit>  
       <filter>note classificazione</filter>  
       <list>note classificazione</list>  
       <heading>1</heading>  
@@ -86,14 +85,13 @@
       <label>osservazione</label>  
       <detail>osservazioni sulla classificazione</detail>  
       <detail_edit>osservazioni sulla classificazione</detail_edit>  
-      <detail_edit>inserire eventuali osservazioni sulla classificazione e sui fattori ambientali in cui e' avvenuta</detail_edit>  
       <filter>osservazioni</filter>  
       <list>osservazioni</list>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>45</order> 
-    </item>
+    </item>  
     <item> 
       <name>allegato</name>  
       <label>allegato</label>  

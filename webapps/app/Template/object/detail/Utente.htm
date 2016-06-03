@@ -90,7 +90,7 @@
 									
 									@tag_sez_residenza@@tag_privo_residenza@@tag_residenza_comune@@tag_residenza_cap@@tag_residenza_via@@tag_residenza_provincia@
 								
-									@tag_sez_situazione_famigliare@@tag_stato_civile@@tag_stato_famiglia@@tag_comune_famiglia@@tag_figli@
+									@tag_sez_situazione_famigliare@@tag_stato_civile@@tag_stato_famiglia@@tag_comune_famiglia@@tag_figli@@tag_familiari@@tag_inverse_of_familiari@
 																	
 									@tag_sez_domicilio@@tag_domicilio_comune@@tag_domicilio_cap@@tag_domicilio_via@@tag_domicilio_provincia@@tag_nota_domicilio@
 									</tbody>
@@ -108,7 +108,7 @@
 									<table class="paziente" width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
 									<tbody>
 					
-									@tag_sez_situazione_scolastica_ed_economica@@tag_titolo_studio@@tag_situazione_economica@@tag_altro@@tag_automunito@@tag_percentuale_inv@@tag_madrelingua@@tag_lingua_it@@tag_altre_lingue@
+									@tag_sez_situazione_scolastica_ed_economica@@tag_titolo_studio@@tag_situazione_economica@@tag_altro@@tag_automunito@@tag_situazione_sanitaria@@tag_percentuale_inv@@tag_madrelingua@@tag_lingua_it@@tag_altre_lingue@
 									
 									@tag_residenze_in_alloggio@
 									<tr><th scope="row">nuovo alloggio</th><td>
@@ -153,6 +153,11 @@
 									});
 								</script>
 								
+								<table class="paziente" width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
+									<tbody>			
+									@tag_servizi_antoniano@
+									</tbody>
+								</table>
 								
 									@FUN_MODULE(q=object/list,p=Tessera/_a_inverse_of_tessere/_c_Utente/_a_ID/_v_@tag_ID#FLAT@,t=Tessera_inlist)@
 									@FUN_MODULE(q=object/list,p=Evento/_a_utente/_c_Utente/_a_ID/_v_@tag_ID#FLAT@,t=Evento_inlist)@	

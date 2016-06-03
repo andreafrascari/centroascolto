@@ -29,8 +29,28 @@ ALTER TABLE `Accoglienza`
   CHANGE `dove` `dove` int(10) NOT NULL,
     CHANGE `note` `note` longtext,
   CHANGE `allegato` `allegato` int(10),
+  CHANGE `allegato_1` `allegato_1` int(10),
+  CHANGE `allegato_2` `allegato_2` int(10),
+  CHANGE `allegato_3` `allegato_3` int(10),
+  CHANGE `allegato_4` `allegato_4` int(10),
 CHANGE `ID_Utente_presa_in_carico_accoglienza` `ID_Utente_presa_in_carico_accoglienza` int(10) NOT NULL,
 INDEX(`ID_Utente_presa_in_carico_accoglienza`),
+DROP PRIMARY KEY,
+ADD PRIMARY KEY ( `ID` ),
+INDEX (`owner_user`),
+INDEX (`owner_group`),
+INDEX (`creation_user`),
+INDEX (`creation_date`),
+INDEX (`activation_flag`),
+INDEX (`deletion_flag`)
+;
+
+ALTER TABLE `Allegato` 
+  CHANGE `ref_class` `ref_class` varchar(200) NOT NULL,
+  CHANGE `ref_instance` `ref_instance` varchar(200) NOT NULL,
+  CHANGE `allegato` `allegato` int(10) NOT NULL,
+CHANGE `ID_Utente_allegati` `ID_Utente_allegati` int(10) NOT NULL,
+INDEX(`ID_Utente_allegati`),
 DROP PRIMARY KEY,
 ADD PRIMARY KEY ( `ID` ),
 INDEX (`owner_user`),
@@ -97,7 +117,7 @@ INDEX (`deletion_flag`)
 
 ALTER TABLE `Competenze` 
   CHANGE `tipologia_competenza` `tipologia_competenza` int(10) NOT NULL,
-  CHANGE `descrizione` `descrizione` longtext NOT NULL,
+  CHANGE `descrizione` `descrizione` longtext,
   CHANGE `allegato` `allegato` int(10),
 CHANGE `ID_Utente_competenze` `ID_Utente_competenze` int(10) NOT NULL,
 INDEX(`ID_Utente_competenze`),
@@ -132,7 +152,7 @@ ALTER TABLE `Documento`
   CHANGE `numero` `numero` varchar(200),
   CHANGE `scadenza` `scadenza` DATE,
   CHANGE `rilasciato_da` `rilasciato_da` varchar(200),
-  CHANGE `descrizione` `descrizione` longtext NOT NULL,
+  CHANGE `descrizione` `descrizione` longtext,
   CHANGE `allegato` `allegato` int(10),
   CHANGE `allegato_1` `allegato_1` int(10),
   CHANGE `allegato_2` `allegato_2` int(10),
@@ -148,37 +168,27 @@ INDEX (`activation_flag`),
 INDEX (`deletion_flag`)
 ;
 
-CREATE TABLE `DocumentoCondiviso` (
-  `ID` int(10) unsigned NOT NULL auto_increment,
-  ADD`allegato` int(10) NOT NULL,
-  ADD`allegato_1` int(10),
-  ADD`allegato_2` int(10),
-  ADD`data` DATE NOT NULL,
-  ADD`descrizione` longtext NOT NULL,
-  ADD`tipo_documento` int(10) NOT NULL,
-  `owner_user` int(10) unsigned NULL,
-  `owner_group` int(10) unsigned NULL,
-  `creation_date` date NOT NULL,
-  `creation_user` varchar(100) NOT NULL,
-  `last_modification_date` date,
-  `last_modification_user` varchar(100),
-  `deletion_date` date,
-  `deletion_user` varchar(100),
-  `deletion_flag` tinyint(1) NOT NULL,
-  `activation_flag` tinyint(1) NOT NULL,
-PRIMARY KEY ( `ID` ),
+ALTER TABLE `DocumentoCondiviso` 
+  CHANGE `tipo_documento` `tipo_documento` int(10) NOT NULL,
+  CHANGE `data` `data` DATE NOT NULL,
+  CHANGE `descrizione` `descrizione` longtext NOT NULL,
+  CHANGE `allegato` `allegato` int(10) NOT NULL,
+  CHANGE `allegato_1` `allegato_1` int(10),
+  CHANGE `allegato_2` `allegato_2` int(10),
+DROP PRIMARY KEY,
+ADD PRIMARY KEY ( `ID` ),
 INDEX (`owner_user`),
 INDEX (`owner_group`),
 INDEX (`creation_user`),
 INDEX (`creation_date`),
 INDEX (`activation_flag`),
-INDEX (`deletion_flag`)) ENGINE=InnoDB;
+INDEX (`deletion_flag`)
+;
 
 ALTER TABLE `Evento` 
   CHANGE `data` `data` DATE NOT NULL,
   CHANGE `tipo_nota` `tipo_nota` int(10) NOT NULL,
   CHANGE `testo` `testo` longtext NOT NULL,
-  CHANGE `allegato` `allegato` int(10),
 CHANGE `ID_Operatore_eventi_registrati` `ID_Operatore_eventi_registrati` int(10) NOT NULL,
 INDEX(`ID_Operatore_eventi_registrati`),
 CHANGE `ID_Utente_eventi` `ID_Utente_eventi` int(10) NOT NULL,
@@ -352,6 +362,7 @@ ALTER TABLE `Utente`
   CHANGE `altro` `altro` longtext,
   CHANGE `automunito` `automunito` int(10),
   CHANGE `percentuale_inv` `percentuale_inv` int(10),
+  CHANGE `situazione_sanitaria` `situazione_sanitaria` longtext,
   CHANGE `madrelingua` `madrelingua` varchar(200),
   CHANGE `lingua_it` `lingua_it` int(10),
   CHANGE `altre_lingue` `altre_lingue` varchar(200),
@@ -360,8 +371,10 @@ ALTER TABLE `Utente`
   CHANGE `domicilio_via` `domicilio_via` varchar(200),
   CHANGE `domicilio_provincia` `domicilio_provincia` varchar(200),
   CHANGE `nota_domicilio` `nota_domicilio` varchar(200),
-                      CHANGE `ID_Operatore_primi_colloqui` `ID_Operatore_primi_colloqui` int(10) NOT NULL,
+    CHANGE `ID_Operatore_primi_colloqui` `ID_Operatore_primi_colloqui` int(10) NOT NULL,
 INDEX(`ID_Operatore_primi_colloqui`),
+CHANGE `ID_Utente_familiari` `ID_Utente_familiari` int(10) NOT NULL,
+INDEX(`ID_Utente_familiari`),
 DROP PRIMARY KEY,
 ADD PRIMARY KEY ( `ID` ),
 INDEX (`owner_user`),
@@ -373,6 +386,11 @@ INDEX (`deletion_flag`)
 ;
 
 
+CREATE TABLE IF NOT EXISTS `rel_Utente_servizi_antoniano` (
+`ID_Utente` int(10) NOT NULL,
+`ID_servizi_antoniano` int(10) NOT NULL,
+PRIMARY KEY  (`ID_Utente`,`ID_servizi_antoniano`)
+) ENGINE=InnoDB;
 
 
 -- Fine parte dinamica 

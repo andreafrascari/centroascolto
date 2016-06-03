@@ -51,9 +51,9 @@
       <name>registrato_da</name>  
       <label>registrato da</label>  
       <detail>registrato da</detail>  
-      <detail_edit>registrato da</detail_edit>  
-      <filter>registrato da</filter>
-      <list>registrato da</list>
+      <detail_edit autocomplete="">registrato da</detail_edit>  
+      <filter autocomplete="">registrato da</filter>  
+      <list>registrato da</list>  
       <heading>1</heading>  
       <needed>1</needed>  
       <max_length/>  
@@ -65,23 +65,13 @@
       <label>testo</label>  
       <detail>testo</detail>  
       <detail_edit>testo</detail_edit>  
-      <filter>testo</filter> 
-      <list>testo</list> 
+      <filter>testo</filter>  
+      <list>testo</list>  
       <heading>1</heading>  
       <needed>1</needed>  
       <max_length/>  
       <default/>  
       <order>41</order> 
-    </item>  
-    <item> 
-      <name>allegato</name>  
-      <label>allegato</label>  
-      <detail>allegato</detail>  
-      <detail_edit>allegato</detail_edit>  
-      <heading>2</heading>  
-      <max_length/>  
-      <default/>  
-      <order>51</order> 
     </item>  
     <item> 
       <name>owner_user</name>  
@@ -162,6 +152,16 @@
       <admin_only>1</admin_only>  
       <read_only>1</read_only>  
       <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>allegato</name>  
+      <label>allegato</label>  
+      <detail>allegato</detail>  
+      <detail_edit>allegato</detail_edit>  
+      <heading>2</heading>  
+      <max_length/>  
+      <default/>  
+      <order>51</order> 
     </item> 
   </attributes> 
 </bean>

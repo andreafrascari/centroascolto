@@ -16,18 +16,18 @@
       </xml> 
     </item>  
     <item> 
-      <name>scheda</name>  
-      <type>2</type>  
-      <xml> 
-        <name>scheda</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
       <name>sez_anagrafica</name>  
       <type>0</type>  
       <xml> 
         <name>sez_anagrafica</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>scheda</name>  
+      <type>2</type>  
+      <xml> 
+        <name>scheda</name>  
         <class/> 
       </xml> 
     </item>  
@@ -93,20 +93,6 @@
       </xml> 
     </item>  
     <item> 
-      <name>tessere</name>  
-      <type>8</type>  
-      <xml> 
-        <name>tessere</name>  
-        <class>Tessera</class>  
-        <relationship>1-N</relationship>  
-        <target>inverse_of_tessere</target> 
-      </xml>  
-      <codomain>Tessera</codomain>  
-      <from>ID</from>  
-      <to>ID_Utente_tessere</to>  
-      <ri>1</ri>
-    </item>  
-    <item> 
       <name>stato_n</name>  
       <type>28</type>  
       <xml> 
@@ -141,14 +127,6 @@
       <decode_class>208</decode_class> 
     </item>  
     <item> 
-      <name>sez_residenza</name>  
-      <type>0</type>  
-      <xml> 
-        <name>sez_residenza</name>  
-        <class/> 
-      </xml> 
-    </item>  
-    <item> 
       <name>espulso</name>  
       <type>28</type>  
       <xml> 
@@ -177,6 +155,14 @@
       <codomain>_system_attachment</codomain>  
       <from>foto</from>  
       <to>ID</to> 
+    </item>  
+    <item> 
+      <name>sez_residenza</name>  
+      <type>0</type>  
+      <xml> 
+        <name>sez_residenza</name>  
+        <class/> 
+      </xml> 
     </item>  
     <item> 
       <name>privo_residenza</name>  
@@ -220,6 +206,14 @@
       </xml> 
     </item>  
     <item> 
+      <name>sez_situazione_famigliare</name>  
+      <type>0</type>  
+      <xml> 
+        <name>sez_situazione_famigliare</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
       <name>stato_civile</name>  
       <type>28</type>  
       <xml> 
@@ -250,6 +244,14 @@
       <type>2</type>  
       <xml> 
         <name>figli</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
+      <name>sez_situazione_scolastica_ed_economica</name>  
+      <type>0</type>  
+      <xml> 
+        <name>sez_situazione_scolastica_ed_economica</name>  
         <class/> 
       </xml> 
     </item>  
@@ -297,6 +299,14 @@
       </xml> 
     </item>  
     <item> 
+      <name>situazione_sanitaria</name>  
+      <type>10</type>  
+      <xml> 
+        <name>situazione_sanitaria</name>  
+        <class/> 
+      </xml> 
+    </item>  
+    <item> 
       <name>madrelingua</name>  
       <type>1</type>  
       <xml> 
@@ -322,10 +332,10 @@
       </xml> 
     </item>  
     <item> 
-      <name>sez_situazione_famigliare</name>  
+      <name>sez_domicilio</name>  
       <type>0</type>  
       <xml> 
-        <name>sez_situazione_famigliare</name>  
+        <name>sez_domicilio</name>  
         <class/> 
       </xml> 
     </item>  
@@ -384,12 +394,18 @@
       <ri>1</ri>
     </item>  
     <item> 
-      <name>sez_situazione_scolastica_ed_economica</name>  
-      <type>0</type>  
+      <name>tessere</name>  
+      <type>8</type>  
       <xml> 
-        <name>sez_situazione_scolastica_ed_economica</name>  
-        <class/> 
-      </xml> 
+        <name>tessere</name>  
+        <class>Tessera</class>  
+        <relationship>1-N</relationship>  
+        <target>inverse_of_tessere</target> 
+      </xml>  
+      <codomain>Tessera</codomain>  
+      <from>ID</from>  
+      <to>ID_Utente_tessere</to>  
+      <ri>1</ri>
     </item>  
     <item> 
       <name>competenze</name>  
@@ -448,20 +464,6 @@
       <ri>1</ri>
     </item>  
     <item> 
-      <name>documenti</name>  
-      <type>8</type>  
-      <xml> 
-        <name>documenti</name>  
-        <class>Documento</class>  
-        <relationship>1-N</relationship>  
-        <target>inverse_of_documenti</target> 
-      </xml>  
-      <codomain>Documento</codomain>  
-      <from>ID</from>  
-      <to>ID_Utente_documenti</to>  
-      <ri>1</ri>
-    </item>  
-    <item> 
       <name>cittadinanza</name>  
       <type>8</type>  
       <xml> 
@@ -476,12 +478,18 @@
       <ri>1</ri>
     </item>  
     <item> 
-      <name>sez_domicilio</name>  
-      <type>0</type>  
+      <name>documenti</name>  
+      <type>8</type>  
       <xml> 
-        <name>sez_domicilio</name>  
-        <class/> 
-      </xml> 
+        <name>documenti</name>  
+        <class>Documento</class>  
+        <relationship>1-N</relationship>  
+        <target>inverse_of_documenti</target> 
+      </xml>  
+      <codomain>Documento</codomain>  
+      <from>ID</from>  
+      <to>ID_Utente_documenti</to>  
+      <ri>1</ri>
     </item>  
     <item> 
       <name>presa_in_carico_accoglienza</name>  
@@ -523,6 +531,65 @@
       <codomain>Inserimento_Lavorativo</codomain>  
       <from>ID</from>  
       <to>ID_Utente_presa_in_carico_inserimenti_lavorativi</to>  
+      <ri>1</ri>
+    </item>  
+    <item> 
+      <name>servizi_antoniano</name>  
+      <type>29</type>  
+      <xml> 
+        <name>servizi_antoniano</name>  
+        <class>_system_decode</class>  
+        <relationship>M-N</relationship>  
+        <target>sd_description</target> 
+      </xml>  
+      <decode_class>302</decode_class>  
+      <codomain>_system_decode</codomain>  
+      <mapping>rel_Utente_servizi_antoniano</mapping>  
+      <domain_from>ID</domain_from>  
+      <domain_to>ID_Utente</domain_to>  
+      <codomain_from>ID_servizi_antoniano</codomain_from>  
+      <codomain_to>sd_value</codomain_to> 
+    </item>  
+    <item> 
+      <name>familiari</name>  
+      <type>8</type>  
+      <xml> 
+        <name>familiari</name>  
+        <class>Utente</class>  
+        <relationship>1-N</relationship>  
+        <target>inverse_of_familiari</target> 
+      </xml>  
+      <codomain>Utente</codomain>  
+      <from>ID</from>  
+      <to>ID_Utente_familiari</to>  
+      <ri>1</ri>
+    </item>  
+    <item> 
+      <name>ID_Utente_familiari</name>  
+      <type>6</type>  
+      <xml> 
+        <name>inverse_of_familiari</name>  
+        <class>Utente</class>  
+        <relationship>N-1</relationship>  
+        <target>familiari</target>  
+        <inverse>1</inverse> 
+      </xml>  
+      <codomain>Utente</codomain>  
+      <from>ID_Utente_familiari</from>  
+      <to>ID</to> 
+    </item>  
+    <item> 
+      <name>allegati</name>  
+      <type>8</type>  
+      <xml> 
+        <name>allegati</name>  
+        <class>Allegato</class>  
+        <relationship>1-N</relationship>  
+        <target>di_utente</target> 
+      </xml>  
+      <codomain>Allegato</codomain>  
+      <from>ID</from>  
+      <to>ID_Utente_allegati</to>  
       <ri>1</ri>
     </item>  
     <item> 

@@ -121,6 +121,14 @@ INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_
 (207,'lingua_it',1,0);
 INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
 (207,0,'it','madrelingua',1,0);
+INSERT INTO `_system_decode_class` (`id`,`sdc_name`,`activation_flag`,`deletion_flag`) VALUES
+(302,'servizi_antoniano',1,0);
+INSERT INTO `_system_decode` (`sd_class`,`sd_value`,`sd_locale`,`sd_description`,`activation_flag`,`deletion_flag`) VALUES
+(302,0,'it','mensa diurna',1,0),
+(302,1,'it','mensa serale',1,0),
+(302,2,'it','accoglienza',1,0),
+(302,3,'it','san ruffillo',1,0),
+(302,4,'it','via gorizia',1,0);
 
 
 -- Fine parte dinamica 

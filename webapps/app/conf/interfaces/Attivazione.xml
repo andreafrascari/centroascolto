@@ -26,10 +26,10 @@
       <detail_edit>dal</detail_edit>  
       <filter>dal</filter>  
       <list>dal</list>  
-      <description_field>1</description_field>  
-      <list_active_field>1</list_active_field>  
       <heading>1</heading>  
       <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
       <max_length/>  
       <default/>  
       <order>21</order> 
@@ -74,6 +74,7 @@
       <name>classificazioni_icf_attivazione</name>  
       <label>classificazioni icf</label>  
       <detail inpage="1">classificazioni icf</detail>  
+      <detail_edit>classificazioni icf</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  

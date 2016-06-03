@@ -68,18 +68,6 @@
       </xml> 
     </item>  
     <item> 
-      <name>allegato</name>  
-      <type>20</type>  
-      <xml> 
-        <name>allegato</name>  
-        <class>_system_attachment</class>  
-        <relationship>N-1</relationship> 
-      </xml>  
-      <codomain>_system_attachment</codomain>  
-      <from>allegato</from>  
-      <to>ID</to> 
-    </item>  
-    <item> 
       <name>owner_user</name>  
       <type>2</type>  
       <xml> 

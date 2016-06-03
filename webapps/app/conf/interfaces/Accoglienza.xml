@@ -63,7 +63,8 @@
     <item> 
       <name>classificazioni_icf_accoglienza</name>  
       <label>classificazioni icf</label>  
-      <detail inpage="1">classificazioni icf</detail>   
+      <detail inpage="1">classificazioni icf</detail>  
+      <detail_edit>classificazioni icf</detail_edit>  
       <heading>1</heading>  
       <max_length/>  
       <default/>  
@@ -88,8 +89,8 @@
       <max_length/>  
       <default/>  
       <order>71</order> 
-    </item> 
-     <item> 
+    </item>  
+    <item> 
       <name>allegato_1</name>  
       <label>allegato</label>  
       <detail>allegato</detail>  
@@ -98,8 +99,8 @@
       <max_length/>  
       <default/>  
       <order>72</order> 
-    </item> 
-     <item> 
+    </item>  
+    <item> 
       <name>allegato_2</name>  
       <label>allegato</label>  
       <detail>allegato</detail>  
@@ -108,8 +109,8 @@
       <max_length/>  
       <default/>  
       <order>73</order> 
-    </item> 
-     <item> 
+    </item>  
+    <item> 
       <name>allegato_3</name>  
       <label>allegato</label>  
       <detail>allegato</detail>  
@@ -118,8 +119,8 @@
       <max_length/>  
       <default/>  
       <order>74</order> 
-    </item> 
-     <item> 
+    </item>  
+    <item> 
       <name>allegato_4</name>  
       <label>allegato</label>  
       <detail>allegato</detail>  

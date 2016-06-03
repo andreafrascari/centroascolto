@@ -99,7 +99,7 @@
       <codomain>_system_attachment</codomain>  
       <from>allegato_1</from>  
       <to>ID</to> 
-    </item> 
+    </item>  
     <item> 
       <name>allegato_2</name>  
       <type>20</type>  
@@ -135,7 +135,7 @@
       <codomain>_system_attachment</codomain>  
       <from>allegato_4</from>  
       <to>ID</to> 
-    </item>   
+    </item>  
     <item> 
       <name>owner_user</name>  
       <type>2</type>  

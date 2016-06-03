@@ -43,7 +43,7 @@
       <description_field>1</description_field>  
       <list_active_field>1</list_active_field>  
       <max_length/>  
-      <default/>  
+      <default>@TODAY@</default>  
       <order>31</order> 
     </item>  
     <item> 

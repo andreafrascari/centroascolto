@@ -16,6 +16,31 @@
       </xml>
     </item>
     <item>
+      <name>tipo_documento</name>
+      <type>28</type>
+      <xml>
+        <name>tipo_documento</name>
+        <class/>
+      </xml>
+      <decode_class>301</decode_class>
+    </item>
+    <item>
+      <name>data</name>
+      <type>3</type>
+      <xml>
+        <name>data</name>
+        <class/>
+      </xml>
+    </item>
+    <item>
+      <name>descrizione</name>
+      <type>10</type>
+      <xml>
+        <name>descrizione</name>
+        <class/>
+      </xml>
+    </item>
+    <item>
       <name>allegato</name>
       <type>20</type>
       <xml>
@@ -50,31 +75,6 @@
       <codomain>_system_attachment</codomain>
       <from>allegato_2</from>
       <to>ID</to>
-    </item>
-    <item>
-      <name>data</name>
-      <type>3</type>
-      <xml>
-        <name>data</name>
-        <class/>
-      </xml>
-    </item>
-    <item>
-      <name>descrizione</name>
-      <type>10</type>
-      <xml>
-        <name>descrizione</name>
-        <class/>
-      </xml>
-    </item>
-    <item>
-      <name>tipo_documento</name>
-      <type>28</type>
-      <xml>
-        <name>tipo_documento</name>
-        <class/>
-      </xml>
-      <decode_class>301</decode_class>
     </item>
     <item> 
       <name>owner_user</name>  
