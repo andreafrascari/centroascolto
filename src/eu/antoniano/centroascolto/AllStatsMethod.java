@@ -166,9 +166,11 @@ public class AllStatsMethod extends JSONMethod {
 				Element t = q.getFirstClassElement();
 				// t.addAttribute(ConstantsXSerena.ATTR_OPERATION,
 				// ConstantsXSerena.VAL_SELECT);
-				t.addAttribute(ConstantsXSerena.ATTR_TARGET, ConstantsXSerena.TARGET_ALL);
-				t.addAttribute(ConstantsXSerena.ATTR_TARGET_LEVELS, "1");
+				t.addAttribute(ConstantsXSerena.ATTR_TARGET, ConstantsXSerena.TARGET_SPECIFIED);
 				t.addAttribute(ConstantsXSerena.ATTR_ORDER_BY, theDate);
+				t.addElement("ID");
+				t.addElement(theDate);
+				t.addElement(theAttribute);				
 				if (anno0!=null){
 					Element condElement = DocumentHelper.createElement(ConstantsXSerena.TAG_AND);
 					Element cond = condElement.addElement(theDate);
@@ -291,6 +293,9 @@ public class AllStatsMethod extends JSONMethod {
 			}
 			for (UnitDTO t : units) {
 				Output o = null;
+				if (t.data==null)	{
+					System.out.print(t.id);;
+				}
 				SerenaDate c = new SerenaDate(t.data);
 				if (c.getYear()<=2006 || c.getYear()>new SerenaDate().getYear()){
 					continue; // dont want them

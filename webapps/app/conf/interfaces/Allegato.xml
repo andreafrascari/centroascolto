@@ -49,10 +49,10 @@
     </item>  
     <item> 
       <name>allegato</name>  
-      <label>allegato</label>  
-      <detail>allegato</detail>  
-      <detail_edit>allegato</detail_edit>  
-      <list>allegato</list>  
+      <label>file</label>  
+      <detail></detail>  
+      <detail_edit>file</detail_edit>  
+      <list>file</list>  
       <heading>2</heading>  
       <needed>1</needed>  
       <description_field>1</description_field>  

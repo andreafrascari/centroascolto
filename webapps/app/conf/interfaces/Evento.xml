@@ -36,11 +36,11 @@
     </item>  
     <item> 
       <name>tipo_nota</name>  
-      <label>tipo nota</label>  
-      <detail>tipo nota</detail>  
-      <detail_edit>tipo nota</detail_edit>  
-      <filter>tipo nota</filter>  
-      <list>tipo nota</list>  
+      <label>tipo</label>  
+      <detail>tipo</detail>  
+      <detail_edit>tipo</detail_edit>  
+      <filter>tipo</filter>  
+      <list>tipo</list>  
       <heading>1</heading>  
       <needed>1</needed>  
       <max_length/>  
