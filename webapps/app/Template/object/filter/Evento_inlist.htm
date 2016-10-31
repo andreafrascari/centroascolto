@@ -1,0 +1,35 @@
+@BEGIN_TEMPLATE@
+
+<script type="text/javascript">
+$(document).ready(function()	{
+	$("#KEY_tipo_nota").change(function()	{
+		$("#event-table tbody tr").each(function(i) {
+		    $( this ).show();
+		});
+		$("#footer").hide();
+		var val = $("#KEY_tipo_nota").val();
+		console.log("selection: " + val);
+		$('.tipo_nota').each(function(i) {
+			// console.log("test: " + val + "=" + $( this ).text());
+		    if ($( this ).text()!=val){
+		    	$( this ).parent().hide();
+		    } 
+		});
+
+	});
+});
+
+</script>
+		<div class="form-container">
+
+			<form id="filter" method="post" action="@ACTION@">
+					<fieldset>
+						<legend>filtro per tipo</legend>
+						
+						@BEGIN_Evento@@tag_tipo_nota@@END_Evento@
+						
+					</fieldset>
+			</form>
+		
+		</div>
+@END_TEMPLATE@
