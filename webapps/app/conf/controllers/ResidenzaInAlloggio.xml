@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean>
+  <title>ResidenzaInAlloggio</title>
+  <attributes>
+	    <item>
+	    	<name>classe_alloggio</name>
+	    	<controls>
+	    		<controlled>
+	    			<target>tipologia_alloggio</target>
+	    			<field>sd_parent</field>
+	    			<action>populate</action>
+	    		</controlled>
+	    	</controls>
+	    </item>
+	</attributes>
+</bean>

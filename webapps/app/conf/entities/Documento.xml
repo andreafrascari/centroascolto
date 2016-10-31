@@ -3,7 +3,7 @@
 <bean> 
   <title>Documento</title>  
   <data_source>Documento</data_source>  
-  <order_by/>  
+  <order_by>scadenza DESC</order_by>  
   <xml> 
     <class>Documento</class> 
   </xml>  

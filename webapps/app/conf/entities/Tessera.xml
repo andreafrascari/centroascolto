@@ -3,7 +3,7 @@
 <bean> 
   <title>Tessera</title>  
   <data_source>Tessera</data_source>  
-  <order_by>emissione</order_by>  
+  <order_by>emissione DESC</order_by>  
   <xml> 
     <class>Tessera</class> 
   </xml>  

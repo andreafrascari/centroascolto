@@ -3,7 +3,7 @@
 <bean> 
   <title>ResidenzaInAlloggio</title>  
   <data_source>ResidenzaInAlloggio</data_source>  
-  <order_by>dal</order_by>  
+  <order_by>dal DESC</order_by>  
   <xml> 
     <class>ResidenzaInAlloggio</class> 
   </xml>  
@@ -37,6 +37,15 @@
         <class/> 
       </xml>  
       <decode_class>203</decode_class> 
+    </item>  
+    <item> 
+      <name>classe_alloggio</name>  
+      <type>28</type>  
+      <xml> 
+        <name>classe_alloggio</name>  
+        <class/> 
+      </xml>  
+      <decode_class>303</decode_class> 
     </item>  
     <item> 
       <name>dal</name>  

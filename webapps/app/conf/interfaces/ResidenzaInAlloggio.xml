@@ -18,9 +18,9 @@
       <max_length/>  
       <default/>  
       <order>11</order> 
-    </item>  
-    <item> 
-      <name>tipologia_alloggio</name>  
+    </item> 
+     <item> 
+      <name>classe_alloggio</name>  
       <label>tipologia alloggio</label>  
       <detail>tipologia alloggio</detail>  
       <detail_edit>tipologia alloggio</detail_edit>  
@@ -30,6 +30,18 @@
       <needed>1</needed>  
       <description_field>1</description_field>  
       <list_active_field>1</list_active_field>  
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>       
+    <item> 
+      <name>tipologia_alloggio</name>  
+      <label>alloggio</label>  
+      <detail>alloggio</detail>  
+      <detail_edit>alloggio</detail_edit>  
+      <filter>alloggio</filter>  
+      <list>alloggio</list>  
+      <heading>1</heading>  
       <max_length/>  
       <default/>  
       <order>21</order> 

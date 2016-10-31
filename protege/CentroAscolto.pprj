@@ -1,4 +1,4 @@
-; Fri Jun 03 15:09:02 CEST 2016
+; Mon Oct 31 12:01:30 CET 2016
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
@@ -20,30 +20,15 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[CentroAscolto_ProjectKB_Class13]
-		[CentroAscolto_ProjectKB_Class14]
-		[CentroAscolto_ProjectKB_Class15]))
+		[CentroAscolto_ProjectKB_Class7]
+		[CentroAscolto_ProjectKB_Class8]
+		[CentroAscolto_ProjectKB_Class9]))
 
 ([CentroAscolto_ProjectKB_Class1] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [CentroAscolto_ProjectKB_Class2])
 	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
-
-([CentroAscolto_ProjectKB_Class13] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([CentroAscolto_ProjectKB_Class14] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([CentroAscolto_ProjectKB_Class15] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
 
 ([CentroAscolto_ProjectKB_Class2] of  Property_List
 )
@@ -65,6 +50,21 @@
 
 ([CentroAscolto_ProjectKB_Class6] of  Property_List
 )
+
+([CentroAscolto_ProjectKB_Class7] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([CentroAscolto_ProjectKB_Class8] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([CentroAscolto_ProjectKB_Class9] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
 
 ([CLSES_TAB] of  Widget
 
@@ -105,7 +105,7 @@
 
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
-([KB_743589_Class0] of  Map
+([KB_753726_Class0] of  Map
 )
 
 ([KB_875361_Class0] of  String
@@ -287,8 +287,8 @@
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[STANDARD_SLOT_FORM_WIDGET]
 		[STANDARD_FACET_FORM_WIDGET]
+		[STANDARD_SLOT_FORM_WIDGET]
 		[PAL_FORM_WIDGET]
 		[STANDARD_CLASS_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")

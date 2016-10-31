@@ -26,6 +26,8 @@ public class ReportTessereAttiveMensaSeraleMethod extends GiveMethod {
 	private static final Logger logger = Logger.getLogger(ReportTessereAttiveMensaSeraleMethod.class);
 
 	public static final String METHOD_NAME = "mensa_serale";
+	
+	private static final int NUM_OF_EXTRA_BLANK_ROWS = 5;
 
 	private class TesseraDTO {
 		String nome;
@@ -110,6 +112,20 @@ public class ReportTessereAttiveMensaSeraleMethod extends GiveMethod {
 				currentElement.setText(t.getProcessedScadenza());
 				currentElement = utente.addElement("sabatoDomenica");
 				currentElement.setText(t.getProcessedSabatoDomenica());
+			}
+			
+			for (int j=0; j< NUM_OF_EXTRA_BLANK_ROWS; j++) {
+				Element utente = utenti.addElement("Utente");
+				currentElement = utente.addElement("nome");
+				currentElement.setText("");
+				currentElement = utente.addElement("cognome");
+				currentElement.setText("");
+				currentElement = utente.addElement("progressivo");
+				currentElement.setText(new Integer(i++).toString());
+				currentElement = utente.addElement("scadenza");
+				currentElement.setText("");
+				currentElement = utente.addElement("sabatoDomenica");
+				currentElement.setText("");
 			}
 			
 		} catch (Exception e) {

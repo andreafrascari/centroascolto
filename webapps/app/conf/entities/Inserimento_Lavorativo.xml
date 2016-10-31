@@ -3,7 +3,7 @@
 <bean> 
   <title>Inserimento_Lavorativo</title>  
   <data_source>Inserimento_Lavorativo</data_source>  
-  <order_by>dal</order_by>  
+  <order_by>dal DESC</order_by>  
   <xml> 
     <class>Inserimento_Lavorativo</class> 
   </xml>  

@@ -3,7 +3,7 @@
 <bean> 
   <title>Incontro_Inserimento_Lavorativo</title>  
   <data_source>Incontro_Inserimento_Lavorativo</data_source>  
-  <order_by>data</order_by>  
+  <order_by>data DESC</order_by>  
   <xml> 
     <class>Incontro_Inserimento_Lavorativo</class> 
   </xml>  

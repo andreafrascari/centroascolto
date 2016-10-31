@@ -1,0 +1,197 @@
+<serena>
+	<service name="get">
+		<result dimension="1">1</result>
+		<Utente>
+			<ID>3147</ID>
+			<scheda>3172</scheda>
+			<sez_anagrafica></sez_anagrafica>
+			<nome>ANDREWS</nome>
+			<cognome>OPOKU</cognome>
+			<op_primo_colloquio>
+				<Operatore>
+					<ID>1</ID>
+					<user_user_id>admin</user_user_id>
+					<user_name>Utente amministratore</user_name>
+					<user_email></user_email>
+					<user_phone_number></user_phone_number>
+					<primi_colloqui />
+					<eventi_registrati />
+					<owner_user></owner_user>
+					<owner_group></owner_group>
+					<creation_user>admin</creation_user>
+					<creation_date>02/02/2016</creation_date>
+					<deletion_user></deletion_user>
+					<deletion_date></deletion_date>
+					<last_modification_user></last_modification_user>
+					<last_modification_date></last_modification_date>
+					<activation_flag>true</activation_flag>
+					<deletion_flag>false</deletion_flag>
+				</Operatore>
+			</op_primo_colloquio>
+			<data_primo_colloquio>12/10/2015</data_primo_colloquio>
+			<data_n>18/12/1983</data_n>
+			<data_arrivo_it>01/06/2011</data_arrivo_it>
+			<data_arrivo_bo>26/09/2015</data_arrivo_bo>
+			 
+			<stato_n>Ghana</stato_n>
+			<comune_n></comune_n>
+			<cf></cf>
+			<sesso>maschio</sesso>
+			<sez_residenza></sez_residenza>
+			<espulso>NO</espulso>
+			<deceduto>NO</deceduto>
+			<foto />
+			<privo_residenza>NO</privo_residenza>
+			<residenza_comune></residenza_comune>
+			<residenza_cap></residenza_cap>
+			<residenza_via></residenza_via>
+			<residenza_provincia></residenza_provincia>
+			<stato_civile>Sposato/a</stato_civile>
+			<stato_famiglia>Ghana</stato_famiglia>
+			<comune_famiglia></comune_famiglia>
+			<figli>1</figli>
+			<titolo_studio>Licenza media</titolo_studio>
+			<situazione_economica>Reddito da lavoro</situazione_economica>
+			<altro></altro>
+			<automunito></automunito>
+			<percentuale_inv></percentuale_inv>
+			<madrelingua></madrelingua>
+			<lingua_it>scarsa</lingua_it>
+			<altre_lingue>INGLESE</altre_lingue>
+			<sez_situazione_famigliare></sez_situazione_famigliare>
+			<domicilio_comune></domicilio_comune>
+			<domicilio_cap></domicilio_cap>
+			<domicilio_via></domicilio_via>
+			<domicilio_provincia></domicilio_provincia>
+			<nota_domicilio></nota_domicilio>
+			<servizi_di_riferimento>
+				<ServizioDiRiferimento>
+					<ID>1479</ID>
+					<inverse_of_servizi_di_riferimento>
+						<Utente>
+							<ID>3147</ID>
+						</Utente>
+					</inverse_of_servizi_di_riferimento>
+					<tipo_servizio>Help Center</tipo_servizio>
+					<referente></referente>
+					<info></info>
+					<owner_user></owner_user>
+					<owner_group></owner_group>
+					<creation_user>admin</creation_user>
+					<creation_date>02/02/2016</creation_date>
+					<deletion_user></deletion_user>
+					<deletion_date></deletion_date>
+					<last_modification_user></last_modification_user>
+					<last_modification_date></last_modification_date>
+					<activation_flag>true</activation_flag>
+					<deletion_flag>false</deletion_flag>
+				</ServizioDiRiferimento>
+				<ServizioDiRiferimento>
+					<ID>1480</ID>
+					<inverse_of_servizi_di_riferimento>
+						<Utente>
+							<ID>3147</ID>
+						</Utente>
+					</inverse_of_servizi_di_riferimento>
+					<tipo_servizio>Sportello Protezione Internazionale - ASP
+					</tipo_servizio>
+					<referente></referente>
+					<info></info>
+					<owner_user></owner_user>
+					<owner_group></owner_group>
+					<creation_user>admin</creation_user>
+					<creation_date>02/02/2016</creation_date>
+					<deletion_user></deletion_user>
+					<deletion_date></deletion_date>
+					<last_modification_user></last_modification_user>
+					<last_modification_date></last_modification_date>
+					<activation_flag>true</activation_flag>
+					<deletion_flag>false</deletion_flag>
+				</ServizioDiRiferimento>
+			</servizi_di_riferimento>
+			 
+			<contatti>
+				<Contatto>
+					<ID>1587</ID>
+					<inverse_of_contatti>
+						<Utente>
+							<ID>3147</ID>
+						</Utente>
+					</inverse_of_contatti>
+					<numero_telefono>3510290025</numero_telefono>
+					<altro></altro>
+					<descrizione></descrizione>
+					<owner_user></owner_user>
+					<owner_group></owner_group>
+					<creation_user>admin</creation_user>
+					<creation_date>02/02/2016</creation_date>
+					<deletion_user></deletion_user>
+					<deletion_date></deletion_date>
+					<last_modification_user></last_modification_user>
+					<last_modification_date></last_modification_date>
+					<activation_flag>true</activation_flag>
+					<deletion_flag>false</deletion_flag>
+				</Contatto>
+			</contatti>
+			<documenti>
+				<Documento>
+					<ID>2303</ID>
+					<inverse_of_documenti>
+						<Utente>
+							<ID>3147</ID>
+						</Utente>
+					</inverse_of_documenti>
+					<tipologia_documento>Permesso di soggiorno</tipologia_documento>
+					<numero>I06521407</numero>
+					<scadenza>03/12/2015</scadenza>
+					<rilasciato_da></rilasciato_da>
+					<descrizione></descrizione>
+					<allegato />
+					<allegato_1 />
+					<allegato_2 />
+					<owner_user></owner_user>
+					<owner_group></owner_group>
+					<creation_user>admin</creation_user>
+					<creation_date>02/02/2016</creation_date>
+					<deletion_user></deletion_user>
+					<deletion_date></deletion_date>
+					<last_modification_user></last_modification_user>
+					<last_modification_date></last_modification_date>
+					<activation_flag>true</activation_flag>
+					<deletion_flag>false</deletion_flag>
+				</Documento>
+			</documenti>
+			<cittadinanza>
+				<Cittadinanza>
+					<ID>2144</ID>
+					<stato>Ghana</stato>
+					<inverse_of_cittadinanza>
+						<Utente>
+							<ID>3147</ID>
+						</Utente>
+					</inverse_of_cittadinanza>
+					<owner_user></owner_user>
+					<owner_group></owner_group>
+					<creation_user>admin</creation_user>
+					<creation_date>02/02/2016</creation_date>
+					<deletion_user></deletion_user>
+					<deletion_date></deletion_date>
+					<last_modification_user></last_modification_user>
+					<last_modification_date></last_modification_date>
+					<activation_flag>true</activation_flag>
+					<deletion_flag>false</deletion_flag>
+				</Cittadinanza>
+			</cittadinanza>
+			<owner_user></owner_user>
+			<owner_group></owner_group>
+			<creation_user>admin</creation_user>
+			<creation_date>02/02/2016</creation_date>
+			<deletion_user></deletion_user>
+			<deletion_date></deletion_date>
+			<last_modification_user></last_modification_user>
+			<last_modification_date></last_modification_date>
+			<activation_flag>true</activation_flag>
+			<deletion_flag>false</deletion_flag>
+		</Utente>
+	</service>
+</serena>

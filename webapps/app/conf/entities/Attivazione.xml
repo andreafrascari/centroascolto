@@ -3,7 +3,7 @@
 <bean> 
   <title>Attivazione</title>  
   <data_source>Attivazione</data_source>  
-  <order_by>dal</order_by>  
+  <order_by>dal DESC</order_by>  
   <xml> 
     <class>Attivazione</class> 
   </xml>  

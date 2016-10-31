@@ -91,8 +91,8 @@
     		SMTP_SERVER. Il server SMTP da usare per inviare le mail di notifica 
     	-->
 	<PARAM NOME="SMTP_SERVER">smtp.gmail.com</PARAM>
-		<PARAM NOME="SMTP_USERNAME">socialphotowedding@gmail.com</PARAM>
-		<PARAM NOME="SMTP_PASSWORD">gomate55!</PARAM>
+		<PARAM NOME="SMTP_USERNAME">afrascaritech@gmail.com</PARAM>
+		<PARAM NOME="SMTP_PASSWORD">goMate88</PARAM>
 
 
 		<!-- SEZIONE LOG -->

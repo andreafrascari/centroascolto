@@ -472,6 +472,7 @@
             <property name="resultSetColumn">calendario</property>
         </data>
         <list id="46">
+            <property name="pageBreakAfter">auto</property>
             <property name="dataSet">Utenti</property>
             <list-property name="boundDataColumns">
                 <structure>

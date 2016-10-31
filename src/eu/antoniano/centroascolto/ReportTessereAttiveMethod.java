@@ -26,6 +26,8 @@ public class ReportTessereAttiveMethod extends GiveMethod {
 	private static final Logger logger = Logger.getLogger(ReportTessereAttiveMethod.class);
 
 	public static final String METHOD_NAME = "tessere_attive";
+	
+	private static final int NUM_OF_EXTRA_BLANK_ROWS = 20;
 
 	private class TesseraDTO {
 		String nome;
@@ -113,6 +115,19 @@ public class ReportTessereAttiveMethod extends GiveMethod {
 					currentElement = utente.addElement("sabatoDomenica");
 					currentElement.setText(t.getProcessedSabatoDomenica());
 				}
+			}
+			for (int j=0; j< NUM_OF_EXTRA_BLANK_ROWS; j++) {
+				Element utente = utenti.addElement("Utente");
+				currentElement = utente.addElement("nome");
+				currentElement.setText("");
+				currentElement = utente.addElement("cognome");
+				currentElement.setText("");
+				currentElement = utente.addElement("progressivo");
+				currentElement.setText(new Integer(i++).toString());
+				currentElement = utente.addElement("scadenza");
+				currentElement.setText("");
+				currentElement = utente.addElement("sabatoDomenica");
+				currentElement.setText("");
 			}
 			
 		} catch (Exception e) {

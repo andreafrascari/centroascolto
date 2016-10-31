@@ -30,17 +30,22 @@
 		</layout>
 	</appender>
 
-	<appender name="MAIL_APPENDER" class="org.apache.log4j.net.SMTPAppender">
-		<param name="SMTPHost" value="mail-server" />
-		<param name="From" value="no-reply@serena.it" />
+	
+	<appender name="MAIL_APPENDER" class="eu.anastasis.serena.logging.SMTPAppender">
+		<param name="SMTPHost" value="smtp.gmail.com" />
+		<param name="SMTPPort" value="465" />
+		<param name="SMTPUsername" value="afrascaritech@gmail.com" />
+		<param name="SMTPPassword" value="goMate88" />
+		<param name="From" value="afrascaritech@gmail.com" />
 		<param name="To" value="afrascari@gmail.com" />
-		<param name="Subject" value="SERENA FATAL ERROR - centroascolto" />
+		<param name="Subject" value="SERENA FATAL ERROR - Centro Ascolto" />
 		<param name="BufferSize" value="1" />
 		<param name="threshold" value="fatal" />
 		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%p § %d{ISO8601} § %c § %m%n"/>
+			<param name="ConversionPattern" value="%p ;; %d{ISO8601} ;; %c.%M (%L) ;; %m%n" />
 		</layout>
 	</appender>
+	
 	
 	<!-- SVILUPPO -->
 	<!-- per attivare i messaggi di trace modificare il livello in questo logger
