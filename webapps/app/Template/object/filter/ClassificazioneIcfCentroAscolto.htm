@@ -1,0 +1,63 @@
+@BEGIN_TEMPLATE@
+	
+<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="javascript:history.back();" title="Indietro">
+							<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+						</a>
+					</div>
+</div>	
+	
+<script type="text/javascript">
+
+$(function () {
+	var theURl = "ModuleIndex?q=centroascolto/icf_chart_gen";
+	$.ajax({
+		type: "GET",
+		url: theURl,
+		data: {richiesta: "@FUN_GET_URL_PARAM(param=richiesta)@", dominio:"@FUN_GET_URL_PARAM(param=dominio)@", id:"@FUN_GET_URL_PARAM(param=id)@"},
+        async: false,        
+        cache: false,
+        dataType: "json",
+        error: function(data){ $('#myPleaseWait').modal('hide'); $("#error-message").show();},
+        success: function(data){  
+        	$("#error-message").hide(); 
+        	$('#myPleaseWait').modal('hide');
+		
+        	$('#container').highcharts({
+
+                chart: {
+              		polar: true
+                },
+
+                title: {
+                    text: 'Valutazione ICF progetto @FUN_GET_URL_PARAM(param=richiesta)@'
+                },
+
+                xAxis: {
+                    categories: data.labels
+                },
+
+
+                series: data.series
+                
+            });	
+        	
+       }
+});
+	
+});
+</script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<div id="container"
+	style="min-width: 310px; height: 400px; margin: 0 auto">
+</div>
+
+<strong>Dal tasto menu sulla destra le opzioni di stampa/esportazione</strong>
+
+
+@END_TEMPLATE@

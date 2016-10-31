@@ -1,0 +1,98 @@
+@BEGIN_TEMPLATE@
+	
+<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="javascript:history.back();" title="Indietro">
+							<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+						</a>
+					</div>
+</div>	
+	
+<h4>Scegliere tipo di progetto, anno di inizio DAL e AL (facoltativo, se lasciato vuoto si intende fino ad oggi):</h4>
+
+
+
+<nav class="navbar navbar-default">
+   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" style="padding:10px">
+      <li style="padding:10px">
+	  <select id="progetto">
+	  	<option value="">Tipo progetto</option>
+	  	<option value="Attivazione">Attivazione</option>
+	  	<option value="Accoglienza">Accoglienza</option>
+	  	<option value="Inserimento_Lavorativo">Inserimento Lavorativo</option>
+	  </select>
+	</li>
+	<li style="padding:10px">
+	  <input type="text" placeholder="DAL" id="dal" aria-describedby="basic-addon2">
+  	</li>
+  	<li style="padding:10px">
+  		<input type="text"  placeholder="AL" id="al" aria-describedby="basic-addon3">
+  	</li>
+  	<li style="padding:10px">
+        <button id="genera" class="btn btn-default" type="button">Genera</button>
+   	</li>
+   	</ul>
+</div>
+</nav>
+
+
+</nav>
+	
+	
+
+	
+<script type="text/javascript">
+
+$(document).ready(function()	{
+	$("#genera").click(function()	{
+			var theURl = "ModuleIndex?q=centroascolto/icf_chart_gen";
+			$.ajax({
+				type: "GET",
+				url: theURl,
+				data: {richiesta: $("#progetto").val(), dominio:"equipe", dal:$("#dal").val(), al:$("#al").val()},
+		        async: false,        
+		        cache: false,
+		        dataType: "json",
+		        error: function(data){ $('#myPleaseWait').modal('hide'); $("#error-message").show();},
+		        success: function(data){  
+		        	$("#error-message").hide(); 
+		        	$('#myPleaseWait').modal('hide');
+				
+		        	$('#container').highcharts({
+		
+		                chart: {
+		              		polar: true
+		                },
+		
+		                title: {
+		                    text: 'Valutazione ICF progetto '+ $("#progetto").val()
+		                },
+		
+		                xAxis: {
+		                    categories: data.labels
+		                },
+		
+		
+		                series: data.series
+		                
+		            });	
+		        	
+		       }
+		});
+	});	
+});
+</script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+<div id="container"
+	style="min-width: 310px; height: 400px; margin: 0 auto">
+</div>
+
+<strong>Dal tasto menu sulla destra le opzioni di stampa/esportazione</strong>
+
+
+@END_TEMPLATE@
