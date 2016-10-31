@@ -15,6 +15,7 @@ public final static String MODULE_NAME = "centroascolto";
 		addMethod(new ReportRilascioTessereMethod(this, getDefaultParameters()));
 		addMethod(new AllStatsMethod(this, getDefaultParameters()));
 		addMethod(new EtaStatsMethod(this, getDefaultParameters()));
+		addMethod(new IcfChartGenMethod(this, getDefaultParameters()));
 		
 		addFunctionToPostparse(new NumeroTessereAttiveFunction());
 	}

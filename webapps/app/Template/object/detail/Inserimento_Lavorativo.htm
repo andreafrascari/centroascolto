@@ -1,17 +1,13 @@
 @BEGIN_TEMPLATE@<div id="detail">
-		
+	@BEGIN_Inserimento_Lavorativo@		
 				<div class="inserto">
 					<div role="toolbar">
 						<a class="btn btn-default btn-xs btn-info" href="?q=object/list&amp;p=@CLASS@&amp;page=XML-QUERY" title="Tornare all'ultima lista visualizzata">
 							<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
 						</a>
-					([[[] != []]
-							?? [
-							<a class="btn btn-default btn-xs btn-info" href="ModuleIndex?q=birtReport/give/CLS=@CLASS@/ID=@ID@/DOC=@CLASS@/FILE=@FILE@/TYPE=pdf" title="Genera versione pdf">
-						 		<span aria-hidden="true" class="glyphicon glyphicon-print"></span>
-						 	</a>	
-							]
-						])
+					 	<a class="btn btn-default btn-xs btn-danger" href="?q=object/filter&p=ClassificazioneIcfCentroAscolto&richiesta=Inserimento_Lavorativo&dominio=persona&id=@tag_ID#FLAT@" title="Grafico andamento progetto">
+						 		<span aria-hidden="true" class="glyphicon glyphicon-stats"></span>
+						 	</a>
 						
 					@BLOCK_BEGIN_EDIT@
 						([
@@ -55,7 +51,7 @@
 				</div>
 			@BLOCK_END_RESULT_EMPTY@
 
-			@BEGIN_Inserimento_Lavorativo@
+		
 
 
 @FUN_MODULE(q=object_tab_header/detail,p=Utente/_a_ID/_v_@tag_inverse_of_presa_in_carico_inserimenti_lavorativi.Utente.ID#FLAT@)@
