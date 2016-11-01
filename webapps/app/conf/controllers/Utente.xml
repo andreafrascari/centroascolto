@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean>
+  <title>Utente</title>
+  <attributes>
+	    <item>
+	    	<name>area_geografica_provenienza</name>
+	    	<controls>
+	    		<controlled>
+	    			<target>stato_n</target>
+	    			<field>sd_parent</field>
+	    			<action>populate</action>
+	    		</controlled>
+	    	</controls>
+	    </item>
+	</attributes>
+</bean>

@@ -93,6 +93,15 @@
       </xml> 
     </item>  
     <item> 
+      <name>area_geografica_provenienza</name>  
+      <type>28</type>  
+      <xml> 
+        <name>area_geografica_provenienza</name>  
+        <class/> 
+      </xml>  
+      <decode_class>304</decode_class> 
+    </item> 
+    <item> 
       <name>stato_n</name>  
       <type>28</type>  
       <xml> 

@@ -116,6 +116,17 @@
       <max_length/>  
       <default/>  
       <order>47</order> 
+    </item> 
+    <item> 
+      <name>area_geografica_provenienza</name>  
+      <label>area geografica di provenienza</label>  
+      <detail>area geografica di provenienza</detail>  
+      <detail_edit>area geografica di provenienza</detail_edit>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>57</order> 
     </item>  
     <item> 
       <name>stato_n</name>  

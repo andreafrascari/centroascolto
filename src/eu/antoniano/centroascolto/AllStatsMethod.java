@@ -36,6 +36,7 @@ public class AllStatsMethod extends JSONMethod {
 	private static final String QUERY_MOTIVAZIONE_TESSERE = "motivazione-tessere";
 	private static final String QUERY_TESSERE_PER_SESSO = "tessere-per-sesso";
 	private static final String QUERY_TESSERE_PER_STATO = "tessere-per-stato";
+	private static final String QUERY_TESSERE_PER_AREA_GEOGRAFICA = "tessere-per-area-geografica";
 	private static final String QUERY_TESSERE_PER_STATO_CIVILE = "tessere-per-stato-civile";
 	private static final String QUERY_TESSERE_PER_RESIDENZA = "tessere-per-residenza";
 	private static final String QUERY_UTENTI_PER_SESSO = "utenti-per-sesso";
@@ -100,6 +101,10 @@ public class AllStatsMethod extends JSONMethod {
 				res.title = "Utenti in carico suddivisi per paese di provenienza: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Utenti";
 				return get2kevelData(anno, request,"Tessera","Utente","emissione","stato_n");
+			} else if (QUERY_TESSERE_PER_AREA_GEOGRAFICA.equals(query))	{
+				res.title = "Utenti in carico suddivisi per area geografica di provenienza: " + ((anno!=null)?anno:"per anno");
+				res.asseY = "Numero Utenti";
+				return get2kevelData(anno, request,"Tessera","Utente","emissione","area_geografica_provenienza");
 			} else if (QUERY_UTENTI_PER_STATO_CIVILE.equals(query))	{
 				res.title = "Utenti  accolti suddivisi per stato civile: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Utenti";

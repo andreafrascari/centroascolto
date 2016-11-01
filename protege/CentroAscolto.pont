@@ -1,4 +1,4 @@
-; Mon Oct 31 12:01:29 CET 2016
+; Tue Nov 01 18:38:56 CET 2016
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 660")
@@ -56,14 +56,22 @@
 		(type SYMBOL)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot protocollo_osservazione
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(multislot contatti
 		(type INSTANCE)
 ;+		(allowed-classes Contatto)
 ;+		(inverse-slot inverse_of_contatti)
+		(create-accessor read-write))
+	(single-slot protocollo_osservazione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot scheda
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot obiettivi
+		(type STRING)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot registrato_da
 		(type INSTANCE)
@@ -71,17 +79,14 @@
 ;+		(cardinality 1 1)
 ;+		(inverse-slot eventi_registrati)
 		(create-accessor read-write))
-	(single-slot obiettivi
-		(type STRING)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot scheda
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot stato_civile
 		(type SYMBOL)
 		(allowed-values Celibe%2FNubile)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot automunito
+		(type SYMBOL)
+		(allowed-values si no)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot op_primo_colloquio
@@ -90,25 +95,20 @@
 ;+		(cardinality 0 1)
 ;+		(inverse-slot primi_colloqui)
 		(create-accessor read-write))
-	(single-slot automunito
-		(type SYMBOL)
-		(allowed-values si no)
+	(single-slot sez_residenza
+		(type STRING)
 ;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot inverse_of_presa_in_carico_attivazioni
-		(type INSTANCE)
-;+		(allowed-classes Utente)
-;+		(cardinality 1 1)
-;+		(inverse-slot presa_in_carico_attivazioni)
 		(create-accessor read-write))
 	(single-slot iter
 		(type SYMBOL)
 		(allowed-values iniziale intermedia finale)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot sez_residenza
-		(type STRING)
-;+		(cardinality 0 1)
+	(single-slot inverse_of_presa_in_carico_attivazioni
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+;+		(inverse-slot presa_in_carico_attivazioni)
 		(create-accessor read-write))
 	(multislot competenze
 		(type INSTANCE)
@@ -142,24 +142,24 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot comune_n
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot inverse_of_tessere
 		(type INSTANCE)
 ;+		(allowed-classes Utente)
 ;+		(cardinality 1 1)
 ;+		(inverse-slot tessere)
 		(create-accessor read-write))
-	(multislot classificazioni_icf_inserimento_lavorativo
-		(type INSTANCE)
-;+		(allowed-classes ClassificazioneIcfCentroAscolto)
-;+		(inverse-slot inserimento_lavorativo)
+	(single-slot comune_n
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot referente
 		(type STRING)
 ;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot classificazioni_icf_inserimento_lavorativo
+		(type INSTANCE)
+;+		(allowed-classes ClassificazioneIcfCentroAscolto)
+;+		(inverse-slot inserimento_lavorativo)
 		(create-accessor read-write))
 	(single-slot punti_di_debolezza
 		(type STRING)
@@ -174,17 +174,17 @@
 ;+		(allowed-classes ResidenzaInAlloggio)
 ;+		(inverse-slot inverse_of_residenze_in_alloggio)
 		(create-accessor read-write))
-	(single-slot attivazione
-		(type INSTANCE)
-;+		(allowed-classes Attivazione)
-;+		(cardinality 1 1)
-;+		(inverse-slot classificazioni_icf_attivazione)
-		(create-accessor read-write))
 	(single-slot inverse_of_item
 		(type INSTANCE)
 ;+		(allowed-classes ClassificazioneIcfCentroAscolto)
 ;+		(cardinality 1 1)
 ;+		(inverse-slot item)
+		(create-accessor read-write))
+	(single-slot attivazione
+		(type INSTANCE)
+;+		(allowed-classes Attivazione)
+;+		(cardinality 1 1)
+;+		(inverse-slot classificazioni_icf_attivazione)
 		(create-accessor read-write))
 	(single-slot rilasciato_da
 		(type STRING)
@@ -238,23 +238,27 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot area_geografica_provenienza
+		(type SYMBOL)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot tipo_nota
 		(type SYMBOL)
 		(allowed-values Sanitaria)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot punti_di_forza
+	(single-slot nota_domicilio
 		(type STRING)
-;+		(cardinality 1 1)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot cittadinanza
 		(type INSTANCE)
 ;+		(allowed-classes Cittadinanza)
 ;+		(inverse-slot inverse_of_cittadinanza)
 		(create-accessor read-write))
-	(single-slot nota_domicilio
+	(single-slot punti_di_forza
 		(type STRING)
-;+		(cardinality 0 1)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot valutazione_finale
 		(type STRING)
@@ -287,12 +291,16 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot domicilio_comune
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot tipologia_documento
 		(type SYMBOL)
 		(allowed-values Patente)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot domicilio_comune
+	(single-slot numero
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -300,20 +308,16 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot numero
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot tipologia_alloggio
-		(type SYMBOL)
-		(allowed-values affitto)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot di_utente
 		(type INSTANCE)
 ;+		(allowed-classes Utente)
 ;+		(cardinality 1 1)
 ;+		(inverse-slot allegati)
+		(create-accessor read-write))
+	(single-slot tipologia_alloggio
+		(type SYMBOL)
+		(allowed-values affitto)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot residenza_comune
 		(type STRING)
@@ -328,14 +332,14 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot procedura_classificazione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot dove
 		(type SYMBOL)
 		(allowed-values San_Ruffillo Via_Gorizia Centro_ascolto)
 ;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot procedura_classificazione
-		(type STRING)
-;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot info
 		(type STRING)
@@ -461,11 +465,11 @@
 ;+		(allowed-classes Inserimento_Lavorativo)
 ;+		(inverse-slot inverse_of_presa_in_carico_inserimenti_lavorativi)
 		(create-accessor read-write))
-	(single-slot altro
+	(single-slot allegato_4
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot allegato_4
+	(single-slot altro
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -490,14 +494,14 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot espulso
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(multislot classificazioni_icf_accoglienza
 		(type INSTANCE)
 ;+		(allowed-classes ClassificazioneIcfCentroAscolto)
 ;+		(inverse-slot accoglienza)
-		(create-accessor read-write))
-	(single-slot espulso
-		(type SYMBOL)
-;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot utente
 		(type INSTANCE)
@@ -562,13 +566,13 @@
 ;+		(allowed-classes Attivazione)
 ;+		(inverse-slot inverse_of_presa_in_carico_attivazioni)
 		(create-accessor read-write))
-	(single-slot persone_di_riferimento
-		(type STRING)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(single-slot sesso
 		(type SYMBOL)
 		(allowed-values maschio femmina trans)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot persone_di_riferimento
+		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot data_arrivo_it
@@ -665,11 +669,11 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot data_arrivo_bo
+	(single-slot sez_situazione_scolastica_ed_economica
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot sez_situazione_scolastica_ed_economica
+	(single-slot data_arrivo_bo
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -690,14 +694,14 @@
 		(allowed-values Celibe%2FNubile)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot op_primo_colloquio
-		(type INSTANCE)
-;+		(allowed-classes Operatore)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot automunito
 		(type SYMBOL)
 		(allowed-values si no)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot op_primo_colloquio
+		(type INSTANCE)
+;+		(allowed-classes Operatore)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot percentuale_inv
@@ -732,29 +736,29 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
+	(single-slot figli
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(multislot presa_in_carico_accoglienza
 		(type INSTANCE)
 ;+		(allowed-classes Accoglienza)
 		(create-accessor read-write))
-	(single-slot figli
-		(type INTEGER)
+	(single-slot comune_n
+		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot presa_in_carico_inserimenti_lavorativi
 		(type INSTANCE)
 ;+		(allowed-classes Inserimento_Lavorativo)
 		(create-accessor read-write))
-	(single-slot comune_n
+	(single-slot altro
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot servizi_di_riferimento
 		(type INSTANCE)
 ;+		(allowed-classes ServizioDiRiferimento)
-		(create-accessor read-write))
-	(single-slot altro
-		(type STRING)
-;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot sez_situazione_famigliare
 		(type STRING)
@@ -764,13 +768,13 @@
 		(type SYMBOL)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(multislot residenze_in_alloggio
-		(type INSTANCE)
-;+		(allowed-classes ResidenzaInAlloggio)
-		(create-accessor read-write))
 	(multislot servizi_antoniano
 		(type SYMBOL)
 		(allowed-values mensa_diurna mensa_serale accoglienza san_ruffillo via_gorizia)
+		(create-accessor read-write))
+	(multislot residenze_in_alloggio
+		(type INSTANCE)
+;+		(allowed-classes ResidenzaInAlloggio)
 		(create-accessor read-write))
 	(single-slot inverse_of_familiari
 		(type INSTANCE)
@@ -786,22 +790,22 @@
 		(allowed-values Diploma)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot deceduto
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot lingua_it
 		(type SYMBOL)
 		(allowed-values madrelingua)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot deceduto
-		(type SYMBOL)
+	(single-slot foto
+		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot situazione_economica
 		(type SYMBOL)
 		(allowed-values privo_di_reddito)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot foto
-		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot presa_in_carico_attivazioni
@@ -821,25 +825,29 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(multislot cittadinanza
-		(type INSTANCE)
-;+		(allowed-classes Cittadinanza)
+	(single-slot area_geografica_provenienza
+		(type SYMBOL)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot nota_domicilio
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(multislot cittadinanza
+		(type INSTANCE)
+;+		(allowed-classes Cittadinanza)
+		(create-accessor read-write))
 	(single-slot residenza_provincia
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sez_anagrafica
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot eventi
 		(type INSTANCE)
 ;+		(allowed-classes Evento)
-		(create-accessor read-write))
-	(single-slot sez_anagrafica
-		(type STRING)
-;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot nome
 		(type STRING)
@@ -857,13 +865,13 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot residenza_via
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(multislot allegati
 		(type INSTANCE)
 ;+		(allowed-classes Allegato)
+		(create-accessor read-write))
+	(single-slot residenza_via
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot domicilio_cap
 		(type STRING)
@@ -893,13 +901,13 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot user_user_id
-		(type STRING)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(single-slot user_phone_number
 		(type STRING)
 ;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot user_user_id
+		(type STRING)
+;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
 (defclass Evento
@@ -963,13 +971,13 @@
 		(allowed-values affitto)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot classe_alloggio
-		(type SYMBOL)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(single-slot inverse_of_residenze_in_alloggio
 		(type INSTANCE)
 ;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot classe_alloggio
+		(type SYMBOL)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot descrizione
@@ -996,19 +1004,19 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot info
-		(type STRING)
-;+		(cardinality 0 1)
+	(single-slot inverse_of_servizi_di_riferimento
+		(type INSTANCE)
+;+		(allowed-classes Utente)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot tipo_servizio
 		(type SYMBOL)
 		(allowed-values SST)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot inverse_of_servizi_di_riferimento
-		(type INSTANCE)
-;+		(allowed-classes Utente)
-;+		(cardinality 1 1)
+	(single-slot info
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
 (defclass Cittadinanza
@@ -1035,23 +1043,15 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot rilasciato_da
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot descrizione
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
+	(single-slot rilasciato_da
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot allegato_2
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot allegato_1
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot allegato
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -1059,6 +1059,14 @@
 		(type SYMBOL)
 		(allowed-values Patente)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot allegato
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot allegato_1
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot inverse_of_documenti
 		(type INSTANCE)
@@ -1100,13 +1108,13 @@
 ;+		(allowed-classes Utente)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot altro
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot descrizione
 		(type STRING)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot altro
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
 (defclass Accoglienza
@@ -1120,11 +1128,15 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot al
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot allegato_3
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot al
+	(single-slot allegato_2
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -1133,15 +1145,11 @@
 ;+		(allowed-classes Utente)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot allegato_2
+	(single-slot allegato_1
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot allegato
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot allegato_1
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
@@ -1211,30 +1219,30 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(single-slot descrizione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot inverse_of_presa_in_carico_inserimenti_lavorativi
 		(type INSTANCE)
 ;+		(allowed-classes Utente)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot descrizione
-		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot al
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot ente_avviante
+	(single-slot allegato
 		(type STRING)
-;+		(cardinality 1 1)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot settore_inserimento
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot allegato
+	(single-slot ente_avviante
 		(type STRING)
-;+		(cardinality 0 1)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot mansioni
 		(type STRING)
@@ -1248,19 +1256,19 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(multislot classificazioni_icf_inserimento_lavorativo
-		(type INSTANCE)
-;+		(allowed-classes ClassificazioneIcfCentroAscolto)
-		(create-accessor read-write))
 	(multislot diario_incontri
 		(type INSTANCE)
 ;+		(allowed-classes Incontro_Inserimento_Lavorativo)
 		(create-accessor read-write))
-	(single-slot punti_di_debolezza
+	(multislot classificazioni_icf_inserimento_lavorativo
+		(type INSTANCE)
+;+		(allowed-classes ClassificazioneIcfCentroAscolto)
+		(create-accessor read-write))
+	(single-slot persone_di_riferimento
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot persone_di_riferimento
+	(single-slot punti_di_debolezza
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
@@ -1272,14 +1280,14 @@
 (defclass Incontro_Inserimento_Lavorativo
 	(is-a USER)
 	(role concrete)
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot inverse_of_diario_incontri
 		(type INSTANCE)
 ;+		(allowed-classes Inserimento_Lavorativo)
 ;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot note
-		(type STRING)
-;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot data
 		(type STRING)
@@ -1311,12 +1319,12 @@
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot ordine
-		(type INTEGER)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(single-slot descrizione
 		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot ordine
+		(type INTEGER)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot osservazione
@@ -1343,18 +1351,13 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot inserimento_lavorativo
-		(type INSTANCE)
-;+		(allowed-classes Inserimento_Lavorativo)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(single-slot data
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot attivazione
+	(single-slot inserimento_lavorativo
 		(type INSTANCE)
-;+		(allowed-classes Attivazione)
+;+		(allowed-classes Inserimento_Lavorativo)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot iter
@@ -1362,14 +1365,19 @@
 		(allowed-values iniziale intermedia finale)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot accoglienza
+	(single-slot attivazione
 		(type INSTANCE)
-;+		(allowed-classes Accoglienza)
+;+		(allowed-classes Attivazione)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(multislot item
 		(type INSTANCE)
 ;+		(allowed-classes ItemIcfCentroAscolto)
+		(create-accessor read-write))
+	(single-slot accoglienza
+		(type INSTANCE)
+;+		(allowed-classes Accoglienza)
+;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
 (defclass DocumentoCondiviso
@@ -1379,24 +1387,24 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot descrizione
-		(type STRING)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(single-slot tipo_documento
 		(type SYMBOL)
 		(allowed-values verbale report)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot descrizione
+		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot allegato_2
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot allegato_1
+	(single-slot allegato
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot allegato
+	(single-slot allegato_1
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
