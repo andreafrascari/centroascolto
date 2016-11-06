@@ -1,35 +1,10 @@
--- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Creato il: Nov 01, 2016 alle 19:15
--- Versione del server: 5.7.16-0ubuntu0.16.04.1
--- Versione PHP: 7.0.8-0ubuntu0.16.04.3
+INSERT INTO `_system_decode_class` (`ID`, `sdc_description`, `sdc_name`, `owner_user`, `owner_group`, `creation_date`, `creation_user`, `last_modification_date`, `last_modification_user`, `deletion_date`, `deletion_user`, `deletion_flag`, `activation_flag`) VALUES ('303', NULL, 'classe_alloggio', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '1');
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+INSERT INTO `_system_decode_class` (`ID`, `sdc_description`, `sdc_name`, `owner_user`, `owner_group`, `creation_date`, `creation_user`, `last_modification_date`, `last_modification_user`, `deletion_date`, `deletion_user`, `deletion_flag`, `activation_flag`) VALUES ('0', NULL, 'aree_geografiche', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '1');
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+delete from _system_decode where sd_class in (203,211,303,304);
 
---
--- Database: `centroascolto`
---
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `_system_decode`
---
- 
-
---
--- Dump dei dati per la tabella `_system_decode`
---
 
 INSERT INTO `_system_decode` (`ID`, `sd_description`, `sd_value`, `sd_locale`, `sd_notes`, `ID__system_decode_sd_parent`, `sd_image`, `owner_user`, `owner_group`, `creation_date`, `creation_user`, `last_modification_date`, `last_modification_user`, `deletion_date`, `deletion_user`, `deletion_flag`, `activation_flag`, `sd_class`) VALUES
 (70, 'Casa Privata', 1, 'it', NULL, NULL, NULL, NULL, NULL, '2016-02-02', 'admin', NULL, NULL, NULL, NULL, 0, 1, 303),
@@ -332,36 +307,4 @@ INSERT INTO `_system_decode` (`ID`, `sd_description`, `sd_value`, `sd_locale`, `
 (966, 'Australia', 9, 'it', NULL, NULL, NULL, NULL, NULL, '2016-11-01', 'admin', NULL, NULL, NULL, NULL, 0, 1, 304),
 (967, 'Altro', 10, 'it', NULL, NULL, NULL, NULL, NULL, '2016-11-01', 'admin', NULL, NULL, NULL, NULL, 0, 1, 304);
 
---
--- Indici per le tabelle scaricate
---
 
---
--- Indici per le tabelle `_system_decode`
---
-ALTER TABLE `_system_decode`
-  ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `sd_class` (`sd_class`,`sd_locale`,`sd_value`),
-  ADD UNIQUE KEY `sd_description` (`sd_class`,`sd_locale`,`sd_description`,`ID__system_decode_sd_parent`),
-  ADD KEY `sd_value` (`sd_value`),
-  ADD KEY `sd_locale` (`sd_locale`),
-  ADD KEY `sd_class_2` (`sd_class`),
-  ADD KEY `owner_user` (`owner_user`),
-  ADD KEY `owner_group` (`owner_group`),
-  ADD KEY `creation_user` (`creation_user`),
-  ADD KEY `creation_date` (`creation_date`),
-  ADD KEY `activation_flag` (`activation_flag`),
-  ADD KEY `deletion_flag` (`deletion_flag`);
-
---
--- AUTO_INCREMENT per le tabelle scaricate
---
-
---
--- AUTO_INCREMENT per la tabella `_system_decode`
---
-ALTER TABLE `_system_decode`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=968;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
