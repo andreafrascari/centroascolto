@@ -28,7 +28,7 @@
         <localDeploySpecificAppDir projectName="${ant.project.name}" serverHome="${serverHome}"/>
     </target>
 	<target name="5_war" depends="1_localDeploy" description="Crea il war dell'applicazione">
-			<input validargs="OK" defaultvalue="OK">Pronot per il WAR?</input>
+			<input validargs="OK" defaultvalue="OK">Pronti per il WAR?</input>
 			<localWar projectName="${ant.project.name}" serverHome="${serverHome}" warName="${serena.warname}" />		
 	</target>
 </project>
