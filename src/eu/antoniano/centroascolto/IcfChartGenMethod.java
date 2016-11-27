@@ -172,9 +172,11 @@ public class IcfChartGenMethod extends JSONMethod {
 			if ("Attivazione".equals(theClass)) {
 				Element cond = condElement.addElement("attivazione");
 				cond = cond.addElement("Attivazione");
-				Element dalCond = cond.addElement("dal");
-				dalCond.setText(("01/01/" + al));
-				dalCond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_GREATER_THAN);
+				if (dal != null && !dal.isEmpty()) {
+					Element dalCond = cond.addElement("dal");
+					dalCond.setText(("01/01/" + dal));
+					dalCond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_GREATER_THAN);
+				}
 				if (al != null && !al.isEmpty()) {
 					Element alCond = cond.addElement("al");
 					alCond.setText("31/12/" + al);
@@ -183,9 +185,11 @@ public class IcfChartGenMethod extends JSONMethod {
 			} else if ("Accoglienza".equals(theClass)) {
 				Element cond = condElement.addElement("accoglienza");
 				cond = cond.addElement("Accoglienza");
-				Element dalCond = cond.addElement("dal");
-				dalCond.setText(("01/01/" + al));
-				dalCond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_GREATER_THAN);
+				if (dal != null && !dal.isEmpty()) {
+					Element dalCond = cond.addElement("dal");
+					dalCond.setText(("01/01/" + dal));
+					dalCond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_GREATER_THAN);
+				}
 				if (al != null && !al.isEmpty()) {
 					Element alCond = cond.addElement("al");
 					alCond.setText("31/12/" + al);
@@ -194,9 +198,11 @@ public class IcfChartGenMethod extends JSONMethod {
 			} else if ("Inserimento_Lavorativo".equals(theClass)) {
 				Element cond = condElement.addElement("inserimento_lavorativo");
 				cond = cond.addElement("Inserimento_Lavorativo");
-				Element dalCond = cond.addElement("dal");
-				dalCond.setText(("01/01/" + al));
-				dalCond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_GREATER_THAN);
+				if (dal != null && !dal.isEmpty()) {
+					Element dalCond = cond.addElement("dal");
+					dalCond.setText(("01/01/" + dal));
+					dalCond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_GREATER_THAN);
+				}
 				if (al != null && !al.isEmpty()) {
 					Element alCond = cond.addElement("al");
 					alCond.setText("31/12/" + al);
@@ -290,13 +296,19 @@ public class IcfChartGenMethod extends JSONMethod {
 	 */
 	private float computeFromArray(List<Integer> keyValues) {
 		int theSize = computeSizeSkipping89(keyValues);
+		if (theSize==0)	{
+			// all 8/9
+			return 8;
+		}
 		int[] theArray = new int[theSize];
 		int i=0;
 		for (Integer x : keyValues) {
 			if (x<8){theArray[i++]=x;}
 		}
 		//return median(theArray);	
-		return average(theArray);		
+		float res =  average(theArray);	
+		logger.info("res id " +res);
+		return res;
 	}
 
 	private int computeSizeSkipping89(List<Integer> keyValues) {
