@@ -45,6 +45,7 @@ public class AllStatsMethod extends JSONMethod {
 	private static final String QUERY_UTENTI_PER_STATO_CIVILE = "utenti-per-stato-civile";
 	private static final String QUERY_EVENTI = "eventi";
 	private static final String QUERY_ETA_PRIMO_COLLOQUIO = "eta-primo-colloquio";
+	private static final String QUERY_TIPO_INTERVENTI = "tipo-interventi";
 
 	protected class UnitDTO {
 		String id;
@@ -133,12 +134,74 @@ public class AllStatsMethod extends JSONMethod {
 				res.title = "Eta' al primo colloquio: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Tessere";
 				return getEtaMediaPrimoColloquio(anno, request);
+			} else if (QUERY_TIPO_INTERVENTI.equals(query)){
+				res.title = "Tipologia interventi: " + ((anno!=null)?anno:"per anno");
+				res.asseY = "N. interventi";
+				return getTipoInterventi(anno, request);
 			}
 			else {
 				String theError = "Richiesta non gestita: " + query;
 				throw new SerenaException(theError);
 			}
 		}
+
+
+		private List<UnitDTO> getTipoInterventi(String anno, HttpServletRequest request) throws SerenaException {
+			List<UnitDTO> answer = new ArrayList<UnitDTO>();
+			getIntervento( anno,  request, "Inserimento_Lavorativo", "dal",  answer);
+			getIntervento( anno,  request, "Attivazione", "dal",  answer);
+			getIntervento( anno,  request, "Accoglienza", "dal",  answer);
+			return answer;
+		}
+				
+		private List<UnitDTO> getIntervento(String anno, HttpServletRequest request, String classIL, String dateIL, List<UnitDTO> answer) throws SerenaException {
+			try {	
+				SelectQuery q = new SelectQuery(classIL);
+				Element t = q.getFirstClassElement();
+				// t.addAttribute(ConstantsXSerena.ATTR_OPERATION,
+				// ConstantsXSerena.VAL_SELECT);
+				t.addAttribute(ConstantsXSerena.ATTR_TARGET, ConstantsXSerena.TARGET_ALL);
+				t.addAttribute(ConstantsXSerena.ATTR_TARGET_LEVELS, "2");
+				t.addAttribute(ConstantsXSerena.ATTR_ORDER_BY, dateIL);
+				if (anno!=null){
+					Element condElement = DocumentHelper.createElement(ConstantsXSerena.TAG_AND);
+					Element cond = condElement.addElement(dateIL);
+					cond.setText("01/01/" + anno);
+					cond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_GREATER_EQUAL_THAN);
+					cond = condElement.addElement(dateIL);
+					cond.setText("31/12/" + anno);
+					cond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_LESS_EQUAL_THAN);
+					q.addCondition(t, condElement);
+				}
+				Document data = ApplicationLibrary.getData(q, request);
+				String[] messages2 = { "", "" };
+				int res = ConstantsXSerena.getXserenaRequestResult(data, messages2, classIL);
+				if (res == ConstantsXSerena.XSERENA_RESULT_SUCCESS) {
+					List<Element> tessere = data.selectNodes(".//"+classIL);
+					for (Element tEl : tessere) {
+						try {
+							UnitDTO tNew = new UnitDTO();
+							tNew.data = tEl.elementText(dateIL);
+							tNew.id = tEl.elementText("ID");
+							tNew.val = classIL;
+							answer.add(tNew);
+						} catch (Exception r) {
+							String message = "Errore in " + classIL + " " + tEl.elementText("ID") + ": dati mancanti ...";
+							logger.error(message);
+						}
+					}
+				} else {
+					String message = "Impossibile reperire " + classIL +": " + messages2[0];
+					logger.error(message);
+					throw new SerenaException(message);
+				}
+				return answer;
+			} catch (Exception e) {
+				String message = "Impossibile reperire " + classIL +": " + e.getMessage();
+				logger.error(message);
+				throw new SerenaException(message);
+			}
+	}
 
 
 		private List<UnitDTO> getEtaMediaPrimoColloquio(String anno, HttpServletRequest request) throws SerenaException {
@@ -285,7 +348,7 @@ public class AllStatsMethod extends JSONMethod {
 		String anno = request.getParameter("year");
 		JsonDTO res = new JsonDTO();
 		boolean isAnni = (anno==null);
-		int xDim = (isAnni)?(new SerenaDate().getYear()-2006):12; // dim x? se statistica anni -> anno corrente -2007 (primo anno) +1. Se mesi: qw
+		int xDim = (isAnni)?11:12; // INTERVENIRE ++ x ULTERIORE ANNO
 		logger.debug("xdim = " + xDim);
 		try	{
 			TreeMap<Integer, Output> mesiAnni = new TreeMap<Integer, Output>();
@@ -293,6 +356,10 @@ public class AllStatsMethod extends JSONMethod {
 			List<String> possibleValues = new ArrayList<String>();
 			if (!isAnni)	{
 				for (int i=1; i<13; i++){
+					mesiAnni.put(i, new Output());
+				}
+			} else {
+				for (int i=2007; i<2018; i++){ // INTERVENIRE ++ x ULTERIORE ANNO
 					mesiAnni.put(i, new Output());
 				}
 			}
@@ -334,7 +401,7 @@ public class AllStatsMethod extends JSONMethod {
 			// loop sui possibili valori
 			int i=0;
 			for (String val: possibleValues)	{
-			//	logger.debug("Valore: "+val);
+				logger.debug("Valore: "+val);
 				JsonInnerDTO j = new JsonInnerDTO();
 				res.data[i++] = j;
 				j.name =  val;
@@ -342,13 +409,13 @@ public class AllStatsMethod extends JSONMethod {
 				// loop sui mesi/anni
 				int k=0;
 				for (Integer mese: mesiAnni.keySet()) {
-				//	logger.debug("---> mese: " + mese + "(in " + k +")");
 					Output o = mesiAnni.get(mese);
 					if (o.valori.containsKey(val))	{
 						j.data[k++] = o.valori.get(val);
 					} else {
 						j.data[k++]=0;
 					}
+					logger.debug("---> mese: " + mese + "="+j.data[k-1]);
 				}
 			}
 	} catch (Exception e) {

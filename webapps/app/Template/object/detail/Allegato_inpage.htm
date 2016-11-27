@@ -1,12 +1,12 @@
 @BEGIN_TEMPLATE@
 <div class="table-responsive">
-			 <table class="table">
-			    <tbody>
-			@BEGIN_Allegato@
-			    <tr>
-					@tag_allegato@
-				</tr>
-			@END_Allegato@
-			</tbody>
-		</table>
-</div>@END_TEMPLATE@
+	@BEGIN_Allegato@
+			<a href="Attachment?q=get&amp;id=@tag_allegato._system_attachment.ID#FLAT@" target="_blank" title="@tag_allegato._system_attachment.sa_alt_text#FLAT@">@tag_allegato._system_attachment.sa_filename#FLAT@</a>    
+				@BLOCK_BEGIN_EDIT@
+				<a class="btn btn-default btn-xs btn-warning" href="?q=object/detail_edit&amp;p=Allegato/_a_ID/_v_@tag_ID#FLAT@" title="Modifica/cancella allegato">
+				  <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+     			</a>
+     			@BLOCK_END_EDIT@
+	@END_Allegato@
+</div>
+@END_TEMPLATE@

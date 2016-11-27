@@ -13,10 +13,11 @@
 						data-parent="#accordion" href="#pannello-1">Al Centro Ascolto</a>
 				</h4>
 			</div>
+
+
 			<div id="pannello-1" class="panel-collapse collapse in">
+
 				<div class="panel-body">
-
-
 
 					<div class="col-lg-4 col-md-6 col-sm-6  home-box">
 						<div class="panel panel-warning">
@@ -29,46 +30,42 @@
 								desc,t=Home_miei_ultimi_eventi)@</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="col-lg-4 col-md-6 col-sm-6  home-box">
-					<div class="panel panel-warning">
-						<div class="panel-heading">
-							<h3 id="panel-title" class="panel-title">Cerca utenti</h3>
-						</div>
-						<div class="panel-body">
-							@FUN_MODULE(q=object/filter,p=Utente,t=Home_Utente_quick_search)@
+					<div class="col-lg-4 col-md-6 col-sm-6  home-box">
+						<div class="panel panel-warning">
+							<div class="panel-heading">
+								<h3 id="panel-title" class="panel-title">Cerca utenti</h3>
+							</div>
+							<div class="panel-body">
+								@FUN_MODULE(q=object/filter,p=Utente,t=Home_Utente_quick_search)@
+							</div>
 						</div>
 					</div>
-				</div>
 
 
-				<div class="col-lg-4  col-md-6 col-sm-6 home-box">
-					<div class="panel panel-warning">
-						<div class="panel-heading">
-							<h3 id="panel-title" class="panel-title">Bacheca messaggi</h3>
+					<div class="col-lg-4  col-md-6 col-sm-6 home-box">
+						<div class="panel panel-warning">
+							<div class="panel-heading">
+								<h3 id="panel-title" class="panel-title">Bacheca messaggi</h3>
+							</div>
+							<div class="panel-body">
+								@FUN_MODULE(q=object/list,p=_system_news,t=Bacheca,order-by=creation_date
+								desc,t=Home_bacheca)@</div>
 						</div>
-						<div class="panel-body">
-							@FUN_MODULE(q=object/list,p=_system_news,t=Bacheca,order-by=creation_date
-							desc,t=Home_bacheca)@</div>
 					</div>
-				</div>
 
-				<div class="col-lg-4 col-md-6 col-sm-6  home-box">
-					<div class="panel panel-warning">
-						<div class="panel-heading">
-							<h3 id="panel-title" class="panel-title">Numero tessere
-								attive</h3>
+					<div class="col-lg-4 col-md-6 col-sm-6  home-box">
+						<div class="panel panel-warning">
+							<div class="panel-heading">
+								<h3 id="panel-title" class="panel-title">Numero tessere
+									attive</h3>
+							</div>
+							<div class="panel-body">@FUN_NUMERO_TESSERE_ATTIVE()@</div>
 						</div>
-						<div class="panel-body">@FUN_NUMERO_TESSERE_ATTIVE()@</div>
 					</div>
-				</div>
-				
-				
-				
-				
-				
-				<div class="col-lg-4 col-md-6 col-sm-6  home-box">
+
+
+					<div class="col-lg-4 col-md-6 col-sm-6  home-box">
 						<div class="panel panel-warning">
 							<div class="panel-heading">
 								<h3 id="panel-title" class="panel-title">Grafici ICF</h3>
@@ -83,25 +80,19 @@
 							</div>
 						</div>
 					</div>
-				
-				
-				
-				
 
 
-				<div class="col-lg-4  col-md-6 col-sm-6 home-box">
-					<div class="panel panel-warning">
-						<div class="panel-heading">
-							<h3 id="panel-title" class="panel-title">Documenti Condivisi</h3>
-						</div>
-						<div class="panel-body">
-							@FUN_MODULE(q=object/list,p=DocumentoCondiviso,t=Home_doc_condivisi,order-by=data
-							desc)@
+					<div class="col-lg-4  col-md-6 col-sm-6 home-box">
+						<div class="panel panel-warning">
+							<div class="panel-heading">
+								<h3 id="panel-title" class="panel-title">Documenti
+									Condivisi</h3>
+							</div>
+							<div class="panel-body">
+								@FUN_MODULE(q=object/list,p=DocumentoCondiviso,t=Home_doc_condivisi,order-by=data desc)@
+							</div>
 						</div>
 					</div>
-			
-
-
 
 
 					<div class="col-lg-4 col-md-6 col-sm-6 home-box">
@@ -167,8 +158,8 @@
 						</div>
 					</div>
 
-
 				</div>
+
 			</div>
 		</div>
 
@@ -194,30 +185,28 @@
 							<div class="panel-body">
 								Questa pagine contiene delle statistiche basate su distribuzioni
 								di dati generate automaticamente specificando i parametri che si
-								desidera monitorare. <br />  A titolo di esempio,
-								scegliendo la scheda "Accoglienza" e specificando il parametro
-								"dove", il sistema genera - tramite grafici a barre o torte
-								- le frequenze dei possibili valori. <br />  E' possibile specificare più parametri
-								contemporaneamente, ed il periodo relativo al quale generare le
-								frequenze (le date sono riferite alla creazione delle schede
-								della cartella). <br /> <br />
+								desidera monitorare. <br /> A titolo di esempio, scegliendo la
+								scheda "Accoglienza" e specificando il parametro "dove", il
+								sistema genera - tramite grafici a barre o torte - le frequenze
+								dei possibili valori. <br /> E' possibile specificare più
+								parametri contemporaneamente, ed il periodo relativo al quale
+								generare le frequenze (le date sono riferite alla creazione
+								delle schede della cartella). <br /> <br />
 
 								<div aria-label="Justified button group" role="group"
 									class="btn-group btn-group-justified">
-									
+
 
 									<a role="button" class="btn btn-default"
 										href="?q=stat/distribution/CLS=Utente">Utenti</a> <a
 										role="button" class="btn btn-default"
 										href="?q=stat/distribution/CLS=Tessera">Tessere</a> <a
 										role="button" class="btn btn-default"
-										href="?q=stat/distribution/CLS=Evento">Eventi</a>  <a
+										href="?q=stat/distribution/CLS=Evento">Eventi</a> <a
 										role="button" class="btn btn-default"
-										href="?q=stat/distribution/CLS=ResidenzaInAlloggio">Residenze in Alloggio</a><a
-										role="button" class="btn btn-default"
-										href="?q=stat/distribution/CLS=Accoglienza">Accoglienza</a> <a
-										role="button" class="btn btn-default"
-										href="?q=stat/distribution/CLS=Inserimento_Lavorativo">Inserimenti lavorativi</a>
+										href="?q=stat/distribution/CLS=ResidenzaInAlloggio">Residenze
+										in Alloggio</a><a role="button" class="btn btn-default"
+										href="?q=stat/distribution/CLS=Accoglienza">Accoglienza</a> 
 								</div>
 							</div>
 						</div>

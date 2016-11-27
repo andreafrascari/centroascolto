@@ -27,7 +27,7 @@ public class ReportTessereAttiveMensaSeraleMethod extends GiveMethod {
 
 	public static final String METHOD_NAME = "mensa_serale";
 	
-	private static final int NUM_OF_EXTRA_BLANK_ROWS = 5;
+	private static final int NUM_OF_EXTRA_BLANK_ROWS = 10;
 
 	private class TesseraDTO {
 		String nome;
