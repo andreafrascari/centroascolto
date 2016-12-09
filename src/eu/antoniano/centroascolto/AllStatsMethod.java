@@ -18,8 +18,6 @@ import eu.anastasis.serena.constants.ConstantsXSerena;
 import eu.anastasis.serena.exception.SerenaException;
 import eu.anastasis.serena.exceptions.JSONException;
 import eu.anastasis.serena.query.SelectQuery;
-import eu.antoniano.centroascolto.EtaStatsMethod.Output;
-
 
 public class AllStatsMethod extends JSONMethod {
 
@@ -46,6 +44,7 @@ public class AllStatsMethod extends JSONMethod {
 	private static final String QUERY_EVENTI = "eventi";
 	private static final String QUERY_ETA_PRIMO_COLLOQUIO = "eta-primo-colloquio";
 	private static final String QUERY_TIPO_INTERVENTI = "tipo-interventi";
+	private static final String QUERY_TESSERE_PER_FASCE_ETA = "tessere-per-fascia-eta";
 
 	protected class UnitDTO {
 		String id;
@@ -126,6 +125,12 @@ public class AllStatsMethod extends JSONMethod {
 				res.title = "Utenti in carico con/privi di residenza: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Eventi";
 				return get2kevelData(anno, request,"Tessera","Utente","emissione","privo_residenza");
+			} else if (QUERY_TESSERE_PER_FASCE_ETA.equals(query))	{
+				res.title = "Utenti in carico per fasce eta: " + ((anno!=null)?anno:"per anno");
+				res.asseY = "Numero Eventi";
+				List<UnitDTO> dtos =  get2kevelData(anno, request,"Tessera","Utente","emissione","data_n");
+				suddivisioneFasceEta(dtos);
+				return dtos;
 			} else if (QUERY_TESSERE_RILASCIATE.equals(query)){
 				res.title = "Tessere rilasciate: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Tessere";
@@ -143,6 +148,32 @@ public class AllStatsMethod extends JSONMethod {
 				String theError = "Richiesta non gestita: " + query;
 				throw new SerenaException(theError);
 			}
+		}
+
+
+		private void suddivisioneFasceEta(List<UnitDTO> level1dtos) {
+			for (UnitDTO unit: level1dtos)	{
+				unit.val = mappaEtaInFasceEta(unit.val);
+			}
+		}
+
+
+		private String mappaEtaInFasceEta(String val) {
+			SerenaDate nascita = new SerenaDate(val);
+			int etaInMesi = new SerenaDate().diffInMonth(nascita);
+			String fascia = "";
+			if (etaInMesi < (12*25))	{
+				fascia = "< 25 anni";
+			} else if (etaInMesi < (12*35))	{
+				fascia = "25 - 34 anni";
+			} else if (etaInMesi < (12*45))	{
+				fascia = "35 - 44 anni";
+			} else if (etaInMesi < (12*65))	{
+				fascia = "45 - 64 anni";
+			} else {
+				fascia = ">= 65 anni";
+			} 
+			return fascia;
 		}
 
 
