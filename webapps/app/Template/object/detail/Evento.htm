@@ -1,4 +1,13 @@
 @BEGIN_TEMPLATE@<div id="detail">
+
+			@FUN_MODULE(q=object_tab_header/detail,p=Utente/_a_ID/_v_@tag_Evento.utente.Utente.ID#FLAT@)@
+
+							
+			<script type="text/javascript">
+				$(document).ready(function() {
+					Anastasis.SerenaUtils.getCurrentTabSheet('CentroAscolto');
+				});
+			</script>
 		
 				<div class="inserto">
 					<div role="toolbar">
@@ -63,21 +72,7 @@
 							</tbody>
 						</table>
 					</div>
-					
-
 				
-				([
-					[ [@tag_utente@] != []]
-					?? [
-						<div id="object-body-nav">
-							<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella navigazione">
-								<tbody>
-									@tag_utente@
-								</tbody>
-							</table>
-						</div>
-					]
-				])
 
 				
 				<div id="object-body">

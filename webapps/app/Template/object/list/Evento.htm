@@ -1,0 +1,129 @@
+@BEGIN_TEMPLATE@
+
+
+      <div>
+			<div id="list-e">
+			
+			@FUN_MODULE(q=object_tab_header/detail,p=Utente/_a_ID/_v_@tag_Evento.utente.Utente.ID#FLAT@)@
+
+							
+			<script type="text/javascript">
+				$(document).ready(function() {
+					Anastasis.SerenaUtils.getCurrentTabSheet('CentroAscolto');
+				});
+			</script>
+			
+			@FUN_MODULE(q=object/filter,p=Evento,t=Evento_inlist)@
+			
+			<div class="inserto">
+					<div role="toolbar">
+	
+						<a class="btn btn-default btn-xs btn-success" href="?q=@MODULE@/detail_edit&amp;p=Evento&amp;a=_a_utente/_c_Utente/_a_ID/_v_@tag_Evento.utente.Utente.ID#FLAT@" title="registra un nuovo evento">
+							<span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
+						</a>
+								
+					</div>
+			</div>
+			
+
+				@BLOCK_BEGIN_RESULT_ERROR@
+					<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+						Si &egrave; verificato un errore: @ERROR_MESSAGE@
+					</div>
+				@BLOCK_END_RESULT_ERROR@
+
+				@BLOCK_BEGIN_RESULT_EMPTY@
+					<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+						Nessun elemento trovato.
+					</div>
+				@BLOCK_END_RESULT_EMPTY@
+
+				([
+						[[@tag_Evento.ID#FLAT@] != []]
+						?? [
+	<div class="table-responsive">
+
+	
+			 <table class="table" id="event-table">
+			    <thead>
+			       <tr>
+									
+									<th style="width:8%">data</th>
+									<th style="width:8%">tipo</th>
+									<th style="width:40%">testo</th>
+									<th style="width:8%">registrato da</th>
+									<th style="width:26%">allegati</th>
+								<th scope="col">&nbsp;</th>
+								</tr>
+								 </thead>
+			    					<tbody>
+								@BEGIN_Evento@([
+										[[@XPATH_FUN((count(preceding-sibling::Evento)+ 1) mod 2)@@] == [0.0] ]
+										?? [
+											<tr class="info">	
+										] :: [
+											<tr>
+										]
+									])
+	
+										@tag_data@@tag_tipo_nota@
+										
+										<td>
+											<a class="btn btn-default btn-xs btn-success"  @tooltip="title=Preview del testo,class=tooltip help,position=local,ajax=true,url=ModuleIndex?q=object/detail&p=Evento/_a_ID/_v_@tag_ID#FLAT@&t=Evento_Preview" href="?q=object/detail&p=Evento/_a_ID/_v_@tag_ID#FLAT@">
+												<span aria-hidden="true" class="glyphicon glyphicon-zoom-in"></span>
+											</a>
+											@FUN_SUBSTRING(string=@tag_testo#FLAT@,start?0,end=100)@[...] 
+										</td>
+										@tag_registrato_da@
+										<td>@FUN_MODULE(q=object/detail,p=Allegato/_a_ref_class/_v_Evento/_a_ref_instance/_v_@tag_ID#FLAT@,t=Allegato_inpage)@</td>
+											<td>
+											<div role="toolbar">
+												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=Evento/_a_ID/_v_@tag_ID#FLAT@" title="Dettaglio">
+													<span aria-hidden="true" class="glyphicon glyphicon-play"></span>
+												</a>
+												([
+													[[@FUN_CHECK_INSTANCE_AUTH(CLS=@CLASS@,ID=@tag_ID#FLAT@,LEVEL=2,CREATION_USER=@tag_creation_user#FLAT@)@] == [true]]
+													
+													?? [
+														<span class="NoVisibility">|</span>
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=Evento/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+																		</a>
+														<span class="NoVisibility">|</span>
+																		<a class="btn btn-default btn-xs btn-success" href="?q=object/detail_edit&amp;p=Allegato&amp;a=_a_di_utente/_c_Utente/_a_ID/_v_@tag_utente.Utente.ID#FLAT@/_a_ref_instance/_v_@tag_ID#FLAT@/_a_ref_class/_v_Evento" title="registra un nuovo allegato">
+																			<span aria-hidden="true" class="glyphicon glyphicon-pushpin"></span>
+																		</a>
+													]
+												])
+												
+											</div>
+											</td>
+									</tr>@END_Evento@
+								</tbody>
+					  		</table>
+						]
+					])
+
+		  		
+
+		  		
+		  		 
+		  		</div>
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+					  <ul class="pager">
+ 
+						
+
+						<li><span class="list-res-summary">@NUMERO_ELEMENTI@ - pagina @PAGINA_CORRENTE@</span></li>
+
+						
+					  </ul>
+				</div>
+			</nav>
+		</div>
+
+		</div>@END_TEMPLATE@
