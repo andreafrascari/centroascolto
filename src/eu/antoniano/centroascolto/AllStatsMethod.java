@@ -379,7 +379,11 @@ public class AllStatsMethod extends JSONMethod {
 		String anno = request.getParameter("year");
 		JsonDTO res = new JsonDTO();
 		boolean isAnni = (anno==null);
-		int xDim = (isAnni)?11:12; // INTERVENIRE ++ x ULTERIORE ANNO
+		
+		int annoUltimo = new SerenaDate().getYear();
+		int annoPrimo = annoUltimo-9;
+		
+		int xDim = (isAnni)?10:12; // ANNI: SEMPRE 10 ... a partire da anno corrente
 		logger.debug("xdim = " + xDim);
 		try	{
 			TreeMap<Integer, Output> mesiAnni = new TreeMap<Integer, Output>();
@@ -390,7 +394,7 @@ public class AllStatsMethod extends JSONMethod {
 					mesiAnni.put(i, new Output());
 				}
 			} else {
-				for (int i=2007; i<2018; i++){ // INTERVENIRE ++ x ULTERIORE ANNO
+				for (int i=annoPrimo; i<=annoUltimo; i++){ // INTERVENIRE ++ x ULTERIORE ANNO
 					mesiAnni.put(i, new Output());
 				}
 			}
@@ -400,7 +404,7 @@ public class AllStatsMethod extends JSONMethod {
 					System.out.print(t.id);;
 				}
 				SerenaDate c = new SerenaDate(t.data);
-				if (c.getYear()<=2006 || c.getYear()>new SerenaDate().getYear()){
+				if (c.getYear()< annoPrimo || c.getYear()>new SerenaDate().getYear()){
 					continue; // dont want them
 				}
 				if (isAnni)	{
