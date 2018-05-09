@@ -37,23 +37,8 @@
 			 <table class="table">
 			    <thead>
 			       <tr>
-									@BLOCK_BEGIN_HEADER@
-										<th>
-											([
-												[[@HEADER_HREF@] != []]
-												?? [
-													<a title="ordina in base a questo attributo" href="@HEADER_HREF@" @ajaxable="target=list,replace=true,target_result=list" ;>
-												]
-											])
-											@HEADER_LABEL@
-											([
-												[[@HEADER_HREF@] != []]
-												?? [
-													</a>
-												]
-											])
-										</th>
-									@BLOCK_END_HEADER@
+										<th>Dal</th><th>Al</th><th>Ente inviante</th>
+									
 									<th scope="col">Azioni</th>
 								</tr>
 								 </thead>

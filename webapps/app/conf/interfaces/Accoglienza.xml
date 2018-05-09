@@ -13,6 +13,8 @@
       <name>inverse_of_presa_in_carico_accoglienza</name>  
       <label>utente</label>  
       <detail>utente</detail>  
+      <list>utente</list>
+      <filter autocomplete="">utente</filter>
       <heading>5</heading>  
       <needed>1</needed>  
       <max_length/>  
@@ -28,6 +30,8 @@
       <list>dal</list>  
       <heading>1</heading>  
       <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>        
       <max_length/>  
       <default/>  
       <order>21</order> 
@@ -54,8 +58,6 @@
       <heading>1</heading>  
       <index>1</index>  
       <needed>1</needed>  
-      <description_field>1</description_field>  
-      <list_active_field>1</list_active_field>  
       <max_length/>  
       <default/>  
       <order>41</order> 

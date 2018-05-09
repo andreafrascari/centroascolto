@@ -31,6 +31,8 @@ public class AllStatsMethod extends JSONMethod {
 	public static final String METHOD_NAME = "all_stats";
 
 	private static final String QUERY_TESSERE_RILASCIATE = "tessere-rilasciate";
+	private static final String QUERY_UTENTI_NUOVI_RINNOVI = "utenti-nuovi-rinnovi";
+	private static final String QUERY_ATTIVAZIONI_ACCOGLIENZA_INSERIMENTI = "utenti-attivazioni-accoglienza-inserimenti";
 	private static final String QUERY_MOTIVAZIONE_TESSERE = "motivazione-tessere";
 	private static final String QUERY_TESSERE_PER_SESSO = "tessere-per-sesso";
 	private static final String QUERY_TESSERE_PER_STATO = "tessere-per-stato";
@@ -131,10 +133,18 @@ public class AllStatsMethod extends JSONMethod {
 				List<UnitDTO> dtos =  get2kevelData(anno, request,"Tessera","Utente","emissione","data_n");
 				suddivisioneFasceEta(dtos);
 				return dtos;
+			} else if (QUERY_ATTIVAZIONI_ACCOGLIENZA_INSERIMENTI.equals(query))	{
+				res.title = "Utenti con attivazioni, accoglienze, inserimenti lavorativi: " + ((anno!=null)?anno:"per anno");
+				res.asseY = "N. utenti";
+				return getUtentiTipiInterventi(anno, request);
 			} else if (QUERY_TESSERE_RILASCIATE.equals(query)){
 				res.title = "Tessere rilasciate: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Tessere";
 				return getTessereRilasciate(anno, request);
+			} else if (QUERY_UTENTI_NUOVI_RINNOVI.equals(query)){
+				res.title = "Utenti: nuovi e rinnovi: " + ((anno!=null)?anno:"per anno");
+				res.asseY = "Numero Utenti";
+				return getUtentiNuoviRinnovi(anno, request);
 			} else if (QUERY_ETA_PRIMO_COLLOQUIO.equals(query)){
 				res.title = "Eta' al primo colloquio: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Tessere";
@@ -149,6 +159,8 @@ public class AllStatsMethod extends JSONMethod {
 				throw new SerenaException(theError);
 			}
 		}
+
+
 
 
 		private void suddivisioneFasceEta(List<UnitDTO> level1dtos) {
@@ -498,22 +510,25 @@ public class AllStatsMethod extends JSONMethod {
 					"Tessera");
 			if (res == ConstantsXSerena.XSERENA_RESULT_SUCCESS) {
 				List<Element> tessere = data.selectNodes(".//Tessera");
-				for (Element tEl : tessere) {
-					try {
-						TesseraDTO tNew = new TesseraDTO();
-						tNew.sabatoDomenica = tEl.elementText("sabatodomenica");
-						tNew.emissione = tEl.elementText("emissione");
-						Element utente = tEl.element("inverse_of_tessere")
-								.element("Utente");
-						tNew.id = utente.elementText("ID");
-						answer.add(tNew);
-					} catch (Exception r) {
-						String message = "Errore in tessera "
-								+ tEl.elementText("ID") + ": dati mancanti ...";
-						logger.error(message);
-					}
+					for (Element tEl : tessere) {
+						try {
+							TesseraDTO tNew = new TesseraDTO();
+							tNew.sabatoDomenica = tEl.elementText("sabatodomenica");
+							tNew.emissione = tEl.elementText("emissione");
+							Element utente = tEl.element("inverse_of_tessere")
+									.element("Utente");
+							tNew.id = utente.elementText("ID");
+							answer.add(tNew);
+						} catch (Exception r) {
+							String message = "Errore in tessera "
+									+ tEl.elementText("ID") + ": dati mancanti ...";
+							logger.error(message);
+						}
 				}
-			} else {
+			} else if (res == ConstantsXSerena.XSERENA_RESULT_EMPTY) {
+				;
+			}
+			else {
 				String message = "Impossibile reperire tessere: "
 						+ messages2[0];
 				logger.error(message);
@@ -551,4 +566,94 @@ public class AllStatsMethod extends JSONMethod {
 		}
 		return answer;
 	}
+	
+	private List<UnitDTO> getUtentiNuoviRinnovi(String anno, HttpServletRequest request) throws SerenaException {
+		List<String> done = new ArrayList<String>();
+		TreeMap<String, Integer> map = new TreeMap<String, Integer>();
+		List<TesseraDTO> tessere = getTessereAttive(anno, request);
+		// populate utenti map: quante tessere ha ogni utente? per distinguerle fra nuove e rilasci
+		for (TesseraDTO t : tessere) {
+			if (!map.containsKey(t.id)) {
+				map.put(t.id, 1);
+			} else {
+				map.put(t.id, map.get(t.id) + 1);
+			}
+		}
+		List<UnitDTO> answer = new ArrayList<UnitDTO>();
+		for (TesseraDTO t : tessere) {
+			boolean newTessera = map.get(t.id) == 1;
+			if (newTessera || !done.contains(t.id))	{
+				UnitDTO u = new UnitDTO();
+				u.id = t.id;
+				u.data = t.emissione;
+				u.val = newTessera?"nuove":"rinnovi";
+				answer.add(u);
+				if (!newTessera){
+					done.add(t.id);	// da non riaggiungere .... di rinnovi ne vogliamo 1!
+				}
+			}
+		}
+		return answer;
+	}
+	
+	private List<UnitDTO> getUtentiTipiInterventi(String anno, HttpServletRequest request) throws SerenaException {
+		List<UnitDTO> answer = new ArrayList<UnitDTO>();
+		getUtentiTipoIntervento( anno,  request, "Inserimento_Lavorativo", "dal", "inverse_of_presa_in_carico_inserimenti_lavorativi",  answer);
+		getUtentiTipoIntervento( anno,  request, "Attivazione", "dal", "inverse_of_presa_in_carico_attivazioni", answer);
+		getUtentiTipoIntervento( anno,  request, "Accoglienza", "dal", "inverse_of_presa_in_carico_accoglienza", answer);
+		return answer;
+	}
+			
+	private void getUtentiTipoIntervento(String anno, HttpServletRequest request, String classIL, String dateIL, String utenteRef, List<UnitDTO> answer) throws SerenaException {
+		try {	
+			SelectQuery q = new SelectQuery(classIL);
+			Element t = q.getFirstClassElement();
+			t.addAttribute(ConstantsXSerena.ATTR_TARGET, ConstantsXSerena.TARGET_ALL);
+			t.addAttribute(ConstantsXSerena.ATTR_TARGET_LEVELS, "2");
+			t.addAttribute(ConstantsXSerena.ATTR_ORDER_BY, dateIL);
+			if (anno!=null){
+				Element condElement = DocumentHelper.createElement(ConstantsXSerena.TAG_AND);
+				Element cond = condElement.addElement(dateIL);
+				cond.setText("01/01/" + anno);
+				cond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_GREATER_EQUAL_THAN);
+				cond = condElement.addElement(dateIL);
+				cond.setText("31/12/" + anno);
+				cond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_LESS_EQUAL_THAN);
+				q.addCondition(t, condElement);
+			}
+			Document data = ApplicationLibrary.getData(q, request);
+			String[] messages2 = { "", "" };
+			int res = ConstantsXSerena.getXserenaRequestResult(data, messages2, classIL);
+			if (res == ConstantsXSerena.XSERENA_RESULT_SUCCESS) {
+				List<String> utenti = new ArrayList<String>();
+				List<Element> tessere = data.selectNodes(".//"+classIL);
+				for (Element tEl : tessere) {
+					try {
+						String utente = tEl.element(utenteRef).element("Utente").elementText("ID");
+						if (!utenti.contains(utente))	{
+							UnitDTO tNew = new UnitDTO();
+							tNew.data = tEl.elementText(dateIL);
+							tNew.id = tEl.elementText("ID");
+							tNew.val = classIL;
+							answer.add(tNew);
+							utenti.add(utente);
+						}
+					} catch (Exception r) {
+						String message = "Errore in " + classIL + " " + tEl.elementText("ID") + ": dati mancanti ...";
+						logger.error(message);
+					}
+				}
+			} else if (res == ConstantsXSerena.XSERENA_RESULT_EMPTY) {
+				;
+			} else {
+				String message = "Impossibile reperire " + classIL +": " + messages2[0];
+				logger.error(message);
+				throw new SerenaException(message);
+			}
+		} catch (Exception e) {
+			String message = "Impossibile reperire " + classIL +": " + e.getMessage();
+			logger.error(message);
+			throw new SerenaException(message);
+		}
+}
 }

@@ -410,6 +410,25 @@
       <max_length/>  
       <default/>  
       <order>155</order> 
+    </item>
+    <item> 
+      <name>progetti_richiedenti_asilo</name>  
+      <label>progetti richiedenti asilo</label>  
+      <detail>progetti richiedenti asilo</detail>  
+      <detail_edit>progetti richiedenti asilo</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>157</order> 
+    </item><item> 
+      <name>progetti_richiedenti_asilo_dove</name>  
+      <label>dove</label>  
+      <detail>dove</detail>  
+      <detail_edit>dove</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>159</order> 
     </item>  
     <item> 
       <name>sez_domicilio</name>  

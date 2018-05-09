@@ -1,5 +1,8 @@
 @BEGIN_TEMPLATE@<div>
 			<div id="list">
+			
+
+				
 
 				@BLOCK_BEGIN_RESULT_ERROR@
 					<div class="alert alert-danger" role="alert">
@@ -15,49 +18,34 @@
 					</div>
 				@BLOCK_END_RESULT_EMPTY@
 				
-				@FUN_MODULE(q=object_tab_header/detail,p=Utente/_a_ID/_v_@tag_Accoglienza.inverse_of_presa_in_carico_accoglienza.Utente.ID#FLAT@)@
+				@FUN_MODULE(q=object_tab_header/detail,p=Utente/_a_ID/_v_@tag_Attivazione.inverse_of_presa_in_carico_attivazioni.Utente.ID#FLAT@)@
 
 							
 			<script type="text/javascript">
 				$(document).ready(function() {
-					Anastasis.SerenaUtils.getCurrentTabSheet('Accoglienza');
+					Anastasis.SerenaUtils.getCurrentTabSheet('Attivazione');
 				});
 			</script>
 				
 				<div role="toolbar" class="btn-toolbar" style="float:right; margin-right:2px;">
-				<a aria-expanded="false" aria-haspopup="true" class="btn btn-success" type="button" href="?q=object/detail_edit&amp;p=Accoglienza&amp;a=_a_inverse_of_presa_in_carico_accoglienza/_c_Utente/_a_ID/_v_@tag_Accoglienza.inverse_of_presa_in_carico_accoglienza.Utente.ID#FLAT@" title="nuova accoglienza">Nuova accoglienza</a>		
+				<a aria-expanded="false" aria-haspopup="true" class="btn btn-success" type="button" href="?q=object/detail_edit&amp;p=Attivazione&amp;a=_a_inverse_of_presa_in_carico_attivazioni/_c_Utente/_a_ID/_v_@tag_Attivazione.inverse_of_presa_in_carico_attivazioni.Utente.ID#FLAT@" title="nuova attivazione">Nuova attivazione</a>		
 			</div>
+			
 
 				([
-						[[@tag_Accoglienza.ID#FLAT@] != []]
+						[[@tag_Attivazione.ID#FLAT@] != []]
 						?? [
 	<div class="table-responsive">
 			 <table class="table">
 			    <thead>
 			       <tr>
-									@BLOCK_BEGIN_HEADER@
-										<th>
-											([
-												[[@HEADER_HREF@] != []]
-												?? [
-													<a title="ordina in base a questo attributo" href="@HEADER_HREF@" @ajaxable="target=list,replace=true,target_result=list" ;>
-												]
-											])
-											@HEADER_LABEL@
-											([
-												[[@HEADER_HREF@] != []]
-												?? [
-													</a>
-												]
-											])
-										</th>
-									@BLOCK_END_HEADER@
+										<th>Dal</th><th>Al</th><th>Descrizione</th>
 									<th scope="col">Azioni</th>
 								</tr>
 								 </thead>
 			    					<tbody>
-								@BEGIN_Accoglienza@([
-										[[@XPATH_FUN((count(preceding-sibling::Accoglienza)+ 1) mod 2)@@] == [0.0] ]
+								@BEGIN_Attivazione@([
+										[[@XPATH_FUN((count(preceding-sibling::Attivazione)+ 1) mod 2)@@] == [0.0] ]
 										?? [
 											<tr class="info">	
 										] :: [
@@ -65,10 +53,10 @@
 										]
 									])
 	
-										@tag_dal@@tag_al@@tag_dove@
+										@tag_dal@@tag_al@@tag_descrizione@
 											<td>
 											<div role="toolbar">
-												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=Accoglienza/_a_ID/_v_@tag_ID#FLAT@" title="Dettaglio">
+												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=Attivazione/_a_ID/_v_@tag_ID#FLAT@" title="Dettaglio">
 													<span aria-hidden="true" class="glyphicon glyphicon-play"></span>
 												</a>
 												([
@@ -82,11 +70,11 @@
 																([ 
 																	[[] == [complex_detail_edit]] 
 																	?? [
-																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/complex_detail_edit/CLS=Accoglienza/ID=@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/complex_detail_edit/CLS=Attivazione/ID=@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
 																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>	
 																		</a>
 																	] :: [
-																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=Accoglienza/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=Attivazione/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
 																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
 																		</a>
 																	]
@@ -98,7 +86,7 @@
 												
 											</div>
 											</td>
-									</tr>@END_Accoglienza@
+									</tr>@END_Attivazione@
 								</tbody>
 					  		</table>
 						]

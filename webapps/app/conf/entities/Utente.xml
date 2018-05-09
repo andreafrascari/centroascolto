@@ -341,6 +341,23 @@
       </xml> 
     </item>  
     <item> 
+      <name>progetti_richiedenti_asilo</name>  
+      <type>28</type>  
+      <xml> 
+        <name>progetti_richiedenti_asilo</name>  
+        <class/> 
+      </xml>  
+      <decode_class>305</decode_class> 
+    </item><item> 
+      <name>progetti_richiedenti_asilo_dove</name>  
+      <type>28</type>  
+      <xml> 
+        <name>progetti_richiedenti_asilo_dove</name>  
+        <class/> 
+      </xml>  
+      <decode_class>306</decode_class> 
+    </item>
+    <item> 
       <name>sez_domicilio</name>  
       <type>0</type>  
       <xml> 

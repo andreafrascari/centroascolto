@@ -16,236 +16,283 @@
                 <structure>
                     <property name="columnName">scheda</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">scheda</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">sez_anagrafica</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">sez_anagrafica</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">nome</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">nome</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">cognome</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">cognome</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">user_name</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">user_name</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">data_primo_colloquio</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">data_primo_colloquio</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">data_n</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">data_n</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">data_arrivo_it</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">data_arrivo_it</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">data_arrivo_bo</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">data_arrivo_bo</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">stato_n</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">stato_n</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">comune_n</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">comune_n</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">cf</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">cf</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">sesso</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">sesso</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">sez_residenza</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">sez_residenza</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">espulso</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">espulso</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">deceduto</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">deceduto</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">foto</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">foto</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">privo_residenza</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">privo_residenza</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">residenza_comune</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">residenza_comune</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">residenza_cap</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">residenza_cap</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">residenza_via</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">residenza_via</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">residenza_provincia</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">residenza_provincia</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">stato_civile</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">stato_civile</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">stato_famiglia</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">stato_famiglia</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">comune_famiglia</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">comune_famiglia</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">figli</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">figli</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">titolo_studio</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">titolo_studio</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">situazione_economica</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">situazione_economica</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">altro</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">altro</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">automunito</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">automunito</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">percentuale_inv</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">percentuale_inv</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">madrelingua</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">madrelingua</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">lingua_it</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">lingua_it</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">altre_lingue</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">altre_lingue</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">sez_situazione_famigliare</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">sez_situazione_famigliare</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">domicilio_comune</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">domicilio_comune</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">domicilio_cap</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">domicilio_cap</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">domicilio_via</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">domicilio_via</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">domicilio_provincia</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">domicilio_provincia</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">nota_domicilio</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">nota_domicilio</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">sez_situazione_scolastica_ed_economica</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">sez_situazione_scolastica_ed_economica</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">sez_domicilio</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">sez_domicilio</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">presa_in_carico_accoglienza</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">presa_in_carico_accoglienza</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">presa_in_carico_attivazioni</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">presa_in_carico_attivazioni</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">presa_in_carico_inserimenti_lavorativi</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">presa_in_carico_inserimenti_lavorativi</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">owner_user</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">owner_user</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">owner_group</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">owner_group</text-property>
                 </structure>
                 <structure>
@@ -263,32 +310,48 @@
                 <structure>
                     <property name="columnName">deletion_user</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">deletion_user</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">deletion_date</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">deletion_date</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">last_modification_user</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">last_modification_user</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">last_modification_date</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">last_modification_date</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">activation_flag</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">activation_flag</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">deletion_flag</property>
                     <property name="analysis">dimension</property>
+                    <property name="onColumnLayout">false</property>
                     <text-property name="heading">deletion_flag</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">progetti_richiedenti_asilo</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">progetti_richiedenti_asilo</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">progetti_richiedenti_asilo_dove</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">progetti_richiedenti_asilo_dove</text-property>
                 </structure>
             </list-property>
             <list-property name="parameters"/>
@@ -567,6 +630,16 @@
                     <structure>
                         <property name="position">55</property>
                         <property name="name">deletion_flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">56</property>
+                        <property name="name">progetti_richiedenti_asilo</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">57</property>
+                        <property name="name">progetti_richiedenti_asilo_dove</property>
                         <property name="dataType">string</property>
                     </structure>
                 </list-property>
@@ -958,8 +1031,22 @@
                     <property name="dataType">string</property>
                     <property name="nativeDataType">12</property>
                 </structure>
+                <structure>
+                    <property name="position">56</property>
+                    <property name="name">progetti_richiedenti_asilo</property>
+                    <property name="nativeName">progetti_richiedenti_asilo</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">57</property>
+                    <property name="name">progetti_richiedenti_asilo_dove</property>
+                    <property name="nativeName">progetti_richiedenti_asilo_dove</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
             </list-property>
-            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/serena/service/Utente]#:#{scheda;STRING;/scheda},{sez_anagrafica;STRING;/sez_anagrafica},{nome;STRING;/nome},{cognome;STRING;/cognome},{user_name;STRING;/op_primo_colloquio/Operatore/user_name},{data_primo_colloquio;STRING;/data_primo_colloquio},{data_n;STRING;/data_n},{data_arrivo_it;STRING;/data_arrivo_it},{data_arrivo_bo;STRING;/data_arrivo_bo},{stato_n;STRING;/stato_n},{comune_n;STRING;/comune_n},{cf;STRING;/cf},{sesso;STRING;/sesso},{sez_residenza;STRING;/sez_residenza},{espulso;STRING;/espulso},{deceduto;STRING;/deceduto},{foto;STRING;/foto},{privo_residenza;STRING;/privo_residenza},{residenza_comune;STRING;/residenza_comune},{residenza_cap;STRING;/residenza_cap},{residenza_via;STRING;/residenza_via},{residenza_provincia;STRING;/residenza_provincia},{stato_civile;STRING;/stato_civile},{stato_famiglia;STRING;/stato_famiglia},{comune_famiglia;STRING;/comune_famiglia},{figli;STRING;/figli},{titolo_studio;STRING;/titolo_studio},{situazione_economica;STRING;/situazione_economica},{altro;STRING;/altro},{automunito;STRING;/automunito},{percentuale_inv;STRING;/percentuale_inv},{madrelingua;STRING;/madrelingua},{lingua_it;STRING;/lingua_it},{altre_lingue;STRING;/altre_lingue},{sez_situazione_famigliare;STRING;/sez_situazione_famigliare},{domicilio_comune;STRING;/domicilio_comune},{domicilio_cap;STRING;/domicilio_cap},{domicilio_via;STRING;/domicilio_via},{domicilio_provincia;STRING;/domicilio_provincia},{nota_domicilio;STRING;/nota_domicilio},{sez_situazione_scolastica_ed_economica;STRING;/sez_situazione_scolastica_ed_economica},{sez_domicilio;STRING;/sez_domicilio},{presa_in_carico_accoglienza;STRING;/presa_in_carico_accoglienza},{presa_in_carico_attivazioni;STRING;/presa_in_carico_attivazioni},{presa_in_carico_inserimenti_lavorativi;STRING;/presa_in_carico_inserimenti_lavorativi},{owner_user;STRING;/owner_user},{owner_group;STRING;/owner_group},{creation_user;STRING;/creation_user},{creation_date;STRING;/creation_date},{deletion_user;STRING;/deletion_user},{deletion_date;STRING;/deletion_date},{last_modification_user;STRING;/last_modification_user},{last_modification_date;STRING;/last_modification_date},{activation_flag;STRING;/activation_flag},{deletion_flag;STRING;/deletion_flag}]]></xml-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/serena/service/Utente]#:#{scheda;STRING;/scheda},{sez_anagrafica;STRING;/sez_anagrafica},{nome;STRING;/nome},{cognome;STRING;/cognome},{user_name;STRING;/op_primo_colloquio/Operatore/user_name},{data_primo_colloquio;STRING;/data_primo_colloquio},{data_n;STRING;/data_n},{data_arrivo_it;STRING;/data_arrivo_it},{data_arrivo_bo;STRING;/data_arrivo_bo},{stato_n;STRING;/stato_n},{comune_n;STRING;/comune_n},{cf;STRING;/cf},{sesso;STRING;/sesso},{sez_residenza;STRING;/sez_residenza},{espulso;STRING;/espulso},{deceduto;STRING;/deceduto},{foto;STRING;/foto},{privo_residenza;STRING;/privo_residenza},{residenza_comune;STRING;/residenza_comune},{residenza_cap;STRING;/residenza_cap},{residenza_via;STRING;/residenza_via},{residenza_provincia;STRING;/residenza_provincia},{stato_civile;STRING;/stato_civile},{stato_famiglia;STRING;/stato_famiglia},{comune_famiglia;STRING;/comune_famiglia},{figli;STRING;/figli},{titolo_studio;STRING;/titolo_studio},{situazione_economica;STRING;/situazione_economica},{altro;STRING;/altro},{automunito;STRING;/automunito},{percentuale_inv;STRING;/percentuale_inv},{madrelingua;STRING;/madrelingua},{lingua_it;STRING;/lingua_it},{altre_lingue;STRING;/altre_lingue},{sez_situazione_famigliare;STRING;/sez_situazione_famigliare},{domicilio_comune;STRING;/domicilio_comune},{domicilio_cap;STRING;/domicilio_cap},{domicilio_via;STRING;/domicilio_via},{domicilio_provincia;STRING;/domicilio_provincia},{nota_domicilio;STRING;/nota_domicilio},{sez_situazione_scolastica_ed_economica;STRING;/sez_situazione_scolastica_ed_economica},{sez_domicilio;STRING;/sez_domicilio},{presa_in_carico_accoglienza;STRING;/presa_in_carico_accoglienza},{presa_in_carico_attivazioni;STRING;/presa_in_carico_attivazioni},{presa_in_carico_inserimenti_lavorativi;STRING;/presa_in_carico_inserimenti_lavorativi},{owner_user;STRING;/owner_user},{owner_group;STRING;/owner_group},{creation_user;STRING;/creation_user},{creation_date;STRING;/creation_date},{deletion_user;STRING;/deletion_user},{deletion_date;STRING;/deletion_date},{last_modification_user;STRING;/last_modification_user},{last_modification_date;STRING;/last_modification_date},{activation_flag;STRING;/activation_flag},{deletion_flag;STRING;/deletion_flag},{progetti_richiedenti_asilo;STRING;/progetti_richiedenti_asilo},{progetti_richiedenti_asilo_dove;STRING;/progetti_richiedenti_asilo_dove}]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -5445,6 +5532,54 @@
                             </structure>
                         </list-property>
                         <property name="resultSetColumn">altre_lingue</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="780">
+                <property name="borderBottomColor">#BABDB6</property>
+                <property name="borderBottomStyle">solid</property>
+                <property name="borderBottomWidth">thin</property>
+                <cell id="781">
+                    <label id="783">
+                        <text-property name="text">progetti richiedenti asilo</text-property>
+                    </label>
+                </cell>
+                <cell id="782">
+                    <data id="785">
+                        <property name="dataSet">Paziente</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">progetti_richiedenti_asilo</property>
+                                <text-property name="displayName">progetti_richiedenti_asilo</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["progetti_richiedenti_asilo"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">progetti_richiedenti_asilo</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="777">
+                <property name="borderBottomColor">#BABDB6</property>
+                <property name="borderBottomStyle">solid</property>
+                <property name="borderBottomWidth">thin</property>
+                <cell id="778">
+                    <label id="784">
+                        <text-property name="text">dove</text-property>
+                    </label>
+                </cell>
+                <cell id="779">
+                    <data id="786">
+                        <property name="dataSet">Paziente</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">progetti_richiedenti_asilo_dove</property>
+                                <text-property name="displayName">progetti_richiedenti_asilo_dove</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["progetti_richiedenti_asilo_dove"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">progetti_richiedenti_asilo_dove</property>
                     </data>
                 </cell>
             </row>

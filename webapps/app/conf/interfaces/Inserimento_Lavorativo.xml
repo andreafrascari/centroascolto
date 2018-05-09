@@ -13,6 +13,8 @@
       <name>inverse_of_presa_in_carico_inserimenti_lavorativi</name>  
       <label>utente</label>  
       <detail>utente</detail>  
+      <list>utente</list>
+      <filter autocomplete="">utente</filter>
       <heading>5</heading>  
       <needed>1</needed>  
       <max_length/>  
@@ -26,6 +28,8 @@
       <detail_edit>dal</detail_edit>  
       <filter>dal</filter>  
       <list>dal</list>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
       <heading>1</heading>  
       <needed>1</needed>  
       <max_length/>  
@@ -52,9 +56,7 @@
       <filter>ente avviante</filter>  
       <list>ente avviante</list>  
       <heading>1</heading>  
-      <needed>1</needed>  
-      <description_field>1</description_field>  
-      <list_active_field>1</list_active_field>  
+      <needed>1</needed>   
       <max_length/>  
       <default/>  
       <order>41</order> 

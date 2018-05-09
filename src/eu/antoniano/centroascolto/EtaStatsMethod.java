@@ -11,6 +11,7 @@ import eu.anastasis.serena.application.core.modules.DefaultModule;
 import eu.anastasis.serena.common.SerenaDate;
 import eu.anastasis.serena.exception.SerenaException;
 import eu.anastasis.serena.exceptions.JSONException;
+import eu.antoniano.centroascolto.AllStatsMethod.Output;
 
 public class EtaStatsMethod extends AllStatsMethod {
 
@@ -68,22 +69,19 @@ public class EtaStatsMethod extends AllStatsMethod {
 		String query = request.getParameter("query");
 		String anno = request.getParameter("year");
 		JsonDTO res = new JsonDTO();
-		boolean isAnni = (anno == null);
-		int xDim = (isAnni) ? (new SerenaDate().getYear() - 2006) : 12; // dim
-																		// x? se
-																		// statistica
-																		// anni
-																		// ->
-																		// anno
-																		// corrente
-																		// -2007
-																		// (primo
-																		// anno)
-																		// +1.
-																		// Se
-																		// mesi:
-																		// qw
+		if (anno.equals("-1")){
+			anno=null;
+		}
+		
+		boolean isAnni = (anno==null);
+		
+		int annoUltimo = new SerenaDate().getYear();
+		int annoPrimo = annoUltimo-9;
+		
+		int xDim = (isAnni)?10:12; // ANNI: SEMPRE 10 ... a partire da anno corrente
 		logger.debug("xdim = " + xDim);
+		
+		
 		try {
 			TreeMap<Integer, Output> mesiAnni = new TreeMap<Integer, Output>();
 			List<UnitDTO> units = getAll(anno, request, query, res);
@@ -92,11 +90,15 @@ public class EtaStatsMethod extends AllStatsMethod {
 				for (int i=1; i<13; i++){
 					mesiAnni.put(i, new Output("0"));
 				}
+			} else {
+				for (int i=annoPrimo; i<=annoUltimo; i++){ // INTERVENIRE ++ x ULTERIORE ANNO
+					mesiAnni.put(i, new Output("0"));
+				}
 			}
 			for (UnitDTO t : units) {
 				Output o = null;
 				SerenaDate c = new SerenaDate(t.data);
-				if (c.getYear() <= 2006 || c.getYear() > new SerenaDate().getYear()) {
+				if (c.getYear()< annoPrimo || c.getYear()>new SerenaDate().getYear()){
 					continue; // dont want them
 				}
 				if (isAnni) {

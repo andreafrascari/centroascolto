@@ -103,7 +103,7 @@
 
     <!-- Timeout sessione (in minuti) -->
     <session-config>
-        <session-timeout>120</session-timeout>
+        <session-timeout>240</session-timeout>
     </session-config>
     <!-- Timeout sessione per utenti loggati (in minuti)-->
     <!--

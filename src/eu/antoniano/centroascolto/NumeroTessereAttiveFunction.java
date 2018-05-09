@@ -55,6 +55,8 @@ public class NumeroTessereAttiveFunction extends DefaultFunction {
 		if (res == ConstantsXSerena.XSERENA_RESULT_SUCCESS) {
 			List<Element> tessere = data.selectNodes(".//Tessera");
 			nTessere= new Integer(tessere.size()).toString();
+		} else if (res == ConstantsXSerena.XSERENA_RESULT_EMPTY) {
+			nTessere = "0";
 		} else {
 			String message = "Errore in computo tessere mancanti ...";
 			logger.error(message);
