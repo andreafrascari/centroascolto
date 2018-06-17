@@ -45,6 +45,7 @@ public class AllStatsMethod extends JSONMethod {
 	private static final String QUERY_UTENTI_PER_STATO_CIVILE = "utenti-per-stato-civile";
 	private static final String QUERY_EVENTI = "eventi";
 	private static final String QUERY_ETA_PRIMO_COLLOQUIO = "eta-primo-colloquio";
+	private static final String QUERY_ETA_MEDIA_UTENTI_ATTIVI = "eta-media-utenti-attivi";
 	private static final String QUERY_TIPO_INTERVENTI = "tipo-interventi";
 	private static final String QUERY_TESSERE_PER_FASCE_ETA = "tessere-per-fascia-eta";
 
@@ -70,13 +71,14 @@ public class AllStatsMethod extends JSONMethod {
 		JsonInnerDTO[] data; // tanti oggetti quanti sono i possibili valori della decodifica
 	}
 	
-	private class TesseraDTO {
+	protected class TesseraDTO {
 		String nome;
 		String cognome;
 		String id;
 		String emissione;
 		String sabatoDomenica;
 		String progressivo;
+		String  dataNascita;
 		boolean italiano;
 	}
 
@@ -149,6 +151,10 @@ public class AllStatsMethod extends JSONMethod {
 				res.title = "Eta' al primo colloquio: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "Numero Tessere";
 				return getEtaMediaPrimoColloquio(anno, request);
+			} else if (QUERY_ETA_MEDIA_UTENTI_ATTIVI.equals(query)){
+				res.title = "Eta' media utenti con tessera: " + ((anno!=null)?anno:"per anno");
+				res.asseY = "Numero Tessere";
+				return getEtaMediaUtentiAttivi(anno, request);
 			} else if (QUERY_TIPO_INTERVENTI.equals(query)){
 				res.title = "Tipologia interventi: " + ((anno!=null)?anno:"per anno");
 				res.asseY = "N. interventi";
@@ -258,7 +264,24 @@ public class AllStatsMethod extends JSONMethod {
 		}
 
 
-
+		
+		protected List<UnitDTO> getEtaMediaUtentiAttivi(String anno, HttpServletRequest request) throws SerenaException {
+		List<TesseraDTO> tessere = getTessereAttiveConEta(anno, request);
+			List<UnitDTO> answer = new ArrayList<UnitDTO>();
+			for (TesseraDTO t : tessere) {
+				if (t.dataNascita!=null)	{
+						UnitDTO u = new UnitDTO();
+						u.id = t.id;
+						u.data = t.emissione;
+						SerenaDate d1 = new SerenaDate(t.emissione);
+						SerenaDate d0 = new SerenaDate(t.dataNascita);
+						u.val = new Integer(d1.diffInYear(d0)).toString();
+						answer.add(u);
+				}
+				}
+			return answer;
+		}
+		
 
 
 		/**
@@ -492,7 +515,8 @@ public class AllStatsMethod extends JSONMethod {
 			// ConstantsXSerena.VAL_SELECT);
 			t.addAttribute(ConstantsXSerena.ATTR_TARGET,
 					ConstantsXSerena.TARGET_ALL);
-			t.addAttribute(ConstantsXSerena.ATTR_TARGET_LEVELS, "1");
+			t.addAttribute(ConstantsXSerena.ATTR_TARGET_LEVELS,
+					"1");
 			t.addAttribute(ConstantsXSerena.ATTR_ORDER_BY, "emissione");
 			if (anno0!=null){
 				Element condElement = DocumentHelper.createElement(ConstantsXSerena.TAG_AND);
@@ -518,6 +542,73 @@ public class AllStatsMethod extends JSONMethod {
 							Element utente = tEl.element("inverse_of_tessere")
 									.element("Utente");
 							tNew.id = utente.elementText("ID");
+							answer.add(tNew);
+						} catch (Exception r) {
+							String message = "Errore in tessera "
+									+ tEl.elementText("ID") + ": dati mancanti ...";
+							logger.error(message);
+						}
+				}
+			} else if (res == ConstantsXSerena.XSERENA_RESULT_EMPTY) {
+				;
+			}
+			else {
+				String message = "Impossibile reperire tessere: "
+						+ messages2[0];
+				logger.error(message);
+				throw new SerenaException(message);
+			}
+			return answer;
+		} catch (Exception e) {
+			String message = "Impossibile reperire tessere: " + e.getMessage();
+			logger.error(message);
+			throw new SerenaException(message);
+		}
+
+	}
+	
+	private List<TesseraDTO> getTessereAttiveConEta(String anno0,
+			HttpServletRequest request) throws SerenaException {
+		try {
+			List<TesseraDTO> answer = new ArrayList<TesseraDTO>();
+			SelectQuery q = new SelectQuery("Tessera");
+			Element t = q.getFirstClassElement();
+			// t.addAttribute(ConstantsXSerena.ATTR_OPERATION,
+			// ConstantsXSerena.VAL_SELECT);
+			t.addAttribute(ConstantsXSerena.ATTR_TARGET,
+					ConstantsXSerena.TARGET_SPECIFIED);
+			t.addAttribute(ConstantsXSerena.ATTR_ORDER_BY, "emissione");
+			if (anno0!=null){
+				Element condElement = DocumentHelper.createElement(ConstantsXSerena.TAG_AND);
+				Element cond = condElement.addElement("emissione");
+				cond.setText("01/01/" + anno0);
+				cond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_GREATER_EQUAL_THAN);
+				cond = condElement.addElement("emissione");
+				cond.setText("31/12/" + anno0);
+				cond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_LESS_EQUAL_THAN);
+				q.addCondition(t, condElement);
+			}
+			t.addElement("emissione");
+			t.addElement("sabatodomenica");
+			Element u = t.addElement("inverse_of_tessere");
+			u = u.addElement("Utente");
+			u.addElement("ID");
+			u.addElement("data_n");
+			Document data = ApplicationLibrary.getData(q, request);
+			String[] messages2 = { "", "" };
+			int res = ConstantsXSerena.getXserenaRequestResult(data, messages2,
+					"Tessera");
+			if (res == ConstantsXSerena.XSERENA_RESULT_SUCCESS) {
+				List<Element> tessere = data.selectNodes(".//Tessera");
+					for (Element tEl : tessere) {
+						try {
+							TesseraDTO tNew = new TesseraDTO();
+							tNew.sabatoDomenica = tEl.elementText("sabatodomenica");
+							tNew.emissione = tEl.elementText("emissione");
+							Element utente = tEl.element("inverse_of_tessere")
+									.element("Utente");
+							tNew.id = utente.elementText("ID");
+							tNew.dataNascita = utente.elementText("data_n");
 							answer.add(tNew);
 						} catch (Exception r) {
 							String message = "Errore in tessera "
@@ -595,7 +686,7 @@ public class AllStatsMethod extends JSONMethod {
 		}
 		return answer;
 	}
-	
+
 	private List<UnitDTO> getUtentiTipiInterventi(String anno, HttpServletRequest request) throws SerenaException {
 		List<UnitDTO> answer = new ArrayList<UnitDTO>();
 		getUtentiTipoIntervento( anno,  request, "Inserimento_Lavorativo", "dal", "inverse_of_presa_in_carico_inserimenti_lavorativi",  answer);

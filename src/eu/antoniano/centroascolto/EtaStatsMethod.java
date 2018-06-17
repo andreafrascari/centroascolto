@@ -12,6 +12,8 @@ import eu.anastasis.serena.common.SerenaDate;
 import eu.anastasis.serena.exception.SerenaException;
 import eu.anastasis.serena.exceptions.JSONException;
 import eu.antoniano.centroascolto.AllStatsMethod.Output;
+import eu.antoniano.centroascolto.AllStatsMethod.TesseraDTO;
+import eu.antoniano.centroascolto.AllStatsMethod.UnitDTO;
 
 public class EtaStatsMethod extends AllStatsMethod {
 
@@ -25,6 +27,8 @@ public class EtaStatsMethod extends AllStatsMethod {
 	public static final String METHOD_NAME = "eta_stats";
 
 	private static final String QUERY_ETA_MEDIA_PRIMO_COLLOQUIO = "eta-media-primo-colloquio";
+	private static final String QUERY_ETA_MEDIA_UTENTI_ATTIVI = "eta-media-utenti-attivi";
+
 
 	protected class Output {
 		float etaMedia;
@@ -48,6 +52,10 @@ public class EtaStatsMethod extends AllStatsMethod {
 			res.title = "Eta' al primo colloquio: " + ((anno != null) ? anno : "per anno");
 			res.asseY = "Eta' media";
 			return getEtaMediaPrimoColloquio(anno, request);
+		} else if (QUERY_ETA_MEDIA_UTENTI_ATTIVI.equals(query)){
+			res.title = "Eta' media utenti con tessera: " + ((anno!=null)?anno:"per anno");
+			res.asseY = "Numero Tessere";
+			return getEtaMediaUtentiAttivi(anno, request);
 		} else {
 			String theError = "Richiesta non gestita: " + query;
 			throw new SerenaException(theError);
@@ -63,6 +71,7 @@ public class EtaStatsMethod extends AllStatsMethod {
 		}
 		return all;
 	}
+
 
 	@Override
 	public String doMethod(HttpServletRequest request, HttpServletResponse response) throws JSONException {

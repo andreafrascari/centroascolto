@@ -1,8 +1,17 @@
 <tasks>
-	<task>  
+	<task>
 		<class>eu.antoniano.centroascolto.CheckDiskSpace</class>
 		<minute>00</minute>
 		<hour>*</hour>
+		<day_of_month>*</day_of_month>
+		<month>*</month>
+		<day_of_week>*</day_of_week>
+	</task>
+	<task>
+		<class>eu.anastasis.serena.application.core.tasks.PasswordController
+		</class>
+		<minute>00</minute>
+		<hour>04</hour>
 		<day_of_month>*</day_of_month>
 		<month>*</month>
 		<day_of_week>*</day_of_week>
