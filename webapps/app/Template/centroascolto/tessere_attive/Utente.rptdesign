@@ -143,25 +143,36 @@
             <list-property name="columnHints">
                 <structure>
                     <property name="columnName">nome</property>
+                    <property name="analysis">dimension</property>
                     <text-property name="heading">nome</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">cognome</property>
+                    <property name="analysis">dimension</property>
                     <text-property name="heading">cognome</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">scadenza</property>
+                    <property name="analysis">dimension</property>
                     <text-property name="heading">scadenza</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">sabatoDomenica</property>
+                    <property name="analysis">measure</property>
                     <text-property name="heading">sabatoDomenica</text-property>
                 </structure>
                 <structure>
                     <property name="columnName">progressivo</property>
+                    <property name="analysis">measure</property>
                     <text-property name="heading">progressivo</text-property>
                 </structure>
+                <structure>
+                    <property name="columnName">tipologiaTessera</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="heading">tipologiaTessera</text-property>
+                </structure>
             </list-property>
+            <list-property name="parameters"/>
             <structure name="cachedMetaData">
                 <list-property name="resultSet">
                     <structure>
@@ -188,6 +199,11 @@
                         <property name="position">5</property>
                         <property name="name">progressivo</property>
                         <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">tipologiaTessera</property>
+                        <property name="dataType">string</property>
                     </structure>
                 </list-property>
             </structure>
@@ -228,8 +244,15 @@
                     <property name="dataType">integer</property>
                     <property name="nativeDataType">4</property>
                 </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">tipologiaTessera</property>
+                    <property name="nativeName">tipologiaTessera</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
             </list-property>
-            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/serena/service/utenti/Utente]#:#{nome;STRING;/nome},{cognome;STRING;/cognome},{scadenza;STRING;/scadenza},{sabatoDomenica;INT;/sabatoDomenica},{progressivo;INT;/progressivo}]]></xml-property>
+            <xml-property name="queryText"><![CDATA[table0#-TNAME-#table0#:#[/serena/service/utenti/Utente]#:#{nome;STRING;/nome},{cognome;STRING;/cognome},{scadenza;STRING;/scadenza},{sabatoDomenica;INT;/sabatoDomenica},{progressivo;INT;/progressivo},{tipologiaTessera;STRING;/tipologiaTessera}]]></xml-property>
             <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
   <Version>2.0</Version>
@@ -505,6 +528,12 @@
                     <property name="dataType">integer</property>
                     <property name="allowExport">true</property>
                 </structure>
+                <structure>
+                    <property name="name">tipologiaTessera</property>
+                    <text-property name="displayName">tipologiaTessera</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tipologiaTessera"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
             </list-property>
             <header>
                 <grid id="37">
@@ -596,13 +625,13 @@
                                 <property name="borderTopWidth">thin</property>
                                 <property name="width">2.9583333333333335in</property>
                                 <column id="48">
-                                    <property name="width">0.3229166666666667in</property>
+                                    <property name="width">0.46875in</property>
                                 </column>
                                 <column id="49">
-                                    <property name="width">1.0625in</property>
+                                    <property name="width">0.9895833333333334in</property>
                                 </column>
                                 <column id="50">
-                                    <property name="width">1.1041666666666667in</property>
+                                    <property name="width">1.03125in</property>
                                 </column>
                                 <column id="51">
                                     <property name="width">0.46875in</property>
@@ -614,7 +643,14 @@
                                         <property name="borderLeftStyle">solid</property>
                                         <property name="borderLeftWidth">thin</property>
                                         <data id="57">
+                                            <property name="display">inline</property>
                                             <property name="resultSetColumn">progressivo</property>
+                                        </data>
+                                        <data id="78">
+                                            <property name="fontSize">8pt</property>
+                                            <property name="paddingLeft">3pt</property>
+                                            <property name="display">inline</property>
+                                            <property name="resultSetColumn">tipologiaTessera</property>
                                         </data>
                                     </cell>
                                     <cell id="54">

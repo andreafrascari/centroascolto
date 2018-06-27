@@ -26,7 +26,7 @@ public class ReportTessereAttiveMensaSeraleMethod extends GiveMethod {
 	private static final Logger logger = Logger.getLogger(ReportTessereAttiveMensaSeraleMethod.class);
 
 	public static final String METHOD_NAME = "mensa_serale";
-	
+
 	private static final int NUM_OF_EXTRA_BLANK_ROWS = 10;
 
 	private class TesseraDTO {
@@ -35,20 +35,30 @@ public class ReportTessereAttiveMensaSeraleMethod extends GiveMethod {
 		String scadenza;
 		String sabatoDomenica;
 		String progressivo;
+		String tipo;
 		boolean italiano;
-		
-		String getProcessedSabatoDomenica()	{
-			return ("SI".equals(sabatoDomenica))?"1":"0";
+
+		public String getTipo() {
+			return tipo;
 		}
-		
-		String getProcessedScadenza()	{
-			return scadenza.substring(0,5);
+
+		public void setTipo(String tipo) {
+			this.tipo = tipo;
 		}
-		
-		String getProcessedCognome()	{
+
+		String getProcessedSabatoDomenica() {
+			return ("SI".equals(sabatoDomenica)) ? "1" : "0";
+		}
+
+		String getProcessedScadenza() {
+			return scadenza.substring(0, 5);
+		}
+
+		String getProcessedCognome() {
 			return cognome.toUpperCase();
 		}
-		String getProcessedNome()	{
+
+		String getProcessedNome() {
 			return nome.toUpperCase();
 		}
 
@@ -108,13 +118,17 @@ public class ReportTessereAttiveMensaSeraleMethod extends GiveMethod {
 				currentElement.setText(t.getProcessedCognome());
 				currentElement = utente.addElement("progressivo");
 				currentElement.setText(new Integer(i++).toString());
+				if ("Tessera ponte".equals(t.getTipo())) {
+					currentElement = utente.addElement("tipologiaTessera");
+					currentElement.setText("TP");
+				}
 				currentElement = utente.addElement("scadenza");
 				currentElement.setText(t.getProcessedScadenza());
 				currentElement = utente.addElement("sabatoDomenica");
 				currentElement.setText(t.getProcessedSabatoDomenica());
 			}
-			
-			for (int j=0; j< NUM_OF_EXTRA_BLANK_ROWS; j++) {
+
+			for (int j = 0; j < NUM_OF_EXTRA_BLANK_ROWS; j++) {
 				Element utente = utenti.addElement("Utente");
 				currentElement = utente.addElement("nome");
 				currentElement.setText("");
@@ -127,7 +141,7 @@ public class ReportTessereAttiveMensaSeraleMethod extends GiveMethod {
 				currentElement = utente.addElement("sabatoDomenica");
 				currentElement.setText("");
 			}
-			
+
 		} catch (Exception e) {
 			String theError = "Errore in generazione report tessere attive: " + e.getMessage();
 			throw new SerenaException(theError);
@@ -147,7 +161,7 @@ public class ReportTessereAttiveMensaSeraleMethod extends GiveMethod {
 			t.addAttribute(ConstantsXSerena.ATTR_TARGET_LEVELS, "2");
 			Element condElement = DocumentHelper.createElement(ConstantsXSerena.TAG_AND);
 			Element cond = condElement.addElement("scadenza");
-			cond.setText("01/" + (cal.get(Calendar.MONTH)+1) + "/" + cal.get(Calendar.YEAR));
+			cond.setText("01/" + (cal.get(Calendar.MONTH) + 1) + "/" + cal.get(Calendar.YEAR));
 			cond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_GREATER_THAN);
 			cond = condElement.addElement("inverse_of_tessere");
 			cond = cond.addElement("Utente");
@@ -169,14 +183,17 @@ public class ReportTessereAttiveMensaSeraleMethod extends GiveMethod {
 						Element utente = tEl.element("inverse_of_tessere").element("Utente");
 						tNew.cognome = utente.elementText("cognome");
 						tNew.nome = utente.elementText("nome");
+						tNew.tipo = tEl.elementText("tipologia_tessera");
 						Element statoNascita = utente.element("stato_n");
-						tNew.italiano = statoNascita!=null && "Italia".equals(statoNascita.getText());
+						tNew.italiano = statoNascita != null && "Italia".equals(statoNascita.getText());
 						answer.put(tNew.cognome.toUpperCase(), tNew);
 					} catch (Exception r) {
 						String message = "Errore in tessera " + tEl.elementText("ID") + ": dati mancanti ...";
 						logger.error(message);
 					}
 				}
+			} else if (res == ConstantsXSerena.XSERENA_RESULT_EMPTY) {
+				logger.warn("Nessuna tessera per questo periodo");
 			} else {
 				String message = "Impossibile reperire tessere: " + messages2[0];
 				logger.error(message);

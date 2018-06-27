@@ -13,7 +13,7 @@ INSERT INTO `_system_decode` ( `sd_description`, `sd_value`, `sd_locale`, `sd_no
 
 
 INSERT INTO `_system_decode` ( `sd_description`, `sd_value`, `sd_locale`, `sd_notes`, `ID__system_decode_sd_parent`, `sd_image`, `owner_user`, `owner_group`, `creation_date`, `creation_user`, `last_modification_date`, `last_modification_user`, `deletion_date`, `deletion_user`, `deletion_flag`, `activation_flag`, `sd_class`) VALUES
-( 'ER', 1, 'it', NULL, NULL, NULL, NULL, NULL, '2016-02-02', 'admin', NULL, NULL, NULL, NULL, 0, 1, 306),
+( 'ER', 1, 'it', NULL, NULL, NULL, NULL, NULL, '2016-02-02', 'admin', NULL, NULL, NULL, NULL, 0, 1, 306), 
 ( 'Fuori ER', 2, 'it', NULL, NULL, NULL, NULL, NULL, '2016-02-02', 'admin', NULL, NULL, NULL, NULL, 0, 1, 306);
 
 INSERT INTO `_system_menu_item` ( `smi_title`, `smi_order`, `smi_locale`, `smi_association`, `smi_href`, `smi_alternative_text`, `ID__system_menu_item_smi_children`, `owner_user`, `owner_group`, `creation_date`, `creation_user`, `last_modification_date`, `last_modification_user`, `deletion_date`, `deletion_user`, `deletion_flag`, `activation_flag`) VALUES ( 'Utenti: nuovi e rinnovi', '3', 'it', NULL, '?q=object/filter&p=Utente&t=stat&y=2018&s=utenti-nuovi-rinnovi', 'Utenti: nuovi e rinnovi', '30', NULL, NULL, '2016-05-01', 'admin', '2016-05-08', 'admin', NULL, NULL, '0', '1');

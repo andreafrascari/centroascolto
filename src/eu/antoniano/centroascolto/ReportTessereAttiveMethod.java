@@ -35,7 +35,17 @@ public class ReportTessereAttiveMethod extends GiveMethod {
 		String scadenza;
 		String sabatoDomenica;
 		String progressivo;
+		String tipo;
+		
 		boolean italiano;
+		
+		public String getTipo() {
+			return tipo;
+		}
+
+		public void setTipo(String tipo) {
+			this.tipo = tipo;
+		}
 		
 		String getProcessedSabatoDomenica()	{
 			return ("SI".equals(sabatoDomenica))?"1":"0";
@@ -110,6 +120,10 @@ public class ReportTessereAttiveMethod extends GiveMethod {
 					currentElement.setText(t.getProcessedCognome());
 					currentElement = utente.addElement("progressivo");
 					currentElement.setText(new Integer(i++).toString());
+					if ("Tessera ponte".equals(t.getTipo()))	{
+						currentElement = utente.addElement("tipologiaTessera");
+						currentElement.setText("TP");
+					}
 					currentElement = utente.addElement("scadenza");
 					currentElement.setText(t.getProcessedScadenza());
 					currentElement = utente.addElement("sabatoDomenica");
@@ -150,6 +164,7 @@ public class ReportTessereAttiveMethod extends GiveMethod {
 			Element condElement = DocumentHelper.createElement(ConstantsXSerena.TAG_AND);
 			Element cond = condElement.addElement("scadenza");
 			cond.setText("01/" + (cal.get(Calendar.MONTH)+1) + "/" + cal.get(Calendar.YEAR));
+			//cond.setText("01/" + (cal.get(Calendar.MONTH)+1) + "/2016"); debug
 			cond.addAttribute(ConstantsXSerena.ATTR_OPERATOR, ConstantsXSerena.VAL_GREATER_THAN);
 			q.addCondition(t, condElement);
 			Document data = ApplicationLibrary.getData(q, request);
@@ -162,6 +177,7 @@ public class ReportTessereAttiveMethod extends GiveMethod {
 						TesseraDTO tNew = new TesseraDTO();
 						tNew.sabatoDomenica = tEl.elementText("sabatodomenica");
 						tNew.scadenza = tEl.elementText("scadenza");
+						tNew.tipo = tEl.elementText("tipologia_tessera");
 						Element utente = tEl.element("inverse_of_tessere").element("Utente");
 						tNew.cognome = utente.elementText("cognome");
 						tNew.nome = utente.elementText("nome");
@@ -173,7 +189,11 @@ public class ReportTessereAttiveMethod extends GiveMethod {
 						logger.error(message);
 					}
 				}
-			} else {
+			} else if (res == ConstantsXSerena.XSERENA_RESULT_EMPTY) {
+				logger.warn("Nessuna tessera per questo periodo");
+			}
+			else 
+			{
 				String message = "Impossibile reperire tessere: " + messages2[0];
 				logger.error(message);
 				throw new SerenaException(message);
