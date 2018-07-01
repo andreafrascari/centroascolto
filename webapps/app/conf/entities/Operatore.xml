@@ -76,6 +76,20 @@
       <to>ID_Operatore_eventi_registrati</to> 
     </item>  
     <item> 
+      <name>spese_utenti</name>  
+      <type>8</type>  
+      <xml> 
+        <name>spese_utenti</name>  
+        <class>Spesa</class>  
+        <relationship>1-N</relationship>  
+        <target>operatore</target> 
+      </xml>  
+      <codomain>Spesa</codomain>  
+      <from>ID</from>  
+      <to>ID_Operatore_spese_utenti</to>  
+      <ri>1</ri>
+    </item>  
+    <item> 
       <name>owner_user</name>  
       <type>2</type>  
       <xml> 

@@ -630,7 +630,17 @@
       <max_length/>  
       <default/>  
       <order>541</order> 
-    </item>  
+    </item>
+     <item> 
+      <name>spese</name>  
+      <label>percorsi</label>  
+      <detail>percorsi</detail>  
+      <detail_edit>percorsi</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>543</order> 
+    </item>    
     <item> 
       <name>allegati</name>  
       <label>allegati</label>  

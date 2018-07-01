@@ -56,6 +56,15 @@
 		title="registra nuovo Inserimento Lavorativo"
 		href="?q=object/detail_edit&amp;p=Inserimento_Lavorativo&amp;a=_a_inverse_of_presa_in_carico_inserimenti_lavorativi/_c_Utente/_a_ID/_v_@tag_ID#FLAT@">Inserimenti Lavorativi</a></li>
 	] ])  	
+	([ [[@tag_spese@] != [] ] ?? [
+	<li id="Spesa" class="ui-state-default ui-corner-top data-exist"><a
+		title="vai ai percorsi"
+		href="?q=object/list&amp;p=Spesa/_a_inverse_of_spese/_c_Utente/_a_ID/_v_@tag_ID#FLAT@&t=Spesa_tab">Percorsi</a></li>
+	] :: [
+	<li id="Spesa" class="ui-state-default ui-corner-top data-do-not-exist"><a
+		title="registra nuova spesa"
+		href="?q=object/detail_edit&amp;p=Spesa&amp;a=_a_inverse_of_spese/_c_Utente/_a_ID/_v_@tag_ID#FLAT@">Percorsi</a></li>
+	] ])  	
 	
 	 
 </ul>

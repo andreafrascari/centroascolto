@@ -591,6 +591,20 @@
       <ri>1</ri>
     </item>  
     <item> 
+      <name>spese</name>  
+      <type>8</type>  
+      <xml> 
+        <name>spese</name>  
+        <class>Spesa</class>  
+        <relationship>1-N</relationship>  
+        <target>inverse_of_spese</target> 
+      </xml>  
+      <codomain>Spesa</codomain>  
+      <from>ID</from>  
+      <to>ID_Utente_spese</to>  
+      <ri>1</ri>
+    </item> 
+    <item> 
       <name>ID_Utente_familiari</name>  
       <type>6</type>  
       <xml> 

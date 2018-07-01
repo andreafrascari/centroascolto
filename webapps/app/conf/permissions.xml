@@ -2009,6 +2009,24 @@
           <get>1</get>
         </anonymous>
       </eventi_registrati>
+      <spese_utenti>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </spese_utenti>
       <ID>
         <admin>
           <set>1</set>
@@ -2065,6 +2083,24 @@
           <get>1</get>
         </anonymous>
       </tipologia_alloggio>
+      <classe_alloggio>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </classe_alloggio>
       <dal>
         <admin>
           <set>1</set>
@@ -2248,6 +2284,170 @@
         </anonymous>
       </ID>
     </ServizioDiRiferimento>
+    <Spesa>
+      <anno>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </anno>
+      <inverse_of_spese>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </inverse_of_spese>
+      <mese>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </mese>
+      <note>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </note>
+      <operatore>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </operatore>
+      <solo_percorsi>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </solo_percorsi>
+      <tipo_di_spesa>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </tipo_di_spesa>
+      <unrra>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </unrra>
+      <ID>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </ID>
+    </Spesa>
     <Tessera>
       <inverse_of_tessere>
         <admin>
@@ -2521,6 +2721,24 @@
           <get>1</get>
         </anonymous>
       </data_arrivo_bo>
+      <area_geografica_provenienza>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </area_geografica_provenienza>
       <stato_n>
         <admin>
           <set>1</set>
@@ -3331,6 +3549,24 @@
           <get>1</get>
         </anonymous>
       </presa_in_carico_inserimenti_lavorativi>
+      <spese>
+        <admin>
+          <set>1</set>
+          <get>1</get>
+        </admin>
+        <user>
+          <set>1</set>
+          <get>1</get>
+        </user>
+        <restricted_user>
+          <set>1</set>
+          <get>1</get>
+        </restricted_user>
+        <anonymous>
+          <set>1</set>
+          <get>1</get>
+        </anonymous>
+      </spese>
       <servizi_antoniano>
         <admin>
           <set>1</set>

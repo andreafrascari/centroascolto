@@ -80,6 +80,16 @@
       <order>61</order> 
     </item>  
     <item> 
+      <name>spese_utenti</name>  
+      <label>spese autorizzate</label>  
+      <detail>spese autorizzate</detail>  
+      <detail_edit>spese autorizzate</detail_edit>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>71</order> 
+    </item>  
+    <item> 
       <name>owner_user</name>  
       <label>utente proprietario</label>  
       <detail>utente proprietario</detail>  

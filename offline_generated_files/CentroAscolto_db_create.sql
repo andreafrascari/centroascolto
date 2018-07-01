@@ -16,7 +16,6 @@
 
 --
 -- Create schema (null)
---
 
 
 
@@ -390,7 +389,7 @@ CREATE TABLE `_system_user` (
   `user_name` varchar(200) NOT NULL,
   `user_email` varchar(200),
   `user_phone_number` varchar(200),
-      `owner_user` int(10) unsigned NULL,
+        `owner_user` int(10) unsigned NULL,
   `owner_group` int(10) unsigned NULL,
   `creation_date` date NOT NULL,
   `creation_user` varchar(100) NOT NULL,
@@ -410,8 +409,9 @@ INDEX (`deletion_flag`)) ENGINE=InnoDB;
 
 CREATE TABLE `ResidenzaInAlloggio` (
   `ID` int(10) unsigned NOT NULL auto_increment,
-  `tipologia_alloggio` int(10) NOT NULL,
-  `dal` DATE NOT NULL,
+  `tipologia_alloggio` int(10),
+  `classe_alloggio` int(10) NOT NULL,
+  `dal` DATE,
   `al` DATE,
   `descrizione` longtext NOT NULL,
   `allegato` int(10),
@@ -460,6 +460,36 @@ INDEX (`creation_date`),
 INDEX (`activation_flag`),
 INDEX (`deletion_flag`)) ENGINE=InnoDB;
 
+CREATE TABLE `Spesa` (
+  `ID` int(10) unsigned NOT NULL auto_increment,
+  `anno` int(10) NOT NULL,
+  `mese` int(10) NOT NULL,
+  `note` longtext,
+  `solo_percorsi` double,
+  `tipo_di_spesa` varchar(200) NOT NULL,
+  `unrra` double,
+  `owner_user` int(10) unsigned NULL,
+  `owner_group` int(10) unsigned NULL,
+  `creation_date` date NOT NULL,
+  `creation_user` varchar(100) NOT NULL,
+  `last_modification_date` date,
+  `last_modification_user` varchar(100),
+  `deletion_date` date,
+  `deletion_user` varchar(100),
+  `deletion_flag` tinyint(1) NOT NULL,
+  `activation_flag` tinyint(1) NOT NULL,
+`ID_Operatore_spese_utenti` int(10) NOT NULL,
+INDEX(`ID_Operatore_spese_utenti`),
+`ID_Utente_spese` int(10) NOT NULL,
+INDEX(`ID_Utente_spese`),
+PRIMARY KEY ( `ID` ),
+INDEX (`owner_user`),
+INDEX (`owner_group`),
+INDEX (`creation_user`),
+INDEX (`creation_date`),
+INDEX (`activation_flag`),
+INDEX (`deletion_flag`)) ENGINE=InnoDB;
+
 CREATE TABLE `Tessera` (
   `ID` int(10) unsigned NOT NULL auto_increment,
   `tipologia_tessera` int(10) NOT NULL,
@@ -487,6 +517,37 @@ INDEX (`activation_flag`),
 INDEX (`deletion_flag`)) ENGINE=InnoDB;
 
 CREATE TABLE `Utente` (
+  `ID` int(10) unsigned NOT NULL auto_increment,
+  `scheda` int(10),
+  `nome` varchar(200) NOT NULL,
+  `cognome` varchar(200) NOT NULL,
+  `data_primo_colloquio` DATE NOT NULL,
+  `data_n` DATE NOT NULL,
+  `data_arrivo_it` DATE,
+  `data_arrivo_bo` DATE,
+  `area_geografica_provenienza` int(10) NOT NULL,
+  `stato_n` int(10) NOT NULL,
+  `comune_n` varchar(200),
+  `cf` varchar(200),
+  `sesso` int(10) NOT NULL,
+  `espulso` int(10),
+  `deceduto` int(10),
+  `foto` int(10),
+  `privo_residenza` int(10),
+  `residenza_comune` varchar(200),
+  `residenza_cap` varchar(200),
+  `residenza_via` varchar(200),
+  `residenza_provincia` varchar(200),
+  `stato_civile` int(10),
+  `stato_famiglia` int(10),
+  `comune_famiglia` varchar(200),
+  `figli` int(10),
+  `titolo_studio` int(10),
+  `situazione_economica` int(10),
+  `altro` longtext,
+  `automunito` int(10),
+  `percentuale_inv` int(10),
+  `situazione_sanitaria` longtext,
   `madrelingua` varchar(200),
   `lingua_it` int(10),
   `altre_lingue` varchar(200),
