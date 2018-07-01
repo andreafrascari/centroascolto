@@ -1,0 +1,25 @@
+<serena>
+	<service name="get">
+		<result dimension="1">1</result>
+			<Spesa>
+				<inverse_of_spese>
+					<Utente>
+						<nome>marco</nome>
+						<cognome>ricci</cognome>
+					</Utente>
+				</inverse_of_spese>
+				<operatore>
+					<Operatore>
+						<user_name>Alessandro Albergamo</user_name>
+					</Operatore>
+				</operatore>
+				<mese>gennaio</mese>
+				<anno>2018</anno>
+				<note>ciao</note>
+				<tipo_di_spesa>abbonamento TPER</tipo_di_spesa>
+				<solo_percorsi>56</solo_percorsi>
+				<unrra>23</unrra>
+			</Spesa>
+			 
+	</service>
+</serena>

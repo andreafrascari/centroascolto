@@ -1,0 +1,69 @@
+@BEGIN_TEMPLATE@<div id="detail">
+@BEGIN_Spesa@		
+				<div class="inserto">
+					<div role="toolbar">
+						<a class="btn btn-default btn-xs btn-info" href="?q=object/list&amp;p=@CLASS@&amp;page=XML-QUERY" title="Tornare all'ultima lista visualizzata">
+							<span aria-hidden="true" class="glyphicon glyphicon-backward"></span>
+						</a>
+	 						
+					@BLOCK_BEGIN_EDIT@
+						
+								<a class="btn btn-default btn-xs btn-warning" href="@HREF_DETAIL_EDIT@" title="Modifica la scheda">
+								  <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+       							</a>
+							
+						@BLOCK_END_EDIT@
+					</div>
+			</div>	
+
+
+			@BLOCK_BEGIN_RESULT_ERROR@
+				<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					Si &egrave; verificato un errore: @ERROR_MESSAGE@
+					<br /><br />
+      				<a href="javascript:history.back();" title="Indietro">Indietro</a>
+				</div>
+			@BLOCK_END_RESULT_ERROR@
+
+			@BLOCK_BEGIN_RESULT_EMPTY@
+				<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+					Nessun elemento trovato!
+					<br /><br />
+      				<a href="javascript:history.back();" title="Indietro">Indietro</a>
+				</div>
+			@BLOCK_END_RESULT_EMPTY@
+			
+			@FUN_MODULE(q=object_tab_header/detail,p=Utente/_a_ID/_v_@tag_inverse_of_spese.Utente.ID#FLAT@)@
+
+							
+			<script type="text/javascript">
+				$(document).ready(function() {
+					Anastasis.SerenaUtils.getCurrentTabSheet('Spesa');
+				});
+			</script>
+ 
+ <div role="toolbar" class="btn-toolbar" style="float:right; margin-right:2px;">
+				<a aria-expanded="false" aria-haspopup="true" class="btn btn-success" type="button" href="?q=object/detail_edit&amp;p=Spesa&amp;a=_a_inverse_of_spese/_c_Utente/_a_ID/_v_@tag_inverse_of_spese.Utente.ID#FLAT@" title="nuova spesa">Nuova spesa</a>	
+			</div>
+				
+				<div id="object-body">
+						<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati scheda">
+							<tbody>
+								@tag_tipo_di_spesa@@tag_operatore@@tag_anno@@tag_mese@@tag_tipo_di_spesa@@tag_solo_percorsi@@tag_unrra@@tag_note@
+							</tbody>
+						</table>
+					</div>
+
+	<div id="object-system" @toggable="label=apri/chiudi attributi di sistema,init_state=closed">
+					<table width="100%"  border="0" cellspacing="0" cellpadding="0" summary="tabella dati di sistema">
+						<tbody>
+							@tag_owner_user@@tag_owner_group@@tag_creation_user@@tag_creation_date@@tag_deletion_user@@tag_deletion_date@@tag_last_modification_user@@tag_last_modification_date@@tag_activation_flag@@tag_deletion_flag@
+						</tbody>
+					</table>
+				</div>@END_Spesa@
+		</div>@END_TEMPLATE@
+				
+				
+				

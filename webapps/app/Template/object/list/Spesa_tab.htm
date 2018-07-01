@@ -1,0 +1,144 @@
+@BEGIN_TEMPLATE@<div>
+			<div id="list">
+
+				@BLOCK_BEGIN_RESULT_ERROR@
+					<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+						Si &egrave; verificato un errore: @ERROR_MESSAGE@
+					</div>
+				@BLOCK_END_RESULT_ERROR@
+
+				@BLOCK_BEGIN_RESULT_EMPTY@
+					<div class="alert alert-danger" role="alert">
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+						Nessun elemento trovato.
+					</div>
+				@BLOCK_END_RESULT_EMPTY@
+				
+				@FUN_MODULE(q=object_tab_header/detail,p=Utente/_a_ID/_v_@tag_Spesa.inverse_of_spese.Utente.ID#FLAT@)@
+
+							
+			<script type="text/javascript">
+				$(document).ready(function() {
+					Anastasis.SerenaUtils.getCurrentTabSheet('Spesa');
+				});
+			</script>
+
+ <div role="toolbar" class="btn-toolbar" style="float:right; margin-right:2px;">
+				<a aria-expanded="false" aria-haspopup="true" class="btn btn-success" type="button" href="?q=object/detail_edit&amp;p=Spesa&amp;a=_a_inverse_of_spese/_c_Utente/_a_ID/_v_@tag_Spesa.inverse_of_spese.Utente.ID#FLAT@" title="nuova spesa">Nuova spesa</a>	
+			</div>
+			
+			
+				([
+						[[@tag_Spesa.ID#FLAT@] != []]
+						?? [
+	<div class="table-responsive">
+			 <table class="table">
+			    <thead>
+			       <tr>
+									
+										<th>Anno</th><th>Mese</th><th>Operatore</th><th>Tipo di spesa</th><th>Solo percorsi</th><th>Unrra</th>
+									<th scope="col">Azioni</th>
+								</tr>
+								 </thead>
+			    					<tbody>
+								@BEGIN_Spesa@([
+										[[@XPATH_FUN((count(preceding-sibling::Spesa)+ 1) mod 2)@@] == [0.0] ]
+										?? [
+											<tr class="info">	
+										] :: [
+											<tr>
+										]
+									])
+	
+	
+	
+										@tag_anno@@tag_mese@@tag_operatore@@tag_tipo_di_spesa@@tag_solo_percorsi@@tag_unrra@
+											<td>
+											<div role="toolbar">
+												<a class="btn btn-default btn-xs btn-info" href="?q=@MODULE@/detail&amp;p=Spesa/_a_ID/_v_@tag_ID#FLAT@" title="Dettaglio">
+													<span aria-hidden="true" class="glyphicon glyphicon-play"></span>
+												</a>
+												([
+													[[@FUN_CHECK_INSTANCE_AUTH(CLS=@CLASS@,ID=@tag_ID#FLAT@,LEVEL=2,CREATION_USER=@tag_creation_user#FLAT@)@] == [true]]
+													
+													?? [
+														<span class="NoVisibility">|</span>
+														([
+															[[] != [1]]
+															?? [
+																([ 
+																	[[] == [complex_detail_edit]] 
+																	?? [
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/complex_detail_edit/CLS=Spesa/ID=@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>	
+																		</a>
+																	] :: [
+																		<a class="btn btn-default btn-xs btn-warning" href="?q=@MODULE@/detail_edit&amp;p=Spesa/_a_ID/_v_@tag_ID#FLAT@" title="Modifica i dati dell'oggetto">
+																			<span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+																		</a>
+																	]
+																])
+															]
+														])
+													]
+												])
+												
+											</div>
+											</td>
+									</tr>@END_Spesa@
+								</tbody>
+					  		</table>
+						]
+					])
+
+		  		
+
+		  		
+		  		 
+		  		</div>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+					  <ul class="pager">
+ 
+						@BLOCK_BEGIN_INDIETRO@
+							<li class="previous">
+								<a href="@HREF_LIST_FIRST@" @ajaxable="target=list,replace=true,target_result=list"  title="Vai alla prima pagina">
+									<span aria-hidden="true">&larr;</span> Prima pagina
+								</a>
+							</li>
+							<li>
+								<a href="@HREF_LIST_BACK@" @ajaxable="target=list,replace=true,target_result=list"  title="Vai alla pagina precedente (@PAGINA_PRECEDENTE@)">
+									Precedente
+								</a>
+							</li>
+						@BLOCK_END_INDIETRO@
+
+						<li><span class="list-res-summary">@NUMERO_ELEMENTI@ - pagina @PAGINA_CORRENTE@</span></li>
+
+						@BLOCK_BEGIN_AVANTI@
+							<li>
+								<a href="@HREF_LIST@"  @ajaxable="target=list,replace=true,target_result=list" title="Vai alla pagina successiva (@PAGINA_SUCCESSIVA@)">
+									Successiva
+								</a>
+							</li>
+							<li class="next">
+								<a  href="@HREF_LIST_LAST@" @ajaxable="target=list,replace=true,target_result=list" title="Vai all'ultima pagina">
+								<span aria-hidden="true">&rarr;</span> Ultima pagina</a>
+								</a>
+							</li>
+						@BLOCK_END_AVANTI@
+					  </ul>
+				</div>
+			</nav>
+		  		
+		  		
+		  		
+		  		
+		  		
+			<span id="apri-chiudi-filtro" title="apri/chiudi filtro di raffinamento">Affina ricerca</span>
+			<div @toggable="controller=apri-chiudi-filtro,init_state=closed">
+			 	@FUN_MODULE(q=object/simplefilter)@  
+			</div>
+		</div>@END_TEMPLATE@

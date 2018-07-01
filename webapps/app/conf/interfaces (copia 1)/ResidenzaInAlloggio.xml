@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean> 
+  <title>ResidenzaInAlloggio</title>  
+  <title_view>Residenza in alloggio</title_view>  
+  <attributes> 
+    <item> 
+      <name>ID</name>  
+      <type>1</type>  
+      <label>ID</label> 
+    </item>  
+    <item> 
+      <name>inverse_of_residenze_in_alloggio</name>  
+      <label>utente</label>  
+      <detail>utente</detail>  
+      <heading>5</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>11</order> 
+    </item> 
+     <item> 
+      <name>classe_alloggio</name>  
+      <label>tipologia alloggio</label>  
+      <detail>tipologia alloggio</detail>  
+      <detail_edit>tipologia alloggio</detail_edit>  
+      <filter>tipologia alloggio</filter>  
+      <list>tipologia alloggio</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <description_field>1</description_field>  
+      <list_active_field>1</list_active_field>  
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>       
+    <item> 
+      <name>tipologia_alloggio</name>  
+      <label>alloggio</label>  
+      <detail>alloggio</detail>  
+      <detail_edit>alloggio</detail_edit>  
+      <filter>alloggio</filter>  
+      <list>alloggio</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>21</order> 
+    </item>  
+    <item> 
+      <name>dal</name>  
+      <label>dal</label>  
+      <detail>dal</detail>  
+      <detail_edit>dal</detail_edit>  
+      <filter>dal</filter>  
+      <list>dal</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>31</order> 
+    </item>  
+    <item> 
+      <name>al</name>  
+      <label>al</label>  
+      <detail>al</detail>  
+      <detail_edit>al</detail_edit>  
+      <filter>al</filter>  
+      <list>al</list>  
+      <heading>1</heading>  
+      <max_length/>  
+      <default/>  
+      <order>41</order> 
+    </item>  
+    <item> 
+      <name>descrizione</name>  
+      <label>descrizione</label>  
+      <detail>descrizione</detail>  
+      <detail_edit>descrizione</detail_edit>  
+      <filter>descrizione</filter>  
+      <list>descrizione</list>  
+      <heading>1</heading>  
+      <needed>1</needed>  
+      <max_length/>  
+      <default/>  
+      <order>51</order> 
+    </item>  
+    <item> 
+      <name>allegato</name>  
+      <label>allegato</label>  
+      <detail>allegato</detail>  
+      <detail_edit>allegato</detail_edit>  
+      <heading>2</heading>  
+      <max_length/>  
+      <default/>  
+      <order>61</order> 
+    </item>  
+    <item> 
+      <name>owner_user</name>  
+      <label>utente proprietario</label>  
+      <detail>utente proprietario</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>owner_group</name>  
+      <label>gruppo proprietario</label>  
+      <detail>gruppo proprietario</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_user</name>  
+      <label>creation_user</label>  
+      <detail>utente creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>creation_date</name>  
+      <label>data creazione</label>  
+      <detail>data creazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_user</name>  
+      <label>deletion_user</label>  
+      <detail>utente cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_date</name>  
+      <label>deletion_date</label>  
+      <detail>data cancellazione</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_user</name>  
+      <label>last_modification_user</label>  
+      <detail>utente ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>last_modification_date</name>  
+      <label>last_modification_date</label>  
+      <detail>data ultima modifica</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>activation_flag</name>  
+      <label>activation_flag</label>  
+      <detail>attivo</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item>  
+    <item> 
+      <name>deletion_flag</name>  
+      <label>deletion_flag</label>  
+      <detail>cancellato</detail>  
+      <admin_only>1</admin_only>  
+      <read_only>1</read_only>  
+      <heading>3</heading> 
+    </item> 
+  </attributes> 
+</bean>
