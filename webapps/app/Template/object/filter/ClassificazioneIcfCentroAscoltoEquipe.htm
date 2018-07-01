@@ -24,7 +24,7 @@
 	  </select>
 	</li>
 	<li style="padding:10px">
-	  <input type="text" placeholder="DAL" id="dal" aria-describedby="basic-addon2">
+	  <input type="text" placeholder="DAL" id="dal" aria-describedby="basic-addon2 >
   	</li>
   	<li style="padding:10px">
   		<input type="text"  placeholder="AL" id="al" aria-describedby="basic-addon3">
@@ -46,6 +46,10 @@
 
 $(document).ready(function()	{
 	$("#genera").click(function()	{
+			if (!$("#progetto").val()){
+				alert("Specificare il progetto!");
+				return;
+			}
 			var theURl = "ModuleIndex?q=centroascolto/icf_chart_gen";
 			$.ajax({
 				type: "GET",

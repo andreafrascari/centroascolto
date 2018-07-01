@@ -54,65 +54,71 @@
 		<ItemCentroAscolto>
 			<ordine>9</ordine>
 			<descrizione></descrizione>
+			<codice>D760 - Rapporti con la famiglia</codice>
+			<icf>1072</icf>
+		</ItemCentroAscolto>
+		<ItemCentroAscolto>
+			<ordine>10</ordine>
+			<descrizione></descrizione>
 			<codice>D230 - Rispetto delle regole</codice>
 			<icf>940</icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
-			<ordine>10</ordine>
+			<ordine>11</ordine>
 			<codice>Gestione spazi comuni</codice>
 			<descrizione></descrizione>
 			<icf></icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
-			<ordine>11</ordine>
+			<ordine>12</ordine>
 			<codice>Gestione spazi privati</codice>
 			<descrizione></descrizione>
 			<icf></icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
-			<ordine>12</ordine>
+			<ordine>13</ordine>
 			<descrizione></descrizione>
 			<codice>D57022 - Abuso farmaci e sostanza</codice>
 			<icf>1374</icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
-			<ordine>13</ordine>
+			<ordine>14</ordine>
 			<descrizione></descrizione>
 			<codice>D469 - Orientamento sul territorio</codice>
 			<icf>1192</icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
-			<ordine>14</ordine>
+			<ordine>15</ordine>
 			<descrizione></descrizione>
 			<codice>D845 - Ricerca autonoma lavorativa</codice>
 			<icf>1120</icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
-			<ordine>15</ordine>
+			<ordine>16</ordine>
 			<descrizione></descrizione>
 			<codice>D610 - Ricerca autonoma abitativa</codice>
 			<icf>1013</icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
-			<ordine>16</ordine>
+			<ordine>17</ordine>
 			<descrizione></descrizione>
 			<codice>D2305 - Puntaualita' appuntamenti</codice>
 			<icf>1267</icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
-			<ordine>17</ordine>
+			<ordine>18</ordine>
 			<descrizione></descrizione>
 			<codice>D860 - Gestione denaro</codice>
 			<icf>1134</icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
-			<ordine>18</ordine>
+			<ordine>19</ordine>
 			<descrizione></descrizione>
 			<codice>Riacquisizione autonomia</codice>
 			<icf></icf>
 		</ItemCentroAscolto>
 		<ItemCentroAscolto>
-			<ordine>19</ordine>
+			<ordine>20</ordine>
 			<descrizione></descrizione>
 			<codice>Tenuta progetto</codice>
 			<icf></icf>
